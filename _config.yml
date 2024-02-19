@@ -108,10 +108,10 @@ title-on-all-pages: true
 excerpt_length: 50
 
 # Whether or not to show an excerpt for every blog post in the feed page
-feed_show_excerpt: true
+feed_show_excerpt: false
 
 # Whether or not to show a list of tags below each post preview in the feed page
-feed_show_tags: true
+feed_show_tags: false
 
 # Add a search button to the navbar
 post_search: true
@@ -133,29 +133,29 @@ navbar-var-length: false
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-# navbar-col: "#EAEAEA"
-# navbar-text-col: "#404040"
-# navbar-border-col: "#DDDDDD"
-# page-col: "#404040"
-# text-col: "#FFFFFF"
-# link-col: "#008AFF"
-# hover-col: "#0085A1"
-# footer-col: "#EAEAEA"
-# footer-text-col: "#777777"
-# footer-link-col: "#404040"
-# footer-hover-col: "#0085A1"
-
-navbar-col: "#1C1B1A"
-navbar-text-col: "#B7B5AC"
-navbar-border-col: "#575653"
-page-col: "#100F0F"
-text-col: "#CECDC3"
+navbar-col: "#F2F0E5"
+navbar-text-col: "#6F6E69"
+navbar-border-col: "#CECDC3"
+page-col: "#FFFCF0"
+text-col: "#100F0F"
 link-col: "#BC5215"
-hover-col: "#BC5215"
-footer-col: "#1C1B1A"
-footer-text-col: "#B7B5AC"
-footer-link-col: "#BC5215"
-footer-hover-col: "#BC5215"
+hover-col: "#4385BE"
+footer-col: "#F2F0E5"
+footer-text-col: "#6F6E69"
+footer-link-col: "#CECDC3"
+footer-hover-col: "#4385BE"
+
+# navbar-col: "#1C1B1A"
+# navbar-text-col: "#B7B5AC"
+# navbar-border-col: "#575653"
+# page-col: "#100F0F"
+# text-col: "#CECDC3"
+# link-col: "#BC5215"
+# hover-col: "#BC5215"
+# footer-col: "#1C1B1A"
+# footer-text-col: "#B7B5AC"
+# footer-link-col: "#BC5215"
+# footer-hover-col: "#BC5215"
 # code-col: "#282726"
 
 
