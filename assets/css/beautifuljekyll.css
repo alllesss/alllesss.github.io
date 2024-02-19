@@ -847,8 +847,8 @@ table tr td :last-child {
 
 code {
   padding: 0.125rem 0.25rem;
-  color: #878580;
-  background-color: #1C1B1A;
+  color: #100F0F;
+  background-color: #DAD8CE;
   border-radius: 0.25rem;
 }
 
@@ -929,30 +929,30 @@ pre {
 .box-success {
   padding: 0.9375rem 0.9375rem 0.9375rem 0.625rem;
   margin: 1.25rem 1.25rem 1.25rem 0.3125rem;
-  border: 1px solid #eee;
-  border-left-width: 0.3125rem;
-  border-radius: 0.3125rem 0.1875rem 0.1875rem 0.3125rem;
-  background-color: #66800B;
+  color: #100F0F;
+/*  border: 1px solid #eee;*/
+/*  border-left-width: 0.3125rem;
+  border-radius: 0.3125rem 0.1875rem 0.1875rem 0.3125rem;*/
 }
 
 .box-note {
-  background-color: #24837B;
-  border-left-color: #24837B;
+  background-color: #3AA99F;
+  border-left-color: #3AA99F;
 }
 
 .box-warning {
-  background-color: #AD8301;
-  border-left-color: #AD8301;
+  background-color: #DA702C;
+  border-left-color: #DA702C;
 }
 
 .box-error {
-  background-color: #AF3029;
-  border-left-color: #AF3029;
+  background-color: #D14D41;
+  border-left-color: #D14D41;
 }
 
 .box-success {
-  background-color: #98FB98;
-  border-left-color: #3CB371;
+  background-color: #879A39;
+  border-left-color: #879A39;
 }
 
 /* --- Misc blog post styles --- */
