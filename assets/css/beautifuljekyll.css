@@ -4,6 +4,15 @@ layout: null
 
 @import url("pygment_highlights.css");
 
+/* INTER Font */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
 /* --- General --- */
 
 html {
@@ -11,11 +20,11 @@ html {
 }
 
 body {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Inter' ,'Lora', 'Times New Roman', serif;
   font-size: 1.125rem;
-  color: {{ site.text-col | default: "#404040" }};
+  color: {{ site.text-col | default: "#FFFFFF" }};
   position: relative;
-  background-color: {{ site.page-col | default: "#FFFFFF" }};
+  background-color: {{ site.page-col | default: "#404040" }};
   {% if site.page-img %}
   background-image: url({{ site.page-img | relative_url }});
   background-attachment: fixed;
@@ -33,12 +42,12 @@ p {
   margin: 1.875rem 0;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 800;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
   line-height: 1.1;
 }
 h1 {
-  font-size: 2.25rem;
+  font-size: 2.0rem;
 }
 h2 {
   font-size: 1.875rem;
@@ -131,7 +140,7 @@ img {
 .navbar-custom {
   background-color: {{ site.navbar-col | default: "#EAEAEA" }};
   border-bottom: 1px solid {{ site.navbar-border-col | default: "#DDDDDD" }};
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   {% if site.navbar-img %}
     background-image: url({{ site.navbar-img | relative_url }});
     background-attachment: fixed;
@@ -414,7 +423,7 @@ footer .list-inline {
   margin-bottom: 1.875rem;
 }
 footer .copyright {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: center;
   margin-bottom: 0;
   margin-top: 0;
@@ -426,7 +435,7 @@ footer .theme-by {
 footer .footer-custom-content {
   text-align: center;
   margin-bottom: 0.9375rem;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -468,7 +477,7 @@ footer .footer-custom-content {
 
 .post-preview a {
   text-decoration: none;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: {{ site.text-col | default: "#404040" }};
 }
 
@@ -493,7 +502,7 @@ footer .footer-custom-content {
   font-size: 1.125rem;
   font-style: italic;
   margin: 0 0 0.625rem;
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: 'Inter', 'Lora', 'Times New Roman', serif;
 }
 .post-heading .post-meta {
   display: inline-block;
@@ -570,7 +579,7 @@ footer .footer-custom-content {
 /* --- Tags --- */
 
 .blog-tags {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 0.9375rem;
   margin: 1.875rem 0;
 }
@@ -617,7 +626,7 @@ footer .footer-custom-content {
 }
 
 #full-tags-list {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 #full-tags-list .tag-entry {
@@ -691,7 +700,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   font-size: 1.6875rem;
   line-height: 1.1;
   display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 0.625rem 0 0;
 }
@@ -716,7 +725,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   padding: 0.3125rem 0.625rem;
   font-size: 0.6875rem;
   color: #EEE;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   right: 0;
   bottom: 0;
   display: none;
@@ -775,7 +784,7 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 }
 
 .pagination .page-item .page-link {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 800;
@@ -805,12 +814,12 @@ table {
 }
 table tr {
   border-top: 1px solid #cccccc;
-  background-color: #ffffff;
+  background-color: {{ site.page-col | default: "#404040" }};
   margin: 0;
   padding: 0;
 }
 table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+  background-color: {{ site.page-col | default: "#404040" }};
 }
 table tr th {
   font-weight: bold;
@@ -838,8 +847,8 @@ table tr td :last-child {
 
 code {
   padding: 0.125rem 0.25rem;
-  color: #c7254e;
-  background-color: #f9f2f4;
+  color: #878580;
+  background-color: #1C1B1A;
   border-radius: 0.25rem;
 }
 
@@ -923,21 +932,22 @@ pre {
   border: 1px solid #eee;
   border-left-width: 0.3125rem;
   border-radius: 0.3125rem 0.1875rem 0.1875rem 0.3125rem;
+  background-color: #66800B;
 }
 
 .box-note {
-  background-color: #eee;
-  border-left-color: #2980b9;
+  background-color: #24837B;
+  border-left-color: #24837B;
 }
 
 .box-warning {
-  background-color: #fdf5d4;
-  border-left-color: #f1c40f;
+  background-color: #AD8301;
+  border-left-color: #AD8301;
 }
 
 .box-error {
-  background-color: #f4dddb;
-  border-left-color: #c0392b;
+  background-color: #AF3029;
+  border-left-color: #AF3029;
 }
 
 .box-success {
@@ -992,7 +1002,7 @@ pre {
 
 /* Search bar */
 #beautifuljekyll-search-overlay {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: none;
   z-index: 999999;
   position: fixed;
