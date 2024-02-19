@@ -2,11 +2,11 @@
 layout: post
 title: Sample blog post to learn markdown tips
 subtitle: There's lots to learn!
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
-tags: [test]
+# gh-repo: daattali/beautiful-jekyll
+# gh-badge: [star, fork, follow]
+# tags: [test]
 comments: true
-author: Bill Smith
+author: Ali Eslami
 ---
 
 {: .box-success}
@@ -14,6 +14,7 @@ This is a demo post to show you how to write blog posts with markdown.  I strong
 
 **Here is some bold text**
 
+# Header main
 ## Here is a secondary heading
 
 [This is a link to a different site](https://deanattali.com/) and [this is a link to a section inside this page](#local-urls).
