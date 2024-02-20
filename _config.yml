@@ -84,7 +84,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: Devlog and random thoughts
 
 ###########################
 # --- General options --- #
@@ -102,7 +102,7 @@ share-links-active:
 # url-pretty: "MyWebsite.com"
 
 # Add the website title to the title of every page
-title-on-all-pages: true
+title-on-all-pages: false
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
@@ -117,7 +117,7 @@ feed_show_tags: false
 post_search: true
 
 # Add a button in the footer to edit the current page. Only works if your website is hosted on GitHub
-edit_page_button: true
+edit_page_button: false
 
 # Allow sub-menu items (second-level navigation menu items) to be longer than the top-level menu
 # If this setting is off, then long sub-menu words might get cut off
@@ -139,24 +139,11 @@ navbar-border-col: "#CECDC3"
 page-col: "#FFFCF0"
 text-col: "#100F0F"
 link-col: "#BC5215"
-hover-col: "#4385BE"
+hover-col: "#3AA99F"
 footer-col: "#F2F0E5"
 footer-text-col: "#6F6E69"
 footer-link-col: "#CECDC3"
-footer-hover-col: "#4385BE"
-
-# navbar-col: "#1C1B1A"
-# navbar-text-col: "#B7B5AC"
-# navbar-border-col: "#575653"
-# page-col: "#100F0F"
-# text-col: "#CECDC3"
-# link-col: "#BC5215"
-# hover-col: "#BC5215"
-# footer-col: "#1C1B1A"
-# footer-text-col: "#B7B5AC"
-# footer-link-col: "#BC5215"
-# footer-hover-col: "#BC5215"
-# code-col: "#282726"
+footer-hover-col: "#3AA99F"
 
 
 # Alternatively, the navbar, footer, and page background can be set to an image
@@ -290,11 +277,13 @@ defaults:
       layout: "post"
       comments: false  # add comments to all blog posts
       social-share: false # add social media sharing buttons to all blog posts
+      nav-short: true
   -
     scope:
       path: "" # any file that's not a post will be a "page" layout by default
     values:
       layout: "page"
+      nav-short: true
 
 # Exclude these files from production site
 exclude:

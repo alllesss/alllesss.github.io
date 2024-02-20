@@ -68,7 +68,7 @@
   }
   .page-dark-mode a:hover,
   .page-dark-mode a:focus {
-    color: #205EA6;
+    color: #24837B;
   }
   .page-dark-mode blockquote {
     color: #878580;
@@ -191,8 +191,8 @@
   .page-dark-mode .pagination .page-item .page-link:hover,
   .page-dark-mode .pagination .page-item .page-link:focus {
     color: #18191a;
-    border-color: #205EA6;
-    background-color: #205EA6;
+    border-color: #24837B;
+    background-color: #24837B;
   }
   .page-dark-mode table tr {
     border-top: 1px solid #666;
