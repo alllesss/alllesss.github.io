@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family: Inter ,'Lora', 'Times New Roman', serif;
+  font-family: Inter , 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 /*    font-family: 'Inter' ,'Lora', 'Times New Roman', serif;*/
   font-size: 1.125rem;
   color: {{ site.text-col | default: "#FFFFFF" }};
