@@ -504,7 +504,7 @@ footer .footer-custom-content {
   font-size: 1rem;
   font-style: italic;
   margin: 0 0 0.625rem;
-  font-family: 'Inter', 'Lora', 'Times New Roman', serif;
+  font-family: Inter , 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .post-heading .post-meta {
   display: inline-block;
