@@ -49,6 +49,14 @@ Obviously there was something about this modular process that hooked me up. Even
 <a href="/assets/images/01_HelloWorld/LineofSight_InstallationView.jpg" data-lightbox="image-1" data-title="My caption">Image #1</a>
 
 
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
 
 
 <a class="example-image-link" href="/assets/images/01_HelloWorld/LineofSight_InstallationView.jpg" data-lightbox="example-1" data-title="Optional caption Line of Sight."><img class="example-image" src="/assets/images/01_HelloWorld/LineofSight_InstallationView.jpg" alt="image-1"/></a>
