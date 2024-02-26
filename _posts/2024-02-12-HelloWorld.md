@@ -17,7 +17,7 @@ It's been over 3 years since I had a growing interest in Modularity and fragment
 This is a temporary post. the blog will be up and alive soon!
 In the meantime feel free to subscribe to stay in touch with new updates here:
 
-<iframe src="https://embeds.beehiiv.com/6a81e4ce-2c36-4fbb-8e38-c73fc8024b34?slim=true" data-test-id="beehiiv-embed" height="120" frameborder="0" scrolling="no" style="margin: 0; border-radius: 3px !important; background-color: transparent;"></iframe>
+<p align="center"><iframe src="https://embeds.beehiiv.com/6a81e4ce-2c36-4fbb-8e38-c73fc8024b34?slim=true" data-test-id="beehiiv-embed" height="55" width="400" frameborder="0" scrolling="no" style="margin: 0; border-radius: 3px !important; background-color: transparent;"></iframe></p>
 
 ---
 

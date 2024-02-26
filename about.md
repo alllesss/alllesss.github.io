@@ -6,7 +6,7 @@ title: About
 
 This website is built with [Jekyll](https://jekyllrb.com/), using customized version of the [Beautiful Jekyll](https://beautifuljekyll.com/) theme. It is hosted on GitHub.
 
-<iframe src="https://embeds.beehiiv.com/6a81e4ce-2c36-4fbb-8e38-c73fc8024b34?slim=true" data-test-id="beehiiv-embed" height="120" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+<p align="center"><iframe src="https://embeds.beehiiv.com/6a81e4ce-2c36-4fbb-8e38-c73fc8024b34?slim=true" data-test-id="beehiiv-embed" height="55" width="400" frameborder="0" scrolling="no" style="margin: 0; border-radius: 3px !important; background-color: transparent;"></iframe></p>
 
 
 <!-- Licence  -->
