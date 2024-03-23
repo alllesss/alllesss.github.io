@@ -61,14 +61,14 @@
     background-color: #100F0F;
   }
   .page-dark-mode a {
-    color: #BC5215;
+    color: #205EA6;
   }
   .page-dark-mode #social-share-section a {
     color: #F2F0E5;
   }
   .page-dark-mode a:hover,
   .page-dark-mode a:focus {
-    color: #24837B;
+    color: #BC5215;
   }
   .page-dark-mode blockquote {
     color: #878580;
@@ -119,7 +119,7 @@
   .page-dark-mode .navbar-custom .navbar-nav .nav-link:focus,
   .page-dark-mode .navbar-custom .navbar-nav .dropdown-menu .dropdown-item:hover,
   .page-dark-mode .navbar-custom .navbar-nav .dropdown-menu .dropdown-item:focus {
-    color: #24837B;
+    color: #BC5215;
   }
   .page-dark-mode footer {
    border-top-color: #282726;
@@ -145,7 +145,7 @@
   }
   .page-dark-mode .post-preview a:focus,
   .page-dark-mode .post-preview a:hover {
-    color: #24837B;
+    color: #BC5215;
   }
   .page-dark-mode .post-preview .post-meta,
   .page-dark-mode .post-heading .post-meta {
@@ -191,13 +191,28 @@
   .page-dark-mode .pagination .page-item .page-link:hover,
   .page-dark-mode .pagination .page-item .page-link:focus {
     color: #18191a;
-    border-color: #24837B;
-    background-color: #24837B;
+    border-color: #BC5215;
+    background-color: #BC5215;
   }
   .page-dark-mode table tr {
     border-top: 1px solid #666;
     background-color: #100F0F;
   }
+
+  .page-dark-mode h1 {
+    color: #AF3029;
+  }
+  .page-dark-mode h2 {
+    color: #BC5215;
+  }
+
+  .page-dark-mode .big-img h1 {
+    color: #FFFCF0;
+  }
+  .page-dark-mode .big-img h2 {
+  color: #FFFCF0;
+  }
+
   .page-dark-mode table tr:nth-child(2n) {
     background-color: #1C1B1A;
   }
