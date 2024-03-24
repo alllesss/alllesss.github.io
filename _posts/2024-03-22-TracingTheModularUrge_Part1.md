@@ -84,7 +84,7 @@ Gabbeh is a traditional type of Persian rug, known for its simplistic design and
 What sets Gabbeh rugs apart is not just their aesthetic appeal but also their cultural significance. They are a form of storytelling, where each rug carries tales from the lives of its creators. The simplicity in their design is intentional, prioritizing emotional expression and the artisan's connection to their environment over decorative complexity.
 
 
-Gabbeh uses Modular tiles as a format for expression. This modularity allows the makers to improvise and put an imprint of their observations along their travels across the landscapes of iran into these carpets. Shaping and artefact similar to a Memory slot or a form of Journaling.
+Gabbeh uses Modular tiles as a format for expression. This modularity allows the makers to improvise and put an imprint of their observations along their travels across the landscapes of iran into these carpets. Shaping an artefact similar to a Memory slot or a form of Journaling.
 
 
 
