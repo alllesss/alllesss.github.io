@@ -32,7 +32,7 @@ This was of course, the first attempt. a year later I moved to a bigger studio a
 Obviously there was something about this modular process that hooked me up. Even though it was only a representation, the fact that the space I was working at was represented with only 3 module types (wood/grey floor/white wall) was satisfying. Even more so perhaps because of the quiteness of this representation it seemed attractive. Could call this 'Syntethic Mirror Space'!
 This kind of space, can be associated to 'Barzakh', a limbo space or a phase inbetween death and resurrection. 
 
-{: .box-note}
+{: .box-gray}
 **Barzakh:** in Islamic theology, refers to the intermediate state between death and resurrection, where souls await judgment. It's often depicted as a barrier or partition between the worldly life and the afterlife.
 
 ## Sampling

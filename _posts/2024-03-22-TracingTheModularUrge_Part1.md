@@ -1,23 +1,24 @@
 ---
 layout: post
-title: Tracing the Modular Urge - Part 1 
+title: Tracing the Modular Urge - Part 1
 subtitle: References and Inspirations
-# tags: [test]
 comments: false
 thumbnail-img: /assets/images/02_Post/Modulex_01.png
-cover-img: ["/assets/images/02_Post/Modulex_01.png" : " "]
+cover-img:
+    - /assets/images/02_Post/Modulex_01.png: " "
 readtime: true
 nav-short: true
-# author: Ali Eslami
+preview: /images/01_HelloWorld/Module_Floor.jpg
 ---
 
 # Tracing the Modular urge
-Before anything, I want to share a bit of background about this new initiative which shamefully I have no proper title for! I chose "ModularX" the most bland and generic name as a placeholder just to have something to refer to. hopefully no god will cast judgment on this poor taste and eventually I will come up with a holy title!
+Before anything, I want to share a bit of background about this new initiative which shamefully I have no proper title for yet! I chose "ModularX" the most bland and generic name as a placeholder just to have something to refer to. hopefully no god will cast judgment on this poor taste and eventually I will come up with a holy title!
 
 I'd like to trace back to few years ago to give a bit of background of where this Modular urge come from. I will break it down into 3 Parts: 
 1. References and inspirations
 2. Limbo Spaces
 3. REBOOT of the past
+
 
 # References and Inspirations
 The following is a list of subjects that got my attention for their use of modularity within different contexts. I try to avoid the more obvious examples such as minecraft.

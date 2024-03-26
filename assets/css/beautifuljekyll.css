@@ -56,8 +56,13 @@ h2 {
   font-size: 1.4rem;
   color: #DA702C;
 }
+
 h3 {
   font-size: 1.2rem;
+}
+.blog-post h3 {
+  font-size: 1.2rem;
+  color: #DA702C;
 }
 h4 {
   font-size: 1.1rem;
@@ -935,8 +940,9 @@ pre {
 .box-note,
 .box-warning,
 .box-error,
-.box-success {
-  padding: 0.9375rem 0.9375rem 0.9375rem 0.625rem;
+.box-success,
+.box-gray {
+  padding: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
   margin: 1.25rem 1.25rem 1.25rem 0.3125rem;
   color: #100F0F;
 /*  border: 1px solid #eee;*/
@@ -962,6 +968,11 @@ pre {
 .box-success {
   background-color: #879A39;
   border-left-color: #879A39;
+}
+
+.box-gray {
+  background-color: #B7B5AC;
+  border-left-color: #B7B5AC;
 }
 
 /* --- Misc blog post styles --- */
