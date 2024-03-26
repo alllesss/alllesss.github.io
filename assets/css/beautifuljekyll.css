@@ -14,6 +14,24 @@ layout: null
   :root { font-family: InterVariable, sans-serif; }
 }
 
+/* @font-face {
+  font-family: 'B Zar';
+  src: url('/assets/fonts/BZar.ttf') format('truetype');
+} */
+
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('/assets/fonts/Vazirmatn-Regular.woff2') format('woff2');
+  /* font-weight: 400; */
+  font-style: normal;
+  font-display: swap;
+}
+
+.farsi {
+  font-family: 'Vazirmatn', sans-serif; /* 'B Zar' */
+  font-size: 1.0em;
+}
+
 /* --- General --- */
 
 html {
