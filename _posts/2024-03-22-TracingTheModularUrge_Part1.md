@@ -10,7 +10,7 @@ readtime: true
 nav-short: true
 # preview: /images/01_HelloWorld/Module_Floor.jpg
 full-width: true
-toc: true
+# toc: true
 ---
 
 <!-- * toc

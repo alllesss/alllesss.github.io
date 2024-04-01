@@ -9,7 +9,7 @@ cover-img: ["/assets/images/01_HelloWorld/Module_Floor.jpg" : "A piece of floor"
 readtime: true
 nav-short: true
 full-width: true
-toc: true
+# toc: true
 # author: Ali Eslami
 ---
 
