@@ -56,6 +56,14 @@
     background: #575653;
   }
   
+  .page-dark-mode .sidebar {
+    color: #575653; /* Adjust as needed */
+  }
+
+  .page-dark-mode .sidebar a {
+    color: #575653; /* Adjust as needed */
+  }
+
   .page-dark-mode {
     color: #CECDC3;
     background-color: #100F0F;

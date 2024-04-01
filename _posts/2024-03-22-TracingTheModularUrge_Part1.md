@@ -8,8 +8,13 @@ cover-img:
     - /assets/images/02_Post/Modulex_01.png: " "
 readtime: true
 nav-short: true
-preview: /images/01_HelloWorld/Module_Floor.jpg
+# preview: /images/01_HelloWorld/Module_Floor.jpg
+full-width: true
+toc: true
 ---
+
+<!-- * toc
+{:toc} -->
 
 # Tracing the Modular urge
 Before anything, I want to share a bit of background about this new initiative which shamefully I have no proper title for yet! I chose "ModularX" the most bland and generic name as a placeholder just to have something to refer to. hopefully no god will cast judgment on this poor taste and eventually I will come up with a holy title!

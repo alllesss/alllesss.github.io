@@ -32,6 +32,30 @@ layout: null
   font-size: 1.0em;
 }
 
+
+.sidebar {
+  float: left;
+  /* position: sticky; */
+  top: 0; /* Adjust this value as needed */
+  left: 0; /* This will make the sidebar stick to the left */
+  width: 20%;
+  font-size: 0.9em; /* Adjust as needed */
+  color: #B7B5AC; /* Adjust as needed */
+}
+
+.sidebar a {
+  color: #B7B5AC; /* Adjust as needed */
+}
+
+.blog-post {
+  margin: 0 auto; /* Add this line to center the blog post */
+  width: 100%; /* Set the default width to 100% */
+}
+
+.blog-post.full-width {
+  width: 50%; /* Set the width to 50% if full-width is true */
+}
+
 /* --- General --- */
 
 html {

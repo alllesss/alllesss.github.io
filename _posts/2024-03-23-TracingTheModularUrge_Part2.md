@@ -8,8 +8,11 @@ thumbnail-img: /assets/images/01_HelloWorld/Module_Floor.jpg
 cover-img: ["/assets/images/01_HelloWorld/Module_Floor.jpg" : "A piece of floor"]
 readtime: true
 nav-short: true
+full-width: true
+toc: true
 # author: Ali Eslami
 ---
+
 
 # Limbo spaces [2021-22]
 As an artist and engineer working primarily with Unreal Engine, I tend to use it not only for my work as a medium to build simulations and VR experiences but also to visualize upcoming exhibitions. This helped me to get a feel of the space and use it as a soft reference to take decisions on what/how to show different elements of the work. but as time went by I realized I do this quite often and why not make it more streamlined and modular so it takes less labor each time I'll try to make a new space? So what I did was to build the most generic modules that shape the architecture of a space. the only constraint I set was each module should not be bigger than `100cm x 100cm x 100cm`.

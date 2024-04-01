@@ -8,6 +8,7 @@ thumbnail-img: /assets/images/01_HelloWorld/Module_Wall_Floor.jpg
 cover-img: ["/assets/images/01_HelloWorld/Module_Wall_Floor.jpg" : "A piece of wall leaning on itself"]
 readtime: true
 nav-short: true
+full-width: false
 # author: Ali Eslami
 ---
 

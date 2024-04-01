@@ -4,6 +4,26 @@ layout: base
 
 {% include header.html type="post" %}
 
+<style>
+  .sidebar {
+    position: sticky;
+    top: 5.0rem;
+    height: min-content;
+    overflow-y: auto;
+    {% if page.full-width %}
+      display: block;
+    {% else %}
+      display: none;
+    {% endif %}
+  }
+
+  @media (max-width: 767px) {
+    .sidebar {
+      display: none;
+    }
+  }
+</style>
+
 <main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
   <div class="row">
     <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
@@ -38,10 +58,17 @@ layout: base
           {% endfor %}
         </div>
       {% endif %}
+      
+      <div class="sidebar">
+        <body>&gt; Table of Contents</body>
+        {% toc %}
+      </div>
 
-      <div class="blog-post">
+      <div class="blog-post {% if page.full-width %}full-width{% endif %}">
         {{ content }}
       </div>
+
+      <div style="clear: both;"></div>
 
       {% if page.tags.size > 0 %}
         <div class="blog-tags">
