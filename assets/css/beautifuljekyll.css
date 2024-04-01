@@ -35,7 +35,6 @@ layout: null
 
 .sidebar {
   float: left;
-  /* position: sticky; */
   top: 0; /* Adjust this value as needed */
   left: 0; /* This will make the sidebar stick to the left */
   width: 20%;
