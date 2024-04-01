@@ -57,7 +57,7 @@ layout: null
 
 @media screen and (max-width: 768px) {
   .blog-post.full-width {
-    width: 90%;
+    width: 95%; /* Adjust mobile content margins */
   }
 }
 
