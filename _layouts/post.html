@@ -61,7 +61,8 @@ layout: base
       
       <div class="sidebar">
         <body>&gt; Table of Contents</body>
-        {% toc %}
+        {% include toc.html html=content %}
+        <!-- {% toc %} -->
       </div>
 
       <div class="blog-post {% if page.full-width %}full-width{% endif %}">
