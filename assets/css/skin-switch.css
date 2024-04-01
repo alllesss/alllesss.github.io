@@ -64,6 +64,10 @@
     color: #575653; /* Adjust as needed */
   }
 
+  .page-dark-mode hr {
+    border-color: #575653; /* Adjust as needed */
+  }
+
   .page-dark-mode {
     color: #CECDC3;
     background-color: #100F0F;
