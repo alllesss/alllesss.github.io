@@ -8,9 +8,9 @@ cover-img:
     - /assets/images/02_Post/Modulex_01.png: " "
 readtime: true
 nav-short: true
-# preview: /images/01_HelloWorld/Module_Floor.jpg
+preview: /images/01_HelloWorld/Module_Floor.jpg
 full-width: true
-# toc: true
+# author: Ali Eslami
 ---
 
 <!-- * toc
