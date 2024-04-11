@@ -47,4 +47,6 @@ the first consists in seeing together things that are scattered about everywhere
 phaedrus, i myself am a lover of these divisions and collections, so that i may be able to think and to speak.”
 ― Plato, Phaedrus
 
+Sampling does not and should not be limited to forms. In the next post, I'll explain how Sampling extends to **mechanisms** and **functions** alongside their inherent forms. As much as we can demarcate and modularize forms, functions can also get stripped back, broken down and put together in ways that god not intended!
+
 ---

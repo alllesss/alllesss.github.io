@@ -8,6 +8,7 @@ thumbnail-img: assets\images\03_Post\01_Homa_Cover.jpg
 cover-img: "/assets/images/03_Post/02_Homa_Cover.jpg"
 readtime: true
 nav-short: true
+full-width: true
 # author: Ali Eslami
 ---
 
@@ -54,7 +55,7 @@ From early on, I knew I wanted to build a house, inspired by the artchitecture o
 
 In this post I want to break down and articulate the process involved in making `Homā's Phantom`. But first I'd give an introduction to each of these 3 core concepts that shaped the work.
 
-1. **Homa Bird** (Persian Mythology)
+1. **Homā Bird** (Persian Mythology)
 2. **Architecture of Courtyard Houses in Kashan**
 3. **The Labyrinth**
 
@@ -62,8 +63,8 @@ In this post I want to break down and articulate the process involved in making 
 <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/873266306?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Homā's Phantom - Excerpt [4K]"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
 
 
-## 1. Homa Bird (Persian Mythology)
-The Homa, deeply embedded in Persian mythology, is a captivating bird symbolizing eternal life and protection. Revered as a creature of immense wisdom and healing powers, it's often associated with themes of rejuvenation and immortality. Legends say that the Homa flies continuously, its shadow bringing fortune to those it passes over. Unlike the cyclic rebirth of the Phoenix, the Homa represents an unending life, embodying purity, and serves as a guardian figure.
+## 1. Homā Bird (Persian Mythology)
+The Homā, deeply embedded in Persian mythology, is a captivating bird symbolizing eternal life and protection. Revered as a creature of immense wisdom and healing powers, it's often associated with themes of rejuvenation and immortality. Legends say that the Homā flies continuously, its shadow bringing fortune to those it passes over. Unlike the cyclic rebirth of the Phoenix, the Homā represents an unending life, embodying purity, and serves as a guardian figure.
 
 ![alt text](\assets\images\03_Post\03_Homa_Mosaic.png)
 ^ *Mosaic detail at the Nadir Divan-begi Madrasa in Bukhara, Uzbekistan.*
@@ -73,14 +74,21 @@ The Homa, deeply embedded in Persian mythology, is a captivating bird symbolizin
 
 It is said that this unique bird spends it entire life in high sky and gets down on to the ground only to feed on bones. It breeds in the sky and lays eggs when in the air which start falling down towards the land at great speed. Before the eggs hit the ground they hatch in the air and in the chick’s downward journey it develops its eyes. On reaching the vicinity of earth, the chick becomes consciousness and gives out a shrill cry with the fear of dashing to the ground to encounter death. It stabilizes its movement and takes flight upwards towards its safest sanctuary, its mother.
 
-![alt text](\assets\images\03_Post\05_Homa_IranAir.png)
-^ *Logo of Iran Air depicting Homa as a symbol of flight*
+<figure align="center">
+  <img src="\assets\images\03_Post\05_Homa_IranAir.png" alt="^ Logo of Iran Air depicting Homa as a symbol of flight" width="400">
+  <figcaption><i><center>^ Logo of Iran Air depicting Homā as a symbol of flight</center></i></figcaption>
+</figure>
 
-This mythical story about the birth of Homa as a recursive process gripped me and I kept thinking about a what if scenario! what if some of those new born Homa birds falling on the ground won't get the chance to fly again upwards and face their death like other mortals ? perhaps on their path to falling on the ground they had a quick glimpse on earth. So I thought to make a floating house that embodies the phantom of Homa, the ghost of those Homas who faced death. 
+
+This mythical story about the birth of Homā as a recursive process gripped me and I kept thinking about a what if scenario! what if some of those new born Homā birds falling on the ground won't get the chance to fly again upwards and face their death like other mortals ? perhaps on their path to falling on the ground they had a quick glimpse on earth. So I thought to make a floating house that embodies the phantom of Homā, the ghost of those Homās who faced death. 
 afterall a house that is built virtually perhaps naturally depicts a ghost house than any other physical representation.
 
-![alt text](\assets\images\03_Post\06_Homa_Real.png)
+<figure align="center">
+  <img src="\assets\images\03_Post\06_Homa_Real.png" alt="" width="500">
+  <figcaption><i><center></center></i></figcaption>
+</figure>
 ^ *The [lammergeier](https://en.wikipedia.org/wiki/Bearded_vulture "Bearded vulture") is a very large bird of prey. It is morphologically similar to depictions of the Huma bird*
+
 
 ## 2. Architecture of Courtyard Houses in Kashan
 In 2015, I went to a short trip to visit Kashan. It's a historical city located between Tehran and Isfahan. Kashan is located in the desert, specifically on the edge of the Dasht-e Kavir, Iran's central desert. Despite its arid surroundings, Kashan has been a thriving oasis city for centuries, thanks to its ingenious traditional systems for tapping underground water sources.
@@ -100,6 +108,7 @@ Walking through these houses I was deeply impressed by how the house combines ae
 ![alt text](\assets\images\03_Post\09_Kashan_Map.png)
 ^ *Snapshot from the research article - "Analysis of the Role of Passive Energy In the Evaluation of Kashan Houses" [link](https://www.manzar-sj.com/jufile?ar_sfile=1729832)*
 
+{: .box-gray}
 >The courtyards of the desert houses are a complete manifestation of introversion and the environment is completely different from the outside space. In this small garden, the residents have created a pleasant environment by planting beautiful trees and flowers and building a pond. The yard has been used in different ways in Iranian houses; which include: 
 >- as a sign of privacy; 
 >- Unifying several elements of the house;
@@ -129,10 +138,10 @@ Ariadne, the daughter of Minos, the king of Crete, falls in love with Theseus an
 
 In a more abstract level, Ariadne's Thread is seen as a technique to follow completely through to trace steps or take point by point a series of found truths in a contingent, ordered search that reaches an end position. This process can take the form of a mental record, a physical marking, or even a philosophical debate; it is the process itself that assumes the name.
 
-In Homa's Phantom, the user crawls the labyrinth along an invisible  spatio-temporal pathway inspired by Ariadne's thread. Here the invisible thread is a record in time of one's way through a complex space with a simple, effective strategy.
+In Homā's Phantom, the user crawls the labyrinth along an invisible  spatio-temporal pathway inspired by Ariadne's thread. Here the invisible thread is a record in time of one's way through a complex space with a simple, effective strategy.
 
 # Making the system
-The forementioned 3 concepts come together to form Homa's Phantom, a Labyrinth Courtyard House that embodies the ghosts of Homa's who fallen on earth. each module used making the house represents one of those fallen birds. each contain a memory fragment, a record of what the bird has seen moments before death.
+The forementioned 3 concepts come together to form Homā's Phantom, a Labyrinth Courtyard House that embodies the ghosts of Homā's who fallen on earth. each module used making the house represents one of those fallen birds. each contain a memory fragment, a record of what the bird has seen moments before death.
 Below I highlight some elements that shapes this floating house.
 
 ### First steps
@@ -152,8 +161,8 @@ When I start making a new level/environment in a game engine It's all blank. I b
 After getting an initial feel of the scale, I generated a reference design of a labyrinth map using a python script. this reference was used to build the house on top.
 
 <figure align="center">
-    <img src="\assets\images\03_Post\14_Maze.png" alt="">
-    <figcaption><i><center></center></i></figcaption>
+  <img src="\assets\images\03_Post\14_Maze.png" alt="" width="400">
+  <figcaption><i><center></center></i></figcaption>
 </figure>
 
 After a month of copy pasting modules the layout of the has was formed into a complex house labyrinth:
@@ -191,8 +200,8 @@ The red ball operates in two distinct modes:
 2. **User-Controlled:** The ball awaits the player's commands, pausing the state machine for direct interaction.
 
 <figure align="center">
-    <img src="\assets\images\03_Post\17_Red_Orb.png" alt="Red Orb">
-    <figcaption><i><center></center></i></figcaption>
+  <img src="\assets\images\03_Post\17_Red_Orb.png" alt="Red Orb" width="300">
+  <figcaption><i><center></center></i></figcaption>
 </figure>
 
 Players have four ways to interact with the environment:
@@ -201,15 +210,14 @@ Players have four ways to interact with the environment:
     
 2. **Revealing:** A second button allows players to uncover text fragments within each module, sharing the final observations or notes of the Homā before its demise. These fragments are drawn from a datatable, linked to each module's unique ID.
 
+3. **Time Navigation:** By rotating the trackball, players can move through time within the labyrinth, exploring the thread at their own pace.
+    
+4. **Gaze Direction:** Utilizing a flight simulation joystick, players can adjust their viewpoint and aim.
+
 <figure align="center">
     <img src="\assets\images\03_Post\18_Revealing.png" alt="An example of a text fragment being revealed">
     <figcaption><i><center>An example of a text fragment being revealed</center></i></figcaption>
 </figure>
-^ *An example of a text fragment being revealed*
-
-3. **Time Navigation:** By rotating the trackball, players can move through time within the labyrinth, exploring the thread at their own pace.
-    
-4. **Gaze Direction:** Utilizing a flight simulation joystick, players can adjust their viewpoint and aim.
 
 <figure align="center">
     <img src="\assets\images\03_Post\20_REBOOT.png" alt="Exhibition view at REBOOT - photo by Pieter Kers">
@@ -220,32 +228,50 @@ Players have four ways to interact with the environment:
 In `Homā's Phantom`, assemblies emerge as clusters of modules, some repeating or significantly prominent. These assemblies materialize, at times deliberately—like the windcatchers—and at times through spontaneous arrangement and experimentation with the modules. Often, the potential for an assembly becomes apparent simply by observing how modules inadvertently align, similar to spotting familiar shapes in cloud formations.
 
 ### Windcatchers
-Below is 3 different windcatcher assemblies.
-![[2024-03-24-TracingTheModularUrge_Part3-20240409120630415.jpg]]
+Below is 3 different Windcatcher assemblies.
 
-![[2024-03-24-TracingTheModularUrge_Part3-20240409120630668.jpg]]
+<a class="example-image-link" href="\assets\images\03_Post\21_Windcatcher_01.png" data-lightbox="example-1" data-title="Windcatcher 01">
+  <img class="example-image" src="\assets\images\03_Post\21_Windcatcher_01.png" alt="Windcatcher 01"/>
+</a>
 
-add the third type here
+<a class="example-image-link" href="\assets\images\03_Post\21_Windcatcher_02.png" data-lightbox="example-1" data-title="Windcatcher 02">
+  <img class="example-image" src="\assets\images\03_Post\21_Windcatcher_02.png" alt="Windcatcher 02"/>
+</a>
+
+<a class="example-image-link" href="\assets\images\03_Post\21_Windcatcher_03.png" data-lightbox="example-1" data-title="Windcatcher 03">
+  <img class="example-image" src="\assets\images\03_Post\21_Windcatcher_03.png" alt="Windcatcher 03"/>
+</a>
+
 
 ### The clock
 This assembly placed on top of the house's tower mostly visible from all angles and has a simple function, it redirects a red line towards the sun.  this Line is a brutal one and passes through eveything on its way until it reaches the sun. 
 
-![[2024-03-24-TracingTheModularUrge_Part3-20240409102510604.jpg]]
+<a class="example-image-link" href="\assets\images\03_Post\22_Clock_01.png" data-lightbox="example-1" data-title="The Clock">
+  <img class="example-image" src="\assets\images\03_Post\22_Clock_01.png" alt="The Clock"/>
+</a>
 
 For a house that constanly flies above earth, perhaps moving as fast as an airplane, time most likely feels different. This clock would possibly be much more functional than a regular clock, because Traversing across time zones at high velocity requires constant time adjustments based on geolocation. Drawing a consistent line to the sun helps us see ourselves in this new coordination. the clock becomes a compass and all we care about in time is where we are according to the sun.
 
-![[2024-03-24-TracingTheModularUrge_Part3-20240409102525634.jpg]]
-^ The clock's sunline at night can pass through the house.
+<figure align="center">
+    <img src="\assets\images\03_Post\22_Clock_02.png" alt="^ The clock's sunline at night can pass through the house.">
+    <figcaption><i><center>^ The clock's sunline at night can pass through the house.</center></i></figcaption>
+</figure>
+
 
 ### Blood Pool
 This assembly is put in the entrance of the house. combining the function of a foot bath ( a small shallow pool usually put in the entrance of pools for washing feet before entering) and the tragic story of the murder of Amir Kabir at 1852 in Kashan's Fin Garden where he spent time in exile.
 
-![[2024-03-24-TracingTheModularUrge_Part3-20240409102327342.jpg]]
+<figure align="center">
+    <img src="/assets/images/03_Post/23_AmirKabir.png" alt="Amir Kabir Portrait">
+    <figcaption><i><center></center></i></figcaption>
+</figure>
 
 Amir Kabir was a notable figure in Iranian history, serving as the chief minister under Shah Naser al-Din Shah Qajar in the mid-19th century. Known for his progressive reforms and efforts to modernize Iran, Amir Kabir's policies included establishing Dar ul-Funun, the first modern university in Iran, and initiating significant changes in the administrative, educational, and economic sectors. Despite his contributions, his bold reforms and increasing power drew envy and hostility from the royal court and aristocracy. His relationship with the Shah soured, leading to his dismissal and eventual arrest. Amir Kabir was murdered at Fin Garden's bathhouse while taking a bath.
 
-![[2024-03-24-TracingTheModularUrge_Part3-20240409102430559.jpg]]
-^ Blood pool assembly
+<figure align="center">
+    <img src="\assets\images\03_Post\23_BloodPool.png" alt="^ Blood Pool assembly">
+    <figcaption><i><center>^ Blood Pool assembly</center></i></figcaption>
+</figure>
 
 ## Exaptation
 Exaptation, a term from evolutionary biology, describes how a trait initially developed for one purpose can be repurposed for an entirely different function. It's the nature's way of innovating through recycling. While this concept originated in biology, it's equally prominent in technology and other fields.
@@ -258,11 +284,24 @@ Technologically, exaptation is also significant. For example, microwave radiatio
 
 In the context of `Homā's Phantom`, exaptation manifests in the construction and interaction with modules. Assemblies, while bearing resemblance to their origins, assume new roles within this environment. The sun clock mechanism exemplifies this, gaining a novel significance within the model. Such a mechanism, once integrated, inherently expands the conceptual boundaries of what a clock represents. This form of exaptation, emerging through modular system design, stands out as a particularly intriguing aspect of creative experimentation.
 
-![[2024-03-24-TracingTheModularUrge_Part3-20240409105441072.jpg]]
-^ The modeling relation. A natural system N is modeled by a formal system F . Each system has its own internal entailment structures (arrows a and c), and the two systems are connected by the encoding and decoding processes
+<figure align="center">
+    <img src="/assets/images/03_Post/24_Exaptation.png" alt="^ The modeling relation. A natural system N is modeled by a formal system F . Each system has its own internal entailment structures (arrows a and c), and the two systems are connected by the encoding and decoding processes">
+    <figcaption><i><center>^ The modeling relation. A natural system N is modeled by a formal system F . Each system has its own internal entailment structures (arrows a and c), and the two systems are connected by the encoding and decoding processes</center></i></figcaption>
+</figure>
+
 
 # Moving ahead
 We've reached the end of our exploration into the modular urge, but this is far from the final chapter. Up next, I'll dive into my current research project, ModularX. This project extends the concepts and curiosities that have developed over time into a more structured investigation of modularity, computation, and complexity. In the upcoming posts, I'll begin by laying out the initial framework and diagrams that will guide this new journey.
 
-![[2024-03-24-TracingTheModularUrge_Part3-20240328143339360.jpg]]
-^ A boy I met in Kashan 2015 - he was holding a paper crown under the sun.
+<figure align="center">
+    <img src="/assets/images/03_Post/25_Boy.jpg" alt="^ A boy I met in Kashan 2015 - he was holding a paper crown under the sun.">
+    <figcaption><i><center>^ A boy I met in Kashan 2015 - he was holding a paper crown under the sun.</center></i></figcaption>
+</figure>
+
+# Further Links / References
+- [Documentation of Homā's Phantom](https://alllesss.com/Homa-s-Phantom)
+- [Labyrinth – Four times through the labyrinth by Olaf Nicolai/Jan Wenzel](https://spectorbooks.com/book/labyrinth-four-times-through-the-labyrinth)
+- [Analysis of the Role of Passive Energy In the Evaluation of Kashan Houses](https://www.manzar-sj.com/jufile?ar_sfile=1729832)
+- [Larson et al., 'Exapting Exaptation'](https://www.researchgate.net/publication/237820717_Exapting_exaptation)
+
+
