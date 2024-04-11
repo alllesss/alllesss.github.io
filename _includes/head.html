@@ -118,6 +118,8 @@
   {%- endcapture -%}
   {%- assign img=img | strip -%}
 
+  <link rel="preload" as="image" href="{{ page.cover-img }}">
+
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
 
