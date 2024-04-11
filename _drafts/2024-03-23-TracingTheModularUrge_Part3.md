@@ -137,26 +137,46 @@ Below I highlight some elements that shapes this floating house.
 
 ### First steps
 When I start making a new level/environment in a game engine It's all blank. I begin by adding a sky and weather system, this means we have light to begin with!
-![[2024-03-24-TracingTheModularUrge_Part3-20240328145804831.jpg]]
+
+<figure align="center">
+    <img src="\assets\images\03_Post\12_Blank_Sky.png" alt="Blank Sky">
+    <figcaption><i><center></center></i></figcaption>
+</figure>
+
  Next is to put geometries in place. I layed the simple `100cmx100cmx10cm` floor all across to create a courtyard house example just to get a sense of scale and how the space can grow to a more complex layout.
  
-![[2024-03-24-TracingTheModularUrge_Part3-20240328145541283.jpg]]
+<a class="example-image-link" href="\assets\images\03_Post\13_Sketch.png" data-lightbox="example-1" data-title="First Sketch">
+  <img class="example-image" src="\assets\images\03_Post\13_Sketch.png" alt="First Sketch"/>
+</a>
+
 After getting an initial feel of the scale, I generated a reference design of a labyrinth map using a python script. this reference was used to build the house on top.
-![[2024-03-24-TracingTheModularUrge_Part3-20240408231219221.jpg]]
+
+<figure align="center">
+    <img src="\assets\images\03_Post\14_Maze.png" alt="">
+    <figcaption><i><center></center></i></figcaption>
+</figure>
+
 After a month of copy pasting modules the layout of the has was formed into a complex house labyrinth:
-![[2024-03-24-TracingTheModularUrge_Part3-20240409114027600.jpg]]
+
+<a class="example-image-link" href="\assets\images\03_Post\15_Overview.png" data-lightbox="example-1" data-title="Homa's Phantom">
+  <img class="example-image" src="\assets\images\03_Post\15_Overview.png" alt="Homa's Phantom"/>
+</a>
 
 ### Building blocks
 Making architectural modules was an iterative process. This step involved sampling some of the motifs that are commonly used in islamic architecture. such as arches with specifc curves used in making vaults, domes and other kind of structures.
 Eventually the whole house was built using 25 unique modules. seen below:
 
-![[2024-03-24-TracingTheModularUrge_Part3-20240328160322044.jpg]]
+<figure align="center">
+    <img src="\assets\images\03_Post\16_Blocks.png" alt="">
+    <figcaption><i><center></center></i></figcaption>
+</figure>
+
 In terms of material variance I limited myself to only 4 types: 
 - Stucco
 - Floor tiles
 - Marble
 - Glazed Ceramic
-![[2024-03-24-TracingTheModularUrge_Part3-20240328160322356.jpg]]
+
 Having a few module goes a long way to make a complex house like this! At this stage it's all about copy-pasting modules based on the reference, assign the desired forms to each module, rinse and repeat.
 thorugh each iteration I find myself messing up with the formation of a tidy modular house and that's where things start to become more than what they seem! 
 
@@ -170,24 +190,32 @@ The red ball operates in two distinct modes:
 1. **Automatic:** Here, the ball moves under computer control, adhering to a state machine's linear pace.
 2. **User-Controlled:** The ball awaits the player's commands, pausing the state machine for direct interaction.
 
-![[avatar-icon.png]]
-
+<figure align="center">
+    <img src="\assets\images\03_Post\17_Red_Orb.png" alt="Red Orb">
+    <figcaption><i><center></center></i></figcaption>
+</figure>
 
 Players have four ways to interact with the environment:
 
 1. **Shooting:** By pressing the projectile button, players can launch red balls. Upon contact, these balls trigger the physics system of the modules they hit, causing them to float away and disassemble, requiring significant computational resources. Overuse of this feature can strain the CPU and memory, risking a slowdown or crash of the simulation.
     
 2. **Revealing:** A second button allows players to uncover text fragments within each module, sharing the final observations or notes of the Homā before its demise. These fragments are drawn from a datatable, linked to each module's unique ID.
-![[2024-03-24-TracingTheModularUrge_Part3-20240409115322126.jpg]]
-^ An example of a text fragment being revealed
+
+<figure align="center">
+    <img src="\assets\images\03_Post\18_Revealing.png" alt="An example of a text fragment being revealed">
+    <figcaption><i><center>An example of a text fragment being revealed</center></i></figcaption>
+</figure>
+^ *An example of a text fragment being revealed*
 
 3. **Time Navigation:** By rotating the trackball, players can move through time within the labyrinth, exploring the thread at their own pace.
     
 4. **Gaze Direction:** Utilizing a flight simulation joystick, players can adjust their viewpoint and aim.
 
+<figure align="center">
+    <img src="\assets\images\03_Post\20_REBOOT.png" alt="Exhibition view at REBOOT - photo by Pieter Kers">
+    <figcaption><i><center>Exhibition view at REBOOT - photo by Pieter Kers</center></i></figcaption>
+</figure>
 
-![[2024-03-24-TracingTheModularUrge_Part3-20240409115452909.jpg]]
-^ Exhibition view at REBOOT - photo by Pieter Kers
 ## Assemblies
 In `Homā's Phantom`, assemblies emerge as clusters of modules, some repeating or significantly prominent. These assemblies materialize, at times deliberately—like the windcatchers—and at times through spontaneous arrangement and experimentation with the modules. Often, the potential for an assembly becomes apparent simply by observing how modules inadvertently align, similar to spotting familiar shapes in cloud formations.
 
