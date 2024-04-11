@@ -4,8 +4,8 @@ title: Tracing the Modular Urge - Part 3
 subtitle: REBOOT
 # tags: [test]
 comments: false 
-thumbnail-img: assets\images\03_Post\01_Homa_Cover.jpg
-cover-img: "/assets/images/03_Post/02_Homa_Cover.jpg"
+thumbnail-img: /assets/images/03_Post/01_Homa_Cover.jpg
+cover-img: /assets/images/03_Post/02_Homa_Cover.jpg
 readtime: true
 nav-short: true
 full-width: true
@@ -66,7 +66,7 @@ In this post I want to break down and articulate the process involved in making 
 ## 1. Homā Bird (Persian Mythology)
 The Homā, deeply embedded in Persian mythology, is a captivating bird symbolizing eternal life and protection. Revered as a creature of immense wisdom and healing powers, it's often associated with themes of rejuvenation and immortality. Legends say that the Homā flies continuously, its shadow bringing fortune to those it passes over. Unlike the cyclic rebirth of the Phoenix, the Homā represents an unending life, embodying purity, and serves as a guardian figure.
 
-![alt text](\assets\images\03_Post\03_Homa_Mosaic.png)
+![alt text](\assets\images\03_Post\03_Homa_Mosaic.jpg)
 ^ *Mosaic detail at the Nadir Divan-begi Madrasa in Bukhara, Uzbekistan.*
 
 ![alt text](\assets\images\03_Post\04_Homa_Column.png)
