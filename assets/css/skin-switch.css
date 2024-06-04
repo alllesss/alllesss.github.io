@@ -264,12 +264,17 @@
   .page-dark-mode .box-note,
   .page-dark-mode .box-warning,
   .page-dark-mode .box-error,
+  .page-dark-mode .box-gray,
   .page-dark-mode .box-success {
     color: #CECDC3;
   }
 
   .page-dark-mode .box-error { 
     background-color: #AF3029;
+  }
+
+  .page-dark-mode .box-gray { 
+    background-color: #403E3C;
   }
 
   .page-dark-mode .box-note { 
