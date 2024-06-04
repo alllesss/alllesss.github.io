@@ -31,7 +31,7 @@ This was of course, the first attempt. a year later I moved to a bigger studio a
 
 <a class="example-image-link" href="\assets\images\01_HelloWorld\LineofSight_InstallationView.jpg" data-lightbox="example-1" data-title="Line of Sight - Rijksakademie OpenStudios 2023 Installation View"><img class="example-image" src="\assets\images\01_HelloWorld\LineofSight_InstallationView.jpg" alt="image-1"/></a>
 
-Obviously there was something about this modular process that hooked me up. Even though it was only a representation, the fact that the space I was working at was represented with only 3 module types (wood/grey floor/white wall) was satisfying. Even more so perhaps because of the quiteness of this representation it seemed attractive. Could call this 'Syntethic Mirror Space'!
+Obviously there was something about this modular process that hooked me up. Even though it was only a representation, the fact that the space I was working at was represented with only 3 module types (wood/grey floor/white wall) was satisfying. Even more so perhaps because of the quietness of this representation it seemed attractive. Could call this 'Synthetic Mirror Space'!
 This kind of space, can be associated to `Barzakh`, a limbo space or a phase inbetween death and resurrection.
 
 {: .box-gray}
@@ -39,7 +39,7 @@ This kind of space, can be associated to `Barzakh`, a limbo space or a phase inb
 
 
 ## Sampling
-The process of reducing recurring elements that construct the space into modules is a step that soon became integral and initial step towards this form of space making. To sample is to eventually compress and with compression comes inevetebly reduction. But reduction here is productive. It gives us clarity, simplicity and sharpness that becomes the force for creating complex spatial formations. Sampling is a treat for the mind, when used with caution and intent.
+The process of reducing recurring elements that construct the space into modules is a step that soon became integral and initial step towards this form of space making. To sample is to eventually compress and with compression comes inevitably reduction. But reduction here is productive. It gives us clarity, simplicity and sharpness that becomes the force for creating complex spatial formations. Sampling is a treat for the mind, when used with caution and intent.
 
 > “[there are] two kinds of things the nature of which it would be quite wonderful to grasp by means of a systematic art...
 the first consists in seeing together things that are scattered about everywhere and collecting them into one kind, so that by defining each thing we can make clear the subject of any instruction we wish to give...

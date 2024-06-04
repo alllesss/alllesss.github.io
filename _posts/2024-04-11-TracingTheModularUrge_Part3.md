@@ -50,8 +50,8 @@ full-width: true
 ```
 
 # REBOOT of the past
-In the summer of 2023, I was comissioned to participate with a new work as part of the [REBOOT exhibition](https://nieuweinstituut.nl/en/projects/reboot-baanbrekende-digitale-kunst). This was a great moment to indulge further with modular world-building ideas that's been brewing in the background of my head.
-From early on, I knew I wanted to build a house, inspired by the artchitecture of traditional desert houses in Iran. Secondly, to forge this house with the mythology of `Homā Bird`. After I started building a modular structure around these ideas, I became convinced that the third angle is missing and that The Labyrinth.
+In the summer of 2023, I was commissioned to participate with a new work as part of the [REBOOT exhibition](https://nieuweinstituut.nl/en/projects/reboot-baanbrekende-digitale-kunst). This was a great moment to indulge further with modular world-building ideas that's been brewing in the background of my head.
+From early on, I knew I wanted to build a house, inspired by the architecture of traditional desert houses in Iran. Secondly, to forge this house with the mythology of `Homā Bird`. After I started building a modular structure around these ideas, I became convinced that the third angle is missing and that The Labyrinth.
 
 In this post I want to break down and articulate the process involved in making `Homā's Phantom`. But first I'd give an introduction to each of these 3 core concepts that shaped the work.
 
@@ -98,12 +98,12 @@ In 2015, I went to a short trip to visit Kashan. It's a historical city located 
 
 Kashan's courtyard houses is unique, they primarily date back to the 18th and 19th centuries, during the Qajar era. This period is marked by a flourishing of Persian domestic architecture, with Kashan being a prominent center due to its economic prosperity and strategic location. The city's merchants and wealthy families invested in constructing lavish homes, embodying the period's aesthetic preferences and the functional needs of desert living.
 
-These houses from the outside look moderate and you only see a long wall stretching across the street. though once you enter the house it reveals itself inside out! The central courtyard is where usually gounds the garden and pool, and all the rooms are built around the courtyard each connected to each other and to the courtyard. These house like many other desert houses in Iran incorporate Wind catchers, Long structures built on the rooftops, designed ingeniously to capture and channel cool breezes into buildings, providing natural ventilation and cooling. 
+These houses from the outside look moderate and you only see a long wall stretching across the street. though once you enter the house it reveals itself inside out! The central courtyard is where usually grounds the garden and pool, and all the rooms are built around the courtyard each connected to each other and to the courtyard. These house like many other desert houses in Iran incorporate Wind catchers, Long structures built on the rooftops, designed ingeniously to capture and channel cool breezes into buildings, providing natural ventilation and cooling. 
 
 ![alt text](\assets\images\03_Post\08_Kashan_Windcatcher.png)
 ^ *Borujerdi Windcatchers*
 
-Walking through these houses I was deeply impressed by how the house combines aesthetics with pure ingenious engineering where neither compromise each other. This layout is exteremely humble from the outside, but from within it becomes a generous space for life. the courtyard also implicates interesting social interactions among the residents. becoming a hub for spontanous interactions, while still respecting privacy. although it worths mentioning that these houses were built by the rich aristocrats of Kashan and the power dynamics perhaps wasn't as romantic as the architecture implies, so we need to take it with a grain of salt.
+Walking through these houses I was deeply impressed by how the house combines aesthetics with pure ingenious engineering where neither compromise each other. This layout is extremely humble from the outside, but from within it becomes a generous space for life. the courtyard also implicates interesting social interactions among the residents. becoming a hub for spontaneous interactions, while still respecting privacy. although it worths mentioning that these houses were built by the rich aristocrats of Kashan and the power dynamics perhaps wasn't as romantic as the architecture implies, so we need to take it with a grain of salt.
 
 ![alt text](\assets\images\03_Post\09_Kashan_Map.png)
 ^ *Snapshot from the research article - "Analysis of the Role of Passive Energy In the Evaluation of Kashan Houses" [link](https://www.manzar-sj.com/jufile?ar_sfile=1729832)*
@@ -119,7 +119,7 @@ Walking through these houses I was deeply impressed by how the house combines ae
 >- As safe and quiet privacy for the comfort of the family
 
 ## 3. The Labyrinth
-A labyrinth is a complex, meandering path, often designed as a single, non-branching route that leads to a center, distinguishing it from a maze, which may have multiple paths and dead ends. Labyrinths have been used symbolically and practically since ancient times, appearing in various cultures around the world. Symbolically, they represent a journey or quest. Practically, they have been used in religious and ceremonial contexts, as well as meditative and contemplative practices. The intricate paths of labyrinths, whether laid out on the ground or carved into rock, encourage a focused, meditative state as one walks the path, emphasising the journey rather than the destination.
+A labyrinth is a complex, meandering path, often designed as a single, non-branching route that leads to a center, distinguishing it from a maze, which may have multiple paths and dead ends. Labyrinths have been used symbolically and practically since ancient times, appearing in various cultures around the world. Symbolically, they represent a journey or quest. Practically, they have been used in religious and ceremonial contexts, as well as meditative and contemplative practices. The intricate paths of labyrinths, whether laid out on the ground or carved into rock, encourage a focused, meditative state as one walks the path, emphasizing the journey rather than the destination.
 
 <figure align="center">
     <img src="\assets\images\03_Post\10_Labyrinth_XP.png" alt="Windows 95 Screensaver">
@@ -141,7 +141,7 @@ In a more abstract level, Ariadne's Thread is seen as a technique to follow comp
 In Homā's Phantom, the user crawls the labyrinth along an invisible  spatio-temporal pathway inspired by Ariadne's thread. Here the invisible thread is a record in time of one's way through a complex space with a simple, effective strategy.
 
 # Making the system
-The forementioned 3 concepts come together to form Homā's Phantom, a Labyrinth Courtyard House that embodies the ghosts of Homā's who fallen on earth. each module used making the house represents one of those fallen birds. each contain a memory fragment, a record of what the bird has seen moments before death.
+The aforementioned 3 concepts come together to form Homā's Phantom, a Labyrinth Courtyard House that embodies the ghosts of Homā's who fallen on earth. each module used making the house represents one of those fallen birds. each contain a memory fragment, a record of what the bird has seen moments before death.
 Below I highlight some elements that shapes this floating house.
 
 ### First steps
@@ -172,7 +172,7 @@ After a month of copy pasting modules the layout of the has was formed into a co
 </a>
 
 ### Building blocks
-Making architectural modules was an iterative process. This step involved sampling some of the motifs that are commonly used in islamic architecture. such as arches with specifc curves used in making vaults, domes and other kind of structures.
+Making architectural modules was an iterative process. This step involved sampling some of the motifs that are commonly used in islamic architecture. such as arches with specific curves used in making vaults, domes and other kind of structures.
 Eventually the whole house was built using 25 unique modules. seen below:
 
 <figure align="center">
@@ -187,7 +187,7 @@ In terms of material variance I limited myself to only 4 types:
 - Glazed Ceramic
 
 Having a few module goes a long way to make a complex house like this! At this stage it's all about copy-pasting modules based on the reference, assign the desired forms to each module, rinse and repeat.
-thorugh each iteration I find myself messing up with the formation of a tidy modular house and that's where things start to become more than what they seem! 
+through each iteration I find myself messing up with the formation of a tidy modular house and that's where things start to become more than what they seem! 
 
 Initially, without even realizing it, I was leaning towards the symmetrical structures commonly seen in Islamic architecture. However, as the project progressed, I began experimenting with arches in unconventional ways, not typically seen or used culturally. This playful approach to space creation marked a turning point. The modules began to take on lives of their own, suggesting functions and forms beyond their traditional interpretations and normative projections.
 
@@ -244,13 +244,13 @@ Below is 3 different Windcatcher assemblies.
 
 
 ### The clock
-This assembly placed on top of the house's tower mostly visible from all angles and has a simple function, it redirects a red line towards the sun.  this Line is a brutal one and passes through eveything on its way until it reaches the sun. 
+This assembly placed on top of the house's tower mostly visible from all angles and has a simple function, it redirects a red line towards the sun.  this Line is a brutal one and passes through everything on its way until it reaches the sun. 
 
 <a class="example-image-link" href="\assets\images\03_Post\22_Clock_01.png" data-lightbox="example-1" data-title="The Clock">
   <img class="example-image" src="\assets\images\03_Post\22_Clock_01.png" alt="The Clock"/>
 </a>
 
-For a house that constanly flies above earth, perhaps moving as fast as an airplane, time most likely feels different. This clock would possibly be much more functional than a regular clock, because Traversing across time zones at high velocity requires constant time adjustments based on geolocation. Drawing a consistent line to the sun helps us see ourselves in this new coordination. the clock becomes a compass and all we care about in time is where we are according to the sun.
+For a house that constantly flies above earth, perhaps moving as fast as an airplane, time most likely feels different. This clock would possibly be much more functional than a regular clock, because Traversing across time zones at high velocity requires constant time adjustments based on geolocation. Drawing a consistent line to the sun helps us see ourselves in this new coordination. the clock becomes a compass and all we care about in time is where we are according to the sun.
 
 <figure align="center">
     <img src="\assets\images\03_Post\22_Clock_02.png" alt="^ The clock's sunline at night can pass through the house.">

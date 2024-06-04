@@ -1,4 +1,12 @@
 {
     "editor.fontSize": 18,
-    "editor.fontFamily": "Consolas, 'Courier New', monospace"
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "cSpell.words": [
+        "exaptation",
+        "Homā",
+        "lightbox",
+        "Modulex",
+        "Suhrawardi",
+        "Suhrawardi’s"
+    ]
 }

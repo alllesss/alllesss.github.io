@@ -47,7 +47,7 @@ Despite all the ambitions behind it, Modulex remained a niche product and slowly
 Perhaps what strike me most about Modulex's premise was that it wanted to achieve higher level and more abstract use cases. Beyond what Lego initially became known for. this new function adds a new level to the complexity of systems that Lego could facilitate. 
 
 ## LEGO - Mindstorm
-Mindstorm extends Lego to a new realm of mechanism. by introducing robotic modules and a visual programming language it became not only a tool for learning robotics but also a valuable kit for quick protytyping innovative  engineering concepts. if you ever doubted my last sentence I'd recommend checking out [Brick Technology's Videos](https://www.youtube.com/@BrickTechnology/videos)
+Mindstorm extends Lego to a new realm of mechanism. by introducing robotic modules and a visual programming language it became not only a tool for learning robotics but also a valuable kit for quick prototyping innovative  engineering concepts. if you ever doubted my last sentence I'd recommend checking out [Brick Technology's Videos](https://www.youtube.com/@BrickTechnology/videos)
 
 <figure align="center">
     <img src="/assets/images/02_Post/Mindstorms_01.png" alt="alt text">
@@ -56,12 +56,12 @@ Mindstorm extends Lego to a new realm of mechanism. by introducing robotic modul
 
 ![alt text](../assets/images/02_Post/Lego_Robot.png)
 
-In my opinion the most exciting aspect of Minstorms is its transparency. you can look at a Lego robot and zoom in to see how everything is put together, each parts clearly communicates its function. it's as if you are looking both at the robot and its blueprint at the same time! a kind of open mindset in system design that gives it's user an indepth and clear agency over the parts yet when you observe the behaviour of the parts as a whole you can see the higher level as clear as the low levels.
+In my opinion the most exciting aspect of Mindstorms is its transparency. you can look at a Lego robot and zoom in to see how everything is put together, each parts clearly communicates its function. it's as if you are looking both at the robot and its blueprint at the same time! a kind of open mindset in system design that gives it's user an in-depth and clear agency over the parts yet when you observe the behavior of the parts as a whole you can see the higher level as clear as the low levels.
 It somehow folds these different levels into a seamless one.
 
 ## Factorio
 Factorio, a popular real-time strategy game focused on automation and production, stands out for its profound use of modularity within both gameplay mechanics and design philosophy. Players create intricate factories composed of modular units—conveyors, machines, and storage solutions—that can be endlessly optimized and reconfigured to improve efficiency and productivity. 
-One has to play Factorio with a bit of a cautious mind, because the satisafaction that comes with it is exteremely addictive and cam make anyone a devoted capitalist!
+One has to play Factorio with a bit of a cautious mind, because the satisfaction that comes with it is extremely addictive and cam make anyone a devoted capitalist!
 
 
 <figure align="center">
@@ -69,10 +69,10 @@ One has to play Factorio with a bit of a cautious mind, because the satisafactio
     <figcaption><i><center></center></i></figcaption>
 </figure>
 
-Factorio manages to lure you into an obsession with scale, maintenance and optimization of a system. And there seems to be no end to it. there is always room for improvement of your factory line. Which oddly I find this kind of viscious pull into mechanics of a system very similar to coding, gamedev and similar practices.
+Factorio manages to lure you into an obsession with scale, maintenance and optimization of a system. And there seems to be no end to it. there is always room for improvement of your factory line. Which oddly I find this kind of vicious pull into mechanics of a system very similar to coding, gamedev and similar practices.
 
 ## Nier Automata
-"Nier: Automata" stands out for its innovative take on character skill customization through its Chip System, a cleverly designed modular approach that fits perfectly with the game's identity and its overaching narrative. Players can tailor their android protagonists' abilities by equipping and combining different chips, each occupying a certain amount of memory space within the character's system. This setup exposes constraints that is inherent with computation directly at the player's identity. In Nier, who you are is what you can computationally afford!
+"Nier: Automata" stands out for its innovative take on character skill customization through its Chip System, a cleverly designed modular approach that fits perfectly with the game's identity and its overarching narrative. Players can tailor their android protagonists' abilities by equipping and combining different chips, each occupying a certain amount of memory space within the character's system. This setup exposes constraints that is inherent with computation directly at the player's identity. In Nier, who you are is what you can computationally afford!
 
 <a class="example-image-link" href="/assets/images/02_Post/Nier.png" data-lightbox="example-1" data-title="Nier Automata: Chip system menu"><img class="example-image" src="/assets/images/02_Post/Nier.png" alt="image-1"/></a>
 

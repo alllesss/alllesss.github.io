@@ -25,7 +25,7 @@ I’ve created a short walkthrough video showcasing the early phase of this work
 
 
 
-## Suhrawardi's Legacy
+# Suhrawardi's Legacy
 Shahab al-Din Yahya ibn Habash Suhrawardi, often known as Suhrawardi, was a Persian philosopher who founded the school of Illuminationism. Born in 1154 in what is now Iran, Suhrawardi was a major figure in Islamic philosophy. His work combined elements of Neoplatonism, ancient Persian thought, and Islamic teachings, aiming to transcend mere rationality with a deeper, intuitive form of knowledge.
 
 Suhrawardi's most significant contribution is his philosophy of "Ishraq" <span class="farsi">(اشراق)</span> or Illumination. He believed true understanding comes from an inner light and intuitive grasp, beyond logical reasoning. His revolutionary ideas blended mysticism with philosophy, greatly influencing later Islamic thinkers. Suhrawardi's writings, such as "The Philosophy of Illumination," explore these themes in depth.
