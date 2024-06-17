@@ -993,6 +993,7 @@ pre {
 .box-warning,
 .box-error,
 .box-success,
+.box-yellow,
 .box-gray {
   padding: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
   margin: 1.25rem 1.25rem 1.25rem 0.3125rem;
@@ -1010,6 +1011,11 @@ pre {
 .box-warning {
   background-color: #DA702C;
   border-left-color: #DA702C;
+}
+
+.box-yellow {
+  background-color: #D0A215;
+  border-left-color: #D0A215;
 }
 
 .box-error {

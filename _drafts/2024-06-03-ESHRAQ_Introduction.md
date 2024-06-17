@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ESHRAQ
-subtitle: Introduction
+title: Introduction to ESHRAQ
+subtitle: Devlog n.1
 comments: false
 thumbnail-img: /assets/images/04_Post/Eshraq_Logo.jpg
 cover-img: /assets/images/04_Post/Eshraq_Cover_post.jpg
@@ -12,6 +12,10 @@ full-width: true
 
 # ESHARQ - Introduction
 I’m excited to share the initial phase of my new project, titled "**ESHRAQ**" <span class="farsi"><strong>(اشراق)</strong></span>, meaning illumination. The name "ESHRAQ" is inspired by the Persian philosopher `Shahab al-Din Suhrawardi` (b. 1154) and his masterpiece, "Hikmat al Eshraq" (The Philosophy of Illumination). Suhrawardi's work explores fascinating concepts of light, essence, existence, and the divine. This project is not a direct simulation of Suhrawardi's ideas but rather an experiment with his philosophical insights within a contemporary computational framework. By partially emulating and synthesizing Suhrawardi's core concepts, I aim to explore their relevance and potential in today's context.  
+
+{: .box-yellow}
+**ESHRAQ** is a modular computational model designed for meditations on forms and functions that rule the natural world. These models are derived from real-world phenomena, sampled, distilled, and synthesized to unravel and illuminate complex systems through computation.
+
 
 Over the past year, I've been focusing on learning `C++` to sharpen my coding skills, which became essential for exploring modularity's true potential. At the same time, I engaged in philosophical readings through the [Foreign Object](https://www.foreignobjekt.com/post/deep-objekt-0-agency-at-the-computational-turn-sepideh-majidi-and-reza-negarestani-framework-f) online study group, profoundly influenced by Reza Negarestani's guidance. These studies were crucial for understanding how computation and models can be used as tools for deeper inquiries into the complex and entangled concepts of the real world.
 

@@ -263,6 +263,7 @@
   }
   .page-dark-mode .box-note,
   .page-dark-mode .box-warning,
+  .page-dark-mode .box-yellow,
   .page-dark-mode .box-error,
   .page-dark-mode .box-gray,
   .page-dark-mode .box-success {
@@ -285,6 +286,9 @@
     background-color: #BC5215;
   }
 
+  .page-dark-mode .box-yellow { 
+    background-color: #AD8301;
+  }
 
   .page-dark-mode .box-success { 
     background-color: #66800B;
