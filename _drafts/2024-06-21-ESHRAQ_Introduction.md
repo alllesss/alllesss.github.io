@@ -13,9 +13,9 @@ full-width: true
 # ESHARQ - Introduction
 I’m excited to share the initial phase of my new project, titled "**ESHRAQ**" <span class="farsi"><strong>(اشراق)</strong></span>, meaning illumination. The name "ESHRAQ" is inspired by the Persian philosopher `Shahab al-Din Suhrawardi` (b. 1154) and his masterpiece, "Hikmat al Eshraq" (The Philosophy of Illumination). Suhrawardi's work explores fascinating concepts of light, essence, existence, and the divine. This project is not a direct simulation of Suhrawardi's ideas but rather an experiment with his philosophical insights within a contemporary computational framework. By partially emulating and synthesizing Suhrawardi's core concepts, I aim to explore their relevance and potential in today's context.  
 
-I’ve created a short walkthrough video showcasing the early phase of this work:
+I’ve created a video showcasing the early phase of this project:
 
-
+<iframe width="1080" height="608" src="https://www.youtube.com/embed/yo1I_73F1HY?si=z_m6BOVmp-dV6wm1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 {: .box-yellow}
 **ESHRAQ** is a modular computational model designed for meditations on forms and functions that rule the natural world. These models are derived from real-world phenomena, sampled, distilled, and synthesized to unravel and illuminate complex systems through computation.
