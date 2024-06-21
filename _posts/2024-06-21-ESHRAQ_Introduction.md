@@ -15,7 +15,8 @@ I’m excited to share the initial phase of my new project, titled "**ESHRAQ**" 
 
 I’ve created a video showcasing the early phase of this project:
 
-<iframe width="1080" height="608" src="https://www.youtube.com/embed/yo1I_73F1HY?si=z_m6BOVmp-dV6wm1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/yo1I_73F1HY?si=z_m6BOVmp-dV6wm1" title="YouTube video player" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 {: .box-yellow}
 **ESHRAQ** is a modular computational model designed for meditations on forms and functions that rule the natural world. These models are derived from real-world phenomena, sampled, distilled, and synthesized to unravel and illuminate complex systems through computation.
