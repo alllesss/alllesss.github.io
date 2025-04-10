@@ -14,11 +14,7 @@ author: Ali Eslami, Will Scarlett
 
 # Introduction to Will Scarlett
 
-I'm thrilled to introduce `Will Scarlett`, an inspiring thinker and collaborator whose insights have significantly contributed to the trajectory of eshraq's conceptual and philosophical development. Over the past few months, Will and I have engaged in deep conversations about immaterialism, immersion, and the complex ontologies that inform eshraq's framework. These exchanges have been profoundly generative, opening new forms of exploration and understanding. Now, as eshraq continues to evolve, it feels essential to incorporate Will's thought-provoking contributions directly into this devlog.
-
-To give you a clearer picture of Will’s remarkable perspective and expertise, here's his bio:
-
-Will Scarlett is a writer and researcher interested in the uncertain spaces between sensation and the surrounding world. He holds a PhD in Anthropology from the New School for Social Research, where he explored experiences of presence in virtual and elemental environments. His writing appears in academic journals such as the Journal of the American Academy of Religion, and para-academic platforms such as Future Studies. He led seminars at the New Centre for Research and Practice titled "Notes from Immediate Irreality" and "Being There and Not There." He presented his research at the Event Lab at University of Barcelona, the American Anthropological Association Annual Meeting, and the Venice Architecture Biennale.
+I'm thrilled to introduce [Will Scarlett](https://waverockwave.neocities.org/), an inspiring thinker and collaborator whose insights have significantly contributed to the trajectory of Eshraq's conceptual and philosophical development. Over the past few months, Will and I have engaged in deep conversations about immaterialism, immersion, and the complex ontologies that inform Eshraq's framework. These exchanges have been profoundly generative, opening new forms of exploration and understanding. Now, as Eshraq continues to evolve, it feels essential to incorporate Will's thought-provoking contributions directly into this devlog.
 
 
 # Bridging Intermediate Realms - Written by Will Scarlett
@@ -50,6 +46,7 @@ With Eshraq, we are exploring ways to bridge the gap between intermediate realms
 
 In this sense, ʿālam al-mithāl and Eshraq could be thought of as structures for reaching beyond the mundane and entering a transcendent space. What this space may be remains an open question. By aspiring toward it through Eshraq, we aren’t intending to secularize it, but are perhaps untethering it from any particular theology. Our gamble is that we can connect ʿālam al-mithāl with Eshraq in such a way that these intermediate realms illuminate each other, inviting this transcendent space into a slightly fuller presence in our world.
 
-
+## Sources
+- Henry Corbin, "Towards a Chart of the Imaginal" 
 
 ---
