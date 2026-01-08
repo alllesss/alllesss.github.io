@@ -19,6 +19,8 @@ It’s been a while since my last post here.
 
 In the second half of 2025, I had the opportunity to show my work at **Emerging Exits** in Arnhem (1 October till 3 November). For this exhibition, I decided to prepare a cinematic experience sourced entirely from ESHRAQ’s simulated environment. It felt like the right moment to turn ESHRAQ into a **film stage**.
 
+<ESHRAQ Documentation Bunker here>
+
 I had been carrying a few ideas for a script for some time. They were slowly simmering in the background but never fully surfaced, until the twelve-day war happened in Iran. Following the horror unfolding back home from the relative safety of Amsterdam was deeply unsettling. At the same time, it forced something into focus. Within a week after the war ended, I managed to write the first draft of the film script.
 
 When I say *film*, I mean **two story loops**. Both are based on ESHRAQ, but they unfold in completely different models. One takes place in the **Ziggurat of Ur**, the other in a **modular version of Amsterdam**.  
@@ -34,6 +36,8 @@ I can talk or write about ESHRAQ’s ontology for hours and still miss essential
 
 Throughout the film, this ontology of light becomes the ground on which new stories can exist. These stories unfold as **loops**. You can call them *story loops* if you will. They allow complex expressions to emerge from a relatively simple and grounded simulation.
 
+< ESHRAQ Trailer here>
+
 ---
 
 ## Writing the Film and Writing With the Simulation
@@ -41,6 +45,8 @@ Throughout the film, this ontology of light becomes the ground on which new stor
 I wrote the draft script in **Scrivener**, which I would recommend for scriptwriting and long-form thinking in general.
 
 From there, I moved into production in **Unreal Engine**. I had roughly two and a half months to turn the script into a twenty-minute film. Thanks to the foundational work that had already been done in ESHRAQ, much of the process was accelerated.
+
+< PDF Preview of ESHRAQ script intro here >
 
 The **modular structure** helped enormously. The Ziggurat of Ur already existed as a modular system and only needed specific modifications. The same applied to agents, environments, and architectural logic.
 
@@ -52,7 +58,11 @@ I chose a **2.55 wide aspect ratio**, with a final output resolution of `4096 ×
 
 In post-production, I leaned into virtual production techniques such as **lens distortion**, **film grain**, **color work**, **flares**, and **bloom**, aiming to get as close as possible to the texture of real cinema lenses.
 
-This choice was also influenced by how much I admired the image quality of *Star Wars: Andor*, as well as *Dune: Part One* and *Part Two*. There is something about that visual language that holds science fiction and gravity at the same time.
+This choice was also influenced by how much I admired the image quality of *Star Wars: Andor*, as well as *Dune: Part One*. There is something about that visual language that holds science fiction and gravity at the same time.
+
+<Screen shot of Andor>
+
+<Screen shot of Dune>
 
 ---
 
@@ -125,6 +135,8 @@ Although I wrote a script, many scenes emerged directly from play. While navigat
 The writing process became both **top-down** and **bottom-up**.
 
 Simulation also transformed cinematography. Being able to inhabit the film stage freely and repeatedly allowed me to survey locations for camera movement and framing before committing to shots. Using Unreal’s `Cine Camera Actor` enabled movements that would be impossible or dangerous in real-world filming.
+It's good to know that even for the pre-production of Dune Part 2 they used Unreal Engine to plan their shots in the desert that was simulated in unreal. https://www.unrealengine.com/en-US/spotlights/unreal-engine-streamlines-desert-production-on-dune-part-two
+
 
 I also chose to keep glitches and artifacts that emerged naturally. Collision errors and clipping are not mistakes to hide. They are part of the living conditions of a computational world.
 
