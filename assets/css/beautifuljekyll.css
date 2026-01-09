@@ -6,6 +6,7 @@ layout: null
   --font-body: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-body-var: 'InterVariable', sans-serif;
   --font-ui: 'Barlow', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-farsi: 'FarsiFont', sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
   font-family: var(--font-body);
 }
@@ -22,7 +23,7 @@ layout: null
 }
 
 .farsi {
-  font-family: 'FarsiFont', sans-serif;
+  font-family: var(--font-farsi);
   font-size: 1.5em;
 }
 
@@ -718,7 +719,7 @@ footer .footer-custom-content {
 }
 
 #full-tags-list {
-  font-family: 'Inter', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-ui);
 }
 
 #full-tags-list .tag-entry {
@@ -1104,9 +1105,27 @@ pre {
   margin: 0 auto;
 }
 
+/* Sidebar styles */
+.sidebar {
+  position: sticky;
+  top: 5.0rem;
+  height: min-content;
+  overflow-y: auto;
+}
+
+.full-width .sidebar {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}
+
 /* Search bar */
 #beautifuljekyll-search-overlay {
-  font-family: 'Barlow', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: var(--font-ui);
   display: none;
   z-index: 999999;
   position: fixed;
