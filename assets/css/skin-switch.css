@@ -68,6 +68,14 @@
     border-color: #575653; /* Adjust as needed */
   }
 
+  .page-dark-mode .blog-post img {
+    box-shadow: 2px 2px 5px rgba(64, 62, 60, 0.12);
+  }
+
+  .page-dark-mode .blog-post img:hover {
+    box-shadow: 2px 2px 3px rgba(64, 62, 60, 0.2);
+  }
+
   .page-dark-mode {
     color: #CECDC3;
     background-color: #100F0F;

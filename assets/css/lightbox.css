@@ -27,9 +27,9 @@ body.lb-disable-scrolling {
 .lightbox .lb-image {
   display: block;
   height: auto;
-  max-width: inherit;
-  max-height: none;
-  border-radius: 3px;
+  max-width: 85vw;
+  max-height: 85vh;
+  border-radius: var(--image-radius, 0.5rem);
 
   /* Image border */
   border: 3px solid ##282726;
@@ -45,7 +45,8 @@ body.lb-disable-scrolling {
   width: 250px;
   height: 250px;
   margin: 0 auto;
-  border-radius: 3px;
+  border-radius: var(--image-radius, 0.5rem);
+  overflow: hidden;
 
   /* Background color behind image.
      This is visible during transitions. */
