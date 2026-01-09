@@ -78,7 +78,7 @@ layout: page
         {% if post.content != post.excerpt or excerpt_word_count > excerpt_length %}
           <a href="{{ post.url | absolute_url }}" class="post-read-more">[Read&nbsp;More]</a>
         {% endif %}
-      </div>
+        </div>
       {% endunless %}
 
       {% if site.feed_show_tags != false and post.tags.size > 0 %}

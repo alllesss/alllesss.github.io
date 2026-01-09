@@ -237,6 +237,20 @@ hr.small {
   .sidebar ul {
     font-size: 0.8em;
   }
+
+  /* Keep home/post header legible on mobile */
+  .intro-header .page-heading h1,
+  .intro-header .post-heading h1 {
+    font-size: 1.6rem;
+  }
+  .intro-header .page-heading .page-subheading,
+  .intro-header .post-heading .post-subheading {
+    font-size: 1.0rem;
+    margin: 0.35rem 0 0.6rem;
+  }
+  .intro-header .page-heading hr.small {
+    margin: 0.35rem auto 0.85rem;
+  }
 }
 
 /* fix in-page anchors to not be behind fixed header */
@@ -898,8 +912,8 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   text-shadow: 1px 1px 3px #000;
 }
 .intro-header .page-heading h1 {
-  margin-top: 0;
-  font-size: 1rem;
+  margin-top: 1rem;
+  font-size: 1.4rem;
 }
 .intro-header .post-heading h1 {
   margin-top: 0;
@@ -907,12 +921,16 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
 }
 .intro-header .page-heading .page-subheading,
 .intro-header .post-heading .post-subheading {
-  font-size: 1.4rem;
+  font-size: 1.05rem;
   line-height: 1.1;
   display: block;
   font-family: var(--font-ui);
   font-weight: 300;
-  margin: 0.625rem 0 0;
+  margin: 0.35rem 0 0.4rem;
+}
+.intro-header .page-heading hr.small,
+.intro-header .post-heading hr.small {
+  margin: 0.9rem auto 1.1rem;
 }
 .intro-header .post-heading .post-subheading {
   margin-bottom: 1.25rem;
@@ -936,9 +954,10 @@ nav.top-nav-short-permanent ~ header > .intro-header.big-img {
   font-size: 1rem;
   color: #EEE;
   font-family: var(--font-ui);
-  right: 0;
-  bottom: 0;
-  display: none;
+  .intro-header .page-heading hr.small,
+  .intro-header .post-heading hr.small {
+    margin: 0.9rem auto 1.1rem;
+  }
 }
 @media (min-width: 1200px) {
   .intro-header {
