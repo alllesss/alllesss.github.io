@@ -7,11 +7,16 @@ layout: null
   --font-body-var: 'InterVariable', sans-serif;
   --font-ui: 'Barlow', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-farsi: 'FarsiFont', sans-serif;
+  --image-radius: 0.5rem; /* controls image corner rounding */
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
   font-family: var(--font-body);
 }
 @supports (font-variation-settings: normal) {
   :root { font-family: var(--font-body-var); }
+}
+
+html {
+  scroll-behavior: smooth; /* smooth jump for TOC/sidebar links */
 }
 
 @font-face {
@@ -1068,6 +1073,13 @@ pre {
 
 .blog-post img {
   max-width: 100%;
+  border-radius: var(--image-radius);
+  box-shadow: 2px 2px 5px rgba(40, 39, 38, 0.18);
+  transition: box-shadow 0.15s ease;
+}
+
+.blog-post img:hover {
+  box-shadow: 2px 2px 3px rgba(40, 39, 38, 0.4);
 }
 
 .blog-post .caption {
@@ -1111,7 +1123,48 @@ pre {
   top: 5.0rem;
   height: min-content;
   overflow-y: auto;
+  opacity: 0.65;
+  transition: opacity 0.2s ease;
 }
+
+.sidebar:hover,
+.sidebar:focus-within {
+  opacity: 1;
+}
+
+  /* Table of Contents styling */
+  .sidebar-title {
+    padding-left: 0.5rem; /* match first-level list indent */
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding-left: 0.5rem;
+    margin: 0;
+    font-size: 0.9em; /* Slightly smaller TOC text */
+  }
+
+  .sidebar ul ul {
+    padding-left: 1rem; /* Reduced from default (usually 2.5rem) */
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .sidebar li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .sidebar a:hover {
+    color: {{ site.hover-col | default: "#DA702C" }};
+  }
 
 .full-width .sidebar {
   display: block;
