@@ -15,7 +15,13 @@ I’m excited to share the initial phase of my new project, titled "**ESHRAQ**" 
 
 I’ve created a video showcasing the early phase of this project:
 
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/yo1I_73F1HY?si=z_m6BOVmp-dV6wm1" title="YouTube video player" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-embed">
+  <iframe src="https://www.youtube.com/embed/yo1I_73F1HY?si=z_m6BOVmp-dV6wm1"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+</div>
 
 
 {: .box-yellow}
