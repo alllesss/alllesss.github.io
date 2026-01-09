@@ -69,11 +69,21 @@
   }
 
   .page-dark-mode .blog-post img {
-    box-shadow: 2px 2px 5px rgba(64, 62, 60, 0.12);
+    box-shadow: 2px 2px 5px rgba(64, 62, 60, 0.5);
   }
 
   .page-dark-mode .blog-post img:hover {
-    box-shadow: 2px 2px 3px rgba(64, 62, 60, 0.2);
+    box-shadow: 2px 2px 3px rgba(64, 62, 60, 0.8);
+  }
+
+  .page-dark-mode .post-preview .post-image img,
+  .page-dark-mode .post-preview .post-image-small img {
+    box-shadow: 2px 2px 5px rgba(64, 62, 60, 0.5);
+  }
+
+  .page-dark-mode .post-preview .post-image img:hover,
+  .page-dark-mode .post-preview .post-image-small img:hover {
+    box-shadow: 2px 2px 3px rgba(64, 62, 60, 0.8);
   }
 
   .page-dark-mode {
