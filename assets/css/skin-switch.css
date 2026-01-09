@@ -58,6 +58,12 @@
   
   .page-dark-mode .sidebar {
     color: #575653; /* Adjust as needed */
+    opacity: 0.35;
+  }
+
+  .page-dark-mode .sidebar:hover,
+  .page-dark-mode .sidebar:focus-within {
+    opacity: 1;
   }
 
   .page-dark-mode .sidebar a {
@@ -69,21 +75,21 @@
   }
 
   .page-dark-mode .blog-post img {
-    box-shadow: 2px 2px 5px rgba(64, 62, 60, 0.5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
   }
 
   .page-dark-mode .blog-post img:hover {
-    box-shadow: 2px 2px 3px rgba(64, 62, 60, 0.8);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   }
 
   .page-dark-mode .post-preview .post-image img,
   .page-dark-mode .post-preview .post-image-small img {
-    box-shadow: 2px 2px 5px rgba(64, 62, 60, 0.5);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
   }
 
   .page-dark-mode .post-preview .post-image img:hover,
   .page-dark-mode .post-preview .post-image-small img:hover {
-    box-shadow: 2px 2px 3px rgba(64, 62, 60, 0.8);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   }
 
   .page-dark-mode {
@@ -165,7 +171,14 @@
     color: #1C1B1A;
   }
   .page-dark-mode .post-preview {
-    border-bottom-color: #282726;
+    border-color: #403E3C;
+    background-color: #1C1B1A;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+  }
+
+  .page-dark-mode .post-preview:hover {
+    background-color: #282726;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
   }
   .page-dark-mode .post-preview a {
     color: #F2F0E5;

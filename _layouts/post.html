@@ -39,14 +39,18 @@ layout: base
         </div>
       {% endif %}
       
-      <div class="sidebar" role="navigation" aria-label="Index">
-        <div class="sidebar-title">Index</div>
-        <hr> <!-- Inserted line -->
-        {% include toc.html html=content %}
-      </div>
-
-      <div class="blog-post {% if page.full-width %}full-width{% endif %}">
-        {{ content }}
+      <div class="post-container">
+        <div class="sidebar" role="navigation" aria-label="Index">
+          <div class="sidebar-title">Index</div>
+          <hr> <!-- Inserted line -->
+          {% include toc.html html=content %}
+        </div>
+        
+        <div class="blog-post {% if page.full-width %}full-width{% endif %}">
+          {{ content }}
+        </div>
+        
+        <div class="sidebar-spacer"></div>
       </div>
 
       <div style="clear: both;"></div>
