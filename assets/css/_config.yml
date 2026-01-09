@@ -263,7 +263,7 @@ timezone: "America/Toronto"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-#paginate: 10
+paginate: 10
 
 kramdown:
   input: GFM
@@ -298,6 +298,7 @@ exclude:
   - docs/
 
 plugins:
+  - jekyll-paginate
   - jekyll-sitemap
 
 # Beautiful Jekyll / Dean Attali

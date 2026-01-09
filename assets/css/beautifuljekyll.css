@@ -34,8 +34,9 @@ html {
 
 
 .sidebar {
-  font-size: 0.9em; /* Adjust as needed */
+  font-size: 1em;
   color: #B7B5AC; /* Adjust as needed */
+  margin: 0 auto;
 }
 
 .sidebar a {
@@ -43,9 +44,10 @@ html {
 }
 
 .blog-post {
-  margin: 0;
+  margin: 0 auto;
   width: 100%;
   flex: 1;
+  max-width: 850px;
 }
 
 .blog-post.full-width {
@@ -55,7 +57,7 @@ html {
 /* Post container with grid layout for asymmetric gaps */
 .post-container {
   display: grid;
-  grid-template-columns: 200px 4rem minmax(0, 1fr) 2rem 200px;
+  grid-template-columns: 10.4vw 2.1vw minmax(0, 1fr) 1.04vw 10.4vw;
   align-items: start;
   width: 100%;
 }
@@ -707,6 +709,72 @@ footer .footer-custom-content {
   transition: color 0.2s ease;
 }
 
+.post-preview .post-preview-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.post-preview .post-preview-link:hover {
+  text-decoration: none;
+}
+
+.post-preview .post-preview-link article {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+  flex-grow: 1;
+}
+
+.post-card-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.post-card-right {
+  display: flex;
+  align-items: flex-start;
+}
+
+.post-card-thumbnail {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.post-card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.post-preview .post-preview-link article {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-preview .post-preview-link .post-read-more {
+  cursor: pointer;
+}
+
+.post-preview .post-preview-link a {
+  color: #0085A1;
+  text-decoration: underline;
+}
+
 .post-preview .post-author a,
 .post-preview .post-author strong {
   color: inherit;
@@ -739,8 +807,8 @@ footer .footer-custom-content {
 .post-preview .post-image {
   float: right;
   margin-left: 0.625rem;
-  height: 16rem;
-  width: 16rem;
+  height: 12rem;
+  width: 12rem;
   padding: 5px;
 }
 .post-preview .post-image {
@@ -750,19 +818,20 @@ footer .footer-custom-content {
   filter: grayscale(0%);
 }
 .post-preview .post-image img {
-  max-height: 100%;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: var(--image-radius, 0.5rem);
   box-shadow: 2px 2px 5px rgba(40, 39, 38, 0.18);
   transition: none;
 }
 .post-preview .post-image-short {
-  margin-top: -2.1875rem;
+  margin-top: -1rem;
 }
 @media (max-width: 500px) {
   .post-preview .post-image {
-    height: 9rem;
-    width: 9rem;
+    height: 8rem;
+    width: 8rem;
   }
   .post-preview .post-image-short {
     margin-top: 0;

@@ -1,18 +1,17 @@
 ---
 layout: post
-title: Turning ESHRAQ into a Film Stage - Part 1
-subtitle: Devlog n.7
+title: From Simulation to Cinema - Part 1
+subtitle: Building the first cinematic loop of ESHRAQ
 comments: false
 thumbnail-img: /assets/images/10_Post/Thumb_Rocket.webp
 cover-img: /assets/images/10_Post/Cover_Rocket.webp
 readtime: true
 nav-short: true
 full-width: true
-author: Ali Eslami
 ---
 
-# Turning ESHRAQ into a Film Stage  
-*Cinema, Simulation, and Ontology*
+# *Cinema, Simulation, and Ontology*
+
 
 It’s been a while since my last post here.
 

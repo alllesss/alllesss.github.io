@@ -8,7 +8,6 @@ cover-img: /assets/images/06_Post/Cover.webp
 readtime: true
 nav-short: true
 full-width: true
-author: Ali Eslami
 ---
 
 

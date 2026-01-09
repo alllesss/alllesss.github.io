@@ -35,7 +35,7 @@
           
           {% if include.type == "post" %} 
             {% if page.author %}
-              By <strong>{{ page.author | strip_html }}</strong><br>
+              By {{ page.author | strip_html }}<br>
             {% endif%}
             <span class="post-meta">{{ page.date | date: date_format }}</span>
             {% if page.last-updated %}
