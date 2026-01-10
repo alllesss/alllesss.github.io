@@ -1405,10 +1405,17 @@ table tr td :last-child {
 
 /* --- Code blocks --- */
 
+.highlight {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-color: #F2F0E5;
+  display: block;
+}
+
 code {
   padding: 0.125rem 0.25rem;
-  color: #100F0F;
-  background-color: #DAD8CE;
+  color: #D14D41;
+  background-color: #F2F0E5;
   border-radius: 0.25rem;
 }
 
@@ -1421,21 +1428,32 @@ pre code {
 pre {
   font-size: 1rem;
   line-height: 1.5em;
-  border-radius: 0.25rem;
-  padding: 0.59375rem;
+  border-radius: 0.75rem;
+  padding: 1.875rem;
+  color: #D14D41;
+  background-color: #F2F0E5;
+  overflow: hidden;
+  margin: 0;
 }
 .highlight pre {
   border: none;
   background: none;
   margin: 0;
+  border-radius: 0;
+  overflow: visible;
+  padding: 1.875rem;
 }
 .highlight > pre {
+  background-color: transparent;
   background-image: linear-gradient(
-    rgba(0,0,0,0.03), rgba(0,0,0,0.03) 1.5em, rgba(0,0,0,0.02) 1.5em, rgba(0,0,0,0.02) 3em);
+    rgba(0,0,0,0.02), rgba(0,0,0,0.02) 1.5em, rgba(0,0,0,0.01) 1.5em, rgba(0,0,0,0.01) 3em);
   background-size: auto 3em;
   background-position-y: 0.625rem;
-  border: 1px solid rgba(0,0,0,0.1);
-  border-left: 0.4375rem solid #444;
+  border: none;
+  border-radius: 0;
+  padding: 1.875rem;
+  overflow: visible;
+  box-sizing: border-box;
 }
 .highlight > pre:not([class~="highlight"]) { /* code block with line number */
   padding: 0;
@@ -1444,7 +1462,7 @@ pre {
 .highlight tr,
 .highlight td { /* to be removed after fixing table styles */
   border: none;
-  background: none;
+  background-color: transparent !important;
   padding: 0;
   margin: 0;
 }
