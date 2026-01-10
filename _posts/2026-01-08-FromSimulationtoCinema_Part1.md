@@ -297,8 +297,30 @@ Encountered without mediation, these objects invite interpretation. After watchi
 
 ---
 
-## Behind the scenes
+## Behind the Scenes
 
+The final element I added to the installation at the Diogenes Bunker was a **behind-the-scenes video loop**, displayed directly behind the main film screen. The screen was therefore two-sided. While the front presented the cinematic work, the reverse side exposed the conditions of its production.
+
+This was a deliberate gesture. I wanted to make visible the fact that everything seen in the film is sourced from a simulation, and to acknowledge the systems, assets, and processes that made it possible.
+
+<div style="padding:62.5% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1153233843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="ESHRAQ - BTS Excerpt (2025)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+The behind-the-scenes video was composed of **five tiled views**, each revealing a different layer of the work:
+
+1. **Conveyor-belt view**  
+   A long tile showing all the modules used in the film moving past in sequence, from the Huma bird heads to walls, floors, stairs, and other architectural elements.
+
+2. **Material palette view**  
+   A tile presenting the full material library of the project, including mud brick, asphalt, concrete, water, stucco, and other surface systems used across environments.
+
+3. **Agent view**  
+   A tile displaying all agents placed on a rotating platform in a T-pose, similar to a character selection interface. This emphasizes their status as potential actors within the simulation rather than fixed characters.
+
+4. **Simulation playthrough view**  
+   A tile showing selected moments from live playthroughs inside ESHRAQ, highlighting how scenes emerged through interaction rather than pre-scripted animation.
+
+5. **Spatial replica view**  
+   A larger tile depicting a replica of the bunker itself, modeled exactly as the installation was presented. This functions as a limbo space connecting the physical exhibition site to its virtual counterpart. I have written more about the concept of limbo spaces in an [earlier post](http://localhost:4000/2024-03-23-TracingTheModularUrge_Part2/).
 
 
 ---
