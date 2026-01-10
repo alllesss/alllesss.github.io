@@ -162,8 +162,8 @@ site-css:
   - "/assets/css/skin-switch.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
-#site-js:
-#  - "/assets/js/custom-script.js"
+site-js:
+  - "/assets/js/noise-spotlight.js"
 
 #################################
 # --- Web Analytics Section --- #

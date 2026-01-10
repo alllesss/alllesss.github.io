@@ -9,10 +9,8 @@ layout: page
 <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
 <ul class="posts-list list-unstyled" role="list">
   {% for post in posts %}
-  <li class="post-preview">
+  <li class="post-preview spotlight-target">
     <a href="{{ post.url | absolute_url }}" class="post-preview-link">
-      <article>
-
       <article>
 
         {%- capture thumbnail -%}

@@ -99,6 +99,207 @@ figure.img-figure figcaption {
   border: 0;
 }
 
+/* Global film grain overlay + spotlight mask */
+:root {
+  --mx: 50vw;
+  --my: 50vh;
+  --grain-opacity: 0.1; /* default subtle grain */
+  --spot-opacity: 0.18; /* base */
+  --spot-size: clamp(180px, 12vw, 230px);
+}
+
+/* Theme variable overrides */
+body:not(.page-dark-mode) {
+  --grain-opacity: 0.25;
+  --spot-opacity: 0.11; /* stronger shadow in light mode */
+}
+body.page-dark-mode {
+  --grain-opacity: 0.35;
+  --spot-opacity: 0.025;
+}
+
+/* Full-page noise overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("/assets/images/noise.png"); /* small seamless tile */
+  background-repeat: repeat;
+  background-size: 320px 320px; /* tune grain scale */
+  opacity: var(--grain-opacity);
+  mix-blend-mode: soft-light;
+  transform: translateZ(0); /* nudge onto GPU */
+}
+
+/* Adjust base grain blend per theme */
+body:not(.page-dark-mode)::before { mix-blend-mode: multiply; }
+body.page-dark-mode::before { mix-blend-mode: soft-light; }
+
+/* Spotlight overlay on hovered targets (cards/posts) */
+.spotlight-target {
+  position: relative;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .spotlight-target.is-spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    /* Default (dark-mode friendly) sheen + grain */
+    background-image:
+      radial-gradient(
+        circle at var(--mx) var(--my),
+        rgba(230, 228, 217, 0.18) 0%,
+        rgba(230, 228, 217, 0.15) 12%,
+        rgba(230, 228, 217, 0.12) 22%,
+        rgba(230, 228, 217, 0.09) 32%,
+        rgba(230, 228, 217, 0.06) 42%,
+        rgba(230, 228, 217, 0.04) 52%,
+        rgba(230, 228, 217, 0.02) 62%,
+        rgba(230, 228, 217, 0.01) 72%,
+        rgba(230, 228, 217, 0.005) 82%,
+        rgba(230, 228, 217, 0.00) 95%
+      ),
+      url("/assets/images/noise.png");
+    background-repeat: no-repeat, repeat;
+    background-size: auto, 320px 320px;
+    background-blend-mode: multiply, normal;
+    opacity: var(--spot-opacity);
+    mix-blend-mode: multiply;
+    filter: contrast(0.8) brightness(1.00);
+
+    /* Textured spotlight edge: combine radial mask with noise mask */
+    -webkit-mask-image: radial-gradient(
+        circle var(--spot-size) at var(--mx) var(--my)),
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 70%
+      ),
+      url("/assets/images/noise.png");
+    -webkit-mask-size: auto, 320px 320px;
+    -webkit-mask-repeat: no-repeat, repeat;
+    /* For spec-compliant browsers */
+    mask-image: radial-gradient(
+        circle var(--spot-size) at var(--mx) var(--my),
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 70%
+      ),
+      url("/assets/images/noise.png");
+    mask-size: auto, 320px 320px;
+    mask-repeat: no-repeat, repeat;
+    /* Attempt to intersect masks where supported */
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+
+    transition: opacity 180ms ease, filter 180ms ease;
+    will-change: opacity, mask-image, filter;
+  }
+}
+
+/* Light-mode: invert to shadow (darker) with noisy edge */
+body:not(.page-dark-mode) .spotlight-target.is-spotlight::after {
+  background-image:
+    radial-gradient(
+      circle at var(--mx) var(--my),
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.20) 35%,
+      rgba(0, 0, 0, 0.00) 70%
+    ),
+    url("/assets/images/noise.png");
+  background-repeat: no-repeat, repeat;
+  background-size: auto, 320px 320px;
+  background-blend-mode: multiply, normal;
+  mix-blend-mode: multiply;
+  filter: contrast(1.20) brightness(0.85);
+  opacity: var(--spot-opacity);
+}
+
+/* Blog post pages: add vertical fade to spotlight */
+@media (hover: hover) and (pointer: fine) {
+  main.spotlight-target.is-spotlight::after {
+    -webkit-mask-image: radial-gradient(
+        circle var(--spot-size) at var(--mx) var(--my)),
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 70%
+      ),
+      url("/assets/images/noise.png"),
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.3) 3%,
+        rgba(0, 0, 0, 0.6) 6%,
+        rgba(0, 0, 0, 0.85) 9%,
+        rgba(0, 0, 0, 1) 12%,
+        rgba(0, 0, 0, 1) 88%,
+        rgba(0, 0, 0, 0.85) 91%,
+        rgba(0, 0, 0, 0.6) 94%,
+        rgba(0, 0, 0, 0.3) 97%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    -webkit-mask-size: auto, 320px 320px, 100% 100%;
+    -webkit-mask-repeat: no-repeat, repeat, no-repeat;
+    mask-image: radial-gradient(
+        circle var(--spot-size) at var(--mx) var(--my),
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 70%
+      ),
+      url("/assets/images/noise.png"),
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.3) 3%,
+        rgba(0, 0, 0, 0.6) 6%,
+        rgba(0, 0, 0, 0.85) 9%,
+        rgba(0, 0, 0, 1) 12%,
+        rgba(0, 0, 0, 1) 88%,
+        rgba(0, 0, 0, 0.85) 91%,
+        rgba(0, 0, 0, 0.6) 94%,
+        rgba(0, 0, 0, 0.3) 97%,
+        rgba(0, 0, 0, 0) 100%
+      );
+    mask-size: auto, 320px 320px, 100% 100%;
+    mask-repeat: no-repeat, repeat, no-repeat;
+  }
+}
+
+/* Theme-specific spotlight blend for better visibility */
+body.page-dark-mode .spotlight-target.is-spotlight::after { mix-blend-mode: screen; }
+
+/* Exclude images from spotlight effect */
+.spotlight-target img {
+  position: relative;
+  z-index: 3;
+  isolation: isolate;
+}
+
+/* Slight bump on hover for targets */
+@media (hover: hover) and (pointer: fine) {
+  .spotlight-target:hover::after {
+    opacity: calc(var(--spot-opacity) + 0.05);
+  }
+}
+
+/* Fallback for browsers without mask-image support: hard-edge spotlight */
+@supports not (mask-image: radial-gradient(circle 10px at 10px 10px, #000 0%, transparent 70%)) {
+  @media (hover: hover) and (pointer: fine) {
+    .spotlight-target.is-spotlight::after {
+      -webkit-mask-image: none;
+      mask-image: none;
+      clip-path: circle(var(--spot-size) at var(--mx) var(--my));
+    }
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    transition: none;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .post-container {
     display: flex;
