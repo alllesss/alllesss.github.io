@@ -148,7 +148,8 @@ $(function() {
     localStorage.setItem('bj-dark-mode', $("body").hasClass("page-dark-mode"));
     BeautifulJekyllJS.initNavbar();
   });
-  if (localStorage.getItem('bj-dark-mode') === 'true') {
+  // Default to dark mode if preference not set
+  if (localStorage.getItem('bj-dark-mode') === null || localStorage.getItem('bj-dark-mode') === 'true') {
     $('#change-skin').trigger('click');
   }
 });
