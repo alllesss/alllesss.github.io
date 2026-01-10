@@ -305,9 +305,6 @@ Encountered without mediation, these objects invite interpretation. After watchi
 
 ## Closing
 
-Showing this twenty-minute section of ESHRAQ confirmed something important for me. **Cinema is not a secondary output of the simulation.** It is a generative force that reshapes its ontology.
-
-This film is not a conclusion.  
-It is a threshold.
+Showing this twenty-minute section of ESHRAQ confirmed something important for me. **Cinema is not a secondary output of the simulation.** It is a generative force that reshapes its meaning and even ontology.
 
 *Next post: the second story loop, set in a modular Amsterdam.*
