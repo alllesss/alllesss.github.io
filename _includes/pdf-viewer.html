@@ -1,0 +1,34 @@
+{% comment %}
+Reusable PDF viewer include
+Usage:
+{% include pdf-viewer.html url="/assets/docs/sample.pdf" title="Sample PDF" height="80vh" width="90%" max_width="800px" caption="My caption" %}
+Params:
+- url (required): absolute/relative path to the PDF
+- title (optional): accessible title for the frame
+- height (optional): CSS height value (default 80vh)
+- width (optional): container width (default 100%)
+- max_width (optional): container max-width (default 900px)
+- caption (optional): text rendered beneath the viewer, styled like image captions
+{% endcomment %}
+
+<div
+  class="pdf-viewer"
+  aria-label="PDF viewer"
+  style="width: {{ include.width | default: '100%' }}; max-width: {{ include.max_width | default: '900px' }};"
+>
+  <iframe
+    src="{{ include.url }}#view=FitH&toolbar=0"
+    title="{{ include.title | default: 'PDF document' }}"
+    loading="lazy"
+    frameborder="0"
+    style="width:100%;height:{{ include.height | default: '80vh' }};"
+    aria-label="{{ include.title | default: 'Embedded PDF' }}"
+  ></iframe>
+  <div class="pdf-viewer-fallback">
+    <span>Having trouble viewing?</span>
+    <a href="{{ include.url }}" target="_blank" rel="noopener">Open or download the PDF</a>
+  </div>
+  {% if include.caption %}
+  <div class="pdf-caption caption">{{ include.caption }}</div>
+  {% endif %}
+</div>

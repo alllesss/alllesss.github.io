@@ -15,7 +15,10 @@ full-width: true
 
 It’s been a while since my last post here.
 
-In the second half of 2025, I had the opportunity to show my work at **[Emerging Exits](https://www.instagram.com/emerging.exits/)** in Arnhem (1 October till 3 November). Curated by Jacco Ouwerkerk and Marijn Bril, the exhibition took place in the Diogenes Bunker, one of the largest bunkers built by the Germans during World War II. For this context, I prepared a cinematic experience sourced entirely from ESHRAQ’s simulated environment. It felt like the right moment to turn ESHRAQ into a **film stage**.
+I spent some time recently redesigning this blog to make things more streamlined. With this new layout comes a more comprehensive report of what I have been working on during the second half of 2025.
+
+During that period, I had the opportunity to show my work at **[Emerging Exits](https://www.instagram.com/emerging.exits/)** in Arnhem (1 October till 3 November). Curated by *Jacco Ouwerkerk* and *Marijn Bril*, the exhibition took place in the Diogenes Bunker, one of the largest bunkers built by the Germans during World War II. Responding to this context, I prepared a cinematic experience sourced entirely from ESHRAQ’s simulated environment. It felt like the right moment to turn ESHRAQ into a **film stage**.
+
 
 
 <figure class="img-figure" align="center">
@@ -38,8 +41,12 @@ I had been carrying a few ideas for a script for some time. They were slowly sim
 When I say *film*, I mean **two story loops**. Both are based on ESHRAQ, but they unfold in completely different models. One takes place in the **Ziggurat of Ur**, the other in a **modular version of Amsterdam**.  
 This post focuses on the first loop, and on what it meant to turn a simulation into cinema.
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1125804071?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="ESHRAQ - 2025 (excerpt)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+To get a sense of the film, you can watch and excerpt from the first 2 minutes of it here:
 
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1125804071?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="ESHRAQ - 2025 (excerpt)"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+ 
+
+---
 
 ## Why Cinema, Why Now
 
@@ -59,19 +66,26 @@ Throughout the film, this ontology of light becomes the ground on which new stor
 
 ---
 
-## Writing the Film and Writing With the Simulation
+## Writing the Film With the Simulation
 
-I wrote the draft script in **Scrivener**, which I would recommend for scriptwriting and long-form writing in general.
+I wrote the initial draft of the film script in **Scrivener**, which I would recommend for scriptwriting and long-form writing in general. At that stage, the script captured a clear direction for the film, but it was never meant to dictate its final form.
 
-From there, I moved into production in **Unreal Engine**. I had roughly two and a half months to turn the script into a twenty-minute film. Thanks to the foundational work that had already been done in ESHRAQ, much of the process was accelerated.
+Once I moved into production in **Unreal Engine**, the relationship between the script and the work began to shift. I had roughly two and a half months to turn the draft into a twenty-minute film, but rather than following the script rigidly, I treated it as a guiding force. Many decisions were made while recording scenes, blocking movement, and working directly with the simulation. Several moments in the final film deviate from the original script, emerging instead from the constraints, affordances, and unexpected behaviors of the system itself.
 
-> PDF Preview of ESHRAQ script intro here
+This approach allowed me to stay in close contact with the internal logic of ESHRAQ and with the limits and potentials of Unreal Engine. The script provided orientation, but the simulation determined how ideas could materialize. In that sense, the film was shaped through a dialogue between intention and system behavior, rather than direct execution.
 
-The **modular structure** helped enormously. The Ziggurat of Ur already existed as a modular system and only needed specific modifications. The same applied to agents, environments, and architectural logic.
+{% include pdf-viewer.html url="/assets/docs/ESHRAQ_Script_Intro.pdf" title="ESHRAQ — Script Intro (PDF)" height="70vh" width="90%" max_width="760px" caption="ESHRAQ — Script Intro (PDF)" %}
+
+The **modular structure** of ESHRAQ played a crucial role in this process. The Ziggurat of Ur already existed as a modular system and only required specific modifications. The same applied to agents, environments, and architectural logic, allowing changes to propagate through the system without needing to be explicitly scripted at every level.
 
 <figure class="img-figure" align="center">
   <img src="/assets/images/10_Post/Ziggurat_test.webp" alt="Behind the scenes of the Ziggurat's construction">
   <figcaption class="caption">Behind the scenes of the Ziggurat's construction</figcaption>
+</figure>
+
+<figure class="img-figure" align="center">
+  <img src="/assets/images/10_Post/Windcatcher_souls.webp" alt="A scene abandoned after realizing, through making, that it overwhelmed the narrative rather than supporting it">
+  <figcaption class="caption">A scene abandoned after realizing, through making, that it overwhelmed the narrative rather than supporting it</figcaption>
 </figure>
 
 ---
@@ -81,6 +95,8 @@ The **modular structure** helped enormously. The Ziggurat of Ur already existed 
 I chose a **2.55 wide aspect ratio**, with a final output resolution of `4096 × 1716`. This very wide format, combined with emulated **Panavision C-Series anamorphic lenses**, creates an immersive frame that wraps around the viewer’s vision.
 
 In post-production, I leaned into virtual production techniques such as **lens distortion**, **film grain**, **color work**, **flares**, and **bloom**, aiming to get as close as possible to the texture of real cinema lenses.
+
+The post-production was handled in two passes. The first took place inside Unreal Engine, where I captured the raw camera image. The second pass was done in DaVinci Resolve, where I introduced lens distortion, color work, and film grain to push the image closer to a cinematic texture.
 
 This choice was also influenced by how much I admired the image quality of *Star Wars: Andor*, as well as *Dune: Part One*. There is something about that visual language that holds science fiction and gravity at the same time.
 
@@ -125,12 +141,20 @@ For Iranian viewers, this references *The Conference of the Birds* by Attar. In 
 </figure>
 
 
-
 In Sufi terminology, this journey involves **fanā’**, the annihilation of the self, followed by **baqā’**, remaining or becoming.
 
 In the film, I invert this logic. The thirty birds begin as a whole and are then fragmented and dispersed back into the desert. This individuation is justified by history. We know where they came from.
 
 In ESHRAQ, all thirty birds are in fact **one bird**, the Huma, encountered across different temporalities. Unlike Attar’s birds, which come from different species, these are the same mythic entity fractured across time. The plurality does not come from identity, but from accumulated meaning and historical interpretation.
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="/assets/images/10_Post/Airship_modules.webp" data-lightbox="example-1" data-title="Huma Airship constructs are made out of 9 unique modules.">
+    <img class="example-image" src="/assets/images/10_Post/Airship_modules.webp" alt="Huma Airship constructs are made out of 9 unique modules.">
+  </a>
+  <figcaption class="caption">Huma Airship constructs are made out of 9 unique modules.</figcaption>
+</figure>
+
+<br>
 
 ---
 
@@ -164,27 +188,66 @@ This opening sequence establishes the internal logic of the world so that everyt
 
 ## Souls and the Ziggurat Loop
 
-Within the film, the Ziggurat becomes a deep object where the first story loop unfolds. The soul of **Mythic George Bush** is spawned into the site.
+Within the film, the Ziggurat becomes a deep object where the first story loop unfolds. The soul of `Mythic George Bush` is spawned into the site.
+
+<figure class="img-figure" align="center" style="max-width: 100%; margin: 1.25rem auto;">
+  <img src="/assets/images/10_Post/Ziggurat_01.jpg" alt="A US military aircraft over the Ziggurat of Ur, Iraq, photographed during the US-led invasion.">
+  <figcaption class="caption">A US military aircraft over the Ziggurat of Ur, Iraq, photographed during the US-led invasion.</figcaption>
+</figure>
 
 I spent a long time thinking about the design of souls in ESHRAQ and how they could be materialized. I eventually arrived at the idea of representing them as **luminous red-orange spheres**, almost like miniature stars hovering above specific sites.
 
-Each soul connects through a visible line or cable to an idle agent on the ground. When the soul becomes active, it forms a bond with the agent. In the film, the camera follows this connection as Mythic George Bush begins to speak about unfinished business.
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="/assets/images/10_Post/Soul_Orb.webp" data-lightbox="example-1" data-title="Soul orb of Mythic George Bush hovering above the Ziggurat">
+    <img class="example-image" src="/assets/images/10_Post/Soul_Orb.webp" alt="Soul orb of Mythic George Bush hovering above the Ziggurat">
+  </a>
+  <figcaption class="caption">Soul orb of Mythic George Bush hovering above the Ziggurat</figcaption>
+</figure>
+
+Each soul connects through a bright thread to an idle agent on the ground. When the soul becomes active, it forms a bond with the agent. In the film, the camera follows this connection as Mythic George Bush begins to speak about unfinished business.
 
 Mythic George Bush, or `MGB`, is an amalgamation of George Bush and his father. I wanted to test the boundaries of what a soul could be. Can it be composite? Can it be an infusion of multiple figures? What other chemistries might be possible?
 
 Through MGB, the history of the Ziggurat is retold from multiple vantage points. Ancient cosmology sits next to the Gulf War and the US invasion of Iraq. This section was sparked by a photograph of American soldiers ascending the Ziggurat. The contradictions in that image became a driving force behind this loop.
 
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="/assets/images/10_Post/Ziggurat_02.jpg" data-lightbox="example-1" data-title="U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.">
+    <img class="example-image" src="/assets/images/10_Post/Ziggurat_02.jpg" alt="U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.">
+  </a>
+  <figcaption class="caption">U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.</figcaption>
+</figure>
+
 ---
 
 ## Soul View and the Imaginal
 
-Another important design element is what I call the **Soul View**, developed together with Danial Alemasoum. We wanted a visual language rooted in ESHRAQ’s modular logic while drawing from Iranian material culture.
+Another important design element is what I call the **Soul View**, developed together with Graphic Designer [Danial Alemasoum](https://www.instagram.com/danial_alemasoum/?hl=en). We wanted a visual language rooted in ESHRAQ’s modular logic while drawing from Iranian visual culture.
 
-We were inspired by glass and mirror architecture, especially the **Shrine of Imam Reza** in Mashhad. As a child, I used to stare at mirrored ceilings and try to find myself within the reflections. The architecture never allowed it.
+We were inspired by glass and mirror architecture, especially the *Shrine of Imam Reza* in Mashhad. I was born in Mashhad and we lived there until the age of 9. As a child, I used to stare at mirrored ceilings and try to find myself within the reflections. The architecture never allowed it.
+
+<figure class="img-figure" align="center" style="max-width: 70%; margin: 1.25rem auto;">
+  <img src="/assets/images/10_Post/Ayine_kari.jpg" alt="Āyineh-kāri (mirror work) in the Shrine of Imam Reza, Mashhad.">
+  <figcaption class="caption">Āyineh-kāri (mirror work) in the Shrine of Imam Reza, Mashhad.</figcaption>
+</figure>
 
 This experience shaped the Soul View. It produces fragile, mirage-like images that appear and disappear. It reveals information about souls that cannot be materialized on the ground.
 
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="/assets/images/10_Post/Soul_View_1.jpg" data-lightbox="example-1" data-title="Soul View">
+    <img class="example-image" src="/assets/images/10_Post/Soul_View_1.jpg" alt="Soul View overlay revealing historical memory of the soul.">
+  </a>
+  <figcaption class="caption">Soul View overlay revealing historical memory of the soul.</figcaption>
+</figure>
+
 There is also a reference to sand as the source of glass. The film begins in a desert, which I see as a strong metaphor for the **imaginal world**. A place where things dissolve, but also where sand and light conspire to form endless images.
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="/assets/images/10_Post/Soul_View_2.jpg" data-lightbox="example-1" data-title="Soul View">
+    <img class="example-image" src="/assets/images/10_Post/Soul_View_2.jpg" alt="Soul View: each soul is given a unique visual form, designed by Danial Alemasoum using Persian Nastaʿlīq calligraphy as a structural reference. ">
+  </a>
+  <figcaption class="caption">Soul View: each soul is given a unique visual form, designed by Danial Alemasoum using Persian Nastaʿlīq calligraphy as a structural reference.</figcaption>
+</figure>
+
 
 ---
 

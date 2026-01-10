@@ -115,7 +115,7 @@ body:not(.page-dark-mode) {
 }
 body.page-dark-mode {
   --grain-opacity: 0.35;
-  --spot-opacity: 0.025;
+  --spot-opacity: 0.015;
 }
 
 /* Full-page noise overlay */
@@ -170,7 +170,7 @@ body.page-dark-mode::before { mix-blend-mode: soft-light; }
     background-blend-mode: multiply, normal;
     opacity: var(--spot-opacity);
     mix-blend-mode: multiply;
-    filter: contrast(0.8) brightness(1.00);
+    filter: contrast(0.8) brightness(0.50);
 
     /* Textured spotlight edge: combine radial mask with noise mask */
     -webkit-mask-image: radial-gradient(
@@ -852,7 +852,7 @@ footer .footer-custom-content {
 
 .post-preview:hover {
   box-shadow: 2px 2px 6px rgba(16, 15, 15, 0.16);
-  background-color: #FFFCF0;
+  background-color: #fffcf042;
 }
 
 .post-preview a {
@@ -1739,4 +1739,61 @@ pre {
   #nav-search-text {
     display: inline-block;
   }
+}
+
+/* PDF viewer embed */
+.pdf-viewer {
+  border: 1px solid #E6E4D9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FFFCF0;
+  box-shadow: 2px 2px 6px rgba(16, 15, 15, 0.12);
+  margin: 1rem auto;
+  max-width: 900px;
+  width: 100%;
+}
+.pdf-viewer iframe {
+  display: block;
+  width: 100%;
+}
+.pdf-viewer .pdf-viewer-fallback {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid #E6E4D9;
+  background: #FFFCF0;
+  font-family: var(--font-ui);
+  color: #6F6E69;
+}
+.pdf-viewer .pdf-viewer-fallback a {
+  color: {{ site.hover-col | default: "#0085A1" }};
+  text-decoration: underline;
+}
+.pdf-viewer .pdf-caption {
+  padding: 0.5rem 0.75rem 0.75rem;
+  background: #FFFCF0;
+  border-top: 1px solid #E6E4D9;
+  font-family: var(--font-ui);
+  color: inherit;
+}
+
+/* Dark mode adjustments for PDF viewer */
+body.page-dark-mode .pdf-viewer {
+  border-color: #2B2A27;
+  background: #0F0E0D;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.45);
+}
+body.page-dark-mode .pdf-viewer .pdf-viewer-fallback {
+  border-top-color: #2B2A27;
+  background: #0F0E0D;
+  color: #E6E4D9;
+}
+body.page-dark-mode .pdf-viewer .pdf-viewer-fallback a {
+  color: #F4C16E;
+}
+body.page-dark-mode .pdf-viewer .pdf-caption {
+  background: #0F0E0D;
+  border-top-color: #2B2A27;
+  color: #E6E4D9;
 }
