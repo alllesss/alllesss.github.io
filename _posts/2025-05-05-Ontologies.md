@@ -3,7 +3,7 @@ layout: post
 title: Ontologies & Diagrams
 subtitle: Devlog n.6
 comments: false
-thumbnail-img: /assets/images/09_Post/Thumb - devlog 06.jpg
+thumbnail-img: /assets/images/09_Post/Thumb_09.jpg
 cover-img: /assets/images/06_Post/Cover.webp
 readtime: true
 nav-short: true
