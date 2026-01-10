@@ -72,7 +72,9 @@ I wrote the initial draft of the film script in **Scrivener**, which I would rec
 
 Once I moved into production in **Unreal Engine**, the relationship between the script and the work began to shift. I had roughly two and a half months to turn the draft into a twenty-minute film, but rather than following the script rigidly, I treated it as a guiding force. Many decisions were made while recording scenes, blocking movement, and working directly with the simulation. Several moments in the final film deviate from the original script, emerging instead from the constraints, affordances, and unexpected behaviors of the system itself.
 
-This approach allowed me to stay in close contact with the internal logic of ESHRAQ and with the limits and potentials of Unreal Engine. The script provided orientation, but the simulation determined how ideas could materialize. In that sense, the film was shaped through a dialogue between intention and system behavior, rather than direct execution.
+In practice, the writing process became both **top-down** and **bottom-up**. While navigating ESHRAQ as a simulation, I encountered moments that felt too strong to ignore. These moments were logged back into the script, allowing play, system behavior, and authorship to feed back into one another.
+
+This approach kept me closely aligned with the internal logic of ESHRAQ and with the limits and potentials of Unreal Engine. The script provided orientation, but the simulation determined how ideas could materialize. In that sense, the film was shaped through a dialogue between intention and system behavior, rather than direct execution.
 
 {% include pdf-viewer.html url="/assets/docs/ESHRAQ_Script_Intro.pdf" title="ESHRAQ — Script Intro (PDF)" height="70vh" width="90%" max_width="760px" caption="ESHRAQ — Script Intro (PDF)" %}
 
@@ -87,6 +89,31 @@ The **modular structure** of ESHRAQ played a crucial role in this process. The Z
   <img src="/assets/images/10_Post/Windcatcher_souls.webp" alt="A scene abandoned after realizing, through making, that it overwhelmed the narrative rather than supporting it">
   <figcaption class="caption">A scene abandoned after realizing, through making, that it overwhelmed the narrative rather than supporting it</figcaption>
 </figure>
+
+Working this way also transformed cinematography. Being able to inhabit the film stage freely and repeatedly allowed me to survey locations for camera movement and framing before committing to shots. Using Unreal’s `Cine Camera Actor` enabled movements that would be impossible or dangerous in real-world filming.
+
+Here is an early test of a weighted camera-follow system, designed to simulate the physical mass of a real camera as it tracks the subject:
+
+<div class="video-embed">
+  <iframe src="https://www.youtube.com/embed/C3x7Um31FDM?si=LnO11gPlkkHANvlu"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+</div>
+
+{: .box-gray}
+This way of working is not unique to ESHRAQ. During the pre-production of *Dune: Part Two*, Unreal Engine was used extensively for virtual scouting and shot planning in a simulated desert environment. Having access to a navigable film stage before shooting fundamentally changes how cinematic decisions are made.  
+You can read more about that process [here](https://www.unrealengine.com/en-US/spotlights/unreal-engine-streamlines-desert-production-on-dune-part-two).
+
+
+I also chose to keep glitches and artifacts that emerged naturally. Collision errors and clipping are not mistakes to hide. They are part of the living conditions of a computational world.
+
+<figure class="img-figure" align="center">
+  <img src="/assets/images/10_Post/Glitch.jpg" alt="Agent Walker's feet collision glitch as it's coming down the stairs">
+  <figcaption class="caption">Agent Walker's feet collision glitch as it's coming down the stairs.</figcaption>
+</figure>
+
 
 ---
 
@@ -248,40 +275,31 @@ There is also a reference to sand as the source of glass. The film begins in a d
   <figcaption class="caption">Soul View: each soul is given a unique visual form, designed by Danial Alemasoum using Persian Nastaʿlīq calligraphy as a structural reference.</figcaption>
 </figure>
 
-
----
-
-## Writing With Simulation
-
-Although I wrote a script, many scenes emerged directly from play. While navigating ESHRAQ as a simulation, I encountered moments that felt too strong to ignore. These moments were logged back into the script.
-
-The writing process became both **top-down** and **bottom-up**.
-
-Simulation also transformed cinematography. Being able to inhabit the film stage freely and repeatedly allowed me to survey locations for camera movement and framing before committing to shots. Using Unreal’s `Cine Camera Actor` enabled movements that would be impossible or dangerous in real-world filming.
-
-Here is an early test of a weighted camera-follow system, designed to simulate the physical mass of a real camera as it tracks the subject:
-
-
-<div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/C3x7Um31FDM?si=LnO11gPlkkHANvlu"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen></iframe>
-</div>
-
-It's good to know that even for the pre-production of Dune Part 2 they used Unreal Engine to plan their shots in the desert that was simulated in unreal. https://www.unrealengine.com/en-US/spotlights/unreal-engine-streamlines-desert-production-on-dune-part-two
-
-
-I also chose to keep glitches and artifacts that emerged naturally. Collision errors and clipping are not mistakes to hide. They are part of the living conditions of a computational world.
-
 ---
 
 ## Physical Dimension
 
 For Emerging Exits, I introduced a physical element sourced from ESHRAQ. I created a lightbox containing the thirty Huma heads, aligned as if passing through the threshold of light again, but without wings.
 
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="/assets/images/10_Post/Sculpture_02.webp" data-lightbox="example-1" data-title="Sculpture 02">
+    <img class="example-image" src="/assets/images/10_Post/Sculpture_02.webp" alt="Lightbox, Thirty 3D Printed pieces, Coated with Sand">
+  </a>
+  <figcaption class="caption">Lightbox, Thirty 3D Printed pieces, Coated with Sand</figcaption>
+</figure>
+
 Encountered without mediation, these objects invite interpretation. After watching the film, they acquire new meaning. The tension between these readings is something I want to preserve.
+
+<figure class="img-figure" align="center" style="max-width: 70%; margin: 1.25rem auto;">
+  <img src="/assets/images/10_Post/Sculpture_01.webp" alt="Sculpture 01">
+  <figcaption class="caption">Installation View - Emerging Exits (Arnhem, October 2025)</figcaption>
+</figure>
+
+---
+
+## Behind the scenes
+
+
 
 ---
 
