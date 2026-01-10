@@ -28,7 +28,15 @@ common-js:
 
 {% include head.html %}
 
-<body>
+<body class="page-dark-mode">
+  <script>
+    (function() {
+      try {
+        var v = localStorage.getItem('bj-dark-mode');
+        if (v === 'false') document.body.classList.remove('page-dark-mode');
+      } catch(e) {}
+    })();
+  </script>
   {% include gtm_body.html %}
 
   {% include nav.html %}

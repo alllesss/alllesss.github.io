@@ -148,8 +148,12 @@ $(function() {
     localStorage.setItem('bj-dark-mode', $("body").hasClass("page-dark-mode"));
     BeautifulJekyllJS.initNavbar();
   });
-  // Default to dark mode if preference not set
-  if (localStorage.getItem('bj-dark-mode') === null || localStorage.getItem('bj-dark-mode') === 'true') {
-    $('#change-skin').trigger('click');
+  // Initialize theme from saved preference without toggling
+  var v = localStorage.getItem('bj-dark-mode');
+  if (v === 'true') {
+    $("body").addClass("page-dark-mode");
+  } else if (v === 'false') {
+    $("body").removeClass("page-dark-mode");
   }
+  BeautifulJekyllJS.initNavbar();
 });
