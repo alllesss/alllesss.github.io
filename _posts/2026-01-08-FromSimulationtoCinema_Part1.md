@@ -323,6 +323,11 @@ The behind-the-scenes video was composed of **five tiled views**, each revealing
    A larger tile depicting a replica of the bunker itself, modeled exactly as the installation was presented. This functions as a limbo space connecting the physical exhibition site to its virtual counterpart. I have written more about the concept of limbo spaces in an [earlier post](http://localhost:4000/2024-03-23-TracingTheModularUrge_Part2/).
 
 
+<figure class="img-figure" align="center" style="max-width: 70%; margin: 1.25rem auto;">
+  <img src="/assets/images/10_Post/BTS_Installation.webp" alt="BTS_Installation">
+  <figcaption class="caption">Installation View - Emerging Exits Opening (Arnhem, October 2025)</figcaption>
+</figure>
+
 ---
 
 ## Closing
