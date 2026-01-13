@@ -4,7 +4,7 @@ title: From Simulation to Cinema - Part 2
 subtitle: Second story loop, modular Amsterdam
 comments: false
 thumbnail-img: /assets/images/11_Post/Thumb.jpg
-cover-img: /assets/images/06_Post/Cover.webp
+cover-img: /assets/images/11_Post/Cover.webp
 readtime: true
 nav-short: true
 full-width: true
@@ -86,7 +86,7 @@ The city developed a clear division between residential and commercial areas. Th
 
 ---
 
-## The Museum as a Ritual Space
+## Inside the Museum
 
 The idea of building a museum within ESHRAQ was sparked by a visit to the **Stedelijk Museum** in the early summer of 2025. During that visit, I encountered two works that stayed with me for very different reasons.
 
@@ -136,6 +136,20 @@ What struck me was not the refusal itself, but the way the refusal was framed. P
 
 Doing nothing became aestheticized.
 
+At the same time, I am conscious of the historical moment we are in. Cultural institutions today are increasingly under pressure, operating within a landscape shaped by the rise of fascism, shrinking public imagination, and growing hostility toward the very idea of shared civic spaces. In such a climate, I hesitate to be unconditionally harsh. Killing the messenger carries its own consequences. A weakened or dismantled institution leaves no message at all.
+
+Still, this tension remains difficult to ignore. Over the years of living in the Netherlands, I have repeatedly observed a pattern in which institutions maintain an ethical posture through procedural correctness, while avoiding direct action. Responsibility is deferred, risk is minimized, and transparency becomes a substitute for engagement.
+
+This does not mean I see the situation in simple terms. I have experienced many powerful exhibitions in this museum as well. Those moments are rightly celebrated. But moments of hesitation, complicity, or withdrawal often pass without the same level of scrutiny.
+
+---
+
+## Still Life and the Aesthetics of Inaction
+
+In response, I introduced another layer in the film. A fictional exhibition titled **Still Life**, commissioned to a fictional Austrian artist, *Clara Gruber Hoffman*.
+
+The work references [Dutchbat](https://en.wikipedia.org/wiki/Dutchbat) and Dutch government's complicity in the Serbian genocide. In the film, doing nothing becomes an aesthetic gesture.
+
 <figure class="img-figure" align="center">
     <a class="example-image-link" href="/assets/images/11_Post/StillLife2.jpg" data-lightbox="amsterdam-series" data-title="Still Life, installation view of a fictional exhibition in the STAD Museum, referencing the 570 Dutch UN soldiers present during the Srebrenica genocide.">
         <img class="example-image" src="/assets/images/11_Post/StillLife2.jpg" alt="Still Life, installation view of a fictional exhibition in the STAD Museum, referencing the 570 Dutch UN soldiers present during the Srebrenica genocide.">
@@ -150,31 +164,27 @@ Doing nothing became aestheticized.
     <figcaption class="caption">Still Life, installation view of a fictional exhibition in the STAD Museum, referencing the 570 Dutch UN soldiers present during the Srebrenica genocide.</figcaption>
 </figure>
 
-At the same time, I am conscious of the historical moment we are in. Cultural institutions today are increasingly under pressure, operating within a landscape shaped by the rise of fascism, shrinking public imagination, and growing hostility toward the very idea of shared civic spaces. In such a climate, I hesitate to be unconditionally harsh. Killing the messenger carries its own consequences. A weakened or dismantled institution leaves no message at all.
-
-Still, this tension remains difficult to ignore. Over the years of living in the Netherlands, I have repeatedly observed a pattern in which institutions maintain an ethical posture through procedural correctness, while avoiding direct action. Responsibility is deferred, risk is minimized, and transparency becomes a substitute for engagement.
-
-This does not mean I see the situation in simple terms. I have experienced many powerful exhibitions in this museum as well. Those moments are rightly celebrated. But moments of hesitation, complicity, or withdrawal often pass without the same level of scrutiny.
-
----
-
-## Still Life and the Aesthetics of Inaction
-
-In response, I introduced another layer in the film. A fictional exhibition titled **Still Life**, commissioned to a fictional Austrian artist, *Clara Gruber Hoffman*.
-
-The work references Dutchbat and Dutch complicity in the Serbian genocide. In the film, doing nothing becomes an aesthetic gesture.
-
-This lack of agency becomes especially charged within ESHRAQ. The UN soldiers are shown sitting on red orbs. These orbs are agents that have lost their agency. `570` of them.
-
-The museum becomes a place where agency is suspended, ritualized, and displayed.
+This lack of agency becomes especially charged within ESHRAQ. The UN soldiers are shown wearing their helmets as `Agent Cores`. These orbs are agents that have lost their agency. `570` of them.
 
 ---
 
 ## Closing
 
-The Amsterdam loop is not a critique from the outside. It is a simulation of how institutions continue to function while doing nothing.
+The Amsterdam loop extends ESHRAQ into institutional space, not to offer critique from a distance, but to simulate how agency is negotiated, deferred, and sometimes aestheticized from within. By placing these dynamics inside a simulation, the film does not judge them from above. It simply lets them run.
 
-In ESHRAQ, agency is never assumed. It can be removed, aestheticized, or quietly absorbed into routine.
+<figure class="img-figure" align="center">
+    <a class="example-image-link" href="/assets/images/11_Post/Amsterdam_06.webp" data-lightbox="amsterdam-series" data-title="Agent Liz, carrying her groceries from Albert Heijn to the museum where she works under the rain">
+        <img class="example-image" src="/assets/images/11_Post/Amsterdam_06.webp" alt="Agent Liz, carrying her groceries from Albert Heijn to the museum where she works under the rain">
+    </a>
+    <figcaption class="caption">Agent Liz, carrying her groceries from Albert Heijn to the museum where she works under the rain</figcaption>
+</figure>
 
-This second loop does not resolve anything.  
-It leaves the question open.
+
+Together, the Ziggurat loop and the Amsterdam loop form the first structural layer of a much larger project. What I presented here is not a finished film, but a foundational section. Over the coming period in 2026, I plan to expand ESHRAQ into a feature-length cinematic work, adding several new story loops that unfold across different historical, political, and mythological terrains. Each loop will further test how simulation, narrative, and ontology reshape one another.
+
+Alongside the film, I am also developing ESHRAQ as a growing installation format, with sculptural elements, spatial staging, and photographic works emerging from within the simulation itself. These outputs are not documentation, but parallel expressions of the same system.
+
+If you are interested to keep in touch with future updates, please feel free to subscribe to the newsletter below:
+
+
+
