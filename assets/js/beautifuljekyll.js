@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
 $(function() {
   $('#change-skin').on('click', function () {
     $("body").toggleClass("page-dark-mode");
+    $("html").toggleClass("page-dark-mode");
     localStorage.setItem('bj-dark-mode', $("body").hasClass("page-dark-mode"));
     BeautifulJekyllJS.initNavbar();
   });
@@ -152,8 +153,10 @@ $(function() {
   var v = localStorage.getItem('bj-dark-mode');
   if (v === 'true') {
     $("body").addClass("page-dark-mode");
+    $("html").addClass("page-dark-mode");
   } else if (v === 'false') {
     $("body").removeClass("page-dark-mode");
+    $("html").removeClass("page-dark-mode");
   }
   BeautifulJekyllJS.initNavbar();
 });

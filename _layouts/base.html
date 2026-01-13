@@ -33,7 +33,12 @@ common-js:
     (function() {
       try {
         var v = localStorage.getItem('bj-dark-mode');
-        if (v === 'false') document.body.classList.remove('page-dark-mode');
+        if (v === 'false') {
+          document.body.classList.remove('page-dark-mode');
+          document.documentElement.classList.remove('page-dark-mode');
+        } else {
+          document.documentElement.classList.add('page-dark-mode');
+        }
       } catch(e) {}
     })();
   </script>

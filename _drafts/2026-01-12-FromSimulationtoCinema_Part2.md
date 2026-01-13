@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Turning ESHRAQ into a Film Stage - Part 2
+title: From Simulation to Cinema - Part 2
 subtitle: Devlog n.8
 comments: false
 thumbnail-img: /assets/images/09_Post/Thumb - devlog 06.jpg

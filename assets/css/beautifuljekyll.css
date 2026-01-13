@@ -347,6 +347,7 @@ figure figcaption,
 
 html {
   font-size: 16px; /* 1rem = 16px */
+  background-color: {{ site.page-col | default: "#FFFCF0" }};
 }
 
 body {
@@ -354,7 +355,7 @@ body {
   font-size: 1.125rem;
   color: {{ site.text-col | default: "#FFFFFF" }};
   position: relative;
-  background-color: {{ site.page-col | default: "#404040" }};
+  background-color: {{ site.page-col | default: "#FFFCF0" }};
   {% if site.page-img %}
   background-image: url({{ site.page-img | relative_url }});
   background-attachment: fixed;
