@@ -3,8 +3,8 @@ layout: post
 title: From Simulation to Cinema - Part 1
 subtitle: Building the first cinematic loop of ESHRAQ
 comments: false
-thumbnail-img: /assets/images/10_Post/Thumb_Rocket.webp
-cover-img: /assets/images/10_Post/Cover_Rocket.webp
+thumbnail-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Thumb_Rocket.webp
+cover-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Cover_Rocket.webp
 readtime: true
 nav-short: true
 full-width: true
@@ -22,15 +22,15 @@ During that period, I had the opportunity to show my work at **[Emerging Exits](
 
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Emergingexit-182.webp" data-lightbox="example-1" data-title="Photo by Aad Hoogendoorn">
-    <img class="example-image" src="/assets/images/10_Post/Emergingexit-182.webp" alt="Installation Views - Emerging Exits, Diogenes Bunker, Arnhem (2025)">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Emergingexit-182.webp" data-lightbox="example-1" data-title="Photo by Aad Hoogendoorn">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Emergingexit-182.webp" alt="Installation Views - Emerging Exits, Diogenes Bunker, Arnhem (2025)">
   </a>
 </figure>
 
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Emergingexit-188.webp" data-lightbox="example-1" data-title="Photo by Aad Hoogendoorn">
-    <img class="example-image" src="/assets/images/10_Post/Emergingexit-188.webp" alt="Installation Views - Emerging Exits, Diogenes Bunker, Arnhem (2025)">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Emergingexit-188.webp" data-lightbox="example-1" data-title="Photo by Aad Hoogendoorn">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Emergingexit-188.webp" alt="Installation Views - Emerging Exits, Diogenes Bunker, Arnhem (2025)">
   </a>
   <figcaption class="caption">Installation Views - Emerging Exits, Diogenes Bunker, Arnhem (2025)</figcaption>
 </figure>
@@ -58,8 +58,8 @@ Throughout the film, this ontology of light becomes the ground on which new stor
 
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Story_Loops.jpg" data-lightbox="example-1" data-title="Diagram of components of each story loop.">
-    <img class="example-image" src="/assets/images/10_Post/Story_Loops.jpg" alt="Diagram of components of each story loop.">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Story_Loops.jpg" data-lightbox="example-1" data-title="Diagram of components of each story loop.">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Story_Loops.jpg" alt="Diagram of components of each story loop.">
   </a>
   <figcaption class="caption">Diagram of components of each story loop.</figcaption>
 </figure>
@@ -81,12 +81,12 @@ This approach kept me closely aligned with the internal logic of ESHRAQ and with
 The **modular structure** of ESHRAQ played a crucial role in this process. The Ziggurat of Ur already existed as a modular system and only required specific modifications. The same applied to agents, environments, and architectural logic, allowing changes to propagate through the system without needing to be explicitly scripted at every level.
 
 <figure class="img-figure" align="center">
-  <img src="/assets/images/10_Post/Ziggurat_test.webp" alt="Behind the scenes of the Ziggurat's construction">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_test.webp" alt="Behind the scenes of the Ziggurat's construction">
   <figcaption class="caption">Behind the scenes of the Ziggurat's construction</figcaption>
 </figure>
 
 <figure class="img-figure" align="center">
-  <img src="/assets/images/10_Post/Windcatcher_souls.webp" alt="A scene abandoned after realizing, through making, that it overwhelmed the narrative rather than supporting it">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Windcatcher_souls.webp" alt="A scene abandoned after realizing, through making, that it overwhelmed the narrative rather than supporting it">
   <figcaption class="caption">A scene abandoned after realizing, through making, that it overwhelmed the narrative rather than supporting it</figcaption>
 </figure>
 
@@ -110,7 +110,7 @@ You can read more about that process [here](https://www.unrealengine.com/en-US/s
 I also chose to keep glitches and artifacts that emerged naturally. Collision errors and clipping are not mistakes to hide. They are part of the living conditions of a computational world.
 
 <figure class="img-figure" align="center">
-  <img src="/assets/images/10_Post/Glitch.jpg" alt="Agent Walker's feet collision glitch as it's coming down the stairs">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Glitch.jpg" alt="Agent Walker's feet collision glitch as it's coming down the stairs">
   <figcaption class="caption">Agent Walker's feet collision glitch as it's coming down the stairs.</figcaption>
 </figure>
 
@@ -128,7 +128,7 @@ The post-production was handled in two passes. The first took place inside Unrea
 This choice was also influenced by how much I admired the image quality of *Star Wars: Andor*, as well as *Dune: Part One*. There is something about that visual language that holds science fiction and gravity at the same time.
 
 <figure class="img-figure" align="center">
-  <img src="/assets/images/10_Post/Andor.jpg" alt="Still from StarWars: Andor">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Andor.jpg" alt="Still from StarWars: Andor">
   <figcaption class="caption">Still from StarWars: Andor</figcaption>
 </figure>
 
@@ -142,8 +142,8 @@ Something unexpected happened while writing cinematically. Ideas emerged that ha
 In that sense, the film did not simply visualize ESHRAQ. It actively generated **new ontological ground** for it. Narrative pressure, pacing, framing, and duration reshaped how the simulation behaved and what it could express. Expanding the film will continue to influence how ESHRAQ’s ontology evolves.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Ontology.jpg" data-lightbox="example-1" data-title="Revision of ESHRAQ's Ontology">
-    <img class="example-image" src="/assets/images/10_Post/Ontology.jpg" alt="Revision of ESHRAQ's Ontology after making the film (Click to enlarge)">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ontology.jpg" data-lightbox="example-1" data-title="Revision of ESHRAQ's Ontology">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ontology.jpg" alt="Revision of ESHRAQ's Ontology after making the film (Click to enlarge)">
   </a>
   <figcaption class="caption">Revision of ESHRAQ's Ontology after making the film (Click to enlarge)</figcaption>
 </figure>
@@ -163,7 +163,7 @@ For Iranian viewers, this references *The Conference of the Birds* by Attar. In 
 
 
 <figure class="img-figure" align="center" style="max-width: 50%; margin: 1.25rem auto;">
-  <img src="/assets/images/10_Post/Attar.jpeg" alt="Detail featuring the Simurgh">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Attar.jpeg" alt="Detail featuring the Simurgh">
   <figcaption class="caption">(Detail featuring the Simurgh) / ca. 1590-1620 / Mughal painting attributed to Miskin / British Museum / CC BY NC SA</figcaption>
 </figure>
 
@@ -175,8 +175,8 @@ In the film, I invert this logic. The thirty birds begin as a whole and are then
 In ESHRAQ, all thirty birds are in fact **one bird**, the Huma, encountered across different temporalities. Unlike Attar’s birds, which come from different species, these are the same mythic entity fractured across time. The plurality does not come from identity, but from accumulated meaning and historical interpretation.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Airship_modules.webp" data-lightbox="example-1" data-title="Huma Airship constructs are made out of 9 unique modules.">
-    <img class="example-image" src="/assets/images/10_Post/Airship_modules.webp" alt="Huma Airship constructs are made out of 9 unique modules.">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Airship_modules.webp" data-lightbox="example-1" data-title="Huma Airship constructs are made out of 9 unique modules.">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Airship_modules.webp" alt="Huma Airship constructs are made out of 9 unique modules.">
   </a>
   <figcaption class="caption">Huma Airship constructs are made out of 9 unique modules.</figcaption>
 </figure>
@@ -190,8 +190,8 @@ In ESHRAQ, all thirty birds are in fact **one bird**, the Huma, encountered acro
 The birds pass through a very bright rectangular window of light and enter the desert. They drop rocket-like bombs that open mid-air before touching the ground. Each bomb releases an **orb of light**, which falls, densifies, and gradually turns into an architectural module such as a wall, stair, or floor. The empty shell then returns to the sky.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Rockets.webp" data-lightbox="example-1" data-title="States of a light carrier rocket in time">
-    <img class="example-image" src="/assets/images/10_Post/Rockets.webp" alt="States of a light carrier rocket in time">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Rockets.webp" data-lightbox="example-1" data-title="States of a light carrier rocket in time">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Rockets.webp" alt="States of a light carrier rocket in time">
   </a>
   <figcaption class="caption">States of a light carrier rocket in time</figcaption>
 </figure>
@@ -199,8 +199,8 @@ The birds pass through a very bright rectangular window of light and enter the d
 This repeats in time-lapse until the entire Ziggurat is constructed in a dense cascade of light.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Ziggurat_light.webp" data-lightbox="example-1" data-title="Ziggurat time-lapse being formed module by module">
-    <img class="example-image" src="/assets/images/10_Post/Ziggurat_light.webp" alt="Ziggurat time-lapse being formed module by module">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_light.webp" data-lightbox="example-1" data-title="Ziggurat time-lapse being formed module by module">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_light.webp" alt="Ziggurat time-lapse being formed module by module">
   </a>
   <figcaption class="caption">Ziggurat time-lapse being formed module by module</figcaption>
 </figure>
@@ -218,15 +218,15 @@ This opening sequence establishes the internal logic of the world so that everyt
 Within the film, the Ziggurat becomes a deep object where the first story loop unfolds. The soul of `Mythic George Bush` is spawned into the site.
 
 <figure class="img-figure" align="center" style="max-width: 100%; margin: 1.25rem auto;">
-  <img src="/assets/images/10_Post/Ziggurat_01.jpg" alt="A US military aircraft over the Ziggurat of Ur, Iraq, photographed during the US-led invasion.">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_01.jpg" alt="A US military aircraft over the Ziggurat of Ur, Iraq, photographed during the US-led invasion.">
   <figcaption class="caption">A US military aircraft over the Ziggurat of Ur, Iraq, photographed during the US-led invasion.</figcaption>
 </figure>
 
 I spent a long time thinking about the design of souls in ESHRAQ and how they could be materialized. I eventually arrived at the idea of representing them as **luminous red-orange spheres**, almost like miniature stars hovering above specific sites.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Soul_Orb.webp" data-lightbox="example-1" data-title="Soul orb of Mythic George Bush hovering above the Ziggurat">
-    <img class="example-image" src="/assets/images/10_Post/Soul_Orb.webp" alt="Soul orb of Mythic George Bush hovering above the Ziggurat">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_Orb.webp" data-lightbox="example-1" data-title="Soul orb of Mythic George Bush hovering above the Ziggurat">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_Orb.webp" alt="Soul orb of Mythic George Bush hovering above the Ziggurat">
   </a>
   <figcaption class="caption">Soul orb of Mythic George Bush hovering above the Ziggurat</figcaption>
 </figure>
@@ -238,8 +238,8 @@ Mythic George Bush, or `MGB`, is an amalgamation of George Bush and his father. 
 Through MGB, the history of the Ziggurat is retold from multiple vantage points. Ancient cosmology sits next to the Gulf War and the US invasion of Iraq. This section was sparked by a photograph of American soldiers ascending the Ziggurat. The contradictions in that image became a driving force behind this loop.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Ziggurat_02.jpg" data-lightbox="example-1" data-title="U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.">
-    <img class="example-image" src="/assets/images/10_Post/Ziggurat_02.jpg" alt="U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_02.jpg" data-lightbox="example-1" data-title="U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_02.jpg" alt="U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.">
   </a>
   <figcaption class="caption">U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.</figcaption>
 </figure>
@@ -253,15 +253,15 @@ Another important design element is what I call the **Soul View**, developed tog
 We were inspired by glass and mirror architecture, especially the *Shrine of Imam Reza* in Mashhad. I was born in Mashhad and we lived there until the age of 9. As a child, I used to stare at mirrored ceilings and try to find myself within the reflections. The architecture never allowed it.
 
 <figure class="img-figure" align="center" style="max-width: 70%; margin: 1.25rem auto;">
-  <img src="/assets/images/10_Post/Ayine_kari.jpg" alt="Āyineh-kāri (mirror work) in the Shrine of Imam Reza, Mashhad.">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ayine_kari.jpg" alt="Āyineh-kāri (mirror work) in the Shrine of Imam Reza, Mashhad.">
   <figcaption class="caption">Āyineh-kāri (mirror work) in the Shrine of Imam Reza, Mashhad.</figcaption>
 </figure>
 
 This experience shaped the Soul View. It produces fragile, mirage-like images that appear and disappear. It reveals information about souls that cannot be materialized on the ground.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Soul_View_1.jpg" data-lightbox="example-1" data-title="Soul View">
-    <img class="example-image" src="/assets/images/10_Post/Soul_View_1.jpg" alt="Soul View overlay revealing historical memory of the soul.">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_View_1.jpg" data-lightbox="example-1" data-title="Soul View">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_View_1.jpg" alt="Soul View overlay revealing historical memory of the soul.">
   </a>
   <figcaption class="caption">Soul View overlay revealing historical memory of the soul.</figcaption>
 </figure>
@@ -269,8 +269,8 @@ This experience shaped the Soul View. It produces fragile, mirage-like images th
 There is also a reference to sand as the source of glass. The film begins in a desert, which I see as a strong metaphor for the **imaginal world**. A place where things dissolve, but also where sand and light conspire to form endless images.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Soul_View_2.jpg" data-lightbox="example-1" data-title="Soul View">
-    <img class="example-image" src="/assets/images/10_Post/Soul_View_2.jpg" alt="Soul View: each soul is given a unique visual form, designed by Danial Alemasoum using Persian Nastaʿlīq calligraphy as a structural reference. ">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_View_2.jpg" data-lightbox="example-1" data-title="Soul View">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_View_2.jpg" alt="Soul View: each soul is given a unique visual form, designed by Danial Alemasoum using Persian Nastaʿlīq calligraphy as a structural reference. ">
   </a>
   <figcaption class="caption">Soul View: each soul is given a unique visual form, designed by Danial Alemasoum using Persian Nastaʿlīq calligraphy as a structural reference.</figcaption>
 </figure>
@@ -282,8 +282,8 @@ There is also a reference to sand as the source of glass. The film begins in a d
 For Emerging Exits, I introduced a physical element sourced from ESHRAQ. I created a lightbox containing the thirty Huma heads, aligned as if passing through the threshold of light again, but without wings.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/10_Post/Sculpture_02.webp" data-lightbox="example-1" data-title="Sculpture 02">
-    <img class="example-image" src="/assets/images/10_Post/Sculpture_02.webp" alt="Lightbox, Thirty 3D Printed pieces, Coated with Sand">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Sculpture_02.webp" data-lightbox="example-1" data-title="Sculpture 02">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Sculpture_02.webp" alt="Lightbox, Thirty 3D Printed pieces, Coated with Sand">
   </a>
   <figcaption class="caption">Lightbox, Thirty 3D Printed pieces, Coated with Sand</figcaption>
 </figure>
@@ -291,7 +291,7 @@ For Emerging Exits, I introduced a physical element sourced from ESHRAQ. I creat
 Encountered without mediation, these objects invite interpretation. After watching the film, they acquire new meaning. The tension between these readings is something I want to preserve.
 
 <figure class="img-figure" align="center" style="max-width: 70%; margin: 1.25rem auto;">
-  <img src="/assets/images/10_Post/Sculpture_01.webp" alt="Sculpture 01">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Sculpture_01.webp" alt="Sculpture 01">
   <figcaption class="caption">Installation View - Emerging Exits (Arnhem, October 2025)</figcaption>
 </figure>
 
@@ -324,7 +324,7 @@ The behind-the-scenes video was composed of **five tiled views**, each revealing
 
 
 <figure class="img-figure" align="center" style="max-width: 70%; margin: 1.25rem auto;">
-  <img src="/assets/images/10_Post/BTS_Installation.webp" alt="BTS_Installation">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/BTS_Installation.webp" alt="BTS_Installation">
   <figcaption class="caption">Installation View - Emerging Exits Opening (Arnhem, October 2025)</figcaption>
 </figure>
 

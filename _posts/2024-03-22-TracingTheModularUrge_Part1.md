@@ -3,12 +3,12 @@ layout: post
 title: Tracing the Modular Urge - Part 1
 subtitle: References and Inspirations
 comments: false
-thumbnail-img: /assets/images/02_Post/Modulex_01.png
+thumbnail-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Modulex_01.png
 cover-img:
-    - /assets/images/02_Post/Modulex_01.png: " "
+    - https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Modulex_01.png: " "
 readtime: true
 nav-short: true
-preview: /images/01_HelloWorld/Module_Floor.jpg
+preview: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/01_HelloWorld/Module_Floor.jpg
 full-width: true
 # author: Ali Eslami
 ---
@@ -34,11 +34,11 @@ Introduced by the LEGO Group in 1963, Modulex was designed as a planning and arc
 Despite all the ambitions behind it, Modulex remained a niche product and slowly phased out from Lego's production line. 
 
 <figure class="img-figure" align="center">
-  <img src="/assets/images/02_Post/Modulex_01.png" alt="Modulex architectural planning tool">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Modulex_01.png" alt="Modulex architectural planning tool">
 </figure>
 
 <figure class="img-figure" align="center">
-  <img src="/assets/images/02_Post/Modulex_02.png" alt="Modulex Office calendar">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Modulex_02.png" alt="Modulex Office calendar">
   <figcaption class="caption">Modulex - Office calendar</figcaption>
 </figure>
 
@@ -49,12 +49,12 @@ Perhaps what strike me most about Modulex's premise was that it wanted to achiev
 Mindstorm extends Lego to a new realm of mechanism. by introducing robotic modules and a visual programming language it became not only a tool for learning robotics but also a valuable kit for quick prototyping innovative  engineering concepts. if you ever doubted my last sentence I'd recommend checking out [Brick Technology's Videos](https://www.youtube.com/@BrickTechnology/videos)
 
 <figure class="img-figure" align="center">
-  <img src="/assets/images/02_Post/Mindstorms_01.png" alt="Lego Mindstorms EV3 set">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Mindstorms_01.png" alt="Lego Mindstorms EV3 set">
   <figcaption class="caption">Lego Mindstorms EV3 set</figcaption>
 </figure>
 
 <figure class="img-figure" align="center">
-  <img src="/assets/images/02_Post/Lego_Robot.png" alt="Lego robot construction">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Lego_Robot.png" alt="Lego robot construction">
 </figure>
 
 In my opinion the most exciting aspect of Mindstorms is its transparency. you can look at a Lego robot and zoom in to see how everything is put together, each parts clearly communicates its function. it's as if you are looking both at the robot and its blueprint at the same time! a kind of open mindset in system design that gives it's user an in-depth and clear agency over the parts yet when you observe the behavior of the parts as a whole you can see the higher level as clear as the low levels.
@@ -66,7 +66,7 @@ One has to play Factorio with a bit of a cautious mind, because the satisfaction
 
 
 <figure class="img-figure" align="center">
-  <img src="/assets/images/02_Post/Factorio.png" alt="Factorio gameplay">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Factorio.png" alt="Factorio gameplay">
   <figcaption class="caption">Factorio factory production line</figcaption>
 </figure>
 
@@ -76,8 +76,8 @@ Factorio manages to lure you into an obsession with scale, maintenance and optim
 "Nier: Automata" stands out for its innovative take on character skill customization through its Chip System, a cleverly designed modular approach that fits perfectly with the game's identity and its overarching narrative. Players can tailor their android protagonists' abilities by equipping and combining different chips, each occupying a certain amount of memory space within the character's system. This setup exposes constraints that is inherent with computation directly at the player's identity. In Nier, who you are is what you can computationally afford!
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/02_Post/Nier.png" data-lightbox="example-1" data-title="Nier Automata: Chip system menu">
-    <img class="example-image" src="/assets/images/02_Post/Nier.png" alt="Nier Automata: Chip system menu"/>
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Nier.png" data-lightbox="example-1" data-title="Nier Automata: Chip system menu">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Nier.png" alt="Nier Automata: Chip system menu"/>
   </a>
   <figcaption class="caption">Nier Automata: Chip system menu</figcaption>
 </figure>
@@ -91,8 +91,8 @@ Factorio manages to lure you into an obsession with scale, maintenance and optim
 Gabbeh is a traditional type of Persian rug, known for its simplistic design and plush texture. Originating from the Fars province in southwest Iran, these rugs are handwoven by nomadic tribes.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/02_Post/Gabbeh_01.png" data-lightbox="example-1" data-title="Gabbeh traditional Persian rug">
-    <img class="example-image" src="/assets/images/02_Post/Gabbeh_01.png" alt="Gabbeh traditional Persian rug"/>
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Gabbeh_01.png" data-lightbox="example-1" data-title="Gabbeh traditional Persian rug">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Gabbeh_01.png" alt="Gabbeh traditional Persian rug"/>
   </a>
   <figcaption class="caption">Gabbeh traditional Persian rug</figcaption>
 </figure>
@@ -109,8 +109,8 @@ Gabbeh uses Modular tiles as a format for expression. This modularity allows t
 It's a type of decorative architectural element found in Islamic architecture, featuring a form of ornamented vaulting. The design is built up from a series of modular components, typically including niches and small projecting brackets. These components are combined in various ways to create intricate, three-dimensional patterns that play with light and shadow.
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="/assets/images/02_Post/Muqarnas.jpg" data-lightbox="example-1" data-title="Vault of the Jameh Mosque of Isfahan">
-    <img class="example-image" src="/assets/images/02_Post/Muqarnas.jpg" alt="Vault of the Jameh Mosque of Isfahan"/>
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Muqarnas.jpg" data-lightbox="example-1" data-title="Vault of the Jameh Mosque of Isfahan">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Muqarnas.jpg" alt="Vault of the Jameh Mosque of Isfahan"/>
   </a>
   <figcaption class="caption">Vault of the Jameh Mosque of Isfahan</figcaption>
 </figure>

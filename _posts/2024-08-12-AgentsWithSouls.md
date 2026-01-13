@@ -3,8 +3,8 @@ layout: post
 title: Agents with Souls
 subtitle: Devlog n.2
 comments: false
-thumbnail-img: /assets/images/05_Post/T_Agent_Walker_thumb.jpg
-cover-img: /assets/images/05_Post/T_Agent_UI_Cover.jpg  
+thumbnail-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/05_Post/T_Agent_Walker_thumb.jpg
+cover-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/05_Post/T_Agent_UI_Cover.jpg  
 readtime: true
 nav-short: true
 full-width: true
@@ -38,35 +38,35 @@ Below is a clip showing two of our agents in action.
 ## 1. Agent Core
 Every agent has a Core. a Core agent is just pure Core. It can bounce and roll on surfaces, making it a highly mobile agent. Its minimal size also allows for inspection of tight areas.
 <figure align="center">
-    <img src="\assets\images\05_Post\T_Agent_Core_thumb.jpg" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/05_Post/T_Agent_Core_thumb.jpg" alt="">
     <figcaption><i><center></center></i></figcaption>
 </figure>
 
 ## 2. Agent Walker
 With two robotic legs, this agent can walk, climb up stairs, etc. the Legs proceduarally adjust their angle on each step to align with the ground's slope.
 <figure align="center">
-    <img src="\assets\images\05_Post\T_Agent_Walker_thumb.jpg" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/05_Post/T_Agent_Walker_thumb.jpg" alt="">
     <figcaption><i><center></center></i></figcaption>
 </figure>
 
 ## 3. Agent Wheeler
 An agent on Kart. drives everywhere and can actually go very fast. Using the headlight makes it a good option for exploring dark models.
 <figure align="center">
-    <img src="\assets\images\05_Post\T_Agent_Wheeler_thumb.jpg" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/05_Post/T_Agent_Wheeler_thumb.jpg" alt="">
     <figcaption><i><center></center></i></figcaption>
 </figure>
 
 ## 4. Agent RTS
 Provides bird's view, similar to real time strategy cameras.
 <figure align="center">
-    <img src="\assets\images\05_Post\T_Agent_RTS.jpg" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/05_Post/T_Agent_RTS.jpg" alt="">
     <figcaption><i><center></center></i></figcaption>
 </figure>
 
 ## 5. Agent UI
 This agent is more abstract, simply interacts with the User Interface of Eshraq.
 <figure align="center">
-    <img src="\assets\images\05_Post\T_Agent_UI.jpg" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/05_Post/T_Agent_UI.jpg" alt="">
     <figcaption><i><center></center></i></figcaption>
 </figure>
 

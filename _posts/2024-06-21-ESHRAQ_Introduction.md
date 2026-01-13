@@ -3,8 +3,8 @@ layout: post
 title: Introduction to ESHRAQ
 subtitle: Devlog n.1
 comments: false
-thumbnail-img: /assets/images/04_Post/Eshraq_Logo.jpg
-cover-img: /assets/images/04_Post/Eshraq_Cover_post.jpg
+thumbnail-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/04_Post/Eshraq_Logo.jpg
+cover-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/04_Post/Eshraq_Cover_post.jpg
 readtime: true
 nav-short: true
 full-width: true
@@ -32,7 +32,7 @@ Over the past year, I've been focusing on learning `C++` to sharpen my coding sk
 In this project, computation is not merely about 0s and 1s, CPUs, and hardware but about a cognitive system where instructions, observations, and engagements with models can occur. This is why I envision this work as a dynamic process leading to unexpected outcomes.
 
 <figure align="center">
-    <img src="\assets\images\04_Post\Eshraq_Diagram.png" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/04_Post/Eshraq_Diagram.png" alt="">
 </figure>
 
 The emphasis is on exploring models emanated by the light of mechanisms, functions, and codes. Here, modularity plays an important role, not only for a more intuitive understanding of these models but also for allowing flexibility in rapidly iterating ideas, reducing the cost of implementation.
@@ -43,7 +43,7 @@ This interactive simulation serves as a foundation, hosting ideas and generating
 # Suhrawardi's Legacy
 Shahab al-Din Yahya ibn Habash Suhrawardi, often known as Suhrawardi, was a Persian philosopher who founded the school of Illuminationism. Born in 1154 in what is now Iran, Suhrawardi was a major figure in Islamic philosophy. His work combined elements of Neoplatonism, ancient Persian thought, and Islamic teachings, aiming to transcend mere rationality with a deeper, intuitive form of knowledge.
 
-![alt text](/assets/images/04_Post/Suhrawadi_Portrait.png){:height="50%" width="50%" style="display: block; margin: 0 auto;"}
+![alt text](https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/04_Post/Suhrawadi_Portrait.png){:height="50%" width="50%" style="display: block; margin: 0 auto;"}
 
 Suhrawardi's most significant contribution is his philosophy of "Ishraq" <span class="farsi">(اشراق)</span> or Illumination. He believed true understanding comes from an inner light and intuitive grasp, beyond logical reasoning. His revolutionary ideas blended mysticism with philosophy, greatly influencing later Islamic thinkers. Suhrawardi's writings, such as "The Philosophy of Illumination," explore these themes in depth.
 
@@ -52,14 +52,14 @@ Suhrawardi's most significant contribution is his philosophy of "Ishraq" <span c
 >  "Suhrawardī respected logic and discursive philosophy but nevertheless acknowledged the limitations in the application of reason alone as the means of discovering the truth. According to him what is required to apprehend completely the higher truth is illuminationist wisdom. Drawing from a deep mystical intuition, Suhrawardī compared the principles of logic and discursive reasoning with his findings through mystical vision, accepting only those elements of the former that could be harmonized with the latter. For Suhrawardī, reason, mystical experience and intellectual intuition constitute a single epistemological system and are reconcilable."
 *Nasr and Razavi, An Anthology of Philosophy in Persia (p.24)*
 
-<a class="example-image-link" href="\assets\images\04_Post\Eshraq_Cover.jpg" data-lightbox="example-1" data-title="">
-    <img class="example-image" src="\assets\images\04_Post\Eshraq_Cover.jpg" alt=""/>
+<a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/04_Post/Eshraq_Cover.jpg" data-lightbox="example-1" data-title="">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/04_Post/Eshraq_Cover.jpg" alt=""/>
 </a>
 
 Suhrawardi distinguished between "maahiat" <span class="farsi">(ماهیت)</span> or essence, and "vojūd" <span class="farsi">(وجود)</span> or existence. He proposed that essence is the fundamental nature of a thing, while existence is its actual manifestation. This mirrors the distinction in computational frameworks between functions (essence) and forms (existence). Just as Suhrawardi sought to bridge essence and existence through illumination, computational design in this context can connect underlying functions (w/ their underlying logics and codes) with their forms (w/ their bodies and materialities).
 
 <figure align="center">
-    <img src="\assets\images\04_Post\Duality.png" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/04_Post/Duality.png" alt="">
 </figure>
 
 Tragically, Suhrawardi's innovative ideas and mystical approach led to his execution in 1191. Despite his untimely death, his legacy endured, impacting various schools of thought within Islamic philosophy and beyond.

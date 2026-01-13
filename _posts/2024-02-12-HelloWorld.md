@@ -3,8 +3,8 @@ layout: post
 title: Hello World
 subtitle: Here's where it begin
 comments: false
-thumbnail-img: /assets/images/01_HelloWorld/Module_Wall_Floor.jpg
-cover-img: /assets/images/01_HelloWorld/Module_Wall_Floor.jpg
+thumbnail-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/01_HelloWorld/Module_Wall_Floor.jpg
+cover-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/01_HelloWorld/Module_Wall_Floor.jpg
 readtime: true
 nav-short: true
 full-width: true
@@ -40,5 +40,6 @@ In the meantime feel free to subscribe to stay in touch with new updates here:
 > Type A heavily dominates Type B
 
 ~~~
+
 
 ---

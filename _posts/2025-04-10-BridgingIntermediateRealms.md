@@ -3,8 +3,8 @@ layout: post
 title: Bridging Intermediate Realms
 subtitle: Devlog n.5
 comments: false
-thumbnail-img: /assets/images/08_Post/devlog_05_thumb.webp
-cover-img: /assets/images/06_Post/Cover.webp
+thumbnail-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/08_Post/devlog_05_thumb.webp
+cover-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/06_Post/Cover.webp
 readtime: true
 nav-short: true
 full-width: true
@@ -25,7 +25,7 @@ When Shahab al-Din Suhrawardi theorized about ʿālam al-mithāl – the world o
 Suhrawardi was not afraid to make such vast statements, which were steeped in religious and philosophical tradition and aligned to some degree with the theological realities of his era. Even so, they still led to his execution in 1191. These ideas continued to influence various schools of Islamic thought after his death, and appeared centuries later in Henry Corbin’s writings on the mundus imaginalis, as well as in the virtual models of Eshraq. 
 
 <figure align="center">
-    <img src="\assets\images\08_Post\devlog_05_A.png" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/08_Post/devlog_05_A.png" alt="">
     <figcaption><i><center></center></i></figcaption>
 </figure>
 
@@ -36,7 +36,7 @@ To say, on the other hand, that Eshraq aspires to enter a similar space or perfo
 The virtual models of Eshraq present an analogous world of images, which appears as an immersive nowhere land in its players' conscious experience, while also existing autonomously through its computational design. Eshraq is composed of virtual forms that players can encounter as a series of spatial and architectural mirages, which coalesce into a simulated realm suspended between the material and immaterial. 
 
 <figure align="center">
-    <img src="\assets\images\08_Post\devlog_05_B.png" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/08_Post/devlog_05_B.png" alt="">
     <figcaption><i><center></center></i></figcaption>
 </figure>
 

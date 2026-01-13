@@ -3,8 +3,8 @@ layout: post
 title: Ontologies & Diagrams
 subtitle: Devlog n.6
 comments: false
-thumbnail-img: /assets/images/09_Post/Thumb_09.jpg
-cover-img: /assets/images/06_Post/Cover.webp
+thumbnail-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/09_Post/Thumb_09.jpg
+cover-img: https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/06_Post/Cover.webp
 readtime: true
 nav-short: true
 full-width: true
