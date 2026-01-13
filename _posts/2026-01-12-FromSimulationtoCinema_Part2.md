@@ -140,7 +140,7 @@ At the same time, I am conscious of the historical moment we are in. Cultural in
 
 Still, this tension remains difficult to ignore. Over the years of living in the Netherlands, I have repeatedly observed a pattern in which institutions maintain an ethical posture through procedural correctness, while avoiding direct action. Responsibility is deferred, risk is minimized, and transparency becomes a substitute for engagement.
 
-This does not mean I see the situation in simple terms. I have experienced many powerful exhibitions in this museum as well. Those moments are rightly celebrated. But moments of hesitation, complicity, or withdrawal often pass without the same level of scrutiny.
+I don't mean to see the situation in simple terms. I have experienced many powerful exhibitions in this museum as well. Those moments are rightly celebrated. But moments of hesitation, complicity, or withdrawal often pass without the same level of attention.
 
 ---
 
