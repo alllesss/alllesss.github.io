@@ -182,9 +182,16 @@ The Amsterdam loop extends ESHRAQ into institutional space, not to offer critiqu
 
 Together, the Ziggurat loop and the Amsterdam loop form the first structural layer of a much larger project. What I presented here is not a finished film, but a foundational section. Over the coming period in 2026, I plan to expand ESHRAQ into a feature-length cinematic work, adding several new story loops that unfold across different historical, political, and mythological terrains. Each loop will further test how simulation, narrative, and ontology reshape one another.
 
+
+
 Alongside the film, I am also developing ESHRAQ as a growing installation format, with sculptural elements, spatial staging, and photographic works emerging from within the simulation itself. These outputs are not documentation, but parallel expressions of the same system.
 
 If you are interested to keep in touch with future updates, please feel free to subscribe to the newsletter below:
+
+<div class="newsletter-container">
+  <iframe class="newsletter-light" src="https://subscribe-forms.beehiiv.com/98b41477-d3cc-4d54-8cb4-0e47090403bb?slim=true" data-test-id="beehiiv-embed" height="55" frameborder="0" scrolling="no" style="background-color: transparent;"></iframe>
+  <iframe class="newsletter-dark" src="https://subscribe-forms.beehiiv.com/5fb0f457-e8b5-4482-98b3-df6902adb978?slim=true" data-test-id="beehiiv-embed" height="55" frameborder="0" scrolling="no" style="background-color: transparent;"></iframe>
+</div>
 
 
 

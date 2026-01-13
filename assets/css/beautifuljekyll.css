@@ -1827,3 +1827,55 @@ body.page-dark-mode .pdf-viewer .pdf-caption {
   border-top-color: #2B2A27;
   color: #E6E4D9;
 }
+
+/* Newsletter embed styling */
+.newsletter-container {
+  max-width: 500px;
+  width: 100%;
+  margin: 2.5rem auto;
+}
+
+.newsletter-container.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-container iframe {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 55px;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* Theme switching for newsletter embeds */
+.newsletter-light {
+  display: block;
+}
+
+.newsletter-dark {
+  display: none;
+}
+
+body.page-dark-mode .newsletter-light {
+  display: none;
+}
+
+body.page-dark-mode .newsletter-dark {
+  display: block;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .newsletter-container {
+    max-width: 100%;
+    margin: 2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-container {
+    margin: 1.5rem 0;
+  }
+}

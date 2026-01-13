@@ -10,7 +10,10 @@ title: About
 
 This website is built with [Jekyll](https://jekyllrb.com/), using customized version of the [Beautiful Jekyll](https://beautifuljekyll.com/) theme. It is hosted on GitHub.
 
-<p align="center"><iframe src="https://embeds.beehiiv.com/6a81e4ce-2c36-4fbb-8e38-c73fc8024b34?slim=true" data-test-id="beehiiv-embed" height="55" width="400" frameborder="0" scrolling="no" style="margin: 0; border-radius: 3px !important; background-color: transparent;"></iframe></p>
+<div class="newsletter-container">
+  <iframe class="newsletter-light" src="https://subscribe-forms.beehiiv.com/98b41477-d3cc-4d54-8cb4-0e47090403bb?slim=true" data-test-id="beehiiv-embed" height="55" frameborder="0" scrolling="no" style="background-color: transparent;"></iframe>
+  <iframe class="newsletter-dark" src="https://subscribe-forms.beehiiv.com/5fb0f457-e8b5-4482-98b3-df6902adb978?slim=true" data-test-id="beehiiv-embed" height="55" frameborder="0" scrolling="no" style="background-color: transparent;"></iframe>
+</div>
 
 
 <!-- Licence  -->
