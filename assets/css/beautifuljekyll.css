@@ -136,6 +136,7 @@ body::before {
   background-image: url("/assets/images/noise.png"); /* small seamless tile */
   background-repeat: repeat;
   background-size: 320px 320px; /* tune grain scale */
+  background-attachment: fixed;
   opacity: var(--grain-opacity);
   mix-blend-mode: soft-light;
   transform: translateZ(0); /* nudge onto GPU */
@@ -348,6 +349,7 @@ figure figcaption,
 html {
   font-size: 16px; /* 1rem = 16px */
   background-color: {{ site.page-col | default: "#FFFCF0" }};
+  background-attachment: fixed;
 }
 
 body {
@@ -356,6 +358,7 @@ body {
   color: {{ site.text-col | default: "#FFFFFF" }};
   position: relative;
   background-color: {{ site.page-col | default: "#FFFCF0" }};
+  background-attachment: fixed;
   {% if site.page-img %}
   background-image: url({{ site.page-img | relative_url }});
   background-attachment: fixed;
