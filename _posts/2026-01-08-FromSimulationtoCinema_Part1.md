@@ -335,3 +335,8 @@ The behind-the-scenes video was composed of **five tiled views**, each revealing
 Showing this twenty-minute section of ESHRAQ confirmed something important for me. **Cinema is not a secondary output of the simulation.** It is a generative force that reshapes its meaning and even ontology.
 
 *Next post: the second story loop, set in a modular Amsterdam.*
+
+<div class="newsletter-container centered">
+  <iframe src="https://alllesss.substack.com/embed" class="newsletter-iframe" frameborder="0" scrolling="no"></iframe>
+</div>
+

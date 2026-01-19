@@ -188,9 +188,8 @@ Alongside the film, I am also developing ESHRAQ as a growing installation format
 
 If you are interested to keep in touch with future updates, please feel free to subscribe to the newsletter below:
 
-<div class="newsletter-container">
-  <iframe class="newsletter-light" src="https://subscribe-forms.beehiiv.com/98b41477-d3cc-4d54-8cb4-0e47090403bb?slim=true" data-test-id="beehiiv-embed" height="55" frameborder="0" scrolling="no" style="background-color: transparent;"></iframe>
-  <iframe class="newsletter-dark" src="https://subscribe-forms.beehiiv.com/5fb0f457-e8b5-4482-98b3-df6902adb978?slim=true" data-test-id="beehiiv-embed" height="55" frameborder="0" scrolling="no" style="background-color: transparent;"></iframe>
+<div class="newsletter-container centered">
+  <iframe src="https://alllesss.substack.com/embed" class="newsletter-iframe" frameborder="0" scrolling="no"></iframe>
 </div>
 
 

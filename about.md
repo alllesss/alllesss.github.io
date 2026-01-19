@@ -6,14 +6,11 @@ title: About
 
 **ESHRAQ**, built in Unreal Engine, is a research project by Ali Eslami ( [ALLLESSS.com](https://alllesss.com/) ) inspired by Illuminationist philosophy, exploring modular systems and agency through computational models as a `cognitive playground`.
 
-
+<div class="newsletter-container centered">
+  <iframe src="https://alllesss.substack.com/embed" class="newsletter-iframe" frameborder="0" scrolling="no"></iframe>
+</div>
 
 This website is built with [Jekyll](https://jekyllrb.com/), using customized version of the [Beautiful Jekyll](https://beautifuljekyll.com/) theme. It is hosted on GitHub.
-
-<div class="newsletter-container">
-  <iframe class="newsletter-light" src="https://subscribe-forms.beehiiv.com/98b41477-d3cc-4d54-8cb4-0e47090403bb?slim=true" data-test-id="beehiiv-embed" height="55" frameborder="0" scrolling="no" style="background-color: transparent;"></iframe>
-  <iframe class="newsletter-dark" src="https://subscribe-forms.beehiiv.com/5fb0f457-e8b5-4482-98b3-df6902adb978?slim=true" data-test-id="beehiiv-embed" height="55" frameborder="0" scrolling="no" style="background-color: transparent;"></iframe>
-</div>
 
 
 <!-- Licence  -->
@@ -24,10 +21,15 @@ This website is built with [Jekyll](https://jekyllrb.com/), using customized ver
 # Contributors
 
 ## Ali Eslami
-Ali Eslami (b.1991) is an Iranian Artist based in Amsterdam. His work deals with long-term, practice-based research that builds and grows through speculative thinking and world-building.
-His work engages and plays with temporal and spatial investigations of memory, computation, human cognition, and emotions. Often results in the form of poetic engineering, seeking the potential that lies between the real and unreal.
+Ali Eslami (b.1991) is an Iranian-Dutch Artist based in Amsterdam. His work deals with long-term, practice-based research that builds and grows through speculative thinking and world-building.
+
+His work engages and plays with temporal and spatial investigations of memory, computation, human cognition, and emotions—often informed by non-Western philosophical frameworks, such as Suhrawardi's Illuminationism.
+This line of inquiry results in forms of poetic engineering that seek the potential lying between the real and the unreal.
+
 His engineering background and passion for video games nurtured an obsession with cybernetics and computation and continue to build his curiosity towards the shifting roles of form and function that create virtual worlds.
-Often utilizing various mediums such as VR, Film, Writing, Installation, and performance lectures. He is an alumni of Rijksakademie van Beeldende Kunsten Amsterdam 2021-23.In 2016, his VR project won the IDFA DocLab Award for “Best Immersive Non-fiction”. and in 2020 the Golden Calf for Best Interactive at Nederlands Film Festival with fellow artist Mamali Shafahi for Nerd_Funk project. In 2023, he received the Cremer Prize from LWL-Museum Münster. 
+He works across various mediums, including VR, Interactive Simulation, film, writing, installation, and performance lectures.
+
+Eslami is an alumnus of the Rijksakademie van Beeldende Kunsten (2021–23). His work has received awards including the IDFA DocLab Award for Best Immersive Non-fiction (2016), the Golden Calf for Best Interactive (2020, with Mamali Shafahi), the Cremer Prize from LWL-Museum Münster (2023) and Wendy-Gutman Prize (2025).
 
 ## Will Scarlett
 [Will Scarlett](https://waverockwave.neocities.org/) is a writer and researcher interested in the uncertain spaces between sensation and the surrounding world. He holds a PhD in Anthropology from the New School for Social Research, where he explored experiences of presence in virtual and elemental environments. His writing appears in academic journals such as the Journal of the American Academy of Religion, and para-academic platforms such as Future Studies. He led seminars at the New Centre for Research and Practice titled "Notes from Immediate Irreality" and "Being There and Not There." He presented his research at the Event Lab at University of Barcelona, the American Anthropological Association Annual Meeting, and the Venice Architecture Biennale.

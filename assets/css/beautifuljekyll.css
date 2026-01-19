@@ -1830,9 +1830,13 @@ body.page-dark-mode .pdf-viewer .pdf-caption {
 
 /* Newsletter embed styling */
 .newsletter-container {
-  max-width: 500px;
   width: 100%;
+  max-width: 540px;
   margin: 2.5rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .newsletter-container.centered {
@@ -1841,12 +1845,26 @@ body.page-dark-mode .pdf-viewer .pdf-caption {
   align-items: center;
 }
 
-.newsletter-container iframe {
+.newsletter-iframe {
   width: 100% !important;
   max-width: 100% !important;
-  height: 55px;
+  height: auto !important;
+  min-height: 320px;
   border: none !important;
+  border-radius: 12px !important;
+  display: block;
   background-color: transparent !important;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 600px) {
+  .newsletter-container {
+    padding: 0 0.75rem;
+  }
+  
+  .newsletter-iframe {
+    min-height: 280px;
+  }
 }
 
 /* Theme switching for newsletter embeds */
