@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    
+    <title>ESHRAQ</title>
+    
+    
+    <description>Devlog and random thoughts</description>
+    
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>From Simulation to Cinema - Part 2</title>
+        <description>
+          Second story loop, modular Amsterdam - 
+          The Second Loop: Amsterdam, Museums, and Lost Agency Alongside the Ziggurat loop, the film unfolds a second story loop set in a modular version of Amsterdam. This loop shifts ESHRAQ outward, into institutional space, urban architecture, and questions of agency. Building a Modular Amsterdam The second loop follows the soul...
+        </description>
+        <pubDate>Mon, 12 Jan 2026 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2026-01-12-FromSimulationtoCinema_Part2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2026-01-12-FromSimulationtoCinema_Part2/</guid>
+      </item>
+    
+      <item>
+        <title>From Simulation to Cinema - Part 1</title>
+        <description>
+          Building the first cinematic loop of ESHRAQ - 
+          Cinema, Simulation, and Ontology It’s been a while since my last post here. I spent some time recently redesigning this blog to make things more streamlined. With this new layout comes a more comprehensive report of what I have been working on during the second half of 2025. During that...
+        </description>
+        <pubDate>Thu, 08 Jan 2026 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2026-01-08-FromSimulationtoCinema_Part1/</link>
+        <guid isPermaLink="true">http://localhost:4000/2026-01-08-FromSimulationtoCinema_Part1/</guid>
+      </item>
+    
+      <item>
+        <title>Ontologies &amp; Diagrams</title>
+        <description>
+          Devlog n.6 - 
+          In this devlog, I’m sharing some diagrams that lay out the core ontology behind ESHRAQ. It’s a foundational part of the project that I’ve been focused on for most of the past six months. A big thanks to Will Scarlet—his thoughts and feedback have been a major influence during this...
+        </description>
+        <pubDate>Mon, 05 May 2025 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2025-05-05-Ontologies/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025-05-05-Ontologies/</guid>
+      </item>
+    
+      <item>
+        <title>Bridging Intermediate Realms</title>
+        <description>
+          Devlog n.5 - 
+          Introduction to Will Scarlett I’m thrilled to introduce Will Scarlett, an inspiring thinker and collaborator whose insights have significantly contributed to the trajectory of Eshraq’s conceptual and philosophical development. Over the past few months, Will and I have engaged in deep conversations about immaterialism, immersion, and the complex ontologies that...
+        </description>
+        <pubDate>Thu, 10 Apr 2025 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2025-04-10-BridgingIntermediateRealms/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025-04-10-BridgingIntermediateRealms/</guid>
+      </item>
+    
+      <item>
+        <title>2024 Updates Recap</title>
+        <description>
+          Devlog n.4 - 
+          Video Recap To recap my 2024’s progress with ESHRAQ, I thought it’s best to do it in a video format and just walk through different changes, big and small and load up a few models to demonstrate them. it ended up a bit longer than I expected but I just...
+        </description>
+        <pubDate>Thu, 28 Nov 2024 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2024-11-28-Devlog04/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024-11-28-Devlog04/</guid>
+      </item>
+    
+      <item>
+        <title>Canvas as a Digital Milieu</title>
+        <description>
+          Devlog n.3 - 
+          Intro There’s something powerful about blank spaces—a stadium without an audience, an empty text file, a blank page. It’s the potential these spaces hold that brings forth the essence of what might be. In Eshraq, the Canvas is this space-time, the framework that holds and shapes the computational model. Imagine...
+        </description>
+        <pubDate>Wed, 04 Sep 2024 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2024-09-04-Canvas/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024-09-04-Canvas/</guid>
+      </item>
+    
+      <item>
+        <title>Agents with Souls</title>
+        <description>
+          Devlog n.2 - 
+          Ontology In the past month, among many updates to Eshraq, the most prominent was the introduction of Agents. In this short post, I’ll explain a bit about them. In Eshraq, we have Souls and Agents. These two, when bound together, form a Player. An Agent is a machine or an...
+        </description>
+        <pubDate>Mon, 12 Aug 2024 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2024-08-12-AgentsWithSouls/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024-08-12-AgentsWithSouls/</guid>
+      </item>
+    
+      <item>
+        <title>Introduction to ESHRAQ</title>
+        <description>
+          Devlog n.1 - 
+          ESHARQ - Introduction I’m excited to share the initial phase of my new project, titled “ESHRAQ” (اشراق), meaning illumination. The name “ESHRAQ” is inspired by the Persian philosopher Shahab al-Din Suhrawardi (b. 1154) and his masterpiece, “Hikmat al Eshraq” (The Philosophy of Illumination). Suhrawardi’s work explores fascinating concepts of light,...
+        </description>
+        <pubDate>Fri, 21 Jun 2024 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2024-06-21-ESHRAQ_Introduction/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024-06-21-ESHRAQ_Introduction/</guid>
+      </item>
+    
+      <item>
+        <title>Tracing the Modular Urge - Part 3</title>
+        <description>
+          REBOOT - 
+          &amp;gt; Close your eyes &amp;gt; Think of a dot &amp;gt; It’s never the same dot &amp;gt; keep it so hard &amp;gt; no matter hard you try ,.--.,_ .’`-.,, ‘. ,’ `. `, ,/ `. \ // \ \ // \ \ // \ , / | , | |/ .....
+        </description>
+        <pubDate>Thu, 11 Apr 2024 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2024-04-11-TracingTheModularUrge_Part3/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024-04-11-TracingTheModularUrge_Part3/</guid>
+      </item>
+    
+      <item>
+        <title>Tracing the Modular Urge - Part 2</title>
+        <description>
+          Limbo Spaces - 
+          Limbo spaces [2021-22] As an artist and engineer working primarily with Unreal Engine, I tend to use it not only for my work as a medium to build simulations and VR experiences but also to visualize upcoming exhibitions. This helped me to get a feel of the space and use...
+        </description>
+        <pubDate>Sat, 23 Mar 2024 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2024-03-23-TracingTheModularUrge_Part2/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024-03-23-TracingTheModularUrge_Part2/</guid>
+      </item>
+    
+      <item>
+        <title>Tracing the Modular Urge - Part 1</title>
+        <description>
+          References and Inspirations - 
+          Tracing the Modular urge Before anything, I want to share a bit of background about this new initiative which shamefully I have no proper title for yet! I chose “ModularX” the most bland and generic name as a placeholder just to have something to refer to. hopefully no god will...
+        </description>
+        <pubDate>Fri, 22 Mar 2024 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2024-03-22-TracingTheModularUrge_Part1/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024-03-22-TracingTheModularUrge_Part1/</guid>
+      </item>
+    
+      <item>
+        <title>Hello World</title>
+        <description>
+          Here&apos;s where it begin - 
+          Hello It’s been over 3 years since I had a growing interest in Modularity and fragmentation. I’m starting to take this idea a bit more serious going forward. The purpose of this blog is simply to share my thoughts, doubts and ideas that develop over the course of this research....
+        </description>
+        <pubDate>Mon, 12 Feb 2024 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000/2024-02-12-HelloWorld/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024-02-12-HelloWorld/</guid>
+      </item>
+    
+  </channel>
+</rss>

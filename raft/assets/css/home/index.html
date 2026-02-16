@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  
+
+  <title>ESHRAQ</title>
+
+  
+  
+  <meta name="author" content="Ali Eslami">
+  
+
+  <meta name="description" content="{{ content }} {% assign posts = paginator.posts | default: site.posts %} {% for post in posts %} {%- capture thumbnail -%} {% if post.thumbnail-img %} {{ post.thumbnail-img }} {% elsif post.cover-img %} {% if post.cover-img.first %} {{ post.cover-img[0].first.first }} {% else %} {{ post.cover-img }} {% endif %} {%...">
+
+  
+  <meta name="color-scheme" content="dark light">
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="ESHRAQ" href="http://localhost:4000/feed.xml">
+  
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX3VKN2EYV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CX3VKN2EYV');
+</script>
+
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+      
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+      <link rel="stylesheet" href="/assets/css/lightbox.css">
+    
+      <link rel="stylesheet" href="/assets/css/gruvbox.css">
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/skin-switch.css">
+    
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="ESHRAQ">
+  <link rel="preload" as="image" href="">
+
+  <meta property="og:title" content="ESHRAQ">
+  <meta property="og:description" content="{{ content }} {% assign posts = paginator.posts | default: site.posts %} {% for post in posts %} {%- capture thumbnail -%} {% if post.thumbnail-img %} {{ post.thumbnail-img }} {% elsif post.cover-img %} {% if post.cover-img.first %} {{ post.cover-img[0].first.first }} {% else %} {{ post.cover-img }} {% endif %} {%...">
+
+  
+  <meta property="og:image" content="http://localhost:4000/assets/img/avatar-icon.png">
+  
+
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4000/assets/css/home/">
+  <link rel="canonical" href="http://localhost:4000/assets/css/home/">
+  
+
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="ESHRAQ">
+  <meta property="twitter:description" content="{{ content }} {% assign posts = paginator.posts | default: site.posts %} {% for post in posts %} {%- capture thumbnail -%} {% if post.thumbnail-img %} {{ post.thumbnail-img }} {% elsif post.cover-img %} {% if post.cover-img.first %} {{ post.cover-img[0].first.first }} {% else %} {{ post.cover-img }} {% endif %} {%...">
+
+  
+  <meta name="twitter:image" content="http://localhost:4000/assets/img/avatar-icon.png">
+  
+
+  
+
+
+  
+
+  
+  
+  <link rel="icon" href="/favicon.ico" />
+  
+
+  
+
+</head>
+
+
+<body class="page-dark-mode">
+  <script>
+    (function() {
+      try {
+        var v = localStorage.getItem('bj-dark-mode');
+        if (v === 'false') {
+          document.body.classList.remove('page-dark-mode');
+          document.documentElement.classList.remove('page-dark-mode');
+        } else {
+          document.documentElement.classList.add('page-dark-mode');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-short-permanent"><a class="navbar-brand" href="http://localhost:4000/">ESHRAQ &nbsp; <span class="farsi">اشــراق</span></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-search-link" href="#" title="Search">
+            <span id="nav-search-icon" class="fa fa-search"></span>
+            <span id="nav-search-text">Search</span>
+          </a>
+        </li></ul>
+  </div>
+
+  
+  
+  <div id="change-skin" title="Toggle Night Mode">
+  <span class="skin-btn dark-mode">🌙</span>
+  <span class="skin-btn light-mode">☀️</span>
+</div>
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="http://localhost:4000/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/avatar-icon.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    var searchjson = '[ \
+       \
+        { \
+          "title"    : "From Simulation to Cinema - Part 2", \
+          "desc"     : "From Simulation to Cinema - Part 2", \
+          "category" : "", \
+          "url"      : "/2026-01-12-FromSimulationtoCinema_Part2/", \
+          "date"     : "January 12, 2026" \
+        }, \
+       \
+        { \
+          "title"    : "From Simulation to Cinema - Part 1", \
+          "desc"     : "From Simulation to Cinema - Part 1", \
+          "category" : "", \
+          "url"      : "/2026-01-08-FromSimulationtoCinema_Part1/", \
+          "date"     : "January  8, 2026" \
+        }, \
+       \
+        { \
+          "title"    : "Ontologies &amp; Diagrams", \
+          "desc"     : "Ontologies &amp; Diagrams", \
+          "category" : "", \
+          "url"      : "/2025-05-05-Ontologies/", \
+          "date"     : "May  5, 2025" \
+        }, \
+       \
+        { \
+          "title"    : "Bridging Intermediate Realms", \
+          "desc"     : "Bridging Intermediate Realms", \
+          "category" : "", \
+          "url"      : "/2025-04-10-BridgingIntermediateRealms/", \
+          "date"     : "April 10, 2025" \
+        }, \
+       \
+        { \
+          "title"    : "2024 Updates Recap", \
+          "desc"     : "2024 Updates Recap", \
+          "category" : "", \
+          "url"      : "/2024-11-28-Devlog04/", \
+          "date"     : "November 28, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Canvas as a Digital Milieu", \
+          "desc"     : "Canvas as a Digital Milieu", \
+          "category" : "", \
+          "url"      : "/2024-09-04-Canvas/", \
+          "date"     : "September  4, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Agents with Souls", \
+          "desc"     : "Agents with Souls", \
+          "category" : "", \
+          "url"      : "/2024-08-12-AgentsWithSouls/", \
+          "date"     : "August 12, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Introduction to ESHRAQ", \
+          "desc"     : "Introduction to ESHRAQ", \
+          "category" : "", \
+          "url"      : "/2024-06-21-ESHRAQ_Introduction/", \
+          "date"     : "June 21, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Tracing the Modular Urge - Part 3", \
+          "desc"     : "Tracing the Modular Urge - Part 3", \
+          "category" : "", \
+          "url"      : "/2024-04-11-TracingTheModularUrge_Part3/", \
+          "date"     : "April 11, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Tracing the Modular Urge - Part 2", \
+          "desc"     : "Tracing the Modular Urge - Part 2", \
+          "category" : "", \
+          "url"      : "/2024-03-23-TracingTheModularUrge_Part2/", \
+          "date"     : "March 23, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Tracing the Modular Urge - Part 1", \
+          "desc"     : "Tracing the Modular Urge - Part 1", \
+          "category" : "", \
+          "url"      : "/2024-03-22-TracingTheModularUrge_Part1/", \
+          "date"     : "March 22, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Hello World", \
+          "desc"     : "Hello World", \
+          "category" : "", \
+          "url"      : "/2024-02-12-HelloWorld/", \
+          "date"     : "February 12, 2024" \
+        }, \
+       \
+       \
+        { \
+          "title"    : "About", \
+          "desc"     : "About", \
+          "category" : "page", \
+          "url"      : "/about/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "", \
+          "desc"     : "", \
+          "category" : "page", \
+          "url"      : "/assets/css/home/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "PROCESS LOG", \
+          "desc"     : "PROCESS LOG", \
+          "category" : "page", \
+          "url"      : "/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "", \
+          "desc"     : "", \
+          "category" : "page", \
+          "url"      : "/links/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Tag Index", \
+          "desc"     : "Tag Index", \
+          "category" : "page", \
+          "url"      : "/tags/", \
+          "date"     : "January 1, 1970" \
+        } \
+       \
+    ]';
+    searchjson = JSON.parse(searchjson);
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: searchjson
+    });
+  </script>
+</div>
+
+
+
+
+
+  
+
+
+
+<header class="header-section ">
+<div class="intro-header ">
+  
+  
+</div>
+
+
+
+</header>
+
+
+<main class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+      
+
+      
+
+
+
+<header class="header-section ">
+<div class="intro-header ">
+  
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="page-heading">
+          <h1>About</h1>
+          
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+
+</header>
+
+
+<main class=" container-md ">
+  <div class="row">
+    <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
+      
+
+      <p><strong>ESHRAQ</strong>, built in Unreal Engine, is a research project by Ali Eslami ( <a href="https://alllesss.com/">ALLLESSS.com</a> ) inspired by Illuminationist philosophy, exploring modular systems and agency through computational models as a <code class="language-plaintext highlighter-rouge">cognitive playground</code>.</p>
+
+<div class="newsletter-container centered">
+  <iframe src="https://alllesss.substack.com/embed" class="newsletter-iframe" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<p>This website is built with <a href="https://jekyllrb.com/">Jekyll</a>, using customized version of the <a href="https://beautifuljekyll.com/">Beautiful Jekyll</a> theme. It is hosted on GitHub.</p>
+
+<!-- Licence  -->
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><span property="dct:title">All the content in this blog</span> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /></a></p>
+
+<hr />
+<h1 id="contributors">Contributors</h1>
+
+<h2 id="ali-eslami">Ali Eslami</h2>
+<p>Ali Eslami (b.1991) is an Iranian-Dutch Artist based in Amsterdam. His work deals with long-term, practice-based research that builds and grows through speculative thinking and world-building.</p>
+
+<p>His work engages and plays with temporal and spatial investigations of memory, computation, human cognition, and emotions—often informed by non-Western philosophical frameworks, such as Suhrawardi’s Illuminationism.
+This line of inquiry results in forms of poetic engineering that seek the potential lying between the real and the unreal.</p>
+
+<p>His engineering background and passion for video games nurtured an obsession with cybernetics and computation and continue to build his curiosity towards the shifting roles of form and function that create virtual worlds.
+He works across various mediums, including VR, Interactive Simulation, film, writing, installation, and performance lectures.</p>
+
+<p>Eslami is an alumnus of the Rijksakademie van Beeldende Kunsten (2021–23). His work has received awards including the IDFA DocLab Award for Best Immersive Non-fiction (2016), the Golden Calf for Best Interactive (2020, with Mamali Shafahi), the Cremer Prize from LWL-Museum Münster (2023) and Wendy-Gutman Prize (2025).</p>
+
+<h2 id="will-scarlett">Will Scarlett</h2>
+<p><a href="https://waverockwave.neocities.org/">Will Scarlett</a> is a writer and researcher interested in the uncertain spaces between sensation and the surrounding world. He holds a PhD in Anthropology from the New School for Social Research, where he explored experiences of presence in virtual and elemental environments. His writing appears in academic journals such as the Journal of the American Academy of Religion, and para-academic platforms such as Future Studies. He led seminars at the New Centre for Research and Practice titled “Notes from Immediate Irreality” and “Being There and Not There.” He presented his research at the Event Lab at University of Barcelona, the American Anthropological Association Annual Meeting, and the Venice Architecture Biennale.</p>
+
+
+
+      
+
+      
+
+    </div>
+  </div>
+</main>
+
+
+
+
+<!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+<ul class="posts-list list-unstyled" role="list">
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2026-01-12-FromSimulationtoCinema_Part2/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/11_Post/Thumb.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2026-01-12-FromSimulationtoCinema_Part2/">
+        <h2 class="post-title">From Simulation to Cinema - Part 2</h2>
+
+        
+          <h3 class="post-subtitle">
+          Second story loop, modular Amsterdam
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        January 12, 2026
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2026-01-12-FromSimulationtoCinema_Part2/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/11_Post/Thumb.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2026-01-08-FromSimulationtoCinema_Part1/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Thumb_Rocket.webp" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2026-01-08-FromSimulationtoCinema_Part1/">
+        <h2 class="post-title">From Simulation to Cinema - Part 1</h2>
+
+        
+          <h3 class="post-subtitle">
+          Building the first cinematic loop of ESHRAQ
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        January 8, 2026
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2026-01-08-FromSimulationtoCinema_Part1/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Thumb_Rocket.webp" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2025-05-05-Ontologies/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/09_Post/Thumb_09.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2025-05-05-Ontologies/">
+        <h2 class="post-title">Ontologies & Diagrams</h2>
+
+        
+          <h3 class="post-subtitle">
+          Devlog n.6
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        May 5, 2025
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2025-05-05-Ontologies/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/09_Post/Thumb_09.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2025-04-10-BridgingIntermediateRealms/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/08_Post/devlog_05_thumb.webp" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2025-04-10-BridgingIntermediateRealms/">
+        <h2 class="post-title">Bridging Intermediate Realms</h2>
+
+        
+          <h3 class="post-subtitle">
+          Devlog n.5
+          </h3>
+        
+      </a>
+
+      
+        <span class="post-author">By <strong>Will Scarlett</strong></span>
+      
+      <p class="post-meta">
+        
+        April 10, 2025
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2025-04-10-BridgingIntermediateRealms/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/08_Post/devlog_05_thumb.webp" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2024-11-28-Devlog04/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/07_Post/devlog04_screenshot_03.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2024-11-28-Devlog04/">
+        <h2 class="post-title">2024 Updates Recap</h2>
+
+        
+          <h3 class="post-subtitle">
+          Devlog n.4
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        November 28, 2024
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2024-11-28-Devlog04/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/07_Post/devlog04_screenshot_03.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2024-09-04-Canvas/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/06_Post/Title.webp" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2024-09-04-Canvas/">
+        <h2 class="post-title">Canvas as a Digital Milieu</h2>
+
+        
+          <h3 class="post-subtitle">
+          Devlog n.3
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        September 4, 2024
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2024-09-04-Canvas/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/06_Post/Title.webp" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2024-08-12-AgentsWithSouls/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/05_Post/T_Agent_Walker_thumb.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2024-08-12-AgentsWithSouls/">
+        <h2 class="post-title">Agents with Souls</h2>
+
+        
+          <h3 class="post-subtitle">
+          Devlog n.2
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        August 12, 2024
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2024-08-12-AgentsWithSouls/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/05_Post/T_Agent_Walker_thumb.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2024-06-21-ESHRAQ_Introduction/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/04_Post/Eshraq_Logo.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2024-06-21-ESHRAQ_Introduction/">
+        <h2 class="post-title">Introduction to ESHRAQ</h2>
+
+        
+          <h3 class="post-subtitle">
+          Devlog n.1
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        June 21, 2024
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2024-06-21-ESHRAQ_Introduction/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/04_Post/Eshraq_Logo.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2024-04-11-TracingTheModularUrge_Part3/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/03_Post/01_Homa_Cover.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2024-04-11-TracingTheModularUrge_Part3/">
+        <h2 class="post-title">Tracing the Modular Urge - Part 3</h2>
+
+        
+          <h3 class="post-subtitle">
+          REBOOT
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        April 11, 2024
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2024-04-11-TracingTheModularUrge_Part3/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/03_Post/01_Homa_Cover.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2024-03-23-TracingTheModularUrge_Part2/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/01_HelloWorld/Module_Floor.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2024-03-23-TracingTheModularUrge_Part2/">
+        <h2 class="post-title">Tracing the Modular Urge - Part 2</h2>
+
+        
+          <h3 class="post-subtitle">
+          Limbo Spaces
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        March 23, 2024
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2024-03-23-TracingTheModularUrge_Part2/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/01_HelloWorld/Module_Floor.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2024-03-22-TracingTheModularUrge_Part1/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Modulex_01.png" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2024-03-22-TracingTheModularUrge_Part1/">
+        <h2 class="post-title">Tracing the Modular Urge - Part 1</h2>
+
+        
+          <h3 class="post-subtitle">
+          References and Inspirations
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        March 22, 2024
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2024-03-22-TracingTheModularUrge_Part1/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/02_Post/Modulex_01.png" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+  <li class="post-preview">
+    <article>
+      
+
+      
+      
+      <div class="post-image post-image-normal">
+        <a href="http://localhost:4000/2024-02-12-HelloWorld/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/01_HelloWorld/Module_Wall_Floor.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+      
+
+      <a href="http://localhost:4000/2024-02-12-HelloWorld/">
+        <h2 class="post-title">Hello World</h2>
+
+        
+          <h3 class="post-subtitle">
+          Here's where it begin
+          </h3>
+        
+      </a>
+
+      
+      <p class="post-meta">
+        
+        February 12, 2024
+      </p>
+
+      
+      <div class="post-image post-image-small">
+        <a href="http://localhost:4000/2024-02-12-HelloWorld/" aria-label="Thumbnail">
+          <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/01_HelloWorld/Module_Wall_Floor.jpg" alt="Post thumbnail">
+        </a>
+      </div>
+      
+
+      
+
+      
+
+    </article>
+  </li>
+  
+</ul>
+
+
+
+
+      
+
+      
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="mailto:alless0@outlook.com" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/alllesss" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.instagram.com/alless0" title="Instagram">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Instagram</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Ali Eslami
+        &nbsp;&bull;&nbsp;
+      
+      2026
+
+      
+
+      
+
+      
+
+      </p>
+      <p class="text-muted newsletter-link text-center"><a href="https://alllesss.substack.com/embed">Subscribe</a> to newsletter</p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+        if (typeof jQuery == 'undefined') {
+          document.write('<script src="/assets/js/lightbox-plus-jquery.js"></scr' + 'ipt>');
+        }
+      </script>
+    
+  
+
+
+
+  
+    <script src="/assets/js/noise-spotlight.js"></script>
+  
+
+
+
+
+
+
+
+  <script src="/assets/js/lightbox-plus-jquery.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        }
+      ]
+    },
+    {
+      "name": "post",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string"
+        },
+        {
+          "title": "title",
+          "name": "title",
+          "type": "datetime"
+        },
+        {
+          "title": "subtitle",
+          "name": "subtitle",
+          "type": "string"
+        },
+        {
+          "title": "comments",
+          "name": "comments",
+          "type": "boolean"
+        },
+        {
+          "title": "thumbnail-img",
+          "name": "thumbnail-img",
+          "type": "string"
+        },
+        {
+          "title": "cover-img",
+          "name": "cover-img",
+          "type": "block",
+          "fields": [
+            {
+              "title": "0",
+              "name": "0",
+              "type": "fields",
+              "fields": [
+                {
+                  "title": "/assets/images/02_Post/Modulex_01.png",
+                  "name": "/assets/images/02_Post/Modulex_01.png",
+                  "type": "image"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "readtime",
+          "name": "readtime",
+          "type": "boolean"
+        },
+        {
+          "title": "nav-short",
+          "name": "nav-short",
+          "type": "boolean"
+        },
+        {
+          "title": "preview",
+          "name": "preview",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "jekyll",
+  "frontMatter.content.publicFolder": "assets",
+  "frontMatter.preview.host": "http://localhost:4000",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "drafts",
+      "path": "[[workspace]]/_drafts"
+    },
+    {
+      "title": "posts",
+      "path": "[[workspace]]/_posts"
+    },
+    {
+      "title": "_posts",
+      "path": "[[workspace]]/_posts"
+    }
+  ]
+}

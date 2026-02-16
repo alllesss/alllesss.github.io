@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  
+
+  
+
+  
+
+  <title>From Simulation to Cinema - Part 1 | ESHRAQ</title>
+
+  
+  
+  <meta name="author" content="Ali Eslami">
+  
+
+  <meta name="description" content="Building the first cinematic loop of ESHRAQ">
+
+  
+  <meta name="color-scheme" content="dark light">
+
+  
+
+  
+  <link rel="alternate" type="application/rss+xml" title="ESHRAQ" href="http://localhost:4000/feed.xml">
+  
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX3VKN2EYV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CX3VKN2EYV');
+</script>
+
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    
+      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+
+
+    
+      
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+
+    
+      
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/bootstrap-social.css">
+    
+      <link rel="stylesheet" href="/assets/css/beautifuljekyll.css">
+    
+      <link rel="stylesheet" href="/assets/css/lightbox.css">
+    
+      <link rel="stylesheet" href="/assets/css/gruvbox.css">
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="/assets/css/skin-switch.css">
+    
+  
+
+  
+  
+  
+
+  
+
+  
+  <meta property="og:site_name" content="ESHRAQ">
+  <link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Cover_Rocket.webp">
+
+  <meta property="og:title" content="From Simulation to Cinema - Part 1 | ESHRAQ">
+  <meta property="og:description" content="Building the first cinematic loop of ESHRAQ">
+
+  
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Cover_Rocket.webp">
+  
+
+  
+  <meta property="og:type" content="article">
+  
+  <meta property="og:article:author" content="Ali Eslami">
+  
+  <meta property="og:article:published_time" content="2026-01-08T00:00:00-05:00">
+  <meta property="og:url" content="http://localhost:4000/2026-01-08-FromSimulationtoCinema_Part1/">
+  <link rel="canonical" href="http://localhost:4000/2026-01-08-FromSimulationtoCinema_Part1/">
+  
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <meta name="twitter:site" content="@">
+  <meta name="twitter:creator" content="@">
+
+  <meta property="twitter:title" content="From Simulation to Cinema - Part 1 | ESHRAQ">
+  <meta property="twitter:description" content="Building the first cinematic loop of ESHRAQ">
+
+  
+  <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Cover_Rocket.webp">
+  
+
+  
+
+
+  
+
+  
+  
+  <link rel="icon" href="/favicon.ico" />
+  
+
+  
+
+</head>
+
+
+<body class="page-dark-mode">
+  <script>
+    (function() {
+      try {
+        var v = localStorage.getItem('bj-dark-mode');
+        if (v === 'false') {
+          document.body.classList.remove('page-dark-mode');
+          document.documentElement.classList.remove('page-dark-mode');
+        } else {
+          document.documentElement.classList.add('page-dark-mode');
+        }
+      } catch(e) {}
+    })();
+  </script>
+  
+
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top navbar-custom top-nav-short-permanent"><a class="navbar-brand" href="http://localhost:4000/">ESHRAQ &nbsp; <span class="farsi">اشــراق</span></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-navbar">
+    <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-search-link" href="#" title="Search">
+            <span id="nav-search-icon" class="fa fa-search"></span>
+            <span id="nav-search-text">Search</span>
+          </a>
+        </li></ul>
+  </div>
+
+  
+  
+  <div id="change-skin" title="Toggle Night Mode">
+  <span class="skin-btn dark-mode">🌙</span>
+  <span class="skin-btn light-mode">☀️</span>
+</div>
+
+  
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        <a href="http://localhost:4000/">
+          <img alt="Navigation bar avatar" class="avatar-img" src="/assets/img/avatar-icon.png" />
+        </a>
+      </div>
+    </div>
+  
+
+</nav>
+
+
+
+<div id="beautifuljekyll-search-overlay">
+
+  <div id="nav-search-exit" title="Exit search">✕</div>
+  <input type="text" id="nav-search-input" placeholder="Search">
+  <ul id="search-results-container"></ul>
+  
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    var searchjson = '[ \
+       \
+        { \
+          "title"    : "From Simulation to Cinema - Part 2", \
+          "desc"     : "From Simulation to Cinema - Part 2", \
+          "category" : "", \
+          "url"      : "/2026-01-12-FromSimulationtoCinema_Part2/", \
+          "date"     : "January 12, 2026" \
+        }, \
+       \
+        { \
+          "title"    : "From Simulation to Cinema - Part 1", \
+          "desc"     : "From Simulation to Cinema - Part 1", \
+          "category" : "", \
+          "url"      : "/2026-01-08-FromSimulationtoCinema_Part1/", \
+          "date"     : "January  8, 2026" \
+        }, \
+       \
+        { \
+          "title"    : "Ontologies &amp; Diagrams", \
+          "desc"     : "Ontologies &amp; Diagrams", \
+          "category" : "", \
+          "url"      : "/2025-05-05-Ontologies/", \
+          "date"     : "May  5, 2025" \
+        }, \
+       \
+        { \
+          "title"    : "Bridging Intermediate Realms", \
+          "desc"     : "Bridging Intermediate Realms", \
+          "category" : "", \
+          "url"      : "/2025-04-10-BridgingIntermediateRealms/", \
+          "date"     : "April 10, 2025" \
+        }, \
+       \
+        { \
+          "title"    : "2024 Updates Recap", \
+          "desc"     : "2024 Updates Recap", \
+          "category" : "", \
+          "url"      : "/2024-11-28-Devlog04/", \
+          "date"     : "November 28, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Canvas as a Digital Milieu", \
+          "desc"     : "Canvas as a Digital Milieu", \
+          "category" : "", \
+          "url"      : "/2024-09-04-Canvas/", \
+          "date"     : "September  4, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Agents with Souls", \
+          "desc"     : "Agents with Souls", \
+          "category" : "", \
+          "url"      : "/2024-08-12-AgentsWithSouls/", \
+          "date"     : "August 12, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Introduction to ESHRAQ", \
+          "desc"     : "Introduction to ESHRAQ", \
+          "category" : "", \
+          "url"      : "/2024-06-21-ESHRAQ_Introduction/", \
+          "date"     : "June 21, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Tracing the Modular Urge - Part 3", \
+          "desc"     : "Tracing the Modular Urge - Part 3", \
+          "category" : "", \
+          "url"      : "/2024-04-11-TracingTheModularUrge_Part3/", \
+          "date"     : "April 11, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Tracing the Modular Urge - Part 2", \
+          "desc"     : "Tracing the Modular Urge - Part 2", \
+          "category" : "", \
+          "url"      : "/2024-03-23-TracingTheModularUrge_Part2/", \
+          "date"     : "March 23, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Tracing the Modular Urge - Part 1", \
+          "desc"     : "Tracing the Modular Urge - Part 1", \
+          "category" : "", \
+          "url"      : "/2024-03-22-TracingTheModularUrge_Part1/", \
+          "date"     : "March 22, 2024" \
+        }, \
+       \
+        { \
+          "title"    : "Hello World", \
+          "desc"     : "Hello World", \
+          "category" : "", \
+          "url"      : "/2024-02-12-HelloWorld/", \
+          "date"     : "February 12, 2024" \
+        }, \
+       \
+       \
+        { \
+          "title"    : "About", \
+          "desc"     : "About", \
+          "category" : "page", \
+          "url"      : "/about/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "", \
+          "desc"     : "", \
+          "category" : "page", \
+          "url"      : "/assets/css/home/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "PROCESS LOG", \
+          "desc"     : "PROCESS LOG", \
+          "category" : "page", \
+          "url"      : "/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "", \
+          "desc"     : "", \
+          "category" : "page", \
+          "url"      : "/links/", \
+          "date"     : "January 1, 1970" \
+        }, \
+       \
+        { \
+          "title"    : "Tag Index", \
+          "desc"     : "Tag Index", \
+          "category" : "page", \
+          "url"      : "/tags/", \
+          "date"     : "January 1, 1970" \
+        } \
+       \
+    ]';
+    searchjson = JSON.parse(searchjson);
+
+    var sjs = SimpleJekyllSearch({
+      searchInput: document.getElementById('nav-search-input'),
+      resultsContainer: document.getElementById('search-results-container'),
+      json: searchjson
+    });
+  </script>
+</div>
+
+
+
+
+
+  
+
+
+  <div id="header-big-imgs" data-num-img=1
+    
+    
+    
+    
+      data-img-src-1="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Cover_Rocket.webp"
+    
+    
+    
+  ></div>
+
+
+<header class="header-section has-img">
+<div class="intro-header  big-img ">
+  
+  <div class="container-md">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="post-heading">
+          <h1>From Simulation to Cinema - Part 1</h1>
+          
+            
+              <h2 class="post-subheading">Building the first cinematic loop of ESHRAQ</h2>
+            
+          
+          
+           
+            
+            <span class="post-meta">January 8, 2026</span>
+            
+            
+              <!--- "ReadTime on GitHub Jekyll" (c) 2020 Ruby Griffith Ramirez, MIT License -->
+
+
+
+
+
+
+  
+  <span class="post-meta"><span class="d-none d-md-inline middot">&middot;</span> 12 minute read</span>
+
+
+            
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <span class='img-desc'></span>
+</div>
+
+
+
+</header>
+
+
+<main class="spotlight-target  container-fluid ">
+  <div class="row">
+    <div class=" col ">
+
+      
+
+      
+      
+      <div class="post-container">
+        <div class="sidebar" role="navigation" aria-label="Index">
+          <div class="sidebar-title">Index</div>
+          <hr> <!-- Inserted line -->
+          <ul><li><a href="#cinema-simulation-and-ontology"><em>Cinema, Simulation, and Ontology</em></a><ul><li><a href="#why-cinema-why-now">Why Cinema, Why Now</a></li><li><a href="#writing-the-film-with-the-simulation">Writing the Film With the Simulation</a></li><li><a href="#cinematic-language-and-format">Cinematic Language and Format</a></li><li><a href="#when-cinema-rewrites-ontology">When Cinema Rewrites Ontology</a></li><li><a href="#the-opening-birds-annihilation-becoming">The Opening: Birds, Annihilation, Becoming</a></li><li><a href="#light-bombs-modules">Light, Bombs, Modules</a></li><li><a href="#souls-and-the-ziggurat-loop">Souls and the Ziggurat Loop</a></li><li><a href="#soul-view-and-the-imaginal">Soul View and the Imaginal</a></li><li><a href="#physical-dimension">Physical Dimension</a></li><li><a href="#behind-the-scenes">Behind the Scenes</a></li><li><a href="#closing">Closing</a></li></ul></li></ul>
+        </div>
+        
+        <div class="blog-post full-width">
+          <h1 id="cinema-simulation-and-ontology"><em>Cinema, Simulation, and Ontology</em></h1>
+
+<p>It’s been a while since my last post here.</p>
+
+<p>I spent some time recently redesigning this blog to make things more streamlined. With this new layout comes a more comprehensive report of what I have been working on during the second half of 2025.</p>
+
+<p>During that period, I had the opportunity to show my work at <strong><a href="https://www.instagram.com/emerging.exits/">Emerging Exits</a></strong> in Arnhem (1 October till 3 November). Curated by <em>Jacco Ouwerkerk</em> and <em>Marijn Bril</em>, the exhibition took place in the Diogenes Bunker, one of the largest bunkers built by the Germans during World War II. Responding to this context, I prepared a cinematic experience sourced entirely from ESHRAQ’s simulated environment. It felt like the right moment to turn ESHRAQ into a <strong>film stage</strong>.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Emergingexit-182.webp" data-lightbox="example-1" data-title="Photo by Aad Hoogendoorn">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Emergingexit-182.webp" alt="Installation Views - Emerging Exits, Diogenes Bunker, Arnhem (2025)" />
+  </a>
+</figure>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Emergingexit-188.webp" data-lightbox="example-1" data-title="Photo by Aad Hoogendoorn">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Emergingexit-188.webp" alt="Installation Views - Emerging Exits, Diogenes Bunker, Arnhem (2025)" />
+  </a>
+  <figcaption class="caption">Installation Views - Emerging Exits, Diogenes Bunker, Arnhem (2025)</figcaption>
+</figure>
+
+<p>I had been carrying a few ideas for a script for some time. They were slowly simmering in the background but never fully surfaced, until the twelve-day war happened in Iran. Following the horror unfolding back home from the relative safety of Amsterdam was deeply unsettling. At the same time, it forced something into focus. Within a week after the war ended, I managed to write the first draft of the film script.</p>
+
+<p>When I say <em>film</em>, I mean <strong>two story loops</strong>. Both are based on ESHRAQ, but they unfold in completely different models. One takes place in the <strong>Ziggurat of Ur</strong>, the other in a <strong>modular version of Amsterdam</strong>.<br />
+This post focuses on the first loop, and on what it meant to turn a simulation into cinema.</p>
+
+<p>To get a sense of the film, you can watch and excerpt from the first 2 minutes of it here:</p>
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1125804071?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="ESHRAQ - 2025 (excerpt)"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<hr />
+
+<h2 id="why-cinema-why-now">Why Cinema, Why Now</h2>
+
+<p>One of my main motivations for working cinematically with a simulation is that cinema remains a very potent medium for unraveling complex webs of knowledge and information in a tangible way.</p>
+
+<p>I can talk or write about ESHRAQ’s ontology for hours and still miss essential aspects of it. But within a twenty-minute film, this world and its internal logic begin to illuminate themselves. The ontology becomes visible through <strong>movement</strong>, <strong>rhythm</strong>, <strong>sound</strong>, <strong>scale</strong>, and <strong>duration</strong>. To me, this feels like a very efficient form of compression, one that cinematic language uniquely allows.</p>
+
+<p>Throughout the film, this ontology of light becomes the ground on which new stories can exist. These stories unfold as <strong>loops</strong>. You can call them <em>story loops</em> if you will. They allow complex expressions to emerge from a relatively simple and grounded simulation.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Story_Loops.jpg" data-lightbox="example-1" data-title="Diagram of components of each story loop.">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Story_Loops.jpg" alt="Diagram of components of each story loop." />
+  </a>
+  <figcaption class="caption">Diagram of components of each story loop.</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="writing-the-film-with-the-simulation">Writing the Film With the Simulation</h2>
+
+<p>I wrote the initial draft of the film script in <strong>Scrivener</strong>, which I would recommend for scriptwriting and long-form writing in general. At that stage, the script captured a clear direction for the film, but it was never meant to dictate its final form.</p>
+
+<p>Once I moved into production in <strong>Unreal Engine</strong>, the relationship between the script and the work began to shift. I had roughly two and a half months to turn the draft into a twenty-minute film, but rather than following the script rigidly, I treated it as a guiding force. Many decisions were made while recording scenes, blocking movement, and working directly with the simulation. Several moments in the final film deviate from the original script, emerging instead from the constraints, affordances, and unexpected behaviors of the system itself.</p>
+
+<p>In practice, the writing process became both <strong>top-down</strong> and <strong>bottom-up</strong>. While navigating ESHRAQ as a simulation, I encountered moments that felt too strong to ignore. These moments were logged back into the script, allowing play, system behavior, and authorship to feed back into one another.</p>
+
+<p>This approach kept me closely aligned with the internal logic of ESHRAQ and with the limits and potentials of Unreal Engine. The script provided orientation, but the simulation determined how ideas could materialize. In that sense, the film was shaped through a dialogue between intention and system behavior, rather than direct execution.</p>
+
+<div class="pdf-viewer" aria-label="PDF viewer" style="width: 90%; max-width: 760px;">
+  <iframe src="/assets/docs/ESHRAQ_Script_Intro.pdf#view=FitH&amp;toolbar=0" title="ESHRAQ — Script Intro (PDF)" loading="lazy" frameborder="0" style="width:100%;height:70vh;" aria-label="ESHRAQ — Script Intro (PDF)"></iframe>
+  <div class="pdf-viewer-fallback">
+    <span>Having trouble viewing?</span>
+    <a href="/assets/docs/ESHRAQ_Script_Intro.pdf" target="_blank" rel="noopener">Open or download the PDF</a>
+  </div>
+  
+  <div class="pdf-caption caption">ESHRAQ — Script Intro (PDF)</div>
+  
+</div>
+
+<p>The <strong>modular structure</strong> of ESHRAQ played a crucial role in this process. The Ziggurat of Ur already existed as a modular system and only required specific modifications. The same applied to agents, environments, and architectural logic, allowing changes to propagate through the system without needing to be explicitly scripted at every level.</p>
+
+<figure class="img-figure" align="center">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_test.webp" alt="Behind the scenes of the Ziggurat's construction" />
+  <figcaption class="caption">Behind the scenes of the Ziggurat's construction</figcaption>
+</figure>
+
+<figure class="img-figure" align="center">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Windcatcher_souls.webp" alt="A scene abandoned after realizing, through making, that it overwhelmed the narrative rather than supporting it" />
+  <figcaption class="caption">A scene abandoned after realizing, through making, that it overwhelmed the narrative rather than supporting it</figcaption>
+</figure>
+
+<p>Working this way also transformed cinematography. Being able to inhabit the film stage freely and repeatedly allowed me to survey locations for camera movement and framing before committing to shots. Using Unreal’s <code class="language-plaintext highlighter-rouge">Cine Camera Actor</code> enabled movements that would be impossible or dangerous in real-world filming.</p>
+
+<p>Here is an early test of a weighted camera-follow system, designed to simulate the physical mass of a real camera as it tracks the subject:</p>
+
+<div class="video-embed">
+  <iframe src="https://www.youtube.com/embed/C3x7Um31FDM?si=LnO11gPlkkHANvlu" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</div>
+
+<p class="box-gray">This way of working is not unique to ESHRAQ. During the pre-production of <em>Dune: Part Two</em>, Unreal Engine was used extensively for virtual scouting and shot planning in a simulated desert environment. Having access to a navigable film stage before shooting fundamentally changes how cinematic decisions are made.<br />
+You can read more about that process <a href="https://www.unrealengine.com/en-US/spotlights/unreal-engine-streamlines-desert-production-on-dune-part-two">here</a>.</p>
+
+<p>I also chose to keep glitches and artifacts that emerged naturally. Collision errors and clipping are not mistakes to hide. They are part of the living conditions of a computational world.</p>
+
+<figure class="img-figure" align="center">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Glitch.jpg" alt="Agent Walker's feet collision glitch as it's coming down the stairs" />
+  <figcaption class="caption">Agent Walker's feet collision glitch as it's coming down the stairs.</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="cinematic-language-and-format">Cinematic Language and Format</h2>
+
+<p>I chose a <strong>2.55 wide aspect ratio</strong>, with a final output resolution of <code class="language-plaintext highlighter-rouge">4096 × 1716</code>. This very wide format, combined with emulated <strong>Panavision C-Series anamorphic lenses</strong>, creates an immersive frame that wraps around the viewer’s vision.</p>
+
+<p>In post-production, I leaned into virtual production techniques such as <strong>lens distortion</strong>, <strong>film grain</strong>, <strong>color work</strong>, <strong>flares</strong>, and <strong>bloom</strong>, aiming to get as close as possible to the texture of real cinema lenses.</p>
+
+<p>The post-production was handled in two passes. The first took place inside Unreal Engine, where I captured the raw camera image. The second pass was done in DaVinci Resolve, where I introduced lens distortion, color work, and film grain to push the image closer to a cinematic texture.</p>
+
+<p>This choice was also influenced by how much I admired the image quality of <em>Star Wars: Andor</em>, as well as <em>Dune: Part One</em>. There is something about that visual language that holds science fiction and gravity at the same time.</p>
+
+<figure class="img-figure" align="center">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Andor.jpg" alt="Still from StarWars: Andor" />
+  <figcaption class="caption">Still from StarWars: Andor</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="when-cinema-rewrites-ontology">When Cinema Rewrites Ontology</h2>
+
+<p>Something unexpected happened while writing cinematically. Ideas emerged that had never appeared during the simulation phase. Switching into a storytelling mindset changed how the world itself wanted to express things.</p>
+
+<p>In that sense, the film did not simply visualize ESHRAQ. It actively generated <strong>new ontological ground</strong> for it. Narrative pressure, pacing, framing, and duration reshaped how the simulation behaved and what it could express. Expanding the film will continue to influence how ESHRAQ’s ontology evolves.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ontology.jpg" data-lightbox="example-1" data-title="Revision of ESHRAQ's Ontology">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ontology.jpg" alt="Revision of ESHRAQ's Ontology after making the film (Click to enlarge)" />
+  </a>
+  <figcaption class="caption">Revision of ESHRAQ's Ontology after making the film (Click to enlarge)</figcaption>
+</figure>
+
+<p><br />
+<br /></p>
+
+<hr />
+
+<h2 id="the-opening-birds-annihilation-becoming">The Opening: Birds, Annihilation, Becoming</h2>
+
+<p>The first eight minutes of the film function as an introduction to ESHRAQ’s illuminationist foundation.</p>
+
+<p>Thirty birds appear on screen, all constructed from modules. Each has the head of a <strong>Huma bird</strong>, but in different states of decay. They initially exist in a divine realm, receive a calling, and are then deployed into the desert of ESHRAQ.</p>
+
+<p>For Iranian viewers, this references <em>The Conference of the Birds</em> by Attar. In that poem, a group of birds sets out on a journey to find truth, only to realize that they themselves are what they were searching for.</p>
+
+<figure class="img-figure" align="center" style="max-width: 50%; margin: 1.25rem auto;">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Attar.jpeg" alt="Detail featuring the Simurgh" />
+  <figcaption class="caption">(Detail featuring the Simurgh) / ca. 1590-1620 / Mughal painting attributed to Miskin / British Museum / CC BY NC SA</figcaption>
+</figure>
+
+<p>In Sufi terminology, this journey involves <strong>fanā’</strong>, the annihilation of the self, followed by <strong>baqā’</strong>, remaining or becoming.</p>
+
+<p>In the film, I invert this logic. The thirty birds begin as a whole and are then fragmented and dispersed back into the desert. This individuation is justified by history. We know where they came from.</p>
+
+<p>In ESHRAQ, all thirty birds are in fact <strong>one bird</strong>, the Huma, encountered across different temporalities. Unlike Attar’s birds, which come from different species, these are the same mythic entity fractured across time. The plurality does not come from identity, but from accumulated meaning and historical interpretation.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Airship_modules.webp" data-lightbox="example-1" data-title="Huma Airship constructs are made out of 9 unique modules.">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Airship_modules.webp" alt="Huma Airship constructs are made out of 9 unique modules." />
+  </a>
+  <figcaption class="caption">Huma Airship constructs are made out of 9 unique modules.</figcaption>
+</figure>
+
+<p><br /></p>
+
+<hr />
+
+<h2 id="light-bombs-modules">Light, Bombs, Modules</h2>
+
+<p>The birds pass through a very bright rectangular window of light and enter the desert. They drop rocket-like bombs that open mid-air before touching the ground. Each bomb releases an <strong>orb of light</strong>, which falls, densifies, and gradually turns into an architectural module such as a wall, stair, or floor. The empty shell then returns to the sky.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Rockets.webp" data-lightbox="example-1" data-title="States of a light carrier rocket in time">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Rockets.webp" alt="States of a light carrier rocket in time" />
+  </a>
+  <figcaption class="caption">States of a light carrier rocket in time</figcaption>
+</figure>
+
+<p>This repeats in time-lapse until the entire Ziggurat is constructed in a dense cascade of light.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_light.webp" data-lightbox="example-1" data-title="Ziggurat time-lapse being formed module by module">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_light.webp" alt="Ziggurat time-lapse being formed module by module" />
+  </a>
+  <figcaption class="caption">Ziggurat time-lapse being formed module by module</figcaption>
+</figure>
+
+<p>At first, making the scene shown above felt complex. Once I realized that all Ziggurat elements inherit the same base module class, the problem collapsed into a systems question. I implemented a shared light-VFX logic to drive the modules sequentially, then ran the simulation in Unreal. With slight randomization in the spawn timing, the engine resolved the composition on its own, allowing the scene to emerge within a few hours.</p>
+
+<p>In this context, making the film was not merely a matter of animation. It required writing procedural logic that could unfold over time. When a procedural system behaves as intended, it introduces a different kind of satisfaction, by letting the system carry part of the authorship.</p>
+
+<p>This opening sequence establishes the internal logic of the world so that everything that follows can operate through it.</p>
+
+<hr />
+
+<h2 id="souls-and-the-ziggurat-loop">Souls and the Ziggurat Loop</h2>
+
+<p>Within the film, the Ziggurat becomes a deep object where the first story loop unfolds. The soul of <code class="language-plaintext highlighter-rouge">Mythic George Bush</code> is spawned into the site.</p>
+
+<figure class="img-figure" align="center" style="max-width: 100%; margin: 1.25rem auto;">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_01.jpg" alt="A US military aircraft over the Ziggurat of Ur, Iraq, photographed during the US-led invasion." />
+  <figcaption class="caption">A US military aircraft over the Ziggurat of Ur, Iraq, photographed during the US-led invasion.</figcaption>
+</figure>
+
+<p>I spent a long time thinking about the design of souls in ESHRAQ and how they could be materialized. I eventually arrived at the idea of representing them as <strong>luminous red-orange spheres</strong>, almost like miniature stars hovering above specific sites.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_Orb.webp" data-lightbox="example-1" data-title="Soul orb of Mythic George Bush hovering above the Ziggurat">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_Orb.webp" alt="Soul orb of Mythic George Bush hovering above the Ziggurat" />
+  </a>
+  <figcaption class="caption">Soul orb of Mythic George Bush hovering above the Ziggurat</figcaption>
+</figure>
+
+<p>Each soul connects through a bright thread to an idle agent on the ground. When the soul becomes active, it forms a bond with the agent. In the film, the camera follows this connection as Mythic George Bush begins to speak about unfinished business.</p>
+
+<p>Mythic George Bush, or <code class="language-plaintext highlighter-rouge">MGB</code>, is an amalgamation of George Bush and his father. I wanted to test the boundaries of what a soul could be. Can it be composite? Can it be an infusion of multiple figures? What other chemistries might be possible?</p>
+
+<p>Through MGB, the history of the Ziggurat is retold from multiple vantage points. Ancient cosmology sits next to the Gulf War and the US invasion of Iraq. This section was sparked by a photograph of American soldiers ascending the Ziggurat. The contradictions in that image became a driving force behind this loop.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_02.jpg" data-lightbox="example-1" data-title="U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ziggurat_02.jpg" alt="U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro." />
+  </a>
+  <figcaption class="caption">U.S. Soldiers from the 17th Fires Brigade make their way up the stairs of the 4,000-year-old Ziggurat of Ur, Iraq, near Contingency Operating Base Adder, May 18, 2010. Photo by Spc. Samantha Ciaramitaro.</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="soul-view-and-the-imaginal">Soul View and the Imaginal</h2>
+
+<p>Another important design element is what I call the <strong>Soul View</strong>, developed together with Graphic Designer <a href="https://www.instagram.com/danial_alemasoum/?hl=en">Danial Alemasoum</a>. We wanted a visual language rooted in ESHRAQ’s modular logic while drawing from Iranian visual culture.</p>
+
+<p>We were inspired by glass and mirror architecture, especially the <em>Shrine of Imam Reza</em> in Mashhad. I was born in Mashhad and we lived there until the age of 9. As a child, I used to stare at mirrored ceilings and try to find myself within the reflections. The architecture never allowed it.</p>
+
+<figure class="img-figure" align="center" style="max-width: 70%; margin: 1.25rem auto;">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Ayine_kari.jpg" alt="Āyineh-kāri (mirror work) in the Shrine of Imam Reza, Mashhad." />
+  <figcaption class="caption">Āyineh-kāri (mirror work) in the Shrine of Imam Reza, Mashhad.</figcaption>
+</figure>
+
+<p>This experience shaped the Soul View. It produces fragile, mirage-like images that appear and disappear. It reveals information about souls that cannot be materialized on the ground.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_View_1.jpg" data-lightbox="example-1" data-title="Soul View">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_View_1.jpg" alt="Soul View overlay revealing historical memory of the soul." />
+  </a>
+  <figcaption class="caption">Soul View overlay revealing historical memory of the soul.</figcaption>
+</figure>
+
+<p>There is also a reference to sand as the source of glass. The film begins in a desert, which I see as a strong metaphor for the <strong>imaginal world</strong>. A place where things dissolve, but also where sand and light conspire to form endless images.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_View_2.jpg" data-lightbox="example-1" data-title="Soul View">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Soul_View_2.jpg" alt="Soul View: each soul is given a unique visual form, designed by Danial Alemasoum using Persian Nastaʿlīq calligraphy as a structural reference. " />
+  </a>
+  <figcaption class="caption">Soul View: each soul is given a unique visual form, designed by Danial Alemasoum using Persian Nastaʿlīq calligraphy as a structural reference.</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="physical-dimension">Physical Dimension</h2>
+
+<p>For Emerging Exits, I introduced a physical element sourced from ESHRAQ. I created a lightbox containing the thirty Huma heads, aligned as if passing through the threshold of light again, but without wings.</p>
+
+<figure class="img-figure" align="center">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Sculpture_02.webp" data-lightbox="example-1" data-title="Sculpture 02">
+    <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Sculpture_02.webp" alt="Lightbox, Thirty 3D Printed pieces, Coated with Sand" />
+  </a>
+  <figcaption class="caption">Lightbox, Thirty 3D Printed pieces, Coated with Sand</figcaption>
+</figure>
+
+<p>Encountered without mediation, these objects invite interpretation. After watching the film, they acquire new meaning. The tension between these readings is something I want to preserve.</p>
+
+<figure class="img-figure" align="center" style="max-width: 70%; margin: 1.25rem auto;">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/Sculpture_01.webp" alt="Sculpture 01" />
+  <figcaption class="caption">Installation View - Emerging Exits (Arnhem, October 2025)</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="behind-the-scenes">Behind the Scenes</h2>
+
+<p>The final element I added to the installation at the Diogenes Bunker was a <strong>behind-the-scenes video loop</strong>, displayed directly behind the main film screen. The screen was therefore two-sided. While the front presented the cinematic work, the reverse side exposed the conditions of its production.</p>
+
+<p>This was a deliberate gesture. I wanted to make visible the fact that everything seen in the film is sourced from a simulation, and to acknowledge the systems, assets, and processes that made it possible.</p>
+
+<div style="padding:62.5% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1153233843?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="ESHRAQ - BTS Excerpt (2025)"></iframe></div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<p>The behind-the-scenes video was composed of <strong>five tiled views</strong>, each revealing a different layer of the work:</p>
+
+<ol>
+  <li>
+    <p><strong>Conveyor-belt view</strong><br />
+A long tile showing all the modules used in the film moving past in sequence, from the Huma bird heads to walls, floors, stairs, and other architectural elements.</p>
+  </li>
+  <li>
+    <p><strong>Material palette view</strong><br />
+A tile presenting the full material library of the project, including mud brick, asphalt, concrete, water, stucco, and other surface systems used across environments.</p>
+  </li>
+  <li>
+    <p><strong>Agent view</strong><br />
+A tile displaying all agents placed on a rotating platform in a T-pose, similar to a character selection interface. This emphasizes their status as potential actors within the simulation rather than fixed characters.</p>
+  </li>
+  <li>
+    <p><strong>Simulation playthrough view</strong><br />
+A tile showing selected moments from live playthroughs inside ESHRAQ, highlighting how scenes emerged through interaction rather than pre-scripted animation.</p>
+  </li>
+  <li>
+    <p><strong>Spatial replica view</strong><br />
+A larger tile depicting a replica of the bunker itself, modeled exactly as the installation was presented. This functions as a limbo space connecting the physical exhibition site to its virtual counterpart. I have written more about the concept of limbo spaces in an <a href="http://localhost:4000/2024-03-23-TracingTheModularUrge_Part2/">earlier post</a>.</p>
+  </li>
+</ol>
+
+<figure class="img-figure" align="center" style="max-width: 70%; margin: 1.25rem auto;">
+  <img src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/10_Post/BTS_Installation.webp" alt="BTS_Installation" />
+  <figcaption class="caption">Installation View - Emerging Exits Opening (Arnhem, October 2025)</figcaption>
+</figure>
+
+<hr />
+
+<h2 id="closing">Closing</h2>
+
+<p>Showing this twenty-minute section of ESHRAQ confirmed something important for me. <strong>Cinema is not a secondary output of the simulation.</strong> It is a generative force that reshapes its meaning and even ontology.</p>
+
+<p><em>Next post: the second story loop, set in a modular Amsterdam.</em></p>
+
+<div class="newsletter-container centered">
+  <iframe src="https://alllesss.substack.com/embed" class="newsletter-iframe" frameborder="0" scrolling="no"></iframe>
+</div>
+
+
+        </div>
+        
+        <div class="sidebar-spacer"></div>
+      </div>
+
+      <div style="clear: both;"></div>
+
+      
+
+      
+
+      
+
+      <ul class="pagination blog-pager">
+        
+        <li class="page-item previous spotlight-target">
+          <a class="page-link" href="/2025-05-05-Ontologies/" data-toggle="tooltip" data-placement="top" title="Ontologies &amp; Diagrams">
+            <i class="fas fa-arrow-left" alt="Previous Post"></i>
+            <span class="d-none d-sm-inline-block">Previous Post</span>
+          </a>
+        </li>
+        
+        
+        <li class="page-item next spotlight-target">
+          <a class="page-link" href="/2026-01-12-FromSimulationtoCinema_Part2/" data-toggle="tooltip" data-placement="top" title="From Simulation to Cinema - Part 2">
+            <span class="d-none d-sm-inline-block">Next Post</span>
+            <i class="fas fa-arrow-right" alt="Next Post"></i>
+          </a>
+        </li>
+        
+      </ul>
+      
+
+    </div>
+  </div>
+</main>
+
+
+  <footer>
+  <div class="container-md beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      
+<ul class="list-inline text-center footer-links"><li class="list-inline-item">
+    <a href="mailto:alless0@outlook.com" title="Email me">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Email me</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://github.com/alllesss" title="GitHub">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">GitHub</span>
+   </a>
+  </li><li class="list-inline-item">
+    <a href="https://www.instagram.com/alless0" title="Instagram">
+      <span class="fa-stack fa-lg" aria-hidden="true">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="sr-only">Instagram</span>
+   </a>
+  </li></ul>
+
+      
+      <p class="copyright text-muted">
+      
+        Ali Eslami
+        &nbsp;&bull;&nbsp;
+      
+      2026
+
+      
+
+      
+
+      
+
+      </p>
+      <p class="text-muted newsletter-link text-center"><a href="https://alllesss.substack.com/embed">Subscribe</a> to newsletter</p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  
+  
+    
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+
+  
+    
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script src="/assets/js/beautifuljekyll.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+        if (typeof jQuery == 'undefined') {
+          document.write('<script src="/assets/js/lightbox-plus-jquery.js"></scr' + 'ipt>');
+        }
+      </script>
+    
+  
+
+
+
+  
+    <script src="/assets/js/noise-spotlight.js"></script>
+  
+
+
+
+
+
+
+
+  <script src="/assets/js/lightbox-plus-jquery.js"></script>
+
+</body>
+</html>
