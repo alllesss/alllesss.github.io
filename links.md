@@ -78,7 +78,7 @@ css:
     font-weight: 400;
     line-height: 1.55;
     margin-bottom: 0;
-    padding-left: calc(1.35em + 0.75rem);
+    padding-left: calc(1.35em + 0.9rem);
 }
 
 .link-prefix {
@@ -120,6 +120,25 @@ css:
 .post-preview:hover .link-prefix,
 .post-preview:focus-within .link-prefix {
     color: #403E3C;
+}
+
+.page-dark-mode .links-list .post-preview a:hover,
+.page-dark-mode .links-list .post-preview a:focus {
+    color: #BC5215;
+}
+
+.page-dark-mode .links-list .post-title {
+    color: #878580;
+}
+
+.page-dark-mode .links-list .post-preview:hover .post-title,
+.page-dark-mode .links-list .post-preview:focus-within .post-title {
+    color: #BC5215;
+}
+
+.page-dark-mode .links-list .post-preview:hover .link-prefix,
+.page-dark-mode .links-list .post-preview:focus-within .link-prefix {
+    color: #BC5215;
 }
 </style>
 
