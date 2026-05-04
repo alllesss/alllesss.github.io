@@ -143,6 +143,19 @@ let BeautifulJekyllJS = {
 document.addEventListener('DOMContentLoaded', BeautifulJekyllJS.init);
 
 $(function() {
+  $(window).on('scroll.backToTop', function() {
+    if ($(this).scrollTop() > 300) {
+      $('#back-to-top').fadeIn(200);
+    } else {
+      $('#back-to-top').fadeOut(200);
+    }
+  });
+  $('#back-to-top').on('click', function() {
+    $('html, body').animate({ scrollTop: 0 }, 400);
+  });
+});
+
+$(function() {
   $('#change-skin').on('click', function () {
     $("body").toggleClass("page-dark-mode");
     $("html").toggleClass("page-dark-mode");

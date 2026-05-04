@@ -56,6 +56,42 @@
     background: #575653;
   }
   
+  #back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1rem;
+    cursor: pointer;
+    border: 1px solid #E6E4D9;
+    background: #FFFCF0;
+    border-radius: 2rem;
+    font-size: 1rem;
+    padding: 0.2rem 0.65rem 0.1rem;
+    line-height: 1.5;
+    color: #100F0F;
+    z-index: 1030;
+    -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  #back-to-top:hover {
+    background: #575653;
+    color: #FFFCF0;
+  }
+  .page-dark-mode #back-to-top {
+    background: #100F0F;
+    border-color: #282726;
+    color: #CECDC3;
+  }
+  .page-dark-mode #back-to-top:hover {
+    background: #575653;
+    color: #FFFCF0;
+  }
+
   .page-dark-mode .sidebar {
     color: #575653; /* Adjust as needed */
     opacity: 0.35;

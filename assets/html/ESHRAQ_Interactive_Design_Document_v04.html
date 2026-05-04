@@ -139,11 +139,28 @@ body.dark .state-card[style*="border-color:#E0A898"] .state-card-header { backgr
 body.dark .state-card[style*="border-color:#E0A898"] .state-card-body { background: #401208 !important; color: #F0B8A8 !important; }
 
 body.dark .state-card-name { color: inherit !important; }
+
+/* Lightbox */
+.lb-trigger{cursor:zoom-in;position:relative;}
+.lb-trigger::after{content:'⤢';position:absolute;top:8px;right:10px;font-size:14px;color:rgba(255,255,255,0.6);line-height:1;pointer-events:none;transition:opacity 0.2s;}
+.lb-trigger:hover::after{color:rgba(255,255,255,0.9);}
+#lb-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.88);cursor:zoom-out;align-items:center;justify-content:center;flex-direction:column;gap:10px;}
+#lb-overlay.lb-open{display:flex;}
+#lb-overlay img{max-width:92vw;max-height:85vh;border-radius:6px;object-fit:contain;box-shadow:0 4px 40px rgba(0,0,0,0.6);}
+#lb-overlay p{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.1em;color:rgba(255,255,255,0.45);text-align:center;max-width:600px;}
+#lb-close{position:fixed;top:18px;right:22px;font-size:22px;color:rgba(255,255,255,0.5);cursor:pointer;line-height:1;background:none;border:none;padding:0;}
+#lb-close:hover{color:#fff;}
 </style>
 </head>
 <body>
 <div class="page">
 <button id="theme-toggle" onclick="document.body.classList.toggle('dark');this.textContent=document.body.classList.contains('dark')?'☀ Light':'☾ Dark'" style="position:fixed;top:20px;right:24px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;padding:7px 14px;border-radius:20px;border:1px solid var(--border);background:var(--paper);color:var(--ink-light);cursor:pointer;letter-spacing:0.06em;transition:all 0.2s;">☾ Dark</button>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:24px;right:24px;z-index:999;font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:500;padding:7px 13px;border-radius:20px;border:1px solid var(--border);background:var(--paper);color:var(--ink-light);cursor:pointer;transition:all 0.2s;">↑</button>
+<script>
+  window.addEventListener('scroll',function(){
+    document.getElementById('back-to-top').style.display=window.scrollY>300?'block':'none';
+  });
+</script>
 
 <div class="doc-header">
   <p class="doc-eyebrow">ESHRAQ — Interactive Prototype 2026</p>
@@ -495,5 +512,51 @@ body.dark .state-card-name { color: inherit !important; }
 </div>
 
 </div>
+
+<div id="lb-overlay">
+  <button id="lb-close" aria-label="Close">✕</button>
+  <img id="lb-img" src="" alt="">
+  <p id="lb-caption"></p>
+</div>
+
+<script>
+(function(){
+  var overlay=document.getElementById('lb-overlay');
+  var lbImg=document.getElementById('lb-img');
+  var lbCaption=document.getElementById('lb-caption');
+
+  // Find all divs whose inline style contains a background image data URI
+  var allDivs=document.querySelectorAll('div[style]');
+  allDivs.forEach(function(el){
+    var style=el.getAttribute('style')||'';
+    var match=style.match(/background:url\(([^)]+)\)/);
+    if(!match) return;
+    var url=match[1];
+    // Only act on data URIs or real image URLs (skip gradients etc)
+    if(!/^data:image|\.jpe?g|\.png|\.webp/.test(url)) return;
+
+    el.classList.add('lb-trigger');
+    // Grab caption from the inner <p> if present
+    el.addEventListener('click',function(e){
+      e.stopPropagation();
+      var caption=el.querySelector('p');
+      lbImg.src=url;
+      lbCaption.textContent=caption?caption.textContent:'';
+      overlay.classList.add('lb-open');
+      document.body.style.overflow='hidden';
+    });
+  });
+
+  function closeLb(){
+    overlay.classList.remove('lb-open');
+    lbImg.src='';
+    document.body.style.overflow='';
+  }
+
+  document.getElementById('lb-close').addEventListener('click',function(e){e.stopPropagation();closeLb();});
+  overlay.addEventListener('click',closeLb);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+})();
+</script>
 </body>
 </html>
