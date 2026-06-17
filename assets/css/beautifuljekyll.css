@@ -102,6 +102,22 @@ figure.img-figure figcaption {
   border-radius: var(--image-radius, 0.5rem);
 }
 
+/* Centered looping / inline MP4 video helper
+   Usage: wrap a <video> tag in a <div class="video-container"> */
+.video-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:1rem 0;
+}
+.video-container video{
+  max-width:100%;
+  height:auto;
+  display:block;
+  border-radius: var(--image-radius, 0.5rem);
+}
+
+
 /* Rounded corners for inline Vimeo/YouTube embeds */
 div[style*="padding:"] iframe {
   border-radius: var(--image-radius, 0.5rem);
