@@ -40,7 +40,7 @@ If Illuminationist presence is the mixture of inner and outer light, what qualit
 A light like this may seem more like the light of a mythic lantern than the electric light of a screen. A light that does not delineate outlines but gradually unravels them, including through its interplay with darkness and shadows. Such a light may already seem to be rendered imperceptible, overpowered by the harsh light of the real. This raises the question, can the virtual become a medium for generating mystical light? While it might not be capable of this on its own, virtual worlds like Eshraq can aspire to open channels of contact with a luminosity that exceeds materialist forms of reality and technology. 
 
 <figure class="img-figure" align="center">
-  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/15_Post/Light_3.jpg" data-lightbox="example-1" data-title="ESHRAQ, Emerging Exits exhibition, October 2025, Arnhem (NL)">
+  <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/15_Post/Light_3.jpg" data-lightbox="example-1" data-title="Still, Once Upon a Time in Anatolia (2022) - a film by Nuri Bilge Ceylan">
     <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/15_Post/Light_3.jpg" alt="emerging exits">
   </a>
   <figcaption class="caption">Still, Once Upon a Time in Anatolia (2022) - a film by Nuri Bilge Ceylan</figcaption>
