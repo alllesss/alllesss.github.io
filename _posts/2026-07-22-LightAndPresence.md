@@ -43,7 +43,7 @@ A light like this may seem more like the light of a mythic lantern than the elec
   <a class="example-image-link" href="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/15_Post/Light_3.jpg" data-lightbox="example-1" data-title="Still, Once Upon a Time in Anatolia (2022) - a film by Nuri Bilge Ceylan">
     <img class="example-image" src="https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/15_Post/Light_3.jpg" alt="emerging exits">
   </a>
-  <figcaption class="caption">Still, Once Upon a Time in Anatolia (2022) - a film by Nuri Bilge Ceylan</figcaption>
+  <figcaption class="caption">Still, Once Upon a Time in Anatolia (2012) - a film by Nuri Bilge Ceylan</figcaption>
 </figure>
 
 Where gradients of light become a continuum of presence across boundaries of inner and outer, it may lead to the dissolution of the enclosed self. However transient, this ekstasis corresponds with a loosening of the bounds of reality, along with the anonymous appearance of the image. Like light, the presence of this image is evident while not being fully expressible or understood. Perhaps it could be described as a virtual climate between worlds, where souls unravel and begin to entwine with other elements. Or perhaps it must simply be felt as that mystery of light and presence hinted at by the words divine love. 
