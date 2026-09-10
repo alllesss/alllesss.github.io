@@ -64,6 +64,11 @@
   {% include google_analytics.html %}
   {% include cloudflare_analytics.html %}
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://rsms.me" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
   {% if layout.common-ext-css %}
     {% for css in layout.common-ext-css %}
       {% include ext-css.html css=css %}
@@ -119,7 +124,9 @@
   {%- endcapture -%}
   {%- assign img=img | strip -%}
 
-  <link rel="preload" as="image" href="{{ page.cover-img }}">
+  {% if page.cover-img and img != "" %}
+  <link rel="preload" as="image" href="{{ img }}">
+  {% endif %}
 
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
@@ -147,8 +154,10 @@
   {% else %}
   <meta name="twitter:card" content="summary">
   {% endif %}
+  {% if site.social-network-links.twitter %}
   <meta name="twitter:site" content="@{{ site.social-network-links.twitter }}">
   <meta name="twitter:creator" content="@{{ site.social-network-links.twitter }}">
+  {% endif %}
 
   <meta property="twitter:title" content="{{ title }}">
   <meta property="twitter:description" content="{{ description }}">
@@ -158,10 +167,6 @@
   {% endif %}
 
   {% include matomo.html %}
-
-  {% if page.comments and site.staticman.repository and site.staticman.branch %}
-  <link rel="stylesheet" href="{{ "/assets/css/staticman.css" | relative_url }}">
-  {% endif %}
 
   {% assign favicon_exists = site.static_files | where: "path", "/favicon.ico" | size %}
   {% if favicon_exists == 1 %}

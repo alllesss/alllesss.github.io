@@ -162,6 +162,13 @@ $(function() {
     localStorage.setItem('bj-dark-mode', $("body").hasClass("page-dark-mode"));
     BeautifulJekyllJS.initNavbar();
   });
+  // Keyboard support for the toggle (Enter / Space)
+  $('#change-skin').on('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      $(this).trigger('click');
+    }
+  });
   // Initialize theme from saved preference without toggling
   var v = localStorage.getItem('bj-dark-mode');
   if (v === 'true') {

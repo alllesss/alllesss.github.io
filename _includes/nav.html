@@ -3,7 +3,7 @@
   {%- if site.title-img -%}
     <a class="navbar-brand navbar-brand-logo" href="{{ '/' | absolute_url }}"><img alt="{{ site.title }} Logo" src="{{ site.title-img | relative_url}}"/></a>
   {%- elsif site.title -%}
-    <a class="navbar-brand" href="{{ '/' | absolute_url }}">{{ site.title }} &nbsp; <span class="farsi">اشــراق</span></a>
+    <a class="navbar-brand" href="{{ '/' | absolute_url }}">{{ site.title }} &nbsp; <span class="farsi" lang="fa">اشــراق</span></a>
   {%- endif -%}
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,10 +47,10 @@
     {% endfor %}
   {% endif %}
   
-  <div id="change-skin" title="Toggle Night Mode">
-  <span class="skin-btn dark-mode">🌙</span>
-  <span class="skin-btn light-mode">☀️</span>
-</div>
+  <div id="change-skin" title="Toggle Night Mode" role="button" tabindex="0" aria-label="Toggle dark mode">
+    <span class="skin-btn dark-mode" aria-hidden="true">🌙</span>
+    <span class="skin-btn light-mode" aria-hidden="true">☀️</span>
+  </div>
 
   {% if site.avatar and page.show-avatar != false %}
     <div class="avatar-container">

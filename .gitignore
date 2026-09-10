@@ -11,3 +11,7 @@ ehthumbs.db
 Gemfile.lock
 
 beautiful-jekyll-theme-*.gem
+
+# stale build copies
+raft/
+rafts/

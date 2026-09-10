@@ -62,7 +62,7 @@ layout: page
 
           {% if thumbnail != "" %}
           <div class="post-card-right">
-            <img src="{{ thumbnail | absolute_url }}" alt="Post thumbnail" class="post-card-thumbnail">
+            <img src="{{ thumbnail | absolute_url }}" alt="{{ post.title | strip_html }}" class="post-card-thumbnail" loading="lazy">
           </div>
           {% endif %}
         </div>
