@@ -1,0 +1,252 @@
+/* About page — colophon layout adapted from the ESHRAQ interface "About" screen.
+   Reuses the blog's Flexoki palette, Barlow (--font-ui) / Inter (--font-body)
+   and the .post-preview card treatment. Loaded only on about.md via `css:`. */
+
+.about {
+  --about-border: #CECDC3;
+  --about-surface: #F2F0E5;
+  --about-surface-hover: #FFFCF0;
+  --about-text: #100F0F;
+  --about-text-soft: #403E3C;
+  --about-text-muted: #6F6E69;
+  --about-text-faint: #878580;
+  --about-accent: #BC5215;
+  --about-accent-soft: rgba(188, 82, 21, 0.12);
+  --about-radius: var(--image-radius, 0.5rem);
+}
+
+body.page-dark-mode .about {
+  --about-border: #403E3C;
+  --about-surface: #1C1B1A;
+  --about-surface-hover: #282726;
+  --about-text: #F2F0E5;
+  --about-text-soft: #CECDC3;
+  --about-text-muted: #878580;
+  --about-text-faint: #6F6E69;
+  --about-accent: #DA702C;
+  --about-accent-soft: rgba(218, 112, 44, 0.16);
+}
+
+/* ---- masthead ---- */
+.about-lead {
+  font-size: 1.12rem;
+  line-height: 1.7;
+  color: var(--about-text-soft);
+  margin: 0.25rem 0 1rem;
+  text-wrap: pretty;
+}
+.about-lead strong { color: var(--about-text); }
+.about-lead em { font-style: normal; color: var(--about-accent); }
+.about-lead .farsi { font-size: 1.15em; }
+
+/* Small tracked label — the interface's "mono label" voice, in Barlow */
+.about-meta,
+.about-label,
+.about-credit-role,
+.about-tile-sub,
+.about-colophon {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--about-text-muted);
+}
+.about-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  align-items: center;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--about-border);
+}
+.about-meta .is-accent { color: var(--about-accent); }
+.about-meta .sep { opacity: 0.4; }
+.about-meta .studio { margin-left: auto; }
+.about-meta .studio a {
+  letter-spacing: 0.32em;
+  color: var(--about-text);
+  text-decoration: none;
+}
+.about-meta .studio a:hover { color: var(--about-accent); }
+
+.about-label {
+  margin: 2.2rem 0 0.8rem;
+  color: var(--about-text-faint);
+}
+
+/* ---- grids ---- */
+.about-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(var(--about-min, 150px), 1fr));
+}
+.about-grid.cols-2 { --about-min: 260px; }
+.about-grid.cols-3 { --about-min: 190px; }
+.about-grid.cols-4 { --about-min: 150px; }
+
+/* ---- tiles & cards (post-preview lineage) ---- */
+.about-tile,
+.about-card,
+.about-logo {
+  border: 1px solid var(--about-border);
+  background-color: var(--about-surface);
+  border-radius: var(--about-radius);
+  box-shadow: 2px 2px 4px rgba(16, 15, 15, 0.06);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.about-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  min-height: 6rem;
+}
+.about-tile-n {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--about-accent);
+}
+.about-tile-title {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--about-text);
+  text-wrap: pretty;
+}
+.about-tile-sub { font-size: 0.66rem; color: var(--about-text-faint); margin-top: auto; }
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.1rem 1.2rem;
+}
+.about-card-name {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--about-text);
+  margin: 0;
+}
+.about-badge {
+  align-self: flex-start;
+  display: inline-block;
+  margin: 0.45rem 0 0.8rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--about-accent);
+  border-radius: 999px;
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--about-accent);
+  background-color: var(--about-accent-soft);
+}
+.about-card-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--about-text-soft);
+  margin: 0;
+  text-wrap: pretty;
+}
+.about-card-body a { color: var(--about-accent); }
+.about-card-foot {
+  margin-top: 0.9rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--about-border);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+.about-card-foot a { color: var(--about-text-muted); text-decoration: none; }
+.about-card-foot a:hover { color: var(--about-accent); }
+
+/* ---- line credits ---- */
+.about-credits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.about-credit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--about-border);
+}
+.about-credit-role { font-size: 0.66rem; color: var(--about-text-faint); }
+.about-credit-name { color: var(--about-text-soft); font-size: 0.98rem; }
+.about-credit-name .note { color: var(--about-text-faint); }
+.about-thanks {
+  margin: 0.4rem 0 0;
+  line-height: 1.6;
+  color: var(--about-text-soft);
+}
+
+/* ---- supporters: quiet until hovered ---- */
+.about-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5.75rem;
+  padding: 1rem 1.1rem;
+  opacity: 0.62;
+  text-decoration: none;
+}
+.about-logo:hover,
+.about-logo:focus-visible {
+  opacity: 1;
+  border-color: var(--about-accent);
+  background-color: var(--about-surface-hover);
+}
+.about-logo img {
+  display: block;
+  max-height: 2.1rem;
+  max-width: 82%;
+  width: auto;
+  height: auto;
+  /* flatten every logo (svg or png, any colour) to the page's ink colour */
+  filter: brightness(0);
+}
+.about-logo.tall img { max-height: 3rem; }
+.about-logo.wide img { max-height: 1.5rem; }
+body.page-dark-mode .about-logo img { filter: brightness(0) invert(1); }
+
+/* ---- colophon ---- */
+.about-colophon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  align-items: center;
+  margin-top: 2.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--about-border);
+  font-size: 0.66rem;
+  color: var(--about-text-faint);
+}
+.about-colophon .sep { opacity: 0.4; }
+.about-colophon .spacer { flex: 1; }
+.about-colophon a { color: var(--about-text-muted); }
+.about-colophon a:hover { color: var(--about-accent); }
+.about-colophon .farsi { font-size: 1.3em; text-transform: none; letter-spacing: 0; }
+.about-licence {
+  margin: 0.9rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--about-text-muted);
+}
+.about-licence img { vertical-align: text-bottom; height: 18px; margin-left: 2px; }
+body.page-dark-mode .about-licence img { filter: invert(1); }
+
+/* The newsletter block already has global styles; just tighten spacing here */
+.about .newsletter-container { margin: 1rem auto 0; }
+
+@media (max-width: 480px) {
+  .about-lead { font-size: 1.02rem; }
+  .about-meta .studio { margin-left: 0; }
+  .about-card { padding: 1rem; }
+}
