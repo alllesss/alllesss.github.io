@@ -159,7 +159,7 @@ css:
 
     <ul class="posts-list links-list list-unstyled" role="list">
         <li class="post-preview spotlight-target">
-            <a class="post-preview-link" href="https://www.eshraq.io/about/" target="_blank" rel="noopener noreferrer">
+            <a class="post-preview-link" href="/stay/">
                 <article>
                     <h2 class="post-title"><span class="link-prefix"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm1 2v14h14V5H5Zm2 2h6v2H7V7Zm0 4h10v2H7v-2Zm0 4h10v2H7v-2Z"/></svg></span>Subscribe to Newsletter</h2>
                 </article>
