@@ -20,13 +20,13 @@ ESHRAQ is at [IDFA DocLab](https://festival.idfa.nl/en/film/88ea9b87-760b-488b-a
 
 Story mode is the guided way into ESHRAQ. Over three chapters you wake as a Soul, learn to take a body, and travel from a quiet Carevansarai to the Ziggurat of Ur and on to an Amsterdam canal. Two voices go with you: SYS, the system that hosts the simulation, and the Soul itself, speaking in my voice. When the story ends, the rest of ESHRAQ is yours to explore.
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/watch?v=IFbgHI9kj4Y" title="ESHRAQ story trailer" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/6VQQg9-gwcU" title="ESHRAQ story trailer" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
 
 **Gameplay trailer**
 
 If you would rather watch than play, there is the walkthrough: a two-hour video I recorded and edited myself, playing on a loop at the exhibition. In it I move through ESHRAQ's levels one by one and talk about how they came to be: the ideas behind them, the references, and a few personal rants.
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/pJcRu9q5iqM" title="ESHRAQ gameplay trailer" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/IFbgHI9kj4Y" title="ESHRAQ gameplay trailer" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
 
 
 ## Visiting
