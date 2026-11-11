@@ -20,3 +20,6 @@ rafts/
 node_modules/
 dist/
 .astro/
+
+# cloudflare
+.wrangler/
