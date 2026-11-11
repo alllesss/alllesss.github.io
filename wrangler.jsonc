@@ -2,7 +2,7 @@
 // _redirects and _headers in public/ are applied by Cloudflare as well.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "eshraq",
+  "name": "eshraq-io",
   "compatibility_date": "2025-10-01",
   "assets": {
     "directory": "./dist",
