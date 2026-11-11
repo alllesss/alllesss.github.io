@@ -12,14 +12,14 @@ const meta = imageMeta(src);
 const optimise = meta && !meta.animated && !/\.(svg|gif)$/i.test(src);
 const hasCaption = Boolean(caption) || Astro.slots.has('default');
 // How wide the image is drawn, so the browser can pick the smallest file that still looks sharp.
-const drawn = size === 'small' ? '480px' : size === 'medium' ? '736px' : '960px';
+const drawn = size === 'small' ? '480px' : size === 'medium' ? '680px' : '880px';
 const sizes = `(min-width: 1100px) ${drawn}, 100vw`;
 // Tall (portrait) images are capped so they never grow taller than the screen.
 const portrait = meta && meta.h > meta.w * 1.05 ? `max-width: min(100%, ${Math.round((760 * meta.w) / meta.h)}px);` : '';
 const custom = width ? `max-width: ${/^\d+$/.test(width) ? width + 'px' : width}; margin-inline: auto;` : '';
 const style = custom || portrait || undefined;
 ---
-<figure class:list={['fig', size && `fig--${size}`]} style={style}>
+<figure class:list={['fig', size && `fig--${size}`, !style && !size && 'fig--auto']} style={style}>
   <span class="fig-frame" data-zoom style={meta ? `--ph: ${meta.color}` : undefined}>
     {optimise ? (
       <Picture

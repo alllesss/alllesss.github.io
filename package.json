@@ -16,8 +16,10 @@
     "@fontsource-variable/inter": "^5.3.0",
     "@fontsource/barlow": "^5.3.0",
     "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
     "astro": "^7.4.10",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "simple-icons": "^16.37.0"
   },
   "devDependencies": {
     "js-yaml": "^5.5.0"

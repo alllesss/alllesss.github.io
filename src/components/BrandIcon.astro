@@ -1,0 +1,14 @@
+---
+// A brand logo (Steam, Instagram…) drawn in the current text colour. Shapes come from the
+// simple-icons package, so they match each brand's official mark.
+import { siSteam, siInstagram } from 'simple-icons';
+
+const ICONS = { steam: siSteam, instagram: siInstagram } as const;
+interface Props { name: keyof typeof ICONS; size?: number; label?: string }
+const { name, size = 20, label } = Astro.props;
+const icon = ICONS[name];
+---
+<svg
+  class="brand-icon" viewBox="0 0 24 24" width={size} height={size} fill="currentColor"
+  role={label ? 'img' : undefined} aria-label={label} aria-hidden={label ? undefined : 'true'}
+><path d={icon.path} /></svg>

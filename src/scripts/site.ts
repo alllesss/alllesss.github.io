@@ -1,20 +1,5 @@
 // Small behaviours for the whole site. No framework; everything is optional enhancement.
 
-// --- Amsterdam clock (the title-bar readout from the simulation) ---
-const dEl = document.querySelector<HTMLElement>('[data-clock-date]');
-const tEl = document.querySelector<HTMLElement>('[data-clock-time]');
-if (dEl && tEl) {
-  const fd = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Amsterdam', day: '2-digit', month: 'short', year: 'numeric' });
-  const ft = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Amsterdam', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
-  const tick = () => {
-    const n = new Date();
-    dEl.textContent = fd.format(n);
-    tEl.textContent = ft.format(n);
-  };
-  tick();
-  setInterval(tick, 1000);
-}
-
 // --- Looping clips play only while visible ---
 const clips = document.querySelectorAll<HTMLVideoElement>('video[data-autoplay]');
 if (clips.length) {
@@ -105,4 +90,22 @@ if (links.length) {
   };
   addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
   update();
+
+  // Fade the index out while a wide image or video passes alongside it, so it never sits on top of one.
+  const toc = document.querySelector<HTMLElement>('.toc');
+  const wide = [...document.querySelectorAll<HTMLElement>('.prose > .fig--auto, .prose > .embed')];
+  if (toc && wide.length) {
+    const check = () => {
+      if (getComputedStyle(toc).display === 'none') return;
+      const t = toc.getBoundingClientRect();
+      const covered = wide.some((el) => {
+        const r = el.getBoundingClientRect();
+        return r.left < t.right + 8 && r.bottom > t.top - 16 && r.top < t.bottom + 16;
+      });
+      toc.classList.toggle('is-covered', covered);
+    };
+    addEventListener('scroll', () => requestAnimationFrame(check), { passive: true });
+    addEventListener('resize', () => requestAnimationFrame(check));
+    check();
+  }
 }

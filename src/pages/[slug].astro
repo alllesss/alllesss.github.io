@@ -8,102 +8,138 @@ import Embed from '../components/Embed.astro';
 import Callout from '../components/Callout.astro';
 import Newsletter from '../components/Newsletter.astro';
 import PdfViewer from '../components/PdfViewer.astro';
-import { getPosts, fmtDate, isoDate, pad2 } from '../lib/posts';
+import { getPosts, fmtDate, isoDate } from '../lib/posts';
 import { imageMeta, widthsFor, FORMATS, FALLBACK } from '../lib/images';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
   return posts.map((post, i) => ({
     params: { slug: post.id },
-    props: { post, newer: posts[i - 1], older: posts[i + 1], total: posts.length },
+    props: {
+      post,
+      newer: posts[i - 1],
+      older: posts[i + 1],
+    },
   }));
 }
 
-const { post, newer, older, total } = Astro.props;
+const { post, newer, older } = Astro.props;
 const { Content, headings } = await render(post);
-const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
+
+// Index: the post's sections. If the post has a single top heading, list the sub-headings instead.
+const h2 = headings.filter((h) => h.depth === 2);
+const toc = h2.length >= 2 ? h2 : headings.filter((h) => h.depth === 3);
 const showToc = toc.length >= 3;
+
 const cover = post.data.cover;
 const meta = imageMeta(cover);
+const banner = Boolean(cover && meta && post.data.banner);
 let og: string | undefined;
 if (cover && meta) {
   const img = await getImage({ src: cover, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
   og = new URL(img.src, Astro.site).href;
 }
 const description = post.data.description ?? post.data.subtitle;
+const OWNER = 'Ali Eslami';
 ---
 <Base title={post.data.title} description={description} image={og} type="article">
-  <div class:list={['post-layout', !showToc && 'no-toc']}>
-    {showToc && (
-      <aside class="toc" aria-label="Index">
-        <div class="toc-inner">
-          <p class="label">Index</p>
-          <ol>
-            {toc.map((h) => <li><a class={`d${h.depth}`} href={`#${h.slug}`}>{h.text}</a></li>)}
-          </ol>
-        </div>
-      </aside>
-    )}
-
-    <article class="post-main">
-      <div class="post-back">
-        <a class="btn btn--ghost btn--sm" href="/">‹ Process log</a>
-        <span class="data faint">LOG {pad2(post.log)} / {pad2(total)}</span>
+  {banner ? (
+    <header class="post-banner" style={`--ph: ${meta!.color}; --ratio: ${(meta!.w / meta!.h).toFixed(3)}`}>
+      <Picture
+        src={cover!} alt="" width={meta!.w} height={meta!.h}
+        widths={widthsFor(meta!.w, [768, 1280, 1920, 2560])} sizes="(min-width: 1240px) 1100px, 100vw"
+        formats={[...FORMATS]} fallbackFormat={FALLBACK}
+        loading="eager" fetchpriority="high" decoding="async"
+      />
+      <div class="post-banner-text">
+        <p class="post-meta">
+          <time datetime={isoDate(post.data.date)}>{fmtDate(post.data.date)}</time>
+          <span>·</span><span>{post.minutes} min read</span>
+          {post.data.author !== OWNER && <Fragment><span>·</span><span>By {post.data.author}</span></Fragment>}
+        </p>
+        <h1 class="post-title">{post.data.title}</h1>
+        {post.data.subtitle && <p class="post-subtitle">{post.data.subtitle}</p>}
       </div>
-
+    </header>
+  ) : (
+    <Fragment>
       <header class="post-head">
-        <p class="post-eyebrow data">
-          <time class="is-accent" datetime={isoDate(post.data.date)}>{fmtDate(post.data.date)}</time>
-          <span class="sep">/</span>
-          <span>{post.data.author.toUpperCase()}</span>
-          <span class="sep">/</span>
-          <span>{post.minutes} MIN READ</span>
+        <p class="post-meta">
+          <time datetime={isoDate(post.data.date)}>{fmtDate(post.data.date)}</time>
+          <span>·</span><span>{post.minutes} min read</span>
+          {post.data.author !== OWNER && <Fragment><span>·</span><span>By {post.data.author}</span></Fragment>}
         </p>
         <h1 class="post-title">{post.data.title}</h1>
         {post.data.subtitle && <p class="post-subtitle">{post.data.subtitle}</p>}
       </header>
-
       {cover && meta && (
-        <figure class="post-cover" style={`background-color: ${meta.color}`}>
+        <figure class="post-cover-plain" style={`--ph: ${meta.color}`}>
           <Picture
             src={cover} alt="" width={meta.w} height={meta.h}
-            widths={widthsFor(meta.w)} sizes="(min-width: 1100px) 960px, 100vw"
+            widths={widthsFor(meta.w, [768, 1280, 1760])} sizes="(min-width: 960px) 880px, 100vw"
             formats={[...FORMATS]} fallbackFormat={FALLBACK}
             loading="eager" fetchpriority="high" decoding="async"
           />
         </figure>
       )}
+    </Fragment>
+  )}
 
+  <div class:list={['post-grid', showToc && 'has-toc']}>
+    {showToc && (
+      <nav class="toc" aria-label="Index">
+        <p class="label">Index</p>
+        <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+      </nav>
+    )}
+
+    <article class="prose">
       {showToc && (
         <details class="toc-inline">
-          <summary class="label">Index</summary>
-          <ol>
-            {toc.map((h) => <li><a class={`d${h.depth}`} href={`#${h.slug}`}>{h.text}</a></li>)}
-          </ol>
+          <summary class="label">Contents</summary>
+          <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
         </details>
       )}
-
-      <div class="prose">
-        <Content components={{ Figure, Video, Embed, Callout, Newsletter, PdfViewer }} />
-      </div>
-
-      <footer class="post-end">
-        <hr class="rule" />
-        <nav class="post-nav" aria-label="More entries">
-          {older && (
-            <a class="glass prev" href={`/${older.id}/`}>
-              <span class="data">‹ OLDER · LOG {pad2(older.log)}</span>
-              <strong>{older.data.title}</strong>
-            </a>
-          )}
-          {newer && (
-            <a class="glass next" href={`/${newer.id}/`}>
-              <span class="data">NEWER · LOG {pad2(newer.log)} ›</span>
-              <strong>{newer.data.title}</strong>
-            </a>
-          )}
-        </nav>
-      </footer>
+      <Content components={{ Figure, Video, Embed, Callout, Newsletter, PdfViewer }} />
     </article>
+    <script is:inline>
+      // Group runs of images while the page loads (before it is drawn): two or more images in a row
+      // become a two-column grid (with an odd count, the first one runs full width).
+      (function () {
+        var seen = new Set();
+        var isFig = function (el) { return el && el.matches && el.matches('figure.fig') && !el.classList.contains('pdf'); };
+        var next = function (el) { var n = el.nextElementSibling; return n; };
+        document.querySelectorAll('.prose figure.fig').forEach(function (start) {
+          if (seen.has(start) || !isFig(start)) return;
+          var prev = start.previousElementSibling;
+          if (isFig(prev)) return;
+          var run = [start];
+          for (var n = next(start); isFig(n); n = next(n)) run.push(n);
+          run.forEach(function (f) { seen.add(f); });
+          if (run.length < 2) return;
+          var box = document.createElement('div');
+          box.className = 'fig-grid' + (run.length % 2 ? ' fig-grid--odd' : '');
+          start.parentNode.insertBefore(box, start);
+          run.forEach(function (f) { f.removeAttribute('style'); f.classList.remove('fig--auto'); box.appendChild(f); });
+        });
+      })();
+    </script>
+
+    <footer class="post-end">
+      <nav class="post-nav" aria-label="More entries">
+        {older && (
+          <a class="glass prev" href={`/${older.id}/`}>
+            <span class="data">‹ OLDER</span>
+            <strong>{older.data.title}</strong>
+          </a>
+        )}
+        {newer && (
+          <a class="glass next" href={`/${newer.id}/`}>
+            <span class="data">NEWER ›</span>
+            <strong>{newer.data.title}</strong>
+          </a>
+        )}
+      </nav>
+    </footer>
   </div>
 </Base>

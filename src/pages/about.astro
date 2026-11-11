@@ -109,29 +109,36 @@ const supporters = [
       )}
     </div>
 
-    <h2 class="section-label label">Newsletter</h2>
-    <Newsletter />
+    <div class="about-news"><Newsletter /></div>
+
+    <h2 class="section-label label">Licence</h2>
+    <p class="about-licence">Texts and images on this blog are licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a> unless noted otherwise. The ESHRAQ simulation, film and artworks are all rights reserved. © 2023–{new Date().getFullYear()} Ali Eslami.</p>
   </div>
 </Base>
 
 <style>
-  .about { max-width: 60rem; }
+  .about { max-width: 58rem; margin: 0 auto; }
+  .about .section-label { margin: 64px 0 20px; }
+  .about-news { margin-top: 64px; }
+  .about :global(.newsletter) { margin: 0; }
   .about-studio { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; padding-bottom: 8px; }
   .about-studio a { font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: 0.34em; color: var(--text-bright); margin-right: -0.34em; }
   .about-studio a:hover { color: var(--accent-hover); }
   .about-lead { font-size: clamp(1.15rem, 2.2vw, 1.375rem); line-height: 1.6; color: var(--text-body); max-width: 46rem; text-wrap: pretty; }
   .about-lead strong { color: var(--text-bright); }
   .about-lead em { font-style: normal; color: var(--accent); }
-  .about-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 22px; }
+  .about-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 24px; }
   .about-grid { display: grid; gap: var(--gap-tile); grid-template-columns: repeat(auto-fit, minmax(var(--min, 150px), 1fr)); }
-  .cols-2 { --min: 300px; }
+  .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cols-3 { --min: 200px; }
-  .cols-4 { --min: 170px; }
-  .about-tile { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px; min-height: 7rem; }
+  .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .about-tile { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; min-height: 8rem; }
   .about-tile > *, .about-card > * { position: relative; z-index: 1; }
   .about-tile strong { font-family: var(--font-display); font-weight: 600; font-size: var(--text-md); color: var(--text-bright); line-height: 1.25; }
   .about-tile .label { margin-top: auto; font-size: 10.5px; letter-spacing: 0.12em; color: var(--text-faint); }
   .about-card { display: flex; flex-direction: column; gap: 12px; padding: 20px 22px; }
+  .about-licence { max-width: 46rem; font-size: 15px; line-height: 1.65; color: var(--text-muted); }
+  .about-licence a { color: var(--text-body); text-decoration: underline; text-underline-offset: 3px; }
   .about-card h3 { font-size: var(--text-lg); }
   .about-card p { font-size: 0.95rem; line-height: 1.65; color: var(--text-body); }
   .about-card a { margin-top: auto; padding-top: 4px; color: var(--accent); }
@@ -144,6 +151,8 @@ const supporters = [
   .about-logo img { position: relative; z-index: 1; max-height: 2.1rem; max-width: 100%; width: auto; filter: brightness(0) invert(1); opacity: 0.82; }
   .about-logo.tall img { max-height: 3rem; }
   .about-logo.wide img { max-height: 1.5rem; }
+  @media (max-width: 860px) { .cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 640px) { .cols-2 { grid-template-columns: minmax(0, 1fr); } }
   @media (max-width: 560px) {
     .about-credits li { grid-template-columns: 1fr; }
     .about-studio { align-items: flex-start; }

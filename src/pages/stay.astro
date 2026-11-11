@@ -5,7 +5,6 @@ import Base from '../layouts/Base.astro';
 <Base
   title="Stay in touch"
   description="ESHRAQ is coming to Steam in Early Access. Leave your email to hear when it is out, and to get new devlogs from the process log."
-  bare
 >
   <div class="stay">
     <p class="label is-accent">Early Access · Coming to Steam</p>
@@ -16,10 +15,6 @@ import Base from '../layouts/Base.astro';
       <iframe src="https://alllesss.substack.com/embed" title="Subscribe to the ESHRAQ newsletter on Substack" scrolling="no"></iframe>
     </div>
     <p class="data faint">Unsubscribe any time.</p>
-
-    <p class="stay-links data">
-      <a href="/">Process log</a><span class="faint">/</span><a href="/about/">About</a><span class="faint">/</span><a href="https://instagram.com/alless0" target="_blank" rel="noopener">@alless0</a>
-    </p>
   </div>
 </Base>
 
@@ -30,7 +25,4 @@ import Base from '../layouts/Base.astro';
   .stay-lead a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(218, 112, 44, 0.45); }
   .stay-box { margin: 28px 0 12px; padding: 14px; }
   .stay-box iframe { position: relative; z-index: 1; display: block; width: 100%; min-height: 320px; border: 0; border-radius: var(--radius-md); background: #fff; }
-  .stay-links { margin-top: 36px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; text-transform: uppercase; letter-spacing: var(--tracking-wider); }
-  .stay-links a { color: var(--text-muted); }
-  .stay-links a:hover { color: var(--accent-hover); }
 </style>

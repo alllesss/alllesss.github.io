@@ -20,6 +20,9 @@ const posts = defineCollection({
     // Moments out in the world get an orange dot on the home timeline and count as Events
     // (except Residency, which reads as a devlog). Leave it out for ordinary devlogs and essays.
     type: z.enum(['Exhibition', 'Residency', 'Talk', 'Screening', 'Release']).optional(),
+    // The cover is shown as a wide banner with the title on it. Set `banner: false` for covers that
+    // shouldn't be cropped (posters, logos, small images): they're shown whole, under the title.
+    banner: z.boolean().default(true),
     draft: z.boolean().default(false),
   }),
 });

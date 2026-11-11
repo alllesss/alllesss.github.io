@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Thumb from '../components/Thumb.astro';
+import BrandIcon from '../components/BrandIcon.astro';
 import { getPosts, isoDate } from '../lib/posts';
 import { pinned } from '../data/pinned';
 
@@ -62,14 +63,26 @@ const rows = posts.map((p, i) => {
 
   {cards.length > 0 && (
     <section class="pinned" aria-label="Pinned">
-      {cards.map((card) => (
-        <a class:list={['pin glass', card.live && 'is-live']} href={card.link.href}>
-          <span><span class:list={['badge', card.live && 'badge--accent']}>{card.live && <span class="pulse" aria-hidden="true" />}{card.status}</span></span>
-          <strong class="pin-title">{card.title}</strong>
-          <span class="pin-text">{card.text}</span>
-          <span class="pin-link label">{card.link.label} ›</span>
-        </a>
-      ))}
+      {cards.map((card) =>
+        card.brand === 'steam' ? (
+          <a class="pin pin--steam" href={card.link.href}>
+            <span class="steam-top">
+              <span class="steam-mark"><BrandIcon name="steam" size={22} /><span>STEAM</span></span>
+              <span class="steam-status">{card.status}</span>
+            </span>
+            <strong class="pin-title">{card.title}</strong>
+            <span class="pin-text">{card.text}</span>
+            <span class="steam-btn">{card.link.label}</span>
+          </a>
+        ) : (
+          <a class:list={['pin glass', card.live && 'is-live']} href={card.link.href}>
+            <span><span class:list={['badge', card.live && 'badge--accent']}>{card.live && <span class="pulse" aria-hidden="true" />}{card.status}</span></span>
+            <strong class="pin-title">{card.title}</strong>
+            <span class="pin-text">{card.text}</span>
+            <span class="pin-link label">{card.link.label} ›</span>
+          </a>
+        ),
+      )}
     </section>
   )}
 
@@ -170,6 +183,25 @@ const rows = posts.map((p, i) => {
   .pin:hover .pin-title { color: var(--accent-hover); }
   .pin-text { font-size: 15px; line-height: 1.5; color: var(--text-muted); }
   .pin-link { margin-top: auto; padding-top: 4px; color: var(--accent); }
+  /* Steam card: Steam's own palette and logo, so it reads as "this is on Steam" at a glance. */
+  .pin--steam {
+    position: relative; border-radius: var(--radius-lg); overflow: hidden;
+    background: linear-gradient(135deg, #171a21 0%, #1b2838 55%, #2a475e 100%);
+    border: 1px solid rgba(102, 192, 244, 0.28); box-shadow: var(--shadow-md);
+  }
+  .pin--steam:hover { border-color: rgba(102, 192, 244, 0.7); }
+  .pin--steam .pin-title { color: #ffffff; }
+  .pin--steam:hover .pin-title { color: #66c0f4; }
+  .pin--steam .pin-text { color: #c7d5e0; }
+  .steam-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .steam-mark { display: inline-flex; align-items: center; gap: 8px; color: #ffffff; font-family: var(--font-display); font-weight: 600; font-size: 15px; letter-spacing: 0.14em; }
+  .steam-status { padding: 3px 10px; border-radius: 2px; background: rgba(102, 192, 244, 0.18); color: #66c0f4; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .steam-btn {
+    align-self: flex-start; margin-top: auto; padding: 8px 16px; border-radius: 2px;
+    background: linear-gradient(90deg, #06bfff 0%, #2d73ff 100%); color: #ffffff; font-size: 14px; font-weight: 500;
+    transition: filter var(--dur-fast);
+  }
+  .pin--steam:hover .steam-btn { filter: brightness(1.12); }
   .pulse { width: 6px; height: 6px; border-radius: 999px; background: currentColor; animation: pulse 2.4s var(--ease-standard) infinite; }
   @keyframes pulse { 50% { opacity: 0.35; } }
 
