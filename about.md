@@ -62,7 +62,7 @@ css:
   </div>
   <div class="about-card">
     <h3 class="about-card-name">Shahin Entezami</h3>
-    <span class="about-badge">Sound</span>
+    <span class="about-badge">Sound &amp; Music</span>
     <p class="about-card-body">Iranian musician and sound artist based in Paris, known as Tegh. Rooted in noise, drone and glitch with experimental elements, combining audio into complex soundscapes that bring new aural experiences to life.</p>
   </div>
 </div>
@@ -72,7 +72,7 @@ css:
   <li class="about-credit"><span class="about-credit-role">Graphic Design</span><span class="about-credit-name">Danial Alemasoum</span></li>
   <li class="about-credit"><span class="about-credit-role">3D Art Assistant</span><span class="about-credit-name">Babak Modarresi</span></li>
   <li class="about-credit"><span class="about-credit-role">Voice</span><span class="about-credit-name">Zehra Eekhout <span class="note">· as Liz Hoekstra</span></span></li>
-  <li class="about-credit"><span class="about-credit-role">Interns &amp; Research Assistants</span><span class="about-credit-name">Nesa Pourgholi, Max Kortmann, Julian Van Halteren</span></li>
+  <li class="about-credit"><span class="about-credit-role">Interns &amp; Research Assistants</span><span class="about-credit-name">Nesa Pourgholi, Max Kortmann</span></li>
 </ul>
 
 <div class="about-label">With thanks to</div>
