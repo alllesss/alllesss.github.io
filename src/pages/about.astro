@@ -1,0 +1,151 @@
+---
+import Base from '../layouts/Base.astro';
+import Newsletter from '../components/Newsletter.astro';
+
+const forms = [
+  { n: '01', title: 'Interactive Simulation', sub: 'Archive and Immersive modes' },
+  { n: '02', title: 'Film & Video Installation' },
+  { n: '03', title: 'Physical Artworks', sub: 'Sculptures and objects' },
+  { n: '04', title: 'Research Blog', sub: 'This site, ESHRAQ.io' },
+];
+
+const core = [
+  {
+    name: 'Ali Eslami', role: 'Artist',
+    body: 'Iranian-Dutch artist based in Amsterdam (b. 1991). Long-term, practice-based research in memory, computation and human cognition, often through non-Western frameworks like Illuminationism. Alumnus of the Rijksakademie van Beeldende Kunsten (2021–23); awards include the IDFA DocLab Award, the Golden Calf, the Cremer Prize and the Wendy-Gutman Prize.',
+    link: { href: 'https://alllesss.com', label: 'ALLLESSS.com ↗' },
+  },
+  {
+    name: 'K.O. Productions', role: 'Production',
+    body: 'Amsterdam-based production house for art & technology, run by creative producer Siuli Ko since 2007. After early years at V2_, Institute for the Unstable Media, Siuli has produced and toured immersive work internationally, including Ali Eslami & Mamali Shafahi\'s <em>Nerd_Funk</em>. Marijn Bril (curator, researcher) is part of the K.O. team and works on the production of ESHRAQ.',
+  },
+  {
+    name: 'Will Scarlett', role: 'Writer & Researcher',
+    body: 'Writer and researcher of the uncertain spaces between sensation and the surrounding world. PhD in Anthropology from the New School for Social Research, exploring experiences of presence in virtual and elemental environments. His essays for ESHRAQ appear on this blog.',
+    link: { href: 'https://waverockwave.neocities.org/', label: 'waverockwave ↗' },
+  },
+  {
+    name: 'Shahin Entezami', role: 'Sound & Music',
+    body: 'Iranian musician and sound artist based in Paris, known as Tegh. Rooted in noise, drone and glitch with experimental elements, combining audio into complex soundscapes that bring new aural experiences to life.',
+  },
+];
+
+const credits = [
+  { role: 'Graphic Design', name: 'Danial Alemasoum' },
+  { role: '3D Art Assistant', name: 'Babak Modarresi' },
+  { role: 'Voice', name: 'Zehra Eekhout', note: 'as Liz Hoekstra' },
+  { role: 'Interns & Research Assistants', name: 'Nesa Pourgholi, Max Kortmann' },
+];
+
+const supporters = [
+  { name: 'Mondriaan Fonds', href: 'https://www.mondriaanfonds.nl/en/', src: '/assets/img/logos/mondriaan-fonds.svg' },
+  { name: 'Amsterdams Fonds voor de Kunst', href: 'https://www.amsterdamsfondsvoordekunst.nl/en/', src: '/assets/img/logos/afk.svg' },
+  { name: 'Amarte Fonds', href: 'https://www.amarte.nl/en', src: '/assets/img/logos/amarte.png', cls: 'wide' },
+  { name: 'MAKE Eindhoven', href: 'https://www.makeeindhoven.nl/', src: '/assets/img/logos/make-eindhoven.svg' },
+  { name: 'Shared Realities', src: '/assets/img/logos/shared-realities.png', cls: 'tall' },
+  { name: 'Dommering Fonds', href: 'https://www.dommeringfonds.nl/en/home', src: '/assets/img/logos/dommering-fonds.svg', cls: 'tall' },
+];
+---
+<Base
+  title="About"
+  description="ESHRAQ is a research project by Ali Eslami, built in Unreal Engine and inspired by Suhrawardi's Illuminationist philosophy. Who makes it, what forms it takes, and who supports it."
+>
+  <div class="about">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">About</h1>
+      </div>
+      <p class="about-studio"><span class="label">A project of</span><a href="https://alllesss.com" target="_blank" rel="noopener">ALLLESSS</a></p>
+    </div>
+
+    <p class="about-lead">
+      <strong>ESHRAQ</strong> <span class="farsi" lang="fa">اشراق</span> is a research project by Ali Eslami, built in Unreal Engine and inspired by Suhrawardi's Illuminationist philosophy, exploring modular systems and agency through computational models as a <em>cognitive playground</em>. It is an ongoing body of work that unfolds in several forms: a simulation you can enter, a film, physical objects, and a written record of its making.
+    </p>
+    <p class="about-meta label">
+      <span class="is-accent">Since late 2023</span><span class="faint">/</span><span>Ongoing</span><span class="faint">/</span><span>Amsterdam</span>
+    </p>
+
+    <h2 class="section-label label">The work takes form as</h2>
+    <div class="about-grid cols-4">
+      {forms.map((f) => (
+        <div class="about-tile glass">
+          <span class="data is-accent">{f.n}</span>
+          <strong>{f.title}</strong>
+          {f.sub && <span class="label">{f.sub}</span>}
+        </div>
+      ))}
+    </div>
+
+    <h2 class="section-label label">Core</h2>
+    <div class="about-grid cols-2">
+      {core.map((c) => (
+        <div class="about-card glass">
+          <h3>{c.name}</h3>
+          <span><span class="badge badge--accent">{c.role}</span></span>
+          <p set:html={c.body} />
+          {c.link && <a class="data" href={c.link.href} target="_blank" rel="noopener">{c.link.label}</a>}
+        </div>
+      ))}
+    </div>
+
+    <h2 class="section-label label">Contributors</h2>
+    <ul class="about-credits" role="list">
+      {credits.map((c) => (
+        <li><span class="label">{c.role}</span><span>{c.name}{c.note && <span class="faint"> · {c.note}</span>}</span></li>
+      ))}
+    </ul>
+
+    <h2 class="section-label label">With thanks to</h2>
+    <p class="about-thanks">Molly Palmer<br />Shreya de Souza</p>
+
+    <h2 class="section-label label">Supported by</h2>
+    <div class="about-grid cols-3">
+      {supporters.map((s) =>
+        s.href ? (
+          <a class:list={['about-logo glass', s.cls]} href={s.href} target="_blank" rel="noopener" title={s.name}><img src={s.src} alt={s.name} loading="lazy" /></a>
+        ) : (
+          <span class:list={['about-logo glass', s.cls]} title={s.name}><img src={s.src} alt={s.name} loading="lazy" /></span>
+        ),
+      )}
+    </div>
+
+    <h2 class="section-label label">Newsletter</h2>
+    <Newsletter />
+  </div>
+</Base>
+
+<style>
+  .about { max-width: 60rem; }
+  .about-studio { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; padding-bottom: 8px; }
+  .about-studio a { font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: 0.34em; color: var(--text-bright); margin-right: -0.34em; }
+  .about-studio a:hover { color: var(--accent-hover); }
+  .about-lead { font-size: clamp(1.15rem, 2.2vw, 1.375rem); line-height: 1.6; color: var(--text-body); max-width: 46rem; text-wrap: pretty; }
+  .about-lead strong { color: var(--text-bright); }
+  .about-lead em { font-style: normal; color: var(--accent); }
+  .about-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 22px; }
+  .about-grid { display: grid; gap: var(--gap-tile); grid-template-columns: repeat(auto-fit, minmax(var(--min, 150px), 1fr)); }
+  .cols-2 { --min: 300px; }
+  .cols-3 { --min: 200px; }
+  .cols-4 { --min: 170px; }
+  .about-tile { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px; min-height: 7rem; }
+  .about-tile > *, .about-card > * { position: relative; z-index: 1; }
+  .about-tile strong { font-family: var(--font-display); font-weight: 600; font-size: var(--text-md); color: var(--text-bright); line-height: 1.25; }
+  .about-tile .label { margin-top: auto; font-size: 10.5px; letter-spacing: 0.12em; color: var(--text-faint); }
+  .about-card { display: flex; flex-direction: column; gap: 12px; padding: 20px 22px; }
+  .about-card h3 { font-size: var(--text-lg); }
+  .about-card p { font-size: 0.95rem; line-height: 1.65; color: var(--text-body); }
+  .about-card a { margin-top: auto; padding-top: 4px; color: var(--accent); }
+  .about-credits { list-style: none; margin: 0; padding: 0; }
+  .about-credits li { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 4px 24px; padding: 12px 0; border-bottom: 1px solid var(--border-soft); color: var(--text-bright); }
+  .about-credits li:first-child { border-top: 1px solid var(--border-soft); }
+  .about-thanks { color: var(--text-bright); line-height: 1.8; }
+  .about-logo { display: grid; place-items: center; height: 6rem; padding: 16px 20px; transition: border-color var(--dur-normal) var(--ease-standard); }
+  a.about-logo:hover { border-color: rgba(218, 112, 44, 0.55); }
+  .about-logo img { position: relative; z-index: 1; max-height: 2.1rem; max-width: 100%; width: auto; filter: brightness(0) invert(1); opacity: 0.82; }
+  .about-logo.tall img { max-height: 3rem; }
+  .about-logo.wide img { max-height: 1.5rem; }
+  @media (max-width: 560px) {
+    .about-credits li { grid-template-columns: 1fr; }
+    .about-studio { align-items: flex-start; }
+  }
+</style>

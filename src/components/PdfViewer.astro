@@ -1,0 +1,9 @@
+---
+// An embedded PDF.   <PdfViewer url="/assets/docs/file.pdf" title="…" caption="…" />
+interface Props { url: string; title?: string; height?: string; caption?: string }
+const { url, title = 'PDF document', height = '70vh', caption } = Astro.props;
+---
+<figure class="fig pdf">
+  <iframe src={`${url}#view=FitH&toolbar=0`} title={title} loading="lazy" style={`height: ${height}`}></iframe>
+  <figcaption>{caption ?? title} · <a href={url} target="_blank" rel="noopener">Open or download the PDF</a></figcaption>
+</figure>

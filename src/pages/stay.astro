@@ -1,0 +1,36 @@
+---
+// The newsletter page. Its address (/stay/) is printed on the IDFA QR code, so it must not change.
+import Base from '../layouts/Base.astro';
+---
+<Base
+  title="Stay in touch"
+  description="ESHRAQ is coming to Steam in Early Access. Leave your email to hear when it is out, and to get new devlogs from the process log."
+  bare
+>
+  <div class="stay">
+    <p class="label is-accent">Early Access · Coming to Steam</p>
+    <h1 class="page-title">Stay in touch</h1>
+    <p class="stay-lead">ESHRAQ is coming to Steam in Early Access. Leave your email to hear when it is out, and to get new devlogs and posts from the <a href="/">process log</a> as they are published.</p>
+
+    <div class="stay-box glass">
+      <iframe src="https://alllesss.substack.com/embed" title="Subscribe to the ESHRAQ newsletter on Substack" scrolling="no"></iframe>
+    </div>
+    <p class="data faint">Unsubscribe any time.</p>
+
+    <p class="stay-links data">
+      <a href="/">Process log</a><span class="faint">/</span><a href="/about/">About</a><span class="faint">/</span><a href="https://instagram.com/alless0" target="_blank" rel="noopener">@alless0</a>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .stay { max-width: 34rem; margin: 0 auto; text-align: center; padding-top: clamp(36px, 8vw, 80px); }
+  .stay .page-title { margin-top: 16px; font-size: clamp(2.25rem, 8vw, 3.5rem); }
+  .stay-lead { margin: 18px auto 0; font-size: 1.0625rem; line-height: 1.65; max-width: 30rem; }
+  .stay-lead a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(218, 112, 44, 0.45); }
+  .stay-box { margin: 28px 0 12px; padding: 14px; }
+  .stay-box iframe { position: relative; z-index: 1; display: block; width: 100%; min-height: 320px; border: 0; border-radius: var(--radius-md); background: #fff; }
+  .stay-links { margin-top: 36px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; text-transform: uppercase; letter-spacing: var(--tracking-wider); }
+  .stay-links a { color: var(--text-muted); }
+  .stay-links a:hover { color: var(--accent-hover); }
+</style>

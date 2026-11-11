@@ -1,0 +1,6 @@
+---
+// A highlighted aside.   <Callout tone="note | accent | soul"> … </Callout>
+interface Props { tone?: 'note' | 'accent' | 'soul' }
+const { tone = 'note' } = Astro.props;
+---
+<aside class:list={['callout glass', `callout--${tone}`]}><slot /></aside>

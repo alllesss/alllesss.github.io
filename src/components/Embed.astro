@@ -1,0 +1,27 @@
+---
+// A YouTube or Vimeo video.   <Embed src="https://www.youtube.com/embed/ID" title="…" />
+// YouTube shows a lightweight poster first; the player itself only loads when clicked.
+interface Props { src: string; title?: string; ratio?: string }
+const { src, title = 'Video', ratio = '1.778' } = Astro.props;
+const yt = src.match(/youtube(?:-nocookie)?\.com\/embed\/([\w-]{6,})/);
+const id = yt?.[1];
+---
+<div class="embed">
+  {id ? (
+    <a
+      class="embed-frame"
+      style={`aspect-ratio: ${ratio}`}
+      href={`https://www.youtube.com/watch?v=${id}`}
+      data-yt={id}
+      aria-label={`Play: ${title}`}
+    >
+      <img src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`} data-fallback={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" decoding="async" />
+      <span class="embed-tag label">{title === 'Video' ? 'Play video' : title}</span>
+      <span class="embed-play" aria-hidden="true"></span>
+    </a>
+  ) : (
+    <div class="embed-frame is-plain" style={`aspect-ratio: ${ratio}`}>
+      <iframe src={src} title={title} loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen></iframe>
+    </div>
+  )}
+</div>

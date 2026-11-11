@@ -1,0 +1,117 @@
+---
+import '@fontsource/barlow/400.css';
+import '@fontsource/barlow/500.css';
+import '@fontsource/barlow/600.css';
+import '@fontsource-variable/inter';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '../styles/tokens.css';
+import '../styles/global.css';
+import Wordmark from '../components/Wordmark.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  bare?: boolean; // no navigation or footer (the /stay and /links pages)
+}
+const SITE = 'ESHRAQ';
+const {
+  title,
+  description = 'ESHRAQ process log: working notes from an ongoing simulation by Ali Eslami.',
+  image,
+  type = 'website',
+  bare = false,
+} = Astro.props;
+const fullTitle = title ? `${title} | ${SITE}` : `${SITE} — Process Log`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const path = Astro.url.pathname;
+const nav = [
+  { href: '/', label: 'Log', current: path === '/' || /^\/\d{4}-/.test(path) },
+  { href: '/about/', label: 'About', current: path.startsWith('/about') },
+  { href: '/links/', label: 'Links', current: path.startsWith('/links') },
+  { href: '/stay/', label: 'Newsletter', current: path.startsWith('/stay') },
+];
+const GTAG = 'G-CX3VKN2EYV';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Ali Eslami" />
+    <meta name="theme-color" content="#211f1c" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" title="ESHRAQ — Process Log" href="/feed.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:site_name" content={SITE} />
+    <meta property="og:title" content={title ?? `${SITE} — Process Log`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    {import.meta.env.PROD && (
+      <Fragment>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}></script>
+        <script is:inline define:vars={{ GTAG }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', GTAG);
+        </script>
+      </Fragment>
+    )}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="frame" aria-hidden="true"></div>
+    <div class="shell">
+      <header class="site-header">
+        <Wordmark />
+        {!bare && (
+          <nav class="site-nav" aria-label="Main">
+            {nav.map((n) => <a href={n.href} aria-current={n.current ? 'page' : undefined}>{n.label}</a>)}
+            <span class="clock" aria-hidden="true"><b>Amsterdam</b><span class="d" data-clock-date></span><span class="t" data-clock-time></span></span>
+          </nav>
+        )}
+      </header>
+
+      <main id="main">
+        <slot />
+      </main>
+
+      {!bare && (
+        <footer class="site-footer">
+          <div class="colophon data">
+            <span>ESHRAQ · <span class="farsi" lang="fa">اشراق</span></span>
+            <span class="faint">/</span>
+            <span>© 2023–{new Date().getFullYear()} Ali Eslami</span>
+            <span class="faint">/</span>
+            <span>A project of <a href="https://alllesss.com" target="_blank" rel="noopener">ALLLESSS</a></span>
+          </div>
+          <nav class="data" aria-label="Footer">
+            <a href="/about/">About</a>
+            <a href="/links/">Links</a>
+            <a href="/stay/">Newsletter</a>
+            <a href="/feed.xml">RSS</a>
+            <a href="https://instagram.com/alless0" target="_blank" rel="noopener">@alless0</a>
+          </nav>
+          <p class="licence">Texts and images on this blog are licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener">CC BY 4.0</a> unless noted otherwise. The ESHRAQ simulation, film and artworks are all rights reserved.</p>
+        </footer>
+      )}
+    </div>
+
+    <dialog class="lightbox" aria-label="Image viewer">
+      <button class="btn btn--sm" type="button" data-close>Close</button>
+      <img alt="" />
+      <p class="data"></p>
+    </dialog>
+
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>

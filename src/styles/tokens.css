@@ -1,0 +1,335 @@
+/* ESHRAQ design tokens — copied from the ESHRAQ Design System (tokens/*.css).
+   Only two values differ for the web build: the body font name (self-hosted Inter Variable)
+   and the grain texture path. Update the design system first, then mirror changes here. */
+
+/* ============================================================
+   ESHRAQ — Colors
+   Built on the Flexoki palette (by Steph Ango), reframed through
+   the Illuminationist "Hierarchy of Light": warm sand & grain
+   neutrals, orange as the accent (emanation), red as the Soul /
+   Agent Core. Light emerges from a dark ground.
+   ============================================================ */
+
+:root {
+  /* ---- Flexoki base / sand scale (warm neutrals) ---- */
+  --flexoki-paper: #fffcf0;
+  --flexoki-base-50:  #f2f0e5;
+  --flexoki-base-100: #e6e4d9;
+  --flexoki-base-150: #dad8ce;
+  --flexoki-base-200: #cecdc3;
+  --flexoki-base-300: #b7b5ac;
+  --flexoki-base-400: #9f9d96;
+  --flexoki-base-500: #878580;
+  --flexoki-base-600: #6f6e69;
+  --flexoki-base-700: #575653;
+  --flexoki-base-800: #403e3c;
+  --flexoki-base-850: #343331;
+  --flexoki-base-900: #282726;
+  --flexoki-base-950: #1c1b1a;
+  --flexoki-black:    #100f0f;
+
+  /* ---- Orange — the accent / emanation of light ---- */
+  --flexoki-orange-50:  #ffe7ce;
+  --flexoki-orange-100: #fed3af;
+  --flexoki-orange-200: #f9ae77;
+  --flexoki-orange-300: #ec8b49;
+  --flexoki-orange-400: #da702c;   /* accent (dark surfaces) */
+  --flexoki-orange-500: #cb6120;
+  --flexoki-orange-600: #bc5215;   /* accent (light surfaces) */
+  --flexoki-orange-700: #9d4310;
+  --flexoki-orange-800: #71320d;
+  --flexoki-orange-900: #59290d;
+
+  /* ---- Red — the Soul, the Agent Core ---- */
+  --flexoki-red-50:  #ffe1d5;
+  --flexoki-red-100: #ffcabb;
+  --flexoki-red-200: #f89a8a;
+  --flexoki-red-300: #e8705f;
+  --flexoki-red-400: #d14d41;      /* soul (dark surfaces) */
+  --flexoki-red-500: #c03e35;
+  --flexoki-red-600: #af3029;      /* soul (light surfaces) */
+  --flexoki-red-700: #942822;
+  --flexoki-red-800: #6c201c;
+  --flexoki-red-900: #3e1715;
+
+  /* ---- Yellow — light at its zenith (noon) ---- */
+  --flexoki-yellow-100: #fceeb8;
+  --flexoki-yellow-400: #d0a215;
+  --flexoki-yellow-600: #ad8301;
+
+  /* ---- Supporting hues (data / states) ---- */
+  --flexoki-green-400:  #879a39;
+  --flexoki-green-600:  #66800b;
+  --flexoki-cyan-400:   #3aa99f;
+  --flexoki-cyan-600:   #24837b;
+  --flexoki-blue-400:   #4385be;
+  --flexoki-blue-600:   #205ea6;
+
+  /* ============================================================
+     SEMANTIC ALIASES — ESHRAQ runs dark-first (light from dark)
+     ============================================================ */
+
+  /* Surfaces — the sand / concrete ground */
+  --surface-void:    #211f1c;   /* deepest ground, behind everything */
+  --surface-base:    #2c2926;   /* primary app background (warm taupe) */
+  --surface-raised:  #3a3631;   /* panels lifted off the ground */
+  --surface-card:    #45413b;   /* glass tiles / cards */
+  --surface-inset:   #25221f;   /* recessed wells, inputs */
+  --surface-control: #8d877d;   /* tactile buttons (sand) */
+  --surface-control-hover: #9b958a;
+  --surface-glass:   rgba(69, 65, 59, 0.55); /* frosted glass tile */
+
+  /* Text — light read against the dark ground */
+  --text-bright:   #efece2;   /* headings, hi-emphasis */
+  --text-body:     #cecabf;   /* body copy */
+  --text-muted:    #9f9a8f;   /* secondary / metadata */
+  --text-faint:    #756f65;   /* disabled, watermark, build strings */
+  --text-on-sand:  #2c2926;   /* dark text on sand-colored controls */
+  --text-on-accent:#2a1206;   /* dark text on orange accent */
+
+  /* Accent — orange emanation */
+  --accent:        var(--flexoki-orange-400);
+  --accent-strong: var(--flexoki-orange-500);
+  --accent-hover:  var(--flexoki-orange-300);
+  --accent-quiet:  rgba(218, 112, 44, 0.16);
+
+  /* Soul / Agent — red */
+  --soul:          var(--flexoki-red-400);
+  --soul-core:     var(--flexoki-red-500);
+  --soul-deep:     var(--flexoki-red-700);
+  --soul-glow:     rgba(209, 77, 65, 0.45);
+
+  /* Lines & borders */
+  --border-frame:  #b5ada3;   /* the outer light frame line */
+  --border-soft:   rgba(206, 205, 195, 0.14);
+  --border-strong: rgba(206, 205, 195, 0.28);
+  --border-inset:  rgba(16, 15, 15, 0.45);
+
+  /* State hues */
+  --state-positive: var(--flexoki-green-400);
+  --state-info:     var(--flexoki-cyan-400);
+  --state-warning:  var(--flexoki-yellow-400);
+  --state-danger:   var(--flexoki-red-400);
+}
+/* ============================================================
+   ESHRAQ — Typography
+   Barlow for titles (geometric, architectural — the structure).
+   Inter for body (neutral, legible — the prose).
+   A monospace for the simulation's technical voice: build strings,
+   model ids, terminal data, numeric readouts. The in-engine UI is
+   monospace throughout, so mono is a first-class register here.
+   ============================================================ */
+
+:root {
+  /* Families */
+  --font-display: "Barlow", "Barlow Semi Condensed", system-ui, sans-serif;
+  --font-body:    "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-farsi:   "Karim", "Amiri", "Noto Naskh Arabic", serif;
+
+  /* Weights */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* Type scale — architectural, generous steps */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   22px;
+  --text-xl:   28px;
+  --text-2xl:  36px;
+  --text-3xl:  48px;
+  --text-4xl:  64px;
+  --text-5xl:  84px;
+
+  /* Line heights */
+  --leading-tight:  1.05;
+  --leading-snug:   1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.7;
+
+  /* Letter spacing — mono labels run wide & uppercase (UI voice) */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.12em;
+  --tracking-label:  0.18em;  /* UI button / nav labels */
+
+  /* Semantic roles */
+  --role-display-size: var(--text-4xl);
+  --role-title-size:   var(--text-2xl);
+  --role-heading-size: var(--text-lg);
+  --role-body-size:    var(--text-base);
+  --role-label-size:   var(--text-sm);
+  --role-data-size:    var(--text-sm);
+}
+
+/* ---- Convenience utility classes (optional for consumers) ---- */
+.eshraq-display {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  font-size: var(--role-display-size);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-bright);
+}
+.eshraq-title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  font-size: var(--role-title-size);
+  line-height: var(--leading-snug);
+  color: var(--text-bright);
+}
+.eshraq-body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  font-size: var(--role-body-size);
+  line-height: var(--leading-normal);
+  color: var(--text-body);
+}
+/* The simulation's voice — terminal labels, model ids, readouts */
+.eshraq-label {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-regular);
+  font-size: var(--role-label-size);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-body);
+}
+.eshraq-data {
+  font-family: var(--font-mono);
+  font-weight: var(--weight-regular);
+  font-size: var(--role-data-size);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+}
+/* ============================================================
+   ESHRAQ — Spacing
+   A modular 4px grid. The work is tile-based and modular;
+   spacing follows the same logic — discrete, snappable units.
+   ============================================================ */
+
+:root {
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* Semantic gaps */
+  --gap-tile:      16px;  /* between modular tiles */
+  --gap-stack:     12px;  /* vertical rhythm in a panel */
+  --gap-inline:    8px;   /* icon ↔ label */
+  --pad-control:   12px 20px;  /* button padding */
+  --pad-card:      20px;
+  --pad-panel:     32px;
+  --pad-screen:    48px;  /* screen edge inset */
+
+  /* The signature outer frame inset (the light border around the canvas) */
+  --frame-inset:   16px;
+  --frame-width:   1.5px;
+}
+/* ============================================================
+   ESHRAQ — Radius
+   "Usually no sharp-edged corners." Everything is a rounded
+   rectangle. Tiles, controls, glass panels — soft, modular,
+   continuous. Radii scale with the element's size.
+   ============================================================ */
+
+:root {
+  --radius-xs:   4px;   /* tags, tight chips */
+  --radius-sm:   6px;   /* small controls, inputs */
+  --radius-md:   10px;  /* buttons */
+  --radius-lg:   16px;  /* cards, tiles */
+  --radius-xl:   22px;  /* large glass panels */
+  --radius-2xl:  28px;  /* modal / sheet shells */
+  --radius-frame:18px;  /* the outer canvas frame */
+  --radius-pill: 999px; /* fully round — sliders, the Agent Core */
+
+  /* Prefer the smooth continuous-corner look where supported */
+  --corner-smoothing: 0.6;
+}
+/* ============================================================
+   ESHRAQ — Effects: light, shadow, glass, grain
+   The "Hierarchy of Light" made physical. Light emerges from a
+   dark ground; surfaces are sand and frosted glass; everything
+   carries a fine film grain. Shadows are soft and warm, never
+   pure black. Elevation = closeness to the light.
+   ============================================================ */
+
+:root {
+  /* ---- Elevation: soft warm shadows (sand casts soft shadows) ---- */
+  --shadow-sm:  0 1px 2px rgba(16, 15, 15, 0.35);
+  --shadow-md:  0 4px 14px rgba(16, 15, 15, 0.40);
+  --shadow-lg:  0 12px 40px rgba(16, 15, 15, 0.50);
+  --shadow-xl:  0 24px 70px rgba(16, 15, 15, 0.55);
+
+  /* ---- Tactile control bevels (sand buttons) ---- */
+  --bevel-up:   inset 0 1px 0 rgba(255, 252, 240, 0.25),
+                inset 0 -2px 3px rgba(16, 15, 15, 0.30); /* @kind shadow */
+  --bevel-down: inset 0 2px 4px rgba(16, 15, 15, 0.40); /* @kind shadow */
+
+  /* ---- Inset wells (recessed inputs / tracks) ---- */
+  --inset-well: inset 0 1px 3px rgba(16, 15, 15, 0.55),
+                inset 0 0 0 1px rgba(16, 15, 15, 0.30);
+
+  /* ---- Glow: emanation of light ---- */
+  --glow-accent: 0 0 0 1px rgba(218, 112, 44, 0.55),
+                 0 0 24px rgba(218, 112, 44, 0.35);
+  --glow-soul:   0 0 18px rgba(209, 77, 65, 0.55),
+                 0 0 48px rgba(209, 77, 65, 0.30);
+
+  /* ---- Glass: frosted, translucent ---- */
+  --glass-blur:  16px;
+  --glass-bg:    rgba(69, 65, 59, 0.55); /* @kind color */
+  --glass-border:1px solid rgba(206, 205, 195, 0.16); /* @kind other */
+  --glass-sheen: linear-gradient(
+                   160deg,
+                   rgba(255, 252, 240, 0.10) 0%,
+                   rgba(255, 252, 240, 0.02) 30%,
+                   rgba(16, 15, 15, 0.04) 100%); /* @kind other */
+
+  /* ---- Grain & ground textures ---- */
+  --grain-url:   url("/img/grain.webp"); /* @kind other */
+  --grain-opacity: 0.5; /* @kind other */
+
+  /* The warm ground gradient — light pooling toward one corner */
+  --ground-gradient: radial-gradient(
+                       120% 120% at 70% 20%,
+                       #3a3631 0%,
+                       #2c2926 45%,
+                       #211f1c 100%); /* @kind other */
+
+  /* ---- Motion: light is calm. Slow, eased, no bounce. ---- */
+  --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1); /* @kind other */
+  --ease-emerge:   cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --ease-out:      cubic-bezier(0.0, 0.0, 0.2, 1); /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur-normal: 220ms; /* @kind other */
+  --dur-slow:   420ms; /* @kind other */
+}
+
+/* ---- Reusable grain overlay (apply to any dark surface) ---- */
+.eshraq-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain-url);
+  background-size: 256px 256px;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  border-radius: inherit;
+}

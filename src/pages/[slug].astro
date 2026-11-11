@@ -1,0 +1,109 @@
+---
+import { render } from 'astro:content';
+import { getImage, Picture } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Figure from '../components/Figure.astro';
+import Video from '../components/Video.astro';
+import Embed from '../components/Embed.astro';
+import Callout from '../components/Callout.astro';
+import Newsletter from '../components/Newsletter.astro';
+import PdfViewer from '../components/PdfViewer.astro';
+import { getPosts, fmtDate, isoDate, pad2 } from '../lib/posts';
+import { imageMeta, widthsFor, FORMATS, FALLBACK } from '../lib/images';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    props: { post, newer: posts[i - 1], older: posts[i + 1], total: posts.length },
+  }));
+}
+
+const { post, newer, older, total } = Astro.props;
+const { Content, headings } = await render(post);
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
+const showToc = toc.length >= 3;
+const cover = post.data.cover;
+const meta = imageMeta(cover);
+let og: string | undefined;
+if (cover && meta) {
+  const img = await getImage({ src: cover, width: 1200, height: 630, fit: 'cover', format: 'jpg' });
+  og = new URL(img.src, Astro.site).href;
+}
+const description = post.data.description ?? post.data.subtitle;
+---
+<Base title={post.data.title} description={description} image={og} type="article">
+  <div class:list={['post-layout', !showToc && 'no-toc']}>
+    {showToc && (
+      <aside class="toc" aria-label="Index">
+        <div class="toc-inner">
+          <p class="label">Index</p>
+          <ol>
+            {toc.map((h) => <li><a class={`d${h.depth}`} href={`#${h.slug}`}>{h.text}</a></li>)}
+          </ol>
+        </div>
+      </aside>
+    )}
+
+    <article class="post-main">
+      <div class="post-back">
+        <a class="btn btn--ghost btn--sm" href="/">‹ Process log</a>
+        <span class="data faint">LOG {pad2(post.log)} / {pad2(total)}</span>
+      </div>
+
+      <header class="post-head">
+        <p class="post-eyebrow data">
+          <time class="is-accent" datetime={isoDate(post.data.date)}>{fmtDate(post.data.date)}</time>
+          <span class="sep">/</span>
+          <span>{post.data.author.toUpperCase()}</span>
+          <span class="sep">/</span>
+          <span>{post.minutes} MIN READ</span>
+        </p>
+        <h1 class="post-title">{post.data.title}</h1>
+        {post.data.subtitle && <p class="post-subtitle">{post.data.subtitle}</p>}
+      </header>
+
+      {cover && meta && (
+        <figure class="post-cover" style={`background-color: ${meta.color}`}>
+          <Picture
+            src={cover} alt="" width={meta.w} height={meta.h}
+            widths={widthsFor(meta.w)} sizes="(min-width: 1100px) 960px, 100vw"
+            formats={[...FORMATS]} fallbackFormat={FALLBACK}
+            loading="eager" fetchpriority="high" decoding="async"
+          />
+        </figure>
+      )}
+
+      {showToc && (
+        <details class="toc-inline">
+          <summary class="label">Index</summary>
+          <ol>
+            {toc.map((h) => <li><a class={`d${h.depth}`} href={`#${h.slug}`}>{h.text}</a></li>)}
+          </ol>
+        </details>
+      )}
+
+      <div class="prose">
+        <Content components={{ Figure, Video, Embed, Callout, Newsletter, PdfViewer }} />
+      </div>
+
+      <footer class="post-end">
+        <hr class="rule" />
+        <nav class="post-nav" aria-label="More entries">
+          {older && (
+            <a class="glass prev" href={`/${older.id}/`}>
+              <span class="data">‹ OLDER · LOG {pad2(older.log)}</span>
+              <strong>{older.data.title}</strong>
+            </a>
+          )}
+          {newer && (
+            <a class="glass next" href={`/${newer.id}/`}>
+              <span class="data">NEWER · LOG {pad2(newer.log)} ›</span>
+              <strong>{newer.data.title}</strong>
+            </a>
+          )}
+        </nav>
+      </footer>
+    </article>
+  </div>
+</Base>

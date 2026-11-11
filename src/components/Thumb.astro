@@ -1,0 +1,19 @@
+---
+// A cropped card image (home tiles, featured entry, previous/next).
+import { Picture } from 'astro:assets';
+import { imageMeta, FORMATS, FALLBACK } from '../lib/images';
+interface Props { src?: string; alt?: string; sizes: string; widths: number[]; priority?: boolean }
+const { src, alt = '', sizes, widths, priority = false } = Astro.props;
+const meta = imageMeta(src);
+---
+{src && meta ? (
+  <Picture
+    src={src} alt={alt} width={meta.w} height={meta.h}
+    widths={widths.filter((w) => w <= meta.w).length ? widths.filter((w) => w <= meta.w) : [meta.w]}
+    sizes={sizes} formats={[...FORMATS]} fallbackFormat={FALLBACK}
+    loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : undefined} decoding="async"
+    style={`background-color: ${meta.color}`}
+  />
+) : src ? (
+  <img src={src} alt={alt} loading="lazy" decoding="async" />
+) : null}

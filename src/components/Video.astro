@@ -1,0 +1,16 @@
+---
+// A silent looping clip (like a GIF, but far smaller). Plays only while it is on screen.
+//   <Video src="https://…/clip.mp4" caption="…" />
+interface Props { src: string; caption?: string; size?: 'medium' | 'small'; width?: string }
+const { src, caption, size, width } = Astro.props;
+const hasCaption = Boolean(caption) || Astro.slots.has('default');
+const style = width ? `max-width: ${width}; margin-inline: auto;` : undefined;
+---
+<figure class:list={['fig', size && `fig--${size}`]} style={style}>
+  <span class="fig-frame">
+    <video muted loop playsinline preload="none" data-autoplay style="aspect-ratio: 16 / 9" aria-label={caption}>
+      <source src={src} type="video/mp4" />
+    </video>
+  </span>
+  {hasCaption && <figcaption>{caption}<slot /></figcaption>}
+</figure>

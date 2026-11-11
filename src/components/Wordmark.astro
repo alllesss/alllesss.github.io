@@ -1,0 +1,9 @@
+---
+interface Props { href?: string }
+const { href = '/' } = Astro.props;
+---
+<a class="wordmark" href={href} aria-label="ESHRAQ — process log home">
+  <span class="core" aria-hidden="true"></span>
+  <span class="wordmark-latin">ESHRAQ</span>
+  <span class="wordmark-farsi" lang="fa" aria-hidden="true">اشـــراق</span>
+</a>

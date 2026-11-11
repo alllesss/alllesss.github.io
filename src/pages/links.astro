@@ -1,0 +1,65 @@
+---
+import Base from '../layouts/Base.astro';
+
+const ICON = {
+  news: 'M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm1 2v14h14V5H5Zm2 2h6v2H7V7Zm0 4h10v2H7v-2Zm0 4h10v2H7v-2Z',
+  instagram: 'M7.75 2h8.5C19.43 2 22 4.57 22 7.75v8.5C22 19.43 19.43 22 16.25 22h-8.5C4.57 22 2 19.43 2 16.25v-8.5C2 4.57 4.57 2 7.75 2Zm-.2 2A3.55 3.55 0 0 0 4 7.55v8.9A3.55 3.55 0 0 0 7.55 20h8.9A3.55 3.55 0 0 0 20 16.45v-8.9A3.55 3.55 0 0 0 16.45 4h-8.9ZM17.5 5.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z',
+  mail: 'M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm0 2v.51l9 5.4 9-5.4V7l-9 5.4L3 7.01ZM4 17h16V9.31l-7.5 4.5a1 1 0 0 1-1.03 0L4 9.31V17Z',
+};
+
+const links = [
+  { href: '/stay/', title: 'Subscribe to Newsletter', icon: ICON.news },
+  { href: 'https://alllesss.com', title: 'ALLLESSS.com', sub: 'Works', img: '/assets/img/alllesss.com-favicon.ico', ext: true },
+  { href: '/', title: 'ESHRAQ.io', sub: 'Process Log', core: true },
+  { href: 'https://instagram.com/alless0', title: '@alless0', icon: ICON.instagram, ext: true },
+  { href: 'mailto:alless0@outlook.com', title: 'alless0@outlook.com', icon: ICON.mail },
+];
+---
+<Base title="Links" description="Find Ali Eslami and ESHRAQ around the web." bare>
+  <div class="links">
+    <div class="page-head">
+      <div>
+        <h1 class="page-title">Links</h1>
+        <p class="page-sub">Find me around the web.</p>
+      </div>
+    </div>
+    <ul role="list">
+      {links.map((l) => (
+        <li>
+          <a class="link glass" href={l.href} target={l.ext ? '_blank' : undefined} rel={l.ext ? 'noopener' : undefined}>
+            <span class="link-icon">
+              {l.icon && <svg viewBox="0 0 24 24" aria-hidden="true"><path d={l.icon} /></svg>}
+              {l.img && <img src={l.img} alt="" />}
+              {l.core && <span class="core" />}
+            </span>
+            <span class="link-text">
+              <strong>{l.title}</strong>
+              {l.sub && <span class="label">{l.sub}</span>}
+            </span>
+            <span class="link-arrow data" aria-hidden="true">{l.ext ? '↗' : '›'}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .links { max-width: 40rem; margin: 0 auto; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .link {
+    display: flex; align-items: center; gap: 16px; padding: 20px 22px; min-height: 5.25rem; color: inherit;
+    transition: transform var(--dur-normal) var(--ease-standard), border-color var(--dur-normal) var(--ease-standard), box-shadow var(--dur-normal);
+  }
+  .link > * { position: relative; z-index: 1; }
+  .link:hover { transform: translateY(-2px); border-color: rgba(218, 112, 44, 0.55); box-shadow: var(--shadow-lg); }
+  .link-icon { width: 24px; height: 24px; display: grid; place-items: center; color: var(--text-muted); flex: none; }
+  .link:hover .link-icon { color: var(--accent); }
+  .link-icon svg { width: 22px; height: 22px; fill: currentColor; }
+  .link-icon img { width: 22px; height: 22px; border-radius: 4px; }
+  .link-icon .core { font-size: 16px; }
+  .link-text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  .link-text strong { font-family: var(--font-display); font-weight: 500; font-size: var(--text-lg); color: var(--text-bright); line-height: 1.2; overflow-wrap: anywhere; }
+  .link-arrow { margin-left: auto; font-size: 16px; color: var(--text-faint); }
+  .link:hover .link-arrow { color: var(--accent); }
+</style>
