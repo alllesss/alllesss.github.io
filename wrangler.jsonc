@@ -1,0 +1,13 @@
+// Cloudflare Workers config: serves the static Astro build in ./dist.
+// _redirects and _headers in public/ are applied by Cloudflare as well.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "eshraq",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "observability": { "enabled": true }
+}
