@@ -462,6 +462,11 @@ a:hover { color: var(--accent-hover); }
    the index fades away until the image has scrolled by (site.ts). */
 @media (min-width: 1000px) {
   .prose > .fig--auto, .prose > .embed, .prose > .is-wide { margin-inline: -100px; }
+  /* Side-by-side images need more room to be seen properly, so they step out further. */
+  .prose > .fig-grid { margin-inline: -100px; gap: 16px; }
+}
+@media (min-width: 1300px) {
+  .prose > .fig-grid { margin-inline: -220px; gap: 20px; }
 }
 
 /* Two or more images in a row: a simple two-column grid. With an odd count the first one runs full width. */
