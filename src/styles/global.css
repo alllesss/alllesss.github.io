@@ -210,7 +210,9 @@ a:hover { color: var(--accent-hover); }
   clip-path: inset(0 -100vmax);
 }
 /* The line under the header runs the full window width, like its background. */
-.site-header::after { content: ""; position: absolute; left: -100vmax; right: -100vmax; bottom: 0; height: 1px; background: var(--border-soft); }
+.site-header::after { content: ""; position: absolute; left: calc(50% - 50vw); width: 100vw; bottom: 0; height: 1px; background: var(--border-soft); }
+/* Full-width header details must never make the page scroll sideways. */
+html { overflow-x: clip; }
 
 /* The wordmark glows on hover: it is the way home. */
 .wordmark .wordmark-latin, .wordmark .wordmark-farsi { transition: text-shadow var(--dur-normal) var(--ease-standard), color var(--dur-normal) var(--ease-standard); }
@@ -621,6 +623,24 @@ a:hover { color: var(--accent-hover); }
   .prose { font-size: 1rem; }
   .prose > p:first-of-type { font-size: 1.125rem; }
 }
+/* Phones: the four links spread evenly across one row under the wordmark;
+   the header slides away while scrolling down and returns on the way up (site.ts). */
+@media (max-width: 640px) {
+  .site-header { row-gap: 12px; justify-content: center; transition: transform var(--dur-normal) var(--ease-standard); }
+  .site-header.is-tucked { transform: translateY(calc(-100% - 2px)); }
+  .site-nav { width: 100%; justify-content: space-between; flex-wrap: nowrap; gap: 8px; }
+  .site-nav a { white-space: nowrap; padding: 6px 0; }
+
+  /* Footer: links first, then the colophon on its own lines. */
+  .site-footer { flex-direction: column-reverse; align-items: flex-start; gap: 22px; }
+  .site-footer nav { gap: 10px 26px; }
+  .site-footer nav a { padding: 4px 0; }
+  .site-footer .colophon { flex-direction: column; gap: 4px; }
+  .site-footer .colophon .faint { display: none; }
+}
+@media (max-width: 400px) {
+  .site-nav a { font-size: 10.5px; letter-spacing: 0.07em; }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
@@ -628,3 +648,6 @@ a:hover { color: var(--accent-hover); }
   .site-nav, body::before, body::after { display: none; }
   body { background: #fff; color: #000; }
 }
+
+/* Long URLs and words wrap instead of pushing past the screen edge on phones. */
+.prose p, .prose li, .prose blockquote, .fig figcaption { overflow-wrap: break-word; }

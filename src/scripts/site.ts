@@ -43,7 +43,7 @@ document.querySelectorAll<HTMLAnchorElement>('a[data-yt]').forEach((a) => {
   a.addEventListener('click', (ev) => {
     ev.preventDefault();
     const f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&rel=0';
+    f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&rel=0&cc_load_policy=0&playsinline=1'; // captions off unless the viewer turns them on
     f.title = a.getAttribute('aria-label') ?? 'Video';
     f.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
     f.allowFullscreen = true;
@@ -202,4 +202,20 @@ if (article && header) {
   addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
   addEventListener('resize', () => requestAnimationFrame(update));
   update();
+}
+
+// --- Phones: tuck the header away while scrolling down, bring it back on the way up ---
+{
+  const head = document.querySelector<HTMLElement>('.site-header');
+  const small = matchMedia('(max-width: 640px)');
+  if (head) {
+    let lastY = scrollY;
+    addEventListener('scroll', () => {
+      const y = scrollY;
+      if (!small.matches || y < 120) head.classList.remove('is-tucked');
+      else if (y > lastY + 6) head.classList.add('is-tucked');
+      else if (y < lastY - 6) head.classList.remove('is-tucked');
+      lastY = y;
+    }, { passive: true });
+  }
 }

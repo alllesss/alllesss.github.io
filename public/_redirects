@@ -1,1 +1,5 @@
-/assets/docs/* /docs/:splat 301
+# Old addresses from the Jekyll site
+/assets/docs/*  /docs/:splat  301
+/tags/          /             301
+/tags/*         /             301
+/sitemap.xml    /sitemap-index.xml  301

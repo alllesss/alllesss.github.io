@@ -1,4 +1,4 @@
-name: Build Jekyll
+name: Build site
 on: [push, pull_request]
 jobs:
   build:
@@ -6,11 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/setup-node@v4
         with:
-          ruby-version: "3.3"
-          bundler-cache: true
-      - name: Build the site
-        run: bundle exec jekyll build --future --strict_front_matter
-        env:
-          JEKYLL_ENV: production
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - run: npm run build
