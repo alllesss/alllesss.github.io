@@ -30,8 +30,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 const path = Astro.url.pathname;
 const nav = [
   { href: '/', label: 'Blog', current: path === '/' || /^\/\d{4}-/.test(path) },
-  { href: '/about/', label: 'About', current: path.startsWith('/about') },
   { href: '/foundations/', label: 'Foundations', current: path.startsWith('/foundations') },
+  { href: '/about/', label: 'About', current: path.startsWith('/about') },
   { href: '/stay/', label: 'Stay in touch', current: path.startsWith('/stay'), icon: 'mail' },
 ];
 const GTAG = 'G-CX3VKN2EYV';
@@ -77,7 +77,6 @@ const GTAG = 'G-CX3VKN2EYV';
           <nav class="site-nav" aria-label="Main">
             {nav.map((n) => (
               <a href={n.href} class:list={[n.icon && 'nav-mail']} aria-current={n.current ? 'page' : undefined}>
-                {n.icon && <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6" width="17" height="12" rx="1.5" /><path d="M4 7l8 6 8-6" /></svg>}
                 {n.label}
               </a>
             ))}

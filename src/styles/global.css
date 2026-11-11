@@ -238,10 +238,16 @@ a:hover { color: var(--accent-hover); }
 }
 .site-nav a:hover { color: var(--text-bright); }
 .site-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: rgba(218, 112, 44, 0.5); }
-/* Stay in touch: a small envelope in the accent colour marks it as the way to subscribe. */
-.site-nav a.nav-mail { display: inline-flex; align-items: center; gap: 7px; }
-.nav-icon { width: 15px; height: 15px; flex: none; fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform var(--dur-fast) var(--ease-standard); }
-.site-nav a.nav-mail:hover .nav-icon { transform: translateY(-1px); }
+/* Stay in touch: every few seconds a soft warm light passes across the words. */
+.site-nav a.nav-mail:not([aria-current="page"]) {
+  color: transparent;
+  background: linear-gradient(100deg, var(--text-muted) 40%, #ec8b49 50%, var(--text-muted) 60%) 0 0 / 300% 100% no-repeat;
+  -webkit-background-clip: text; background-clip: text;
+  animation: nav-sheen 7s var(--ease-standard) infinite;
+}
+.site-nav a.nav-mail:not([aria-current="page"]):hover { animation: none; background: none; color: var(--text-bright); }
+@keyframes nav-sheen { 0%, 55% { background-position: 100% 0; } 85%, 100% { background-position: 0 0; } }
+@media (prefers-reduced-motion: reduce) { .site-nav a.nav-mail:not([aria-current="page"]) { animation: none; background: none; color: var(--text-muted); } }
 
 
 /* ---------- footer ---------- */
