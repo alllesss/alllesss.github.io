@@ -111,9 +111,9 @@
       ]
     }
   ],
-  "frontMatter.framework.id": "jekyll",
-  "frontMatter.content.publicFolder": "assets",
-  "frontMatter.preview.host": "http://localhost:4000",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.preview.host": "http://localhost:4321",
   "frontMatter.content.pageFolders": [
     {
       "title": "drafts",
@@ -121,11 +121,11 @@
     },
     {
       "title": "posts",
-      "path": "[[workspace]]/_posts"
+      "path": "[[workspace]]/src/content/posts"
     },
     {
       "title": "_posts",
-      "path": "[[workspace]]/_posts"
+      "path": "[[workspace]]/src/content/posts"
     }
   ]
 }
