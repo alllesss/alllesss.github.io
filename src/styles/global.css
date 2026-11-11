@@ -238,6 +238,10 @@ a:hover { color: var(--accent-hover); }
 }
 .site-nav a:hover { color: var(--text-bright); }
 .site-nav a[aria-current="page"] { color: var(--accent); border-bottom-color: rgba(218, 112, 44, 0.5); }
+/* Stay in touch: a small envelope in the accent colour marks it as the way to subscribe. */
+.site-nav a.nav-mail { display: inline-flex; align-items: center; gap: 7px; }
+.nav-icon { width: 15px; height: 15px; flex: none; fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform var(--dur-fast) var(--ease-standard); }
+.site-nav a.nav-mail:hover .nav-icon { transform: translateY(-1px); }
 
 
 /* ---------- footer ---------- */
@@ -339,31 +343,45 @@ a:hover { color: var(--accent-hover); }
 .post-cover-plain img { display: block; width: 100%; height: auto; border-radius: var(--radius-lg); }
 
 /* One centred reading column; the side index sits in the empty left margin on wide screens. */
-.post-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--prose-max)) minmax(0, 1fr); column-gap: 40px; padding-top: clamp(40px, 6vw, 64px); }
+.post-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--prose-max)) minmax(0, 1fr); column-gap: 72px; padding-top: clamp(40px, 6vw, 64px); }
 .post-grid > * { grid-column: 2; min-width: 0; }
 @media (max-width: 1159px) { .post-grid { display: block; max-width: var(--prose-max); margin: 0 auto; } }
 
-.toc { display: none; }
-.toc-inline { margin: 0 0 40px; }
-.toc-inline summary { cursor: pointer; list-style: none; display: inline-flex; gap: 10px; align-items: center; }
-.toc-inline summary::-webkit-details-marker { display: none; }
-.toc-inline summary::after { content: "▾"; color: var(--text-faint); }
-.toc-inline[open] summary::after { content: "▴"; }
-.toc ol, .toc-inline ol { list-style: none; margin: 12px 0 0; padding: 0; display: grid; }
-.toc a, .toc-inline a {
-  display: block; padding: 6px 0 6px 12px; border-left: 1px solid var(--border-soft);
+/* Index: a small floating button at the top left. It follows you down the page and opens a list of
+   the post's sections only when you ask for it. */
+.toc {
+  position: fixed; z-index: 40; top: 96px;
+  left: max(var(--page-pad), calc((100vw - var(--page-max)) / 2));
+  opacity: 0; transform: translateY(-6px); pointer-events: none;
+  transition: opacity var(--dur-normal) var(--ease-standard), transform var(--dur-normal) var(--ease-standard);
+}
+.toc.is-shown { opacity: 1; transform: none; pointer-events: auto; }
+.toc-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: var(--tracking-label); text-transform: uppercase;
+  color: var(--text-faint); background: rgba(33, 31, 28, 0.55); border: 1px solid var(--border-soft);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  opacity: 0.7;
+  transition: color var(--dur-fast), border-color var(--dur-fast), opacity var(--dur-fast);
+}
+.toc-btn:hover, .toc-btn[aria-expanded="true"] { opacity: 1; color: var(--text-body); border-color: var(--border-strong); }
+.toc-btn::after { content: "▾"; font-size: 10px; color: var(--text-faint); transition: transform var(--dur-fast); }
+.toc-btn[aria-expanded="true"]::after { transform: rotate(180deg); }
+.toc-panel {
+  margin-top: 8px; width: min(300px, calc(100vw - 32px)); max-height: min(70vh, 520px); overflow: auto;
+  padding: 14px 16px 16px; border-radius: var(--radius-md);
+  background: rgba(33, 31, 28, 0.94); border: 1px solid var(--border-strong);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: var(--shadow-lg);
+}
+.toc-panel[hidden] { display: none; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: grid; }
+.toc a {
+  display: block; padding: 7px 0 7px 12px; border-left: 1px solid var(--border-soft);
   font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.02em; line-height: 1.45; color: var(--text-muted);
 }
-.toc a:hover, .toc-inline a:hover { color: var(--text-bright); }
+.toc a:hover { color: var(--text-bright); }
 .toc a.is-active { color: var(--accent); border-left-color: var(--accent); }
-/* The side index stays quiet at the edge of vision and only brightens when you reach for it. */
-.toc { opacity: 0.32; transition: opacity var(--dur-slow) var(--ease-standard); }
-.toc:hover, .toc:focus-within { opacity: 1; }
-.toc.is-covered { opacity: 0; pointer-events: none; }
-@media (min-width: 1160px) {
-  .toc { display: block; grid-column: 1; grid-row: 1 / span 3; justify-self: end; align-self: start; position: sticky; top: 112px; width: 176px; max-height: calc(100vh - 140px); overflow: auto; }
-  .toc-inline { display: none; }
-}
+@media (max-width: 640px) { .toc { left: 16px; } }
 
 .post-end { margin-top: 80px; }
 
@@ -427,17 +445,17 @@ a:hover { color: var(--accent-hover); }
 }
 .fig-frame img, .fig-frame video { display: block; width: 100%; height: auto; }
 .fig-frame[data-zoom] { cursor: zoom-in; }
+/* Captions: centred under the image, like the original eshraq.io. */
 .fig figcaption {
-  margin-top: 10px;
-  font-family: "JetBrains Mono", var(--font-mono); font-size: 12px; line-height: 1.55; letter-spacing: 0.02em;
-  color: var(--text-muted); max-width: var(--prose-max);
+  margin: 12px auto 0; max-width: 60ch; text-align: center;
+  font-family: var(--font-body); font-size: 14px; line-height: 1.55;
+  color: var(--text-muted);
 }
 
 /* Single landscape images step out of the text column a little. Where one passes the side index,
    the index fades away until the image has scrolled by (site.ts). */
 @media (min-width: 1000px) {
-  .prose > .fig--auto, .prose > .embed { margin-inline: -100px; }
-  .prose > .fig--auto figcaption { padding-inline: 100px; }
+  .prose > .fig--auto, .prose > .embed, .prose > .is-wide { margin-inline: -100px; }
 }
 
 /* Two or more images in a row: a simple two-column grid. With an odd count the first one runs full width. */
@@ -498,17 +516,87 @@ a:hover { color: var(--accent-hover); }
 .post-nav strong { font-family: var(--font-display); font-weight: 500; font-size: var(--text-md); color: var(--text-bright); line-height: 1.25; }
 @media (max-width: 600px) { .post-nav { grid-template-columns: 1fr; } .post-nav .next { grid-column: 1; text-align: left; } }
 
-/* ---------- lightbox ---------- */
+/* ---------- lightbox (full-screen image viewer) ---------- */
 
 .lightbox {
-  border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; max-width: none; max-height: none;
-  background: rgba(22, 20, 18, 0.94); color: var(--text-body);
+  border: 0; padding: 0; margin: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none;
+  background: transparent; color: var(--text-body); overflow: hidden;
 }
-.lightbox::backdrop { background: rgba(22, 20, 18, 0.6); }
-.lightbox[open] { display: grid; grid-template-rows: 1fr auto; place-items: center; }
-.lightbox img { max-width: calc(100vw - 48px); max-height: calc(100vh - 96px); object-fit: contain; border-radius: var(--radius-sm); cursor: zoom-out; }
-.lightbox p { padding: 0 24px 22px; text-align: center; max-width: 80ch; }
-.lightbox button { position: absolute; top: 20px; right: 20px; }
+.lightbox:focus { outline: none; }
+.lightbox::backdrop { background: rgba(16, 15, 15, 0.9); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.lightbox[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 64px 72px 28px; animation: lb-fade var(--dur-normal) var(--ease-standard); }
+.lightbox[open]::backdrop { animation: lb-fade var(--dur-normal) var(--ease-standard); }
+.lb-stage { min-height: 0; display: flex; align-items: center; justify-content: center; }
+.lb-img {
+  display: block; max-width: calc(100vw - 144px); max-height: calc(100dvh - 160px); width: auto; height: auto;
+  object-fit: contain; border-radius: var(--radius-sm); box-shadow: var(--shadow-xl);
+  animation: lb-in var(--dur-slow) var(--ease-emerge);
+}
+.lb-cap { margin: 0; max-width: 64ch; text-align: center; font-family: var(--font-body); font-size: 15px; line-height: 1.55; color: var(--text-body); }
+.lb-cap:empty { display: none; }
+.lb-count { position: absolute; top: 24px; left: 28px; font-family: var(--font-body); font-size: 13px; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+/* Viewer buttons: just the icon, no circle; it brightens on hover. */
+.lb-btn {
+  position: absolute; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border-radius: 999px; cursor: pointer;
+  color: var(--text-faint); background: none; border: 0;
+  transition: color var(--dur-fast), transform var(--dur-fast);
+}
+.lb-btn:hover { color: var(--text-bright); }
+.lb-btn:focus { outline: none; box-shadow: none; }
+.lb-btn:focus-visible { color: var(--text-bright); box-shadow: inset 0 0 0 1px var(--border-strong); }
+.lb-btn:active { transform: scale(0.94); }
+.lb-btn svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.lb-close { top: 16px; right: 20px; }
+.lb-prev, .lb-next { top: 50%; margin-top: -22px; }
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+.lb-prev[hidden], .lb-next[hidden], .lb-count[hidden] { display: none; }
+@keyframes lb-fade { from { opacity: 0; } }
+@keyframes lb-in { from { opacity: 0; transform: scale(0.985); } }
+@media (max-width: 640px) {
+  .lightbox[open] { padding: 60px 12px 20px; }
+  .lb-img { max-width: calc(100vw - 24px); max-height: calc(100dvh - 150px); }
+  .lb-prev, .lb-next { top: auto; bottom: 16px; margin: 0; }
+}
+
+/* ---------- tactile effects ---------- */
+
+/* 1. A soft light follows the cursor across tiles and cards (site.ts sets --mx / --my). */
+.spot { position: relative; }
+.spot::before {
+  content: ""; position: absolute; inset: 0; z-index: 2; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(236, 139, 73, 0.13), rgba(236, 139, 73, 0.04) 45%, transparent 70%);
+  mix-blend-mode: screen; opacity: 0; transition: opacity var(--dur-slow) var(--ease-standard);
+}
+.spot:hover::before { opacity: 1; }
+
+/* 2. Images emerge out of the dark as they scroll into view. */
+.reveal { opacity: 0; filter: brightness(0.55); transform: translateY(10px); transition: opacity 700ms var(--ease-emerge), filter 900ms var(--ease-emerge), transform 700ms var(--ease-emerge); }
+.reveal.is-in { opacity: 1; filter: none; transform: none; }
+
+/* 3. Press feedback: things sink slightly when clicked. */
+.entry:active, .pin:active, .post-nav a:active, .about-card a:active { transform: translateY(0) scale(0.99); transition-duration: var(--dur-fast); }
+.chip:active, .btn:active, .toc-btn:active, .site-nav a:active, .wordmark:active { transform: scale(0.96); }
+.chip, .site-nav a, .wordmark { transition: transform var(--dur-fast) var(--ease-standard), color var(--dur-fast), background var(--dur-fast), border-color var(--dur-fast); }
+.site-nav a { display: inline-block; }
+
+/* 4. Page transitions: pages cross-fade; a post's thumbnail grows into its banner. The header stays put. */
+@view-transition { navigation: auto; }
+.site-header { view-transition-name: site-header; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 280ms; }
+::view-transition-group(*) { animation-duration: 420ms; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* 5. Reading progress: a thin orange line under the header fills as you read. */
+.read-progress {
+  position: absolute; left: calc(50% - 50vw); bottom: -1px; width: 100vw; height: 2px; z-index: 1;
+  background: linear-gradient(90deg, var(--accent-strong), var(--accent-hover));
+  transform-origin: left; transform: scaleX(var(--read, 0)); box-shadow: 0 0 8px rgba(218, 112, 44, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  .reveal { opacity: 1; filter: none; transform: none; }
+}
 
 /* ---------- small screens & motion ---------- */
 

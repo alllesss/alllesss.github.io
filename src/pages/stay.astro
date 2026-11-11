@@ -4,25 +4,33 @@ import Base from '../layouts/Base.astro';
 ---
 <Base
   title="Stay in touch"
-  description="ESHRAQ is coming to Steam in Early Access. Leave your email to hear when it is out, and to get new devlogs from the process log."
+  description="Leave your email to get new devlogs, essays and news from the ESHRAQ process log as they are published."
 >
   <div class="stay">
-    <p class="label is-accent">Early Access · Coming to Steam</p>
+    <span class="stay-orb" aria-hidden="true"><span class="core"></span></span>
     <h1 class="page-title">Stay in touch</h1>
-    <p class="stay-lead">ESHRAQ is coming to Steam in Early Access. Leave your email to hear when it is out, and to get new devlogs and posts from the <a href="/">process log</a> as they are published.</p>
+    <p class="stay-lead">Leave your email to get new devlogs, essays and news from the <a href="/">process log</a> as they are published.</p>
 
-    <div class="stay-box glass">
+    <div class="stay-box">
       <iframe src="https://alllesss.substack.com/embed" title="Subscribe to the ESHRAQ newsletter on Substack" scrolling="no"></iframe>
     </div>
-    <p class="data faint">Unsubscribe any time.</p>
+    <p class="stay-note">No spam. Unsubscribe any time.</p>
   </div>
 </Base>
 
 <style>
-  .stay { max-width: 34rem; margin: 0 auto; text-align: center; padding-top: clamp(36px, 8vw, 80px); }
-  .stay .page-title { margin-top: 16px; font-size: clamp(2.25rem, 8vw, 3.5rem); }
-  .stay-lead { margin: 18px auto 0; font-size: 1.0625rem; line-height: 1.65; max-width: 30rem; }
+  .stay { max-width: 32rem; margin: 0 auto; text-align: center; padding-top: clamp(40px, 9vw, 96px); }
+  /* The Agent Core, glowing softly: light arriving. */
+  .stay-orb { display: inline-flex; font-size: 22px; margin-bottom: 22px; }
+  .stay-orb .core { animation: breathe 4.8s var(--ease-standard) infinite; }
+  @keyframes breathe { 50% { box-shadow: inset 0 1px 2px rgba(255, 200, 180, 0.55), inset 0 -2px 4px rgba(62, 23, 21, 0.7), 0 0 30px rgba(232, 112, 95, 0.7); } }
+  .stay .page-title { font-size: clamp(2.25rem, 7vw, 3.25rem); }
+  .stay-lead { margin: 16px auto 0; max-width: 26rem; font-size: 1.0625rem; line-height: 1.65; color: var(--text-body); text-wrap: balance; }
   .stay-lead a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(218, 112, 44, 0.45); }
-  .stay-box { margin: 28px 0 12px; padding: 14px; }
-  .stay-box iframe { position: relative; z-index: 1; display: block; width: 100%; min-height: 320px; border: 0; border-radius: var(--radius-md); background: #fff; }
+  .stay-box {
+    margin: 36px 0 0; padding: 10px; border-radius: var(--radius-lg);
+    background: var(--glass-bg); border: var(--glass-border); box-shadow: var(--shadow-lg);
+  }
+  .stay-box iframe { display: block; width: 100%; min-height: 300px; border: 0; border-radius: var(--radius-md); background: #fff; }
+  .stay-note { margin-top: 14px; font-size: 13px; color: var(--text-faint); }
 </style>

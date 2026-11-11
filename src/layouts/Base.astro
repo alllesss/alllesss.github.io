@@ -29,10 +29,10 @@ const fullTitle = title ? `${title} | ${SITE}` : `${SITE} — Process Log`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const path = Astro.url.pathname;
 const nav = [
-  { href: '/', label: 'Log', current: path === '/' || /^\/\d{4}-/.test(path) },
+  { href: '/', label: 'Blog', current: path === '/' || /^\/\d{4}-/.test(path) },
   { href: '/about/', label: 'About', current: path.startsWith('/about') },
   { href: '/foundations/', label: 'Foundations', current: path.startsWith('/foundations') },
-  { href: '/stay/', label: 'Stay in touch', current: path.startsWith('/stay') },
+  { href: '/stay/', label: 'Stay in touch', current: path.startsWith('/stay'), icon: 'mail' },
 ];
 const GTAG = 'G-CX3VKN2EYV';
 ---
@@ -75,7 +75,12 @@ const GTAG = 'G-CX3VKN2EYV';
         <Wordmark />
         {!bare && (
           <nav class="site-nav" aria-label="Main">
-            {nav.map((n) => <a href={n.href} aria-current={n.current ? 'page' : undefined}>{n.label}</a>)}
+            {nav.map((n) => (
+              <a href={n.href} class:list={[n.icon && 'nav-mail']} aria-current={n.current ? 'page' : undefined}>
+                {n.icon && <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6" width="17" height="12" rx="1.5" /><path d="M4 7l8 6 8-6" /></svg>}
+                {n.label}
+              </a>
+            ))}
           </nav>
         )}
       </header>
@@ -102,10 +107,13 @@ const GTAG = 'G-CX3VKN2EYV';
       )}
     </div>
 
-    <dialog class="lightbox" aria-label="Image viewer">
-      <button class="btn btn--sm" type="button" data-close>Close</button>
-      <img alt="" />
-      <p class="data"></p>
+    <dialog class="lightbox" aria-label="Image viewer" tabindex="-1">
+      <span class="lb-count" aria-live="polite"></span>
+      <button class="lb-btn lb-close" type="button" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
+      <button class="lb-btn lb-prev" type="button" aria-label="Previous image"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" /></svg></button>
+      <button class="lb-btn lb-next" type="button" aria-label="Next image"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" /></svg></button>
+      <div class="lb-stage"><img class="lb-img" alt="" /></div>
+      <p class="lb-cap"></p>
     </dialog>
 
     <script src="../scripts/site.ts"></script>

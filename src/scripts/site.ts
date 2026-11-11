@@ -55,26 +55,60 @@ document.querySelectorAll<HTMLAnchorElement>('a[data-yt]').forEach((a) => {
   });
 });
 
-// --- Lightbox: click an image to see it large ---
+// --- Lightbox: click an image to see it large; arrows step through the page's images ---
 const box = document.querySelector<HTMLDialogElement>('dialog.lightbox');
 if (box) {
-  const big = box.querySelector('img')!;
-  const cap = box.querySelector('p')!;
+  const big = box.querySelector<HTMLImageElement>('.lb-img')!;
+  const cap = box.querySelector<HTMLElement>('.lb-cap')!;
+  const count = box.querySelector<HTMLElement>('.lb-count')!;
+  const prev = box.querySelector<HTMLButtonElement>('.lb-prev')!;
+  const next = box.querySelector<HTMLButtonElement>('.lb-next')!;
+  let frames: HTMLElement[] = [];
+  let i = 0;
+  const largest = (frame: HTMLElement, img: HTMLImageElement) => {
+    const set = (frame.querySelector('source')?.srcset || img.srcset || '').split(',').map((x) => x.trim().split(/\s+/)[0]).filter(Boolean);
+    return set.length ? set[set.length - 1] : img.currentSrc || img.src;
+  };
+  const show = (n: number) => {
+    i = (n + frames.length) % frames.length;
+    const frame = frames[i];
+    const img = frame.querySelector('img')!;
+    big.style.animation = 'none';
+    void big.offsetWidth; // restart the fade-in for each image
+    big.style.animation = '';
+    big.src = largest(frame, img);
+    big.alt = img.alt;
+    cap.textContent = frame.closest('figure')?.querySelector('figcaption')?.textContent?.trim() ?? '';
+    const many = frames.length > 1;
+    prev.hidden = next.hidden = count.hidden = !many;
+    count.textContent = many ? (i + 1) + ' / ' + frames.length : '';
+  };
   document.addEventListener('click', (ev) => {
     const frame = (ev.target as HTMLElement).closest<HTMLElement>('[data-zoom]');
-    const img = frame?.querySelector('img');
-    if (!frame || !img) return;
-    const set = (frame.querySelector('source')?.srcset || img.srcset || '')
-      .split(',')
-      .map((s) => s.trim().split(/\s+/)[0])
-      .filter(Boolean);
-    big.src = set.length ? set[set.length - 1] : img.currentSrc || img.src;
-    big.alt = img.alt;
-    cap.textContent = frame.parentElement?.querySelector('figcaption')?.textContent ?? '';
+    if (!frame || !frame.querySelector('img')) return;
+    frames = [...document.querySelectorAll<HTMLElement>('[data-zoom]')].filter((f) => f.querySelector('img'));
+    show(frames.indexOf(frame));
     box.showModal();
+    box.focus(); // keep focus on the viewer, not on a button, so no focus ring shows on open
   });
+  prev.addEventListener('click', () => show(i - 1));
+  next.addEventListener('click', () => show(i + 1));
+  box.querySelector('.lb-close')!.addEventListener('click', () => box.close());
+  // A click on the dark area (not the image, caption or buttons) closes.
   box.addEventListener('click', (ev) => {
-    if (ev.target !== cap) box.close();
+    const t = ev.target as HTMLElement;
+    if (t === box || t.classList.contains('lb-stage')) box.close();
+  });
+  box.addEventListener('keydown', (ev) => {
+    if (ev.key === 'ArrowLeft') show(i - 1);
+    if (ev.key === 'ArrowRight') show(i + 1);
+  });
+  // Swipe left/right on touch screens.
+  let x0 = 0;
+  box.addEventListener('touchstart', (ev) => { x0 = ev.touches[0].clientX; }, { passive: true });
+  box.addEventListener('touchend', (ev) => {
+    const dx = ev.changedTouches[0].clientX - x0;
+    if (frames.length > 1 && Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1));
   });
 }
 
@@ -91,21 +125,81 @@ if (links.length) {
   addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
   update();
 
-  // Fade the index out while a wide image or video passes alongside it, so it never sits on top of one.
+  // The floating index button: shown once you scroll into the post, opens and closes its list.
   const toc = document.querySelector<HTMLElement>('.toc');
-  const wide = [...document.querySelectorAll<HTMLElement>('.prose > .fig--auto, .prose > .embed')];
-  if (toc && wide.length) {
-    const check = () => {
-      if (getComputedStyle(toc).display === 'none') return;
-      const t = toc.getBoundingClientRect();
-      const covered = wide.some((el) => {
-        const r = el.getBoundingClientRect();
-        return r.left < t.right + 8 && r.bottom > t.top - 16 && r.top < t.bottom + 16;
-      });
-      toc.classList.toggle('is-covered', covered);
+  const btn = toc?.querySelector<HTMLButtonElement>('.toc-btn');
+  const panel = toc?.querySelector<HTMLElement>('.toc-panel');
+  if (toc && btn && panel) {
+    const setOpen = (open: boolean) => { btn.setAttribute('aria-expanded', String(open)); panel.hidden = !open; };
+    btn.addEventListener('click', () => setOpen(panel.hidden));
+    panel.addEventListener('click', (e) => { if ((e.target as HTMLElement).closest('a')) setOpen(false); });
+    document.addEventListener('click', (e) => { if (!toc.contains(e.target as Node)) setOpen(false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    // Sit just below the sticky header, whatever its height (it wraps to two rows on phones).
+    const header = document.querySelector<HTMLElement>('.site-header');
+    const place = () => { if (header) toc.style.top = header.getBoundingClientRect().height + 14 + 'px'; };
+    place();
+    addEventListener('resize', () => requestAnimationFrame(place));
+    const show = () => {
+      const on = scrollY > 280;
+      toc.classList.toggle('is-shown', on);
+      if (!on) setOpen(false);
     };
-    addEventListener('scroll', () => requestAnimationFrame(check), { passive: true });
-    addEventListener('resize', () => requestAnimationFrame(check));
-    check();
+    addEventListener('scroll', () => requestAnimationFrame(show), { passive: true });
+    show();
   }
+}
+
+
+// --- Tactile effects -----------------------------------------------------------------------
+
+const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// 1. Cursor light on tiles and cards (only with a real mouse).
+if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll<HTMLElement>('.entry, .pin, .post-nav a, .about-card, .about-tile, .f-concept, .series-parts a, .link').forEach((el) => {
+    el.classList.add('spot');
+    let raf = 0;
+    el.addEventListener('pointermove', (e) => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', e.clientX - r.left + 'px');
+        el.style.setProperty('--my', e.clientY - r.top + 'px');
+        raf = 0;
+      });
+    }, { passive: true });
+  });
+}
+
+// 2. Images emerge as they scroll into view. (Images already on screen at load appear straight away.)
+if (!calm && 'IntersectionObserver' in window) {
+  const targets = [...document.querySelectorAll<HTMLElement>('.prose .fig-frame, .entry-media, .post-cover-plain, .f-who-side, .feature-media, .tile-media')];
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  targets.forEach((el) => {
+    if (el.getBoundingClientRect().top < innerHeight) return;
+    el.classList.add('reveal');
+    io.observe(el);
+  });
+}
+
+// 5. Reading progress on long pages (posts, Foundations).
+const article = document.querySelector<HTMLElement>('article.prose');
+const header = document.querySelector<HTMLElement>('.site-header');
+if (article && header) {
+  const bar = document.createElement('div');
+  bar.className = 'read-progress';
+  bar.setAttribute('aria-hidden', 'true');
+  header.append(bar);
+  const update = () => {
+    const r = article.getBoundingClientRect();
+    const total = r.height - innerHeight * 0.6;
+    const done = Math.min(1, Math.max(0, (-r.top + innerHeight * 0.25) / Math.max(1, total)));
+    bar.style.setProperty('--read', done.toFixed(4));
+  };
+  addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+  addEventListener('resize', () => requestAnimationFrame(update));
+  update();
 }

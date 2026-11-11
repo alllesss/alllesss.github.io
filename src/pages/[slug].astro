@@ -41,10 +41,11 @@ if (cover && meta) {
 }
 const description = post.data.description ?? post.data.subtitle;
 const OWNER = 'Ali Eslami';
+const vt = `view-transition-name: p-${post.id.replace(/[^A-Za-z0-9_-]/g, '-')}`;
 ---
 <Base title={post.data.title} description={description} image={og} type="article">
   {banner ? (
-    <header class="post-banner" style={`--ph: ${meta!.color}; --ratio: ${(meta!.w / meta!.h).toFixed(3)}`}>
+    <header class="post-banner" style={`--ph: ${meta!.color}; --ratio: ${(meta!.w / meta!.h).toFixed(3)}; ${vt}`}>
       <Picture
         src={cover!} alt="" width={meta!.w} height={meta!.h}
         widths={widthsFor(meta!.w, [768, 1280, 1920, 2560])} sizes="(min-width: 1240px) 1100px, 100vw"
@@ -73,7 +74,7 @@ const OWNER = 'Ali Eslami';
         {post.data.subtitle && <p class="post-subtitle">{post.data.subtitle}</p>}
       </header>
       {cover && meta && (
-        <figure class="post-cover-plain" style={`--ph: ${meta.color}`}>
+        <figure class="post-cover-plain" style={`--ph: ${meta.color}; ${vt}`}>
           <Picture
             src={cover} alt="" width={meta.w} height={meta.h}
             widths={widthsFor(meta.w, [768, 1280, 1760])} sizes="(min-width: 960px) 880px, 100vw"
@@ -87,19 +88,15 @@ const OWNER = 'Ali Eslami';
 
   <div class:list={['post-grid', showToc && 'has-toc']}>
     {showToc && (
-      <nav class="toc" aria-label="Index">
-        <p class="label">Index</p>
-        <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+    <nav class="toc" aria-label="Index">
+        <button class="toc-btn" type="button" aria-expanded="false" aria-controls="toc-panel">Index</button>
+        <div class="toc-panel" id="toc-panel" hidden>
+          <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+        </div>
       </nav>
     )}
 
     <article class="prose">
-      {showToc && (
-        <details class="toc-inline">
-          <summary class="label">Contents</summary>
-          <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
-        </details>
-      )}
       <Content components={{ Figure, Video, Embed, Callout, Newsletter, PdfViewer }} />
     </article>
     <script is:inline>

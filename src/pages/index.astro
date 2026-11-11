@@ -119,7 +119,7 @@ const rows = posts.map((p, i) => {
                 <span class="entry-type">{r.type}</span>
               </span>
             </span>
-            <span class="entry-media">
+            <span class="entry-media" style={`view-transition-name: p-${r.p.id.replace(/[^A-Za-z0-9_-]/g, "-")}`}>
               <Thumb src={r.p.data.thumbnail ?? r.p.data.cover} sizes="(max-width: 640px) 112px, 228px" widths={[240, 480]} />
             </span>
           </a>

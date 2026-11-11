@@ -69,28 +69,25 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
   <header class="post-head">
     <p class="post-meta"><span>Foundations</span><span>·</span><span>Ḥikmat al-Ishrāq · 1186</span></p>
     <h1 class="post-title">The Philosophy of Illumination</h1>
-    <p class="f-fa-title" lang="fa" dir="rtl">حکمة الإشراق</p>
+    <p class="f-fa-title" lang="fa" dir="rtl">حکمت‌الاشراق</p>
   </header>
 
   <div class="post-grid has-toc">
     <nav class="toc" aria-label="Index">
-      <p class="label">Index</p>
-      <ol>{CHAPTERS.map((c) => <li><a href={`#${c.id}`}><span class="f-n">{c.n}</span> {c.label}</a></li>)}</ol>
+      <button class="toc-btn" type="button" aria-expanded="false" aria-controls="toc-panel">Index</button>
+      <div class="toc-panel" id="toc-panel" hidden>
+        <ol>{CHAPTERS.map((c) => <li><a href={`#${c.id}`}><span class="f-n">{c.n}</span> {c.label}</a></li>)}</ol>
+      </div>
     </nav>
 
     <article class="prose foundations">
-      <details class="toc-inline">
-        <summary class="label">Contents</summary>
-        <ol>{CHAPTERS.map((c) => <li><a href={`#${c.id}`}>{c.n} · {c.label}</a></li>)}</ol>
-      </details>
-
       <p>ESHRAQ takes its name and its structure from a twelfth-century Persian philosophy. You don't need to know any of it to play. But if you are curious why the world is made of light, why Souls float and Agents wait, this is where it comes from.</p>
       <p>The concepts below are the parts the simulation is built from. The chapters after them introduce Suhrawardi's ideas, then show how ESHRAQ builds on them.</p>
       <p><em>Ishrāq</em> (<span class="farsi" lang="fa">اشراق</span>) means the rising of the sun: the moment light breaks over the horizon. It also points East, the place where light comes from.</p>
 
       <!-- 00 · Concepts -->
       <h2 id="concepts" class="f-h"><span class="f-n">00</span>Concepts</h2>
-      <div class="f-concepts">
+      <div class="f-concepts is-wide">
         {CONCEPTS.map((c) => (
           <div class="f-concept">
             <span class="f-glyph" aria-hidden="true">
@@ -111,9 +108,11 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
 
       <!-- 01 -->
       <h2 id="who" class="f-h"><span class="f-n">01</span>Who was Suhrawardi <span class="farsi" lang="fa">شهاب‌الدین سهروردی</span></h2>
-      <div class="f-who">
-        <img src="/img/foundations/suhrawardi.webp" alt="Portrait of Suhrawardi" width="480" height="676" loading="lazy" />
-        <div>
+      <div class="f-who is-wide">
+        <div class="f-who-side">
+          <img src="/img/foundations/suhrawardi.webp" alt="Portrait of Suhrawardi" width="480" height="676" loading="lazy" />
+        </div>
+        <div class="f-who-text">
           <p>Shahab al-Din Suhrawardi was a Persian philosopher, born in the village of Suhraward in northwest Iran. He studied in Maragheh and Isfahan, then travelled through Anatolia and Syria. At 32 he finished his major work, <em>The Philosophy of Illumination</em>.</p>
           <p>He was executed in Aleppo at around 37, accused of heresy. Two titles stayed with him: <em>Shaykh al-Ishrāq</em>, Master of Illumination, and <em>al-Maqtūl</em>, the one who was killed.</p>
           <p>He saw himself as reviving a lost wisdom, and wove together:</p>
@@ -125,12 +124,12 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
           </ul>
         </div>
       </div>
-      <div class="f-facts">
-        <div class="f-fact"><span>Born</span><strong>1154</strong><small>Suhraward, Iran</small></div>
-        <div class="f-fact"><span>Major work</span><strong>1186</strong><small>Ḥikmat al-Ishrāq</small></div>
-        <div class="f-fact"><span>Died</span><strong>1191</strong><small>Aleppo, Syria</small></div>
-        <div class="f-fact"><span>Writings</span><strong>50+</strong><small>in Persian and Arabic</small></div>
-      </div>
+      <dl class="f-facts is-wide">
+        <div><dt>Born</dt><dd><strong>1154</strong> Suhraward, Iran</dd></div>
+        <div><dt>Major work</dt><dd><strong>1186</strong> Ḥikmat al-Ishrāq</dd></div>
+        <div><dt>Died</dt><dd><strong>1191</strong> Aleppo, Syria</dd></div>
+        <div><dt>Writings</dt><dd><strong>50+</strong> in Persian and Arabic</dd></div>
+      </dl>
 
       <!-- 02 -->
       <h2 id="light" class="f-h"><span class="f-n">02</span>Everything is light <span class="farsi" lang="fa">نور</span></h2>
@@ -150,7 +149,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       <!-- 03 -->
       <h2 id="knowing" class="f-h"><span class="f-n">03</span>Two ways of knowing</h2>
       <p>The philosophers of his day held that real knowledge comes through definitions. Suhrawardi saw a problem: every definition is made of words that need their own definitions. Somewhere, something has to be known directly. He called that ground <em>knowledge by presence</em>.</p>
-      <div class="f-know">
+      <div class="f-know is-wide">
         <div class="f-know-card is-lit">
           <div class="f-know-head"><strong>Knowledge by Presence</strong><span class="farsi" lang="fa">علم حضوری</span></div>
           <span class="f-tr">ʿilm ḥuḍūrī</span>
@@ -202,7 +201,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       <!-- 05 -->
       <h2 id="imaginal" class="f-h"><span class="f-n">05</span>The imaginal world <span class="farsi" lang="fa">عالم مثال</span></h2>
       <p>Between pure light and heavy matter, Suhrawardi placed a middle realm: a world of images that have shape and colour but no matter. Think of a face in a mirror. You can see it clearly, but you can't touch it, and it isn't inside the glass.</p>
-      <div class="f-realms" role="table" aria-label="What each realm has">
+      <div class="f-realms is-wide" role="table" aria-label="What each realm has">
         <span role="columnheader"></span>
         {REALMS.map((c) => <div role="columnheader" class:list={['f-realm-h', c.hi && 'is-hi']}><strong>{c.t}</strong><span>{c.s}</span></div>)}
         {REALM_ROWS.map((r, ri) => (
@@ -214,7 +213,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       </div>
       <p>Crucially, he said these images are not just inside your head. They exist on their own, and a person can travel there in dreams and visions. In Persian he named it <em>nā-kojā-ābād</em> (<span class="farsi" lang="fa">ناکجاآباد</span>), the land of Nowhere. In the twentieth century the French scholar Henry Corbin called it the <em>mundus imaginalis</em>, and warned against confusing it with the merely imaginary.</p>
       <p>ESHRAQ is an attempt to explore how this imaginal world might take shape through computation and simulation.</p>
-      <figure class="fig">
+      <figure class="fig is-wide">
         <span class="fig-frame"><img src={CANVAS05} alt="Floating Platform, an ESHRAQ canvas" loading="lazy" style="aspect-ratio: 16 / 9; object-fit: cover" /></span>
         <figcaption>Floating Platform, an ESHRAQ canvas. A stage suspended in nowhere: the simulation as an intermediate realm, a resonance rather than an equivalence.</figcaption>
       </figure>
@@ -225,9 +224,9 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       <div class="f-soulbody">
         <div class="f-stack" aria-hidden="true"><img src="/img/soul-star.webp" alt="" width="44" height="53" class="f-soul" /><span class="f-stem"></span><span class="core f-core" /></div>
         <div>
-          <div class="f-sb"><strong>The governing light</strong><span class="f-tr">isfahbad</span><span class="farsi" lang="fa">اسپهبد</span></div>
+          <div class="f-sb"><strong>The governing light</strong><span class="f-tr">rūḥ</span><span class="farsi" lang="fa">روح</span></div>
           <p>Aware of itself. Runs the body the way software runs on hardware.</p>
-          <div class="f-sb"><strong>The body</strong><span class="f-tr">barzakh</span><span class="farsi" lang="fa">برزخ</span></div>
+          <div class="f-sb"><strong>The body</strong><span class="f-tr">badan</span><span class="farsi" lang="fa">بدن</span></div>
           <p>Not aware of itself. Lit only while the soul governs it; dark again when it leaves.</p>
         </div>
       </div>
@@ -235,7 +234,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       <h3>How ESHRAQ takes it further</h3>
       <p>You don't see your own soul in ESHRAQ. You bring it with you. When you take an agent, your soul becomes its governing light.</p>
       <p>But you are not the only soul here. <em>Wandering souls</em> float through the world as glass orbs with metal horns, filled with glowing red air. Because a soul is airy, it doesn't stay sealed. If a wandering soul is present in the model you enter, it will find its way into your thoughts and actions. You don't choose this. It is a forced relationship, a co-presence.</p>
-      <div class="f-steps">
+      <div class="f-steps is-wide">
         <div class="f-step">
           <div class="f-step-pic" aria-hidden="true"><span class="f-col"><span class="f-you">YOU</span><span class="f-stem"></span><span class="core f-core-sm" /></span></div>
           <p><span>01</span>You arrive and govern an agent.</p>
@@ -295,7 +294,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       </div>
       <p>Models are not fantasy. The Ziggurat of Ur, Amsterdam and most others start from something real: a place, a structure, a phenomenon. Making a model means <em>distilling</em> that subject from the physical world into the imaginal one, keeping what matters and letting the rest fall away.</p>
       <p>The biologist Robert Rosen drew this as a loop between a natural system and a formal one. ESHRAQ follows the same loop, with play in the middle:</p>
-      <div class="f-well f-loop">
+      <div class="f-well f-loop is-wide">
         <svg viewBox="0 0 700 330" role="img" aria-label="The real world is distilled into a model, played, and insight is carried back">
           <defs>
             <marker id="ml-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="f-arrow" /></marker>
@@ -371,24 +370,26 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
   .f-sun { fill: #ecd38a; stroke: none; filter: drop-shadow(0 0 4px rgba(236, 139, 73, 0.8)); }
 
   /* 01 */
-  .f-who { display: flex; flex-wrap: wrap; gap: 26px; align-items: flex-start; margin-top: 1.25em; }
-  .f-who img { flex: 0 1 200px; width: 200px; height: auto; border-radius: var(--radius-md); filter: sepia(0.25) contrast(1.05); }
-  .f-who > div { flex: 1 1 280px; min-width: 0; }
-  .f-who > div > * + * { margin-top: 1em; }
+  /* Portrait stretches to the height of the text beside it, so neither column leaves a gap. */
+  .f-who { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 40px; align-items: stretch; margin-top: 1.25em; }
+  .f-who-side { position: relative; min-height: 320px; }
+  .f-who-side img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; border-radius: var(--radius-md); filter: sepia(0.25) contrast(1.05); }
+  .f-who-text > * + * { margin-top: 1em; }
+  .f-who-text > p:first-child { margin-top: 0; }
   .f-bullets { list-style: none; padding: 0 !important; display: grid; gap: 6px; font-size: 15px; line-height: 1.55; }
   .f-bullets li { display: flex; gap: 10px; margin: 0 !important; }
   .f-bullets li::before { content: '>'; font-family: var(--font-mono); color: var(--text-muted); }
   .f-bullets--lit li::before { color: var(--accent-hover); }
-  .f-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-  .f-fact { display: flex; flex-direction: column; gap: 3px; padding: 12px 16px; border-radius: var(--radius-sm); background: var(--surface-inset); box-shadow: var(--inset-well); }
-  .f-fact span { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-faint); }
-  .f-fact strong { font-family: var(--font-mono); font-size: 15px; font-weight: 500; color: var(--text-bright); }
-  .f-fact small { font-size: 13px; color: var(--text-muted); }
+  .f-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 24px 0 0; }
+  .f-facts > div { display: flex; flex-direction: column; gap: 3px; padding: 12px 16px; border-radius: var(--radius-sm); background: var(--surface-inset); box-shadow: var(--inset-well); }
+  .f-facts dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-faint); }
+  .f-facts dd { margin: 0; font-size: 13px; line-height: 1.45; color: var(--text-muted); }
+  .f-facts dd strong { display: block; font-family: var(--font-mono); font-size: 15px; font-weight: 500; color: var(--text-bright); }
 
   /* quotes */
   .f-quote { margin: 1.6em 0; padding: 22px 26px; border-radius: var(--radius-md); background: var(--surface-inset); box-shadow: var(--inset-well); }
-  .f-quote blockquote { margin: 0; padding: 0; border: 0; font-family: var(--font-display); font-weight: 500; font-size: 22px; line-height: 1.4; color: var(--text-bright); text-wrap: balance; }
-  .f-quote figcaption { margin-top: 12px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-muted); }
+  .f-quote blockquote { margin: 0; padding: 0; border: 0; font-family: var(--font-display); font-weight: 500; font-size: 24px; line-height: 1.4; color: var(--text-bright); text-wrap: pretty; }
+  .f-quote figcaption { text-align: right; margin-top: 14px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-muted); }
   .f-quote figcaption a { color: var(--text-muted); text-decoration: none; }
   .f-quote figcaption a:hover { color: var(--accent-hover); }
 
@@ -498,6 +499,8 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
 
   @media (max-width: 720px) {
     .f-concepts, .f-know, .f-steps { grid-template-columns: minmax(0, 1fr); }
+    .f-who { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .f-who-side { min-height: 0; aspect-ratio: 480 / 676; max-width: 220px; }
     .f-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .f-tag { margin-left: 0; }
   }

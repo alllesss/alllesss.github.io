@@ -13,20 +13,25 @@ const core = [
   {
     name: 'Ali Eslami', role: 'Artist',
     body: 'Iranian-Dutch artist based in Amsterdam (b. 1991). Long-term, practice-based research in memory, computation and human cognition, often through non-Western frameworks like Illuminationism. Alumnus of the Rijksakademie van Beeldende Kunsten (2021–23); awards include the IDFA DocLab Award, the Golden Calf, the Cremer Prize and the Wendy-Gutman Prize.',
-    link: { href: 'https://alllesss.com', label: 'ALLLESSS.com ↗' },
+    links: [
+      { href: 'https://alllesss.com', label: 'ALLLESSS.com ↗' },
+      { href: 'https://instagram.com/alless0', label: 'Instagram ↗' },
+    ],
   },
   {
     name: 'K.O. Productions', role: 'Production',
     body: 'Amsterdam-based production house for art & technology, run by creative producer Siuli Ko since 2007. After early years at V2_, Institute for the Unstable Media, Siuli has produced and toured immersive work internationally, including Ali Eslami & Mamali Shafahi\'s <em>Nerd_Funk</em>. Marijn Bril (curator, researcher) is part of the K.O. team and works on the production of ESHRAQ.',
+    links: [{ href: 'https://koproductions.nl/', label: 'koproductions.nl ↗' }],
   },
   {
     name: 'Will Scarlett', role: 'Writer & Researcher',
     body: 'Writer and researcher of the uncertain spaces between sensation and the surrounding world. PhD in Anthropology from the New School for Social Research, exploring experiences of presence in virtual and elemental environments. His essays for ESHRAQ appear on this blog.',
-    link: { href: 'https://waverockwave.neocities.org/', label: 'waverockwave ↗' },
+    links: [{ href: 'https://waverockwave.neocities.org/', label: 'waverockwave ↗' }],
   },
   {
     name: 'Shahin Entezami', role: 'Sound & Music',
     body: 'Iranian musician and sound artist based in Paris, known as Tegh. Rooted in noise, drone and glitch with experimental elements, combining audio into complex soundscapes that bring new aural experiences to life.',
+    links: [{ href: 'https://www.instagram.com/shahin_entezami/', label: 'Instagram ↗' }],
   },
 ];
 
@@ -83,7 +88,7 @@ const supporters = [
           <h3>{c.name}</h3>
           <span><span class="badge badge--accent">{c.role}</span></span>
           <p set:html={c.body} />
-          {c.link && <a class="data" href={c.link.href} target="_blank" rel="noopener">{c.link.label}</a>}
+          {c.links && <span class="about-card-links">{c.links.map((l) => <a class="data" href={l.href} target="_blank" rel="noopener">{l.label}</a>)}</span>}
         </div>
       ))}
     </div>
@@ -141,7 +146,8 @@ const supporters = [
   .about-licence a { color: var(--text-body); text-decoration: underline; text-underline-offset: 3px; }
   .about-card h3 { font-size: var(--text-lg); }
   .about-card p { font-size: 0.95rem; line-height: 1.65; color: var(--text-body); }
-  .about-card a { margin-top: auto; padding-top: 4px; color: var(--accent); }
+  .about-card-links { margin-top: auto; padding-top: 4px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .about-card a { color: var(--accent); }
   .about-credits { list-style: none; margin: 0; padding: 0; }
   .about-credits li { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 4px 24px; padding: 12px 0; border-bottom: 1px solid var(--border-soft); color: var(--text-bright); }
   .about-credits li:first-child { border-top: 1px solid var(--border-soft); }
