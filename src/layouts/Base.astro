@@ -31,6 +31,7 @@ const path = Astro.url.pathname;
 const nav = [
   { href: '/', label: 'Log', current: path === '/' || /^\/\d{4}-/.test(path) },
   { href: '/about/', label: 'About', current: path.startsWith('/about') },
+  { href: '/foundations/', label: 'Foundations', current: path.startsWith('/foundations') },
   { href: '/stay/', label: 'Stay in touch', current: path.startsWith('/stay') },
 ];
 const GTAG = 'G-CX3VKN2EYV';

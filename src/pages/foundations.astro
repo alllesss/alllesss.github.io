@@ -1,0 +1,504 @@
+---
+// Foundations: the ideas behind ESHRAQ. Carried over from the Help screen in the ESHRAQ interface
+// design sheets (Concepts + Foundations), adapted to the blog's reading layout.
+import Base from '../layouts/Base.astro';
+
+const CHAPTERS = [
+  { id: 'concepts', n: '00', label: 'Concepts' },
+  { id: 'who', n: '01', label: 'Who was Suhrawardi' },
+  { id: 'light', n: '02', label: 'Everything is light' },
+  { id: 'knowing', n: '03', label: 'Two ways of knowing' },
+  { id: 'hierarchy', n: '04', label: 'Hierarchy of light' },
+  { id: 'imaginal', n: '05', label: 'The imaginal world' },
+  { id: 'soul', n: '06', label: 'Soul and body' },
+  { id: 'modules', n: '07', label: 'Modules and spells' },
+  { id: 'models', n: '08', label: 'Models and canvases' },
+  { id: 'reading', n: '09', label: 'Further reading' },
+];
+
+const CONCEPTS = [
+  { term: 'Soul', glyph: 'soul', d: 'A luminous red sphere filled with soul air. An active Soul hovering in the sky can possess agents on the ground.' },
+  { term: 'Agent', glyph: 'agent', d: 'A body with its own behaviour. It goes idle unless an active Soul possesses it.' },
+  { term: 'Spell', glyph: 'spell', d: 'Made of lightning. A function that can be applied to agents or modules inside a model.' },
+  { term: 'Module', glyph: 'module', d: 'The building blocks of ESHRAQ. Like lego blocks, originated from light. Modules can carry spells, and become dynamic when an agent interacts with them.' },
+  { term: 'Model', glyph: 'model', d: 'A simulated level consisting of Modules, Agents and the rules between them. Models can have revisions.' },
+  { term: 'Canvas', glyph: 'canvas', d: 'The environment a model is staged on: ground, light, weather.' },
+];
+
+// A disc of light at intensity i (0..1); the brightest carry a glow.
+const light = (i: number, size = 20) => {
+  const c = i > 0.85 ? '#fffcf0' : i > 0.65 ? '#ecd38a' : i > 0.45 ? 'var(--accent-hover)' : i > 0.25 ? 'var(--accent-strong)' : 'var(--surface-card)';
+  const glow = i > 0.25
+    ? `0 0 ${Math.round(6 + i * 26)}px ${Math.round(i * 8)}px rgba(218,112,44,${(0.15 + i * 0.4).toFixed(2)})`
+    : 'inset 0 0 0 1px var(--border-strong)';
+  return `width:${size}px;height:${size}px;background:${c};opacity:${(0.35 + i * 0.65).toFixed(2)};box-shadow:${glow}`;
+};
+
+const LEVELS = [
+  { i: 1, en: 'Light of Lights', tr: 'Nūr al-Anwār', fa: 'نور الأنوار', tag: 'the source', d: 'Pure light that depends on nothing. It shines without ever running out, and everything else is its radiance.' },
+  { i: 0.78, en: 'Dominating Lights', tr: 'al-Anwār al-Qāhira', fa: 'انوار قاهره', tag: 'angels · intellects', d: 'Great lights that receive from the source and pass light on, each one dimmer than the one before. Some are the archetypes of every species.' },
+  { i: 0.58, en: 'Governing Lights', tr: 'al-Anwār al-Mudabbira', fa: 'انوار مدبّره', tag: 'souls', d: 'Lights that take charge of a body and steer it. The soul in you is one of these.' },
+  { i: 0.38, en: 'Imaginal Forms', tr: 'ʿĀlam al-Mithāl', fa: 'عالم مثال', tag: 'suspended images', d: 'Shapes and colours without matter: the images of dreams, visions and mirrors.' },
+  { i: 0.12, body: true, en: 'Bodies', tr: 'al-Barzakh', fa: 'برزخ', tag: 'matter · the dark isthmus', d: 'Dark in itself. A body shows up only when light falls on it; on its own it is a barrier, a veil.' },
+];
+const SEG = ['rgba(255,252,240,0.85)', 'rgba(236,180,120,0.7)', 'rgba(218,112,44,0.6)', 'rgba(190,90,50,0.5)', 'rgba(165,46,40,0.45)'];
+
+const REALMS = [
+  { t: 'Intellects', s: 'pure light', v: [1, 0, 0] },
+  { t: 'Imaginal world', s: 'between', v: [1, 1, 0], hi: true },
+  { t: 'Bodies', s: 'matter', v: [0.5, 1, 1] },
+];
+const REALM_ROWS = ['Light', 'Shape & colour', 'Matter / weight'];
+
+const READING = [
+  { t: 'Light and Presence', by: 'ESHRAQ.io · 2026', href: '/2026-07-22-LightAndPresence/' },
+  { t: 'Bridging Intermediate Realms', by: 'ESHRAQ.io · Devlog n.5 · 2025', href: '/2025-04-10-BridgingIntermediateRealms/' },
+  { t: 'Suhrawardi', by: 'Stanford Encyclopedia of Philosophy', href: 'https://plato.stanford.edu/entries/suhrawardi/' },
+  { t: 'The Philosophy of Illumination', by: 'Suhrawardi · trans. J. Walbridge & H. Ziai · 1999' },
+  { t: 'Mundus Imaginalis, or the Imaginary and the Imaginal', by: 'Henry Corbin · 1964' },
+  { t: 'Knowledge by Presence', by: "Mehdi Ha'iri Yazdi · 1992" },
+  { t: 'Anticipatory Systems', by: 'Robert Rosen · 1985 · the modelling relation' },
+];
+
+const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/06_Post/Canvas05.webp';
+---
+<Base
+  title="Foundations"
+  description="The ideas behind ESHRAQ: Suhrawardi's Philosophy of Illumination, and how the simulation builds on it."
+>
+  <header class="post-head">
+    <p class="post-meta"><span>Foundations</span><span>·</span><span>Ḥikmat al-Ishrāq · 1186</span></p>
+    <h1 class="post-title">The Philosophy of Illumination</h1>
+    <p class="f-fa-title" lang="fa" dir="rtl">حکمة الإشراق</p>
+  </header>
+
+  <div class="post-grid has-toc">
+    <nav class="toc" aria-label="Index">
+      <p class="label">Index</p>
+      <ol>{CHAPTERS.map((c) => <li><a href={`#${c.id}`}><span class="f-n">{c.n}</span> {c.label}</a></li>)}</ol>
+    </nav>
+
+    <article class="prose foundations">
+      <details class="toc-inline">
+        <summary class="label">Contents</summary>
+        <ol>{CHAPTERS.map((c) => <li><a href={`#${c.id}`}>{c.n} · {c.label}</a></li>)}</ol>
+      </details>
+
+      <p>ESHRAQ takes its name and its structure from a twelfth-century Persian philosophy. You don't need to know any of it to play. But if you are curious why the world is made of light, why Souls float and Agents wait, this is where it comes from.</p>
+      <p>The concepts below are the parts the simulation is built from. The chapters after them introduce Suhrawardi's ideas, then show how ESHRAQ builds on them.</p>
+      <p><em>Ishrāq</em> (<span class="farsi" lang="fa">اشراق</span>) means the rising of the sun: the moment light breaks over the horizon. It also points East, the place where light comes from.</p>
+
+      <!-- 00 · Concepts -->
+      <h2 id="concepts" class="f-h"><span class="f-n">00</span>Concepts</h2>
+      <div class="f-concepts">
+        {CONCEPTS.map((c) => (
+          <div class="f-concept">
+            <span class="f-glyph" aria-hidden="true">
+              {c.glyph === 'soul' && <img src="/img/soul-star.webp" alt="" width="26" height="31" class="f-soul" />}
+              {c.glyph === 'agent' && <span class="core f-core" />}
+              {c.glyph === 'spell' && <svg viewBox="0 0 24 24" width="24" height="24" class="f-spell"><path d="M14 2 6.5 13.5h4.2L9.4 22 17.5 9.8h-4.3L14 2z" /></svg>}
+              {c.glyph === 'module' && <svg viewBox="0 0 24 24" width="25" height="25" class="f-line"><path d="M12 3.2 21 8v8l-9 4.8L3 16V8l9-4.8z" /><path d="M3 8l9 4.8L21 8M12 12.8v8" opacity="0.75" /></svg>}
+              {c.glyph === 'model' && <svg viewBox="0 0 24 24" width="25" height="25" class="f-line"><path d="M12 3 21.5 8 12 13 2.5 8 12 3z" /><path d="M2.5 12.5 12 17.5l9.5-5" opacity="0.8" /><path d="M2.5 16.8 12 21.8l9.5-5" opacity="0.5" /></svg>}
+              {c.glyph === 'canvas' && <svg viewBox="0 0 24 24" width="25" height="25" class="f-line"><rect x="3" y="4.5" width="18" height="15" rx="2.5" /><path d="M3 14.5h18" opacity="0.75" /><circle cx="8.5" cy="10" r="1.6" class="f-fill" opacity="0.75" /></svg>}
+            </span>
+            <div>
+              <div class="f-term">{c.term}</div>
+              <p>{c.d}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- 01 -->
+      <h2 id="who" class="f-h"><span class="f-n">01</span>Who was Suhrawardi <span class="farsi" lang="fa">شهاب‌الدین سهروردی</span></h2>
+      <div class="f-who">
+        <img src="/img/foundations/suhrawardi.webp" alt="Portrait of Suhrawardi" width="480" height="676" loading="lazy" />
+        <div>
+          <p>Shahab al-Din Suhrawardi was a Persian philosopher, born in the village of Suhraward in northwest Iran. He studied in Maragheh and Isfahan, then travelled through Anatolia and Syria. At 32 he finished his major work, <em>The Philosophy of Illumination</em>.</p>
+          <p>He was executed in Aleppo at around 37, accused of heresy. Two titles stayed with him: <em>Shaykh al-Ishrāq</em>, Master of Illumination, and <em>al-Maqtūl</em>, the one who was killed.</p>
+          <p>He saw himself as reviving a lost wisdom, and wove together:</p>
+          <ul class="f-bullets f-bullets--lit">
+            <li>Ancient Persian wisdom and its Zoroastrian language of light</li>
+            <li>Plato, Pythagoras and Hermes</li>
+            <li>Avicenna, the great rationalist whose method he criticised</li>
+            <li>Sufi mysticism and the inner journey</li>
+          </ul>
+        </div>
+      </div>
+      <div class="f-facts">
+        <div class="f-fact"><span>Born</span><strong>1154</strong><small>Suhraward, Iran</small></div>
+        <div class="f-fact"><span>Major work</span><strong>1186</strong><small>Ḥikmat al-Ishrāq</small></div>
+        <div class="f-fact"><span>Died</span><strong>1191</strong><small>Aleppo, Syria</small></div>
+        <div class="f-fact"><span>Writings</span><strong>50+</strong><small>in Persian and Arabic</small></div>
+      </div>
+
+      <!-- 02 -->
+      <h2 id="light" class="f-h"><span class="f-n">02</span>Everything is light <span class="farsi" lang="fa">نور</span></h2>
+      <figure class="f-quote">
+        <blockquote>“If there is anything in existence that does not need to be defined, it is light.”</blockquote>
+        <figcaption>Suhrawardi · Ḥikmat al-Ishrāq</figcaption>
+      </figure>
+      <p>Most philosophers start from abstractions like “being” or “substance”. Suhrawardi starts from something you can see. Light shows itself, and it shows everything else. You don't need a definition to know it; you only need to see it.</p>
+      <p>So he doesn't split the world into light and matter. <em>Everything is light</em>, at some degree of intensity. An angel is intense light; a stone is very faint light, what he called dark or “dusky” substance. Nothing new is added on the way down. Only the brightness changes.</p>
+      <div class="f-well f-scale" aria-label="A scale from more light to less light">
+        <span class="label">More</span>
+        <span class="f-scale-row">{[1, 0.86, 0.72, 0.58, 0.44, 0.3, 0.16, 0.04].map((i) => <span class="f-light" style={light(i)} />)}</span>
+        <span class="label">Less</span>
+      </div>
+      <p>And you are a light too. The “I” that is aware of itself, without needing to look in a mirror, is exactly what light is: something evident to itself. For Suhrawardi, whatever is present to itself is light.</p>
+
+      <!-- 03 -->
+      <h2 id="knowing" class="f-h"><span class="f-n">03</span>Two ways of knowing</h2>
+      <p>The philosophers of his day held that real knowledge comes through definitions. Suhrawardi saw a problem: every definition is made of words that need their own definitions. Somewhere, something has to be known directly. He called that ground <em>knowledge by presence</em>.</p>
+      <div class="f-know">
+        <div class="f-know-card is-lit">
+          <div class="f-know-head"><strong>Knowledge by Presence</strong><span class="farsi" lang="fa">علم حضوری</span></div>
+          <span class="f-tr">ʿilm ḥuḍūrī</span>
+          <div class="f-diagram" aria-hidden="true">
+            <span class="f-presence"><span class="f-circle a"><b>YOU</b></span><span class="f-circle b"><b>IT</b></span></span>
+          </div>
+          <ul class="f-bullets f-bullets--lit"><li>Intuitive, immediate</li><li>Direct, unmediated encounter</li><li>Self-evident, beyond definition</li><li>Embodied and experiential</li></ul>
+          <p class="f-eg"><span>e.g.</span>Feeling your own pain. Knowing that you exist. Nobody has to prove these to you.</p>
+        </div>
+        <div class="f-know-card">
+          <div class="f-know-head"><strong>Knowledge by Representation</strong><span class="farsi" lang="fa">علم حصولی</span></div>
+          <span class="f-tr">ʿilm ḥuṣūlī</span>
+          <div class="f-diagram" aria-hidden="true">
+            <span class="f-node">YOU</span><span class="f-dash"></span><span class="f-word">word<br />concept<br />image</span><span class="f-dash"></span><span class="f-node is-far">IT</span>
+          </div>
+          <ul class="f-bullets"><li>Rational, discursive</li><li>Mediated by concepts and words</li><li>Needs proofs and definitions</li><li>Abstract, indirect, representational</li></ul>
+          <p class="f-eg"><span>e.g.</span>Knowing the population of Isfahan. You hold an idea of the thing, not the thing.</p>
+        </div>
+      </div>
+      <p>He doesn't throw reasoning away. He puts it second. In one of his books he recounts a dream in which Aristotle tells him where knowledge begins: with yourself, and how you know yourself.</p>
+      <figure class="f-quote">
+        <blockquote>“In Suhrawardi's thought, presence is the effect of light, and light is the vehicle of presence.”</blockquote>
+        <figcaption><a href="/2026-07-22-LightAndPresence/">ESHRAQ.io · Light and Presence</a></figcaption>
+      </figure>
+
+      <!-- 04 -->
+      <h2 id="hierarchy" class="f-h"><span class="f-n">04</span>Hierarchy of light</h2>
+      <p>Picture a lamp in a dark room. Light is strongest at the source and fades with distance, yet it is the same light all the way. Suhrawardi's cosmos is ordered like this: one source, and everything else is its radiance, growing fainter as it descends.</p>
+      <ol class="f-levels">
+        {LEVELS.map((l, idx) => (
+          <li style={idx < LEVELS.length - 1 ? `--seg: linear-gradient(180deg, ${SEG[idx]}, ${SEG[idx + 1]})` : undefined} class:list={[idx < LEVELS.length - 1 && 'has-seg']}>
+            <span class="f-level-dot">
+              {l.body ? <span class="f-body-dot" /> : <span class="f-light" style={light(l.i, idx === 0 ? 30 : 22 - idx)} />}
+            </span>
+            <div>
+              <div class="f-level-head">
+                <strong style={`opacity:${(0.55 + l.i * 0.45).toFixed(2)}`}>{l.en}</strong>
+                <span class="f-tr">{l.tr}</span>
+                <span class="farsi" lang="fa">{l.fa}</span>
+                <span class="f-tag">{l.tag}</span>
+              </div>
+              <p>{l.d}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p>Each light loves the brighter light above it and shines on the dimmer light below. That pull upward and pouring downward is what keeps the whole cosmos in motion.</p>
+
+      <!-- 05 -->
+      <h2 id="imaginal" class="f-h"><span class="f-n">05</span>The imaginal world <span class="farsi" lang="fa">عالم مثال</span></h2>
+      <p>Between pure light and heavy matter, Suhrawardi placed a middle realm: a world of images that have shape and colour but no matter. Think of a face in a mirror. You can see it clearly, but you can't touch it, and it isn't inside the glass.</p>
+      <div class="f-realms" role="table" aria-label="What each realm has">
+        <span role="columnheader"></span>
+        {REALMS.map((c) => <div role="columnheader" class:list={['f-realm-h', c.hi && 'is-hi']}><strong>{c.t}</strong><span>{c.s}</span></div>)}
+        {REALM_ROWS.map((r, ri) => (
+          <Fragment>
+            <div role="rowheader" class="f-realm-r">{r}</div>
+            {REALMS.map((c) => <div role="cell" class:list={['f-realm-c', c.hi && 'is-hi']}><span class:list={['f-dot', c.v[ri] === 1 && 'is-full', c.v[ri] === 0.5 && 'is-half']} aria-label={c.v[ri] === 1 ? 'yes' : c.v[ri] === 0.5 ? 'partly' : 'no'} /></div>)}
+          </Fragment>
+        ))}
+      </div>
+      <p>Crucially, he said these images are not just inside your head. They exist on their own, and a person can travel there in dreams and visions. In Persian he named it <em>nā-kojā-ābād</em> (<span class="farsi" lang="fa">ناکجاآباد</span>), the land of Nowhere. In the twentieth century the French scholar Henry Corbin called it the <em>mundus imaginalis</em>, and warned against confusing it with the merely imaginary.</p>
+      <p>ESHRAQ is an attempt to explore how this imaginal world might take shape through computation and simulation.</p>
+      <figure class="fig">
+        <span class="fig-frame"><img src={CANVAS05} alt="Floating Platform, an ESHRAQ canvas" loading="lazy" style="aspect-ratio: 16 / 9; object-fit: cover" /></span>
+        <figcaption>Floating Platform, an ESHRAQ canvas. A stage suspended in nowhere: the simulation as an intermediate realm, a resonance rather than an equivalence.</figcaption>
+      </figure>
+
+      <!-- 06 -->
+      <h2 id="soul" class="f-h"><span class="f-n">06</span>Soul and body</h2>
+      <p>For Suhrawardi, each soul is a governing light that has come down into a body. It runs the body, but it is not the body. When it leaves, the body stays behind, unlit.</p>
+      <div class="f-soulbody">
+        <div class="f-stack" aria-hidden="true"><img src="/img/soul-star.webp" alt="" width="44" height="53" class="f-soul" /><span class="f-stem"></span><span class="core f-core" /></div>
+        <div>
+          <div class="f-sb"><strong>The governing light</strong><span class="f-tr">isfahbad</span><span class="farsi" lang="fa">اسپهبد</span></div>
+          <p>Aware of itself. Runs the body the way software runs on hardware.</p>
+          <div class="f-sb"><strong>The body</strong><span class="f-tr">barzakh</span><span class="farsi" lang="fa">برزخ</span></div>
+          <p>Not aware of itself. Lit only while the soul governs it; dark again when it leaves.</p>
+        </div>
+      </div>
+      <p>His stories tell this as exile. In <em>The Tale of the Western Exile</em>, a traveller is imprisoned at the bottom of a well in a dark city of the West, and forgets where he comes from until a hoopoe arrives with a letter from home. The soul's task is to remember, and to turn back toward the light.</p>
+      <h3>How ESHRAQ takes it further</h3>
+      <p>You don't see your own soul in ESHRAQ. You bring it with you. When you take an agent, your soul becomes its governing light.</p>
+      <p>But you are not the only soul here. <em>Wandering souls</em> float through the world as glass orbs with metal horns, filled with glowing red air. Because a soul is airy, it doesn't stay sealed. If a wandering soul is present in the model you enter, it will find its way into your thoughts and actions. You don't choose this. It is a forced relationship, a co-presence.</p>
+      <div class="f-steps">
+        <div class="f-step">
+          <div class="f-step-pic" aria-hidden="true"><span class="f-col"><span class="f-you">YOU</span><span class="f-stem"></span><span class="core f-core-sm" /></span></div>
+          <p><span>01</span>You arrive and govern an agent.</p>
+        </div>
+        <div class="f-step">
+          <div class="f-step-pic" aria-hidden="true"><span class="f-col"><span class="f-you">YOU</span><span class="f-stem"></span><span class="core f-core-sm" /></span><img src="/img/soul-star.webp" alt="" width="30" height="36" class="f-soul f-soul-up" /></div>
+          <p><span>02</span>A wandering soul is present in the same model.</p>
+        </div>
+        <div class="f-step">
+          <div class="f-step-pic" aria-hidden="true"><span class="f-col"><span class="f-pair"><span class="f-you">YOU</span><img src="/img/soul-star.webp" alt="" width="30" height="36" class="f-soul f-soul-in" /></span><span class="f-stem"></span><span class="core f-core-sm" /></span></div>
+          <p><span>03</span>It blends with your soul, and may even take over.</p>
+        </div>
+      </div>
+      <p>From then on, your thoughts and your agent's behaviour can be coloured by another soul. Sometimes you won't be sure whose idea it was.</p>
+      <figure class="f-quote">
+        <blockquote>“Is it me thinking this, or the soul beside me?”</blockquote>
+        <figcaption>The question ESHRAQ leaves with you</figcaption>
+      </figure>
+
+      <!-- 07 -->
+      <h2 id="modules" class="f-h"><span class="f-n">07</span>Modules and spells</h2>
+      <p>If everything is light at different intensities, then even the building blocks of a world are light, condensed until it holds a shape. In ESHRAQ these blocks are <em>modules</em>.</p>
+      <div class="f-concepts">
+        <div class="f-concept">
+          <span class="f-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" class="f-line"><path d="M12 3.2 21 8v8l-9 4.8L3 16V8l9-4.8z" /><path d="M3 8l9 4.8L21 8M12 12.8v8" opacity="0.75" /></svg></span>
+          <div><div class="f-term">Module</div><p>A building block, like a lego brick, made from light. On its own it is still, the way Suhrawardi's bodies are dark until light falls on them.</p></div>
+        </div>
+        <div class="f-concept">
+          <span class="f-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" class="f-spell"><path d="M14 2 6.5 13.5h4.2L9.4 22 17.5 9.8h-4.3L14 2z" /></svg></span>
+          <div><div class="f-term">Spell</div><p>Made of lightning. A function you apply to an agent or a module that changes how it behaves.</p></div>
+        </div>
+      </div>
+      <p>Modules can carry spells. Nothing happens until an agent touches one. Then the spell fires and the module comes alive.</p>
+      <div class="f-well f-eq" aria-label="Module plus spell plus agent equals a living module">
+        <span class="f-eq-item"><svg viewBox="0 0 24 24" width="30" height="30" class="f-line"><path d="M12 3.2 21 8v8l-9 4.8L3 16V8l9-4.8z" /><path d="M3 8l9 4.8L21 8M12 12.8v8" opacity="0.75" /></svg><span>module</span></span>
+        <span class="f-op">+</span>
+        <span class="f-eq-item"><svg viewBox="0 0 24 24" width="26" height="26" class="f-spell"><path d="M14 2 6.5 13.5h4.2L9.4 22 17.5 9.8h-4.3L14 2z" /></svg><span>spell</span></span>
+        <span class="f-op">+</span>
+        <span class="f-eq-item"><span class="core f-core-sm" /><span>agent</span></span>
+        <span class="f-op">=</span>
+        <span class="f-eq-item is-alive"><svg viewBox="0 0 24 24" width="30" height="30" class="f-line f-lit"><path d="M12 3.2 21 8v8l-9 4.8L3 16V8l9-4.8z" /><path d="M3 8l9 4.8L21 8M12 12.8v8" opacity="0.75" /></svg><span>alive</span></span>
+      </div>
+      <p>Why lightning? Suhrawardi describes the first lights a seeker meets as sudden flashes: brief, bright, and gone. A spell is light in that form, a quick strike that sets still things in motion.</p>
+      <p>One spell on one module is simple. But many agents, modules and spells acting on each other start to build depth, complexity and emergent behaviours nobody designed. ESHRAQ encourages this. Like light itself, a world here is never meant to stand still. It is always flowing.</p>
+
+      <!-- 08 -->
+      <h2 id="models" class="f-h"><span class="f-n">08</span>Models and canvases</h2>
+      <p>Put modules together, add agents and spells, and set rules between them, and you have a <em>model</em>: a level in ESHRAQ. Every model is placed on a <em>canvas</em>: the surroundings it sits in, like a desert, an ocean or a city street. The canvas sets the ground underfoot, the light and the weather, so the same model can feel completely different from one canvas to the next.</p>
+      <div class="f-well f-eq" aria-label="Modules plus agents and spells on a canvas make a model">
+        <span class="f-eq-item"><span class="f-row3">{[0, 1, 2].map(() => <svg viewBox="0 0 24 24" width="22" height="22" class="f-line"><path d="M12 3.2 21 8v8l-9 4.8L3 16V8l9-4.8z" /><path d="M3 8l9 4.8L21 8M12 12.8v8" opacity="0.75" /></svg>)}</span><span>modules</span></span>
+        <span class="f-op">+</span>
+        <span class="f-eq-item"><span class="f-row3"><span class="core f-core-xs" /><svg viewBox="0 0 24 24" width="20" height="20" class="f-spell"><path d="M14 2 6.5 13.5h4.2L9.4 22 17.5 9.8h-4.3L14 2z" /></svg></span><span>agents · spells</span></span>
+        <span class="f-op">on</span>
+        <span class="f-eq-item"><svg width="58" height="34" viewBox="0 0 58 34" class="f-line"><circle cx="44" cy="7" r="4" class="f-sun" /><path d="M4 26 L29 16 L54 26 L29 33 Z" /><path d="M14 22 L39 29 M22 19 L46 25.5 M29 16 L29 33" opacity="0.5" /></svg><span>canvas</span></span>
+        <span class="f-op">=</span>
+        <span class="f-eq-item is-alive"><span class="f-model">&gt; model</span><span>a level</span></span>
+      </div>
+      <p>Models are not fantasy. The Ziggurat of Ur, Amsterdam and most others start from something real: a place, a structure, a phenomenon. Making a model means <em>distilling</em> that subject from the physical world into the imaginal one, keeping what matters and letting the rest fall away.</p>
+      <p>The biologist Robert Rosen drew this as a loop between a natural system and a formal one. ESHRAQ follows the same loop, with play in the middle:</p>
+      <div class="f-well f-loop">
+        <svg viewBox="0 0 700 330" role="img" aria-label="The real world is distilled into a model, played, and insight is carried back">
+          <defs>
+            <marker id="ml-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="f-arrow" /></marker>
+            <marker id="ml-arrow-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="f-arrow-m" /></marker>
+          </defs>
+          <path d="M520 118 C520 28 180 28 180 112" class="f-curve" marker-end="url(#ml-arrow)" />
+          <path d="M180 212 C180 302 520 302 520 218" class="f-curve" marker-end="url(#ml-arrow)" />
+          <path d="M90 190 C38 190 38 140 84 140" class="f-curve-m" marker-end="url(#ml-arrow-m)" />
+          <path d="M610 190 C662 190 662 140 616 140" class="f-curve-m" marker-end="url(#ml-arrow-m)" />
+          <rect x="90" y="120" width="180" height="90" rx="14" class="f-box" />
+          <text x="180" y="160" text-anchor="middle" class="f-box-t">Real world</text>
+          <text x="180" y="184" text-anchor="middle" class="f-box-s">natural system</text>
+          <rect x="430" y="120" width="180" height="90" rx="14" class="f-box" />
+          <text x="520" y="160" text-anchor="middle" class="f-box-t">Model</text>
+          <text x="520" y="184" text-anchor="middle" class="f-box-s">imaginal world</text>
+          <text x="350" y="22" text-anchor="middle" class="f-lab">INSIGHT</text>
+          <text x="350" y="86" text-anchor="middle" class="f-sub">carried back</text>
+          <text x="350" y="322" text-anchor="middle" class="f-lab">DISTIL</text>
+          <text x="350" y="254" text-anchor="middle" class="f-sub">into modules</text>
+          <text x="22" y="165" text-anchor="middle" transform="rotate(-90 22 165)" class="f-side">CAUSALITY</text>
+          <text x="678" y="165" text-anchor="middle" transform="rotate(90 678 165)" class="f-side">PLAY</text>
+        </svg>
+      </div>
+      <p>You step into the model, become present in it, and play. What happens there can be carried back as a new way of seeing the real thing. Not knowledge by representation, but knowledge by presence.</p>
+      <figure class="f-quote">
+        <blockquote>“…these intermediate realms illuminate each other, inviting this transcendent space into a slightly fuller presence in our world.”</blockquote>
+        <figcaption><a href="/2025-04-10-BridgingIntermediateRealms/">Will Scarlett · ESHRAQ.io · Bridging Intermediate Realms</a></figcaption>
+      </figure>
+
+      <!-- 09 -->
+      <h2 id="reading" class="f-h"><span class="f-n">09</span>Further reading</h2>
+      <ul class="f-reading">
+        {READING.map((r) =>
+          r.href ? (
+            <li><a href={r.href} target={r.href.startsWith('http') ? '_blank' : undefined} rel={r.href.startsWith('http') ? 'noopener' : undefined}><strong>{r.t}</strong><span>{r.by}</span></a></li>
+          ) : (
+            <li><strong>{r.t}</strong><span>{r.by}</span></li>
+          ),
+        )}
+      </ul>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .f-fa-title { font-family: var(--font-farsi); font-size: 1.8rem; color: var(--text-muted); line-height: 1.2; text-align: left; }
+  .foundations em { font-style: italic; color: var(--text-bright); }
+  .foundations .farsi { font-size: 1.15em; color: var(--text-muted); }
+  .foundations :global(.f-h) { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; scroll-margin-top: 110px; }
+  .foundations :global(.f-h .farsi) { font-size: 0.85em; font-weight: 400; }
+  .f-n { font-family: var(--font-mono); font-size: 13px; font-weight: 400; letter-spacing: 0.08em; color: var(--accent-hover); }
+  .toc .f-n { font-size: 11px; margin-right: 6px; color: inherit; opacity: 0.7; }
+  .f-tr { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+  .label { margin: 0; }
+
+  /* wells (recessed panels for diagrams) */
+  .f-well { padding: 20px 22px; border-radius: var(--radius-md); background: var(--surface-inset); box-shadow: var(--inset-well); }
+
+  /* concepts */
+  .f-concepts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .f-concept { display: flex; gap: 16px; padding: 18px 20px; border-radius: var(--radius-md); background: rgba(206, 205, 195, 0.035); border: 1px solid var(--border-soft); }
+  .f-concept p { margin: 6px 0 0; font-size: 15px; line-height: 1.65; }
+  .f-term { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-bright); }
+  .f-glyph { width: 34px; height: 34px; flex: none; display: flex; align-items: center; justify-content: center; padding-top: 2px; }
+  .f-soul { filter: drop-shadow(0 0 8px rgba(209, 77, 65, 0.7)); }
+  .f-core { font-size: 18px; }
+  .f-core-sm { font-size: 18px; }
+  .f-core-xs { font-size: 14px; }
+  .f-spell { fill: var(--accent-hover); filter: drop-shadow(0 0 6px rgba(218, 112, 44, 0.55)); }
+  .f-line { fill: none; stroke: var(--surface-control); stroke-width: 1.5; stroke-linejoin: round; filter: drop-shadow(0 0 5px rgba(181, 173, 163, 0.3)); }
+  .f-line .f-fill { fill: var(--surface-control); stroke: none; }
+  .f-line.f-lit { stroke: var(--accent-hover); fill: rgba(218, 112, 44, 0.18); filter: drop-shadow(0 0 10px rgba(218, 112, 44, 0.7)); }
+  .f-sun { fill: #ecd38a; stroke: none; filter: drop-shadow(0 0 4px rgba(236, 139, 73, 0.8)); }
+
+  /* 01 */
+  .f-who { display: flex; flex-wrap: wrap; gap: 26px; align-items: flex-start; margin-top: 1.25em; }
+  .f-who img { flex: 0 1 200px; width: 200px; height: auto; border-radius: var(--radius-md); filter: sepia(0.25) contrast(1.05); }
+  .f-who > div { flex: 1 1 280px; min-width: 0; }
+  .f-who > div > * + * { margin-top: 1em; }
+  .f-bullets { list-style: none; padding: 0 !important; display: grid; gap: 6px; font-size: 15px; line-height: 1.55; }
+  .f-bullets li { display: flex; gap: 10px; margin: 0 !important; }
+  .f-bullets li::before { content: '>'; font-family: var(--font-mono); color: var(--text-muted); }
+  .f-bullets--lit li::before { color: var(--accent-hover); }
+  .f-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .f-fact { display: flex; flex-direction: column; gap: 3px; padding: 12px 16px; border-radius: var(--radius-sm); background: var(--surface-inset); box-shadow: var(--inset-well); }
+  .f-fact span { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-faint); }
+  .f-fact strong { font-family: var(--font-mono); font-size: 15px; font-weight: 500; color: var(--text-bright); }
+  .f-fact small { font-size: 13px; color: var(--text-muted); }
+
+  /* quotes */
+  .f-quote { margin: 1.6em 0; padding: 22px 26px; border-radius: var(--radius-md); background: var(--surface-inset); box-shadow: var(--inset-well); }
+  .f-quote blockquote { margin: 0; padding: 0; border: 0; font-family: var(--font-display); font-weight: 500; font-size: 22px; line-height: 1.4; color: var(--text-bright); text-wrap: balance; }
+  .f-quote figcaption { margin-top: 12px; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-muted); }
+  .f-quote figcaption a { color: var(--text-muted); text-decoration: none; }
+  .f-quote figcaption a:hover { color: var(--accent-hover); }
+
+  /* 02 light scale */
+  .f-light { display: inline-block; border-radius: 50%; flex: none; }
+  .f-scale { display: flex; align-items: center; gap: 16px; }
+  .f-scale-row { flex: 1; display: flex; justify-content: space-between; align-items: center; }
+
+  /* 03 knowing */
+  .f-know { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .f-know-card { display: flex; flex-direction: column; padding: 20px 22px; border-radius: var(--radius-md); background: rgba(206, 205, 195, 0.035); border: 1px solid var(--border-soft); }
+  .f-know-card.is-lit { background: rgba(218, 112, 44, 0.06); border-color: rgba(218, 112, 44, 0.32); }
+  .f-know-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 10px; }
+  .f-know-head strong { font-family: var(--font-display); font-size: 19px; font-weight: 600; color: var(--text-bright); }
+  .is-lit .f-know-head strong { color: var(--accent-hover); }
+  .f-diagram { height: 120px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .f-presence { position: relative; width: 150px; height: 90px; }
+  .f-circle { position: absolute; top: 5px; width: 80px; height: 80px; border-radius: 50%; border: 1px solid rgba(236, 139, 73, 0.6); }
+  .f-circle.a { left: 10px; background: radial-gradient(circle, rgba(255, 252, 240, 0.55), rgba(218, 112, 44, 0.25) 60%, rgba(218, 112, 44, 0) 72%); }
+  .f-circle.b { left: 60px; background: radial-gradient(circle, rgba(255, 252, 240, 0.4), rgba(218, 112, 44, 0.2) 60%, rgba(218, 112, 44, 0) 72%); }
+  .f-circle b { position: absolute; top: 34px; font-family: var(--font-mono); font-size: 10.5px; font-weight: 400; letter-spacing: 0.1em; color: var(--text-bright); }
+  .f-circle.a b { left: 12px; }
+  .f-circle.b b { right: 16px; }
+  .f-node { width: 54px; height: 54px; flex: none; border-radius: 50%; border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--text-bright); }
+  .f-node.is-far { border-style: dashed; color: var(--text-muted); }
+  .f-dash { flex: 1; min-width: 14px; max-width: 34px; border-top: 1px dashed var(--text-faint); }
+  .f-word { padding: 10px 12px; border-radius: var(--radius-sm); background: var(--surface-inset); box-shadow: var(--inset-well); font-family: var(--font-mono); font-size: 11px; line-height: 1.35; text-align: center; color: var(--text-body); }
+  .f-eg { margin-top: auto !important; padding-top: 12px; border-top: 1px solid var(--border-soft); font-size: 14px !important; line-height: 1.6; color: var(--text-muted); }
+  .f-know-card .f-bullets { margin: 0 0 14px; }
+  .f-eg span { margin-right: 8px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-faint); }
+
+  /* 04 hierarchy */
+  .f-levels { list-style: none; padding: 0 !important; }
+  .f-levels li { position: relative; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 18px; padding: 12px 0; margin: 0 !important; }
+  .f-levels li.has-seg::before { content: ''; position: absolute; left: 21.25px; top: 24px; bottom: -24px; width: 1.5px; background: var(--seg); }
+  .f-level-dot { position: relative; z-index: 1; display: flex; justify-content: center; align-items: flex-start; padding-top: 2px; }
+  .f-level-dot > * { outline: 5px solid var(--surface-base); }
+  .f-body-dot { display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, var(--soul-core), var(--soul-deep) 70%); opacity: 0.85; }
+  .f-level-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; }
+  .f-level-head strong { font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--text-bright); }
+  .f-tag { margin-left: auto; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--accent-hover); }
+  .f-levels p { margin: 4px 0 0; font-size: 15px; line-height: 1.65; }
+
+  /* 05 realms */
+  .f-realms { display: grid; grid-template-columns: minmax(84px, 0.9fr) repeat(3, minmax(0, 1fr)); border-radius: var(--radius-md); border: 1px solid var(--border-soft); overflow: hidden; }
+  .f-realm-h { padding: 14px 10px 10px; text-align: center; display: flex; flex-direction: column; gap: 3px; }
+  .f-realm-h strong { font-family: var(--font-display); font-weight: 600; font-size: 15px; color: var(--text-bright); }
+  .f-realm-h span { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  .f-realm-h.is-hi strong { color: var(--accent-hover); }
+  .is-hi { background: rgba(218, 112, 44, 0.08); }
+  .f-realm-r { padding: 11px 14px; border-top: 1px solid var(--border-soft); font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+  .f-realm-c { padding: 11px 10px; border-top: 1px solid var(--border-soft); display: flex; justify-content: center; align-items: center; }
+  .f-dot { width: 12px; height: 12px; border-radius: 50%; border: 1px solid var(--border-strong); }
+  .f-dot.is-full { background: var(--accent-hover); border-color: var(--accent-hover); box-shadow: 0 0 8px rgba(218, 112, 44, 0.5); }
+  .f-dot.is-half { background: linear-gradient(90deg, var(--accent-hover) 50%, transparent 50%); border-color: var(--accent-hover); }
+
+  /* 06 soul & body */
+  .f-soulbody { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; padding: 22px 26px; border-radius: var(--radius-md); background: rgba(206, 205, 195, 0.035); border: 1px solid var(--border-soft); }
+  .f-soulbody > div:last-child { flex: 1 1 200px; min-width: 0; }
+  .f-soulbody p { margin: 3px 0 16px; font-size: 15px; line-height: 1.6; }
+  .f-soulbody p:last-child { margin-bottom: 0; }
+  .f-stack, .f-col { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .f-stack { width: 70px; }
+  .f-stem { height: 30px; border-left: 1px dashed var(--soul); opacity: 0.8; }
+  .f-col .f-stem { height: 22px; }
+  .f-sb { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  .f-sb strong { font-family: var(--font-display); font-weight: 600; font-size: 17px; color: var(--text-bright); }
+  .f-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .f-step-pic { height: 120px; display: flex; align-items: center; justify-content: center; gap: 14px; border-radius: var(--radius-md); background: var(--surface-inset); box-shadow: var(--inset-well); }
+  .f-step p { display: flex; gap: 10px; margin: 12px 4px 0; font-size: 14px; line-height: 1.6; }
+  .f-step p span { font-family: var(--font-mono); font-size: 11px; color: var(--soul); padding-top: 3px; }
+  .f-you { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; border: 1px dashed var(--text-faint); font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; color: var(--text-bright); }
+  .f-pair { display: flex; align-items: center; }
+  .f-soul-in { margin-left: -12px; }
+  .f-soul-up { transform: translateY(-18px); }
+
+  /* 07–08 equations */
+  .f-eq { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; }
+  .f-eq-item { display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 48px; }
+  .f-eq-item > :first-child { height: 34px; display: flex; align-items: center; }
+  .f-eq-item > span:last-child { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: var(--tracking-label); text-transform: uppercase; color: var(--text-muted); }
+  .f-eq-item.is-alive > span:last-child { color: var(--accent-hover); }
+  .f-op { font-family: var(--font-mono); font-size: 15px; color: var(--text-faint); }
+  .f-row3 { display: flex; gap: 4px; align-items: center; }
+  .f-model { font-family: var(--font-mono); font-size: 14px; color: var(--accent-hover); }
+
+  /* 08 loop diagram */
+  .f-loop svg { display: block; width: 100%; max-width: 640px; margin: 0 auto; }
+  .f-curve { fill: none; stroke: var(--accent-hover); stroke-width: 2; }
+  .f-curve-m { fill: none; stroke: var(--text-muted); stroke-width: 1.5; }
+  .f-arrow { fill: var(--accent-hover); }
+  .f-arrow-m { fill: var(--text-muted); }
+  .f-box { fill: rgba(206, 205, 195, 0.05); stroke: var(--border-strong); stroke-width: 1.2; }
+  .f-box-t { font-family: var(--font-display); font-weight: 600; font-size: 19px; fill: var(--text-bright); }
+  .f-box-s { font-family: var(--font-mono); font-size: 12px; fill: var(--text-muted); }
+  .f-lab { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.16em; fill: var(--accent-hover); }
+  .f-sub { font-family: var(--font-body); font-size: 13px; fill: var(--text-muted); }
+  .f-side { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; fill: var(--text-muted); }
+
+  /* 09 reading */
+  .f-reading { list-style: none; padding: 0 !important; }
+  .f-reading li { margin: 0 !important; border-bottom: 1px solid var(--border-soft); }
+  .f-reading li > a, .f-reading li:not(:has(a)) { display: flex; flex-direction: column; gap: 3px; padding: 12px 0; text-decoration: none; }
+  .f-reading strong { font-family: var(--font-body); font-weight: 400; font-size: 15px; color: var(--text-bright); }
+  .f-reading span { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+  .f-reading a:hover strong { color: var(--accent-hover); }
+
+  @media (max-width: 720px) {
+    .f-concepts, .f-know, .f-steps { grid-template-columns: minmax(0, 1fr); }
+    .f-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .f-tag { margin-left: 0; }
+  }
+</style>
