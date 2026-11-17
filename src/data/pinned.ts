@@ -37,8 +37,8 @@ export const pinned: Pinned[] = [
     brand: 'steam',
     status: 'Coming soon',
     title: 'ESHRAQ on Steam, in Early Access',
-    text: "The Steam page isn't public yet. Leave your email to hear when it is.",
-    short: 'Hear first when the page opens.',
-    link: { href: '/stay/', label: 'Get notified' },
+    text: 'The Steam page is live. Add ESHRAQ to your wishlist to hear when it launches.',
+    short: 'Wishlist it to hear at launch.',
+    link: { href: 'https://store.steampowered.com/app/4869850/ESHRAQ/', label: 'Wishlist on Steam' },
   },
 ];
