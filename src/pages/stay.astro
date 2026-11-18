@@ -1,6 +1,7 @@
 ---
 // The newsletter page. Its address (/stay/) is printed on the IDFA QR code, so it must not change.
 import Base from '../layouts/Base.astro';
+import SteamCard from '../components/SteamCard.astro';
 ---
 <Base
   title="Stay in touch"
@@ -15,6 +16,8 @@ import Base from '../layouts/Base.astro';
       <iframe src="https://alllesss.substack.com/embed" title="Subscribe to the ESHRAQ newsletter on Substack" scrolling="no"></iframe>
     </div>
     <p class="stay-note">No spam. Unsubscribe any time.</p>
+
+    <div class="stay-steam"><SteamCard /></div>
   </div>
 </Base>
 
@@ -33,4 +36,5 @@ import Base from '../layouts/Base.astro';
   }
   .stay-box iframe { display: block; width: 100%; min-height: 300px; border: 0; border-radius: var(--radius-md); background: #fff; }
   .stay-note { margin-top: 14px; font-size: 13px; color: var(--text-faint); }
+  .stay-steam { margin-top: 40px; }
 </style>

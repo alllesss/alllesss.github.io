@@ -1,0 +1,42 @@
+---
+// The Steam card as a stand-alone block (used on /stay/). The text and link come from
+// src/data/pinned.ts, the same entry the home page uses, so there is one place to edit.
+import BrandIcon from './BrandIcon.astro';
+import { pinned } from '../data/pinned';
+
+const card = pinned.find((p) => p.brand === 'steam' && p.show !== false);
+---
+{card && (
+  <a class="steam-card" href={card.link.href}>
+    <span class="top">
+      <span class="mark"><BrandIcon name="steam" size={22} /><span>STEAM</span></span>
+      <span class="status">{card.status}</span>
+    </span>
+    <strong class="title">{card.title}</strong>
+    <span class="text">{card.text}</span>
+    <span class="go">{card.link.label}</span>
+  </a>
+)}
+
+<style>
+  .steam-card {
+    display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; text-align: left;
+    border-radius: var(--radius-lg); overflow: hidden; color: inherit;
+    background: linear-gradient(135deg, #171a21 0%, #1b2838 55%, #2a475e 100%);
+    border: 1px solid rgba(102, 192, 244, 0.28); box-shadow: var(--shadow-md);
+    transition: transform var(--dur-normal) var(--ease-standard), box-shadow var(--dur-normal) var(--ease-standard), border-color var(--dur-normal) var(--ease-standard);
+  }
+  .steam-card:hover { color: inherit; transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: rgba(102, 192, 244, 0.7); }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .mark { display: inline-flex; align-items: center; gap: 8px; color: #ffffff; font-family: var(--font-display); font-weight: 600; font-size: 15px; letter-spacing: 0.14em; }
+  .status { padding: 3px 10px; border-radius: 2px; background: rgba(102, 192, 244, 0.18); color: #66c0f4; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .title { font-family: var(--font-display); font-weight: 600; font-size: 22px; line-height: 1.2; color: #ffffff; }
+  .steam-card:hover .title { color: #66c0f4; }
+  .text { font-size: 15px; line-height: 1.5; color: #c7d5e0; }
+  .go {
+    align-self: flex-start; padding: 8px 16px; border-radius: 2px;
+    background: linear-gradient(90deg, #06bfff 0%, #2d73ff 100%); color: #ffffff; font-size: 14px; font-weight: 500;
+    transition: filter var(--dur-fast);
+  }
+  .steam-card:hover .go { filter: brightness(1.12); }
+</style>
