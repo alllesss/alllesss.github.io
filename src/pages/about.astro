@@ -113,6 +113,7 @@ const supporters = [
         ),
       )}
     </div>
+    <p class="about-also">The presentation at IDFA DocLab 2026 was also supported by Creative Industries Fund NL, the Ministry of Education, Culture and Science, and CIIIC.</p>
 
     <div class="about-news"><Newsletter /></div>
 
@@ -131,34 +132,35 @@ const supporters = [
   .about-studio a:hover { color: var(--accent-hover); }
   .about-lead { font-size: clamp(1.15rem, 2.2vw, 1.375rem); line-height: 1.6; color: var(--text-body); max-width: 46rem; text-wrap: pretty; }
   .about-lead strong { color: var(--text-bright); }
-  .about-lead em { font-style: normal; color: var(--accent); }
+  .about-lead em { font-style: italic; color: var(--text-bright); }
   .about-meta { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 24px; }
   .about-grid { display: grid; gap: var(--gap-tile); grid-template-columns: repeat(auto-fit, minmax(var(--min, 150px), 1fr)); }
   .cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .cols-3 { --min: 200px; }
+  .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .about-also { margin-top: 18px; max-width: 46rem; font-size: 15px; line-height: 1.6; color: var(--text-muted); }
   .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .about-tile { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; min-height: 8rem; }
   .about-tile > *, .about-card > * { position: relative; z-index: 1; }
   .about-tile strong { font-family: var(--font-display); font-weight: 600; font-size: var(--text-md); color: var(--text-bright); line-height: 1.25; }
-  .about-tile .label { margin-top: auto; font-size: 10.5px; letter-spacing: 0.12em; color: var(--text-faint); }
+  .about-tile .label { margin-top: auto; font-size: 12px; letter-spacing: 0.1em; color: var(--text-muted); }
   .about-card { display: flex; flex-direction: column; gap: 12px; padding: 20px 22px; }
   .about-licence { max-width: 46rem; font-size: 15px; line-height: 1.65; color: var(--text-muted); }
   .about-licence a { color: var(--text-body); text-decoration: underline; text-underline-offset: 3px; }
   .about-card h3 { font-size: var(--text-lg); }
   .about-card p { font-size: 0.95rem; line-height: 1.65; color: var(--text-body); }
   .about-card-links { margin-top: auto; padding-top: 4px; display: flex; flex-wrap: wrap; gap: 6px 18px; }
-  .about-card a { color: var(--accent); }
+  .about-card a { color: var(--accent-text); }
   .about-credits { list-style: none; margin: 0; padding: 0; }
   .about-credits li { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 4px 24px; padding: 12px 0; border-bottom: 1px solid var(--border-soft); color: var(--text-bright); }
   .about-credits li:first-child { border-top: 1px solid var(--border-soft); }
   .about-thanks { color: var(--text-bright); line-height: 1.8; }
   .about-logo { display: grid; place-items: center; height: 6rem; padding: 16px 20px; transition: border-color var(--dur-normal) var(--ease-standard); }
-  a.about-logo:hover { border-color: rgba(218, 112, 44, 0.55); }
+  a.about-logo:hover { border-color: var(--accent-line); }
   .about-logo img { position: relative; z-index: 1; max-height: 2.1rem; max-width: 100%; width: auto; filter: brightness(0) invert(1); opacity: 0.82; }
   .about-logo.tall img { max-height: 3rem; }
   .about-logo.wide img { max-height: 1.5rem; }
   @media (max-width: 860px) { .cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 640px) { .cols-2 { grid-template-columns: minmax(0, 1fr); } }
+  @media (max-width: 640px) { .cols-2 { grid-template-columns: minmax(0, 1fr); } .cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 560px) {
     .about-credits li { grid-template-columns: 1fr; }
     .about-studio { align-items: flex-start; }

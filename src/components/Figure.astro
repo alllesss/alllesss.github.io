@@ -20,7 +20,7 @@ const custom = width ? `max-width: ${/^\d+$/.test(width) ? width + 'px' : width}
 const style = custom || portrait || undefined;
 ---
 <figure class:list={['fig', size && `fig--${size}`, !style && !size && 'fig--auto']} style={style}>
-  <span class="fig-frame" data-zoom style={meta ? `--ph: ${meta.color}` : undefined}>
+  <span class="fig-frame" data-zoom tabindex="0" role="button" aria-label={alt ? `Enlarge image: ${alt}` : 'Enlarge image'} style={meta ? `--ph: ${meta.color}` : undefined}>
     {optimise ? (
       <Picture
         src={src}

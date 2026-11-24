@@ -67,9 +67,9 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
   description="The ideas behind ESHRAQ: Suhrawardi's Philosophy of Illumination, and how the simulation builds on it."
 >
   <header class="post-head">
-    <p class="post-meta"><span>Foundations</span><span>·</span><span>Ḥikmat al-Ishrāq · 1186</span></p>
+    <p class="post-meta"><span>Foundations</span><span>·</span><span>Hekmat Eshraqi · 1186</span></p>
     <h1 class="post-title">The Philosophy of Illumination</h1>
-    <p class="f-fa-title" lang="fa" dir="rtl">حکمت‌الاشراق</p>
+    <p class="f-fa-title" lang="fa" dir="rtl">حکمت اشراقی</p>
   </header>
 
   <div class="post-grid has-toc">
@@ -139,7 +139,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       </figure>
       <p>Most philosophers start from abstractions like “being” or “substance”. Suhrawardi starts from something you can see. Light shows itself, and it shows everything else. You don't need a definition to know it; you only need to see it.</p>
       <p>So he doesn't split the world into light and matter. <em>Everything is light</em>, at some degree of intensity. An angel is intense light; a stone is very faint light, what he called dark or “dusky” substance. Nothing new is added on the way down. Only the brightness changes.</p>
-      <div class="f-well f-scale" aria-label="A scale from more light to less light">
+      <div class="f-well f-scale" role="img" aria-label="A scale from more light to less light">
         <span class="label">More</span>
         <span class="f-scale-row">{[1, 0.86, 0.72, 0.58, 0.44, 0.3, 0.16, 0.04].map((i) => <span class="f-light" style={light(i)} />)}</span>
         <span class="label">Less</span>
@@ -202,13 +202,16 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       <h2 id="imaginal" class="f-h"><span class="f-n">05</span>The imaginal world <span class="farsi" lang="fa">عالم مثال</span></h2>
       <p>Between pure light and heavy matter, Suhrawardi placed a middle realm: a world of images that have shape and colour but no matter. Think of a face in a mirror. You can see it clearly, but you can't touch it, and it isn't inside the glass.</p>
       <div class="f-realms is-wide" role="table" aria-label="What each realm has">
-        <span role="columnheader"></span>
-        {REALMS.map((c) => <div role="columnheader" class:list={['f-realm-h', c.hi && 'is-hi']}><strong>{c.t}</strong><span>{c.s}</span></div>)}
+        {/* Rows use display: contents, so the grid layout is unchanged while screen readers get a real table. */}
+        <div role="row" class="f-realm-row">
+          <span role="columnheader"></span>
+          {REALMS.map((c) => <div role="columnheader" class:list={['f-realm-h', c.hi && 'is-hi']}><strong>{c.t}</strong><span>{c.s}</span></div>)}
+        </div>
         {REALM_ROWS.map((r, ri) => (
-          <Fragment>
+          <div role="row" class="f-realm-row">
             <div role="rowheader" class="f-realm-r">{r}</div>
-            {REALMS.map((c) => <div role="cell" class:list={['f-realm-c', c.hi && 'is-hi']}><span class:list={['f-dot', c.v[ri] === 1 && 'is-full', c.v[ri] === 0.5 && 'is-half']} aria-label={c.v[ri] === 1 ? 'yes' : c.v[ri] === 0.5 ? 'partly' : 'no'} /></div>)}
-          </Fragment>
+            {REALMS.map((c) => <div role="cell" class:list={['f-realm-c', c.hi && 'is-hi']}><span class:list={['f-dot', c.v[ri] === 1 && 'is-full', c.v[ri] === 0.5 && 'is-half']} role="img" aria-label={c.v[ri] === 1 ? 'yes' : c.v[ri] === 0.5 ? 'partly' : 'no'} /></div>)}
+          </div>
         ))}
       </div>
       <p>Crucially, he said these images are not just inside your head. They exist on their own, and a person can travel there in dreams and visions. In Persian he named it <em>nā-kojā-ābād</em> (<span class="farsi" lang="fa">ناکجاآباد</span>), the land of Nowhere. In the twentieth century the French scholar Henri Corbin called it the <em>mundus imaginalis</em>, and warned against confusing it with the merely imaginary.</p>
@@ -268,7 +271,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
         </div>
       </div>
       <p>Modules can carry spells. Nothing happens until an agent touches one. Then the spell fires and the module comes alive.</p>
-      <div class="f-well f-eq" aria-label="Module plus spell plus agent equals a living module">
+      <div class="f-well f-eq" role="img" aria-label="Module plus spell plus agent equals a living module">
         <span class="f-eq-item"><svg viewBox="0 0 24 24" width="30" height="30" class="f-line"><path d="M12 3.2 21 8v8l-9 4.8L3 16V8l9-4.8z" /><path d="M3 8l9 4.8L21 8M12 12.8v8" opacity="0.75" /></svg><span>module</span></span>
         <span class="f-op">+</span>
         <span class="f-eq-item"><svg viewBox="0 0 24 24" width="26" height="26" class="f-spell"><path d="M14 2 6.5 13.5h4.2L9.4 22 17.5 9.8h-4.3L14 2z" /></svg><span>spell</span></span>
@@ -283,7 +286,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       <!-- 08 -->
       <h2 id="models" class="f-h"><span class="f-n">08</span>Models and canvases</h2>
       <p>Put modules together, add agents and spells, and set rules between them, and you have a <em>model</em>: a level in ESHRAQ. Every model is placed on a <em>canvas</em>: the surroundings it sits in, like a desert, an ocean or a city street. The canvas sets the ground underfoot, the light and the weather, so the same model can feel completely different from one canvas to the next.</p>
-      <div class="f-well f-eq" aria-label="Modules plus agents and spells on a canvas make a model">
+      <div class="f-well f-eq" role="img" aria-label="Modules plus agents and spells on a canvas make a model">
         <span class="f-eq-item"><span class="f-row3">{[0, 1, 2].map(() => <svg viewBox="0 0 24 24" width="22" height="22" class="f-line"><path d="M12 3.2 21 8v8l-9 4.8L3 16V8l9-4.8z" /><path d="M3 8l9 4.8L21 8M12 12.8v8" opacity="0.75" /></svg>)}</span><span>modules</span></span>
         <span class="f-op">+</span>
         <span class="f-eq-item"><span class="f-row3"><span class="core f-core-xs" /><svg viewBox="0 0 24 24" width="20" height="20" class="f-spell"><path d="M14 2 6.5 13.5h4.2L9.4 22 17.5 9.8h-4.3L14 2z" /></svg></span><span>agents · spells</span></span>
@@ -363,7 +366,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
   .f-core { font-size: 18px; }
   .f-core-sm { font-size: 18px; }
   .f-core-xs { font-size: 14px; }
-  .f-spell { fill: var(--accent-hover); filter: drop-shadow(0 0 6px rgba(218, 112, 44, 0.55)); }
+  .f-spell { fill: var(--accent-hover); filter: drop-shadow(0 0 6px var(--accent-line)); }
   .f-line { fill: none; stroke: var(--surface-control); stroke-width: 1.5; stroke-linejoin: round; filter: drop-shadow(0 0 5px rgba(181, 173, 163, 0.3)); }
   .f-line .f-fill { fill: var(--surface-control); stroke: none; }
   .f-line.f-lit { stroke: var(--accent-hover); fill: rgba(218, 112, 44, 0.18); filter: drop-shadow(0 0 10px rgba(218, 112, 44, 0.7)); }
@@ -435,6 +438,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
 
   /* 05 realms */
   .f-realms { display: grid; grid-template-columns: minmax(84px, 0.9fr) repeat(3, minmax(0, 1fr)); border-radius: var(--radius-md); border: 1px solid var(--border-soft); overflow: hidden; }
+  .f-realm-row { display: contents; }
   .f-realm-h { padding: 14px 10px 10px; text-align: center; display: flex; flex-direction: column; gap: 3px; }
   .f-realm-h strong { font-family: var(--font-display); font-weight: 600; font-size: 15px; color: var(--text-bright); }
   .f-realm-h span { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }

@@ -16,9 +16,12 @@ const posts = defineCollection({
     author: z.string().default('Ali Eslami'),
     cover: z.string().optional(),
     thumbnail: z.string().optional(),
+    // Cards crop the thumbnail to a wide frame. Set `thumbFit: whole` when the subject fills the image
+    // (e.g. a square photo of an object): it's then shown whole on its own background colour.
+    thumbFit: z.enum(['crop', 'whole']).default('crop'),
     description: z.string().optional(),
-    // Moments out in the world get an orange dot on the home timeline and count as Events
-    // (except Residency, which reads as a devlog). Leave it out for ordinary devlogs and essays.
+    // Moments out in the world count as Events in the home filter (except Residency, which reads
+    // as a devlog). Leave it out for ordinary devlogs and essays.
     type: z.enum(['Exhibition', 'Residency', 'Talk', 'Screening', 'Release']).optional(),
     // The cover is shown as a wide banner with the title on it. Set `banner: false` for covers that
     // shouldn't be cropped (posters, logos, small images): they're shown whole, under the title.

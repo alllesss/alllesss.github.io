@@ -52,6 +52,7 @@ document.querySelectorAll<HTMLAnchorElement>('a[data-yt]').forEach((a) => {
     box.style.cssText = a.style.cssText;
     box.append(f);
     a.replaceWith(box);
+    f.focus(); // keyboard users land on the player instead of the top of the page
   });
 });
 
@@ -65,6 +66,7 @@ if (box) {
   const next = box.querySelector<HTMLButtonElement>('.lb-next')!;
   let frames: HTMLElement[] = [];
   let i = 0;
+  let opener: HTMLElement | null = null;
   const largest = (frame: HTMLElement, img: HTMLImageElement) => {
     const set = (frame.querySelector('source')?.srcset || img.srcset || '').split(',').map((x) => x.trim().split(/\s+/)[0]).filter(Boolean);
     return set.length ? set[set.length - 1] : img.currentSrc || img.src;
@@ -83,14 +85,27 @@ if (box) {
     prev.hidden = next.hidden = count.hidden = !many;
     count.textContent = many ? (i + 1) + ' / ' + frames.length : '';
   };
-  document.addEventListener('click', (ev) => {
-    const frame = (ev.target as HTMLElement).closest<HTMLElement>('[data-zoom]');
-    if (!frame || !frame.querySelector('img')) return;
+  const open = (frame: HTMLElement) => {
     frames = [...document.querySelectorAll<HTMLElement>('[data-zoom]')].filter((f) => f.querySelector('img'));
+    opener = frame;
     show(frames.indexOf(frame));
     box.showModal();
     box.focus(); // keep focus on the viewer, not on a button, so no focus ring shows on open
+  };
+  document.addEventListener('click', (ev) => {
+    const frame = (ev.target as HTMLElement).closest<HTMLElement>('[data-zoom]');
+    if (frame && frame.querySelector('img')) open(frame);
   });
+  // Images can be opened from the keyboard too (Figure.astro makes each frame focusable).
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key !== 'Enter' && ev.key !== ' ') return;
+    const frame = (ev.target as HTMLElement).closest?.<HTMLElement>('[data-zoom]');
+    if (!frame || !frame.querySelector('img')) return;
+    ev.preventDefault();
+    open(frame);
+  });
+  // Back on the page, focus returns to the image that was opened.
+  box.addEventListener('close', () => { opener?.focus({ preventScroll: true }); opener = null; });
   prev.addEventListener('click', () => show(i - 1));
   next.addEventListener('click', () => show(i + 1));
   box.querySelector('.lb-close')!.addEventListener('click', () => box.close());
@@ -154,23 +169,6 @@ if (links.length) {
 // --- Tactile effects -----------------------------------------------------------------------
 
 const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// 1. Cursor light on tiles and cards (only with a real mouse).
-if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  document.querySelectorAll<HTMLElement>('.entry, .pin, .post-nav a, .about-card, .about-tile, .f-concept, .series-parts a, .link').forEach((el) => {
-    el.classList.add('spot');
-    let raf = 0;
-    el.addEventListener('pointermove', (e) => {
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        const r = el.getBoundingClientRect();
-        el.style.setProperty('--mx', e.clientX - r.left + 'px');
-        el.style.setProperty('--my', e.clientY - r.top + 'px');
-        raf = 0;
-      });
-    }, { passive: true });
-  });
-}
 
 // 2. Images emerge as they scroll into view. (Images already on screen at load appear straight away.)
 if (!calm && 'IntersectionObserver' in window) {

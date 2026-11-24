@@ -1,6 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export type Post = CollectionEntry<'posts'> & { log: number; minutes: number };
+export type Post = CollectionEntry<'posts'> & { log: number; minutes: number; video: boolean };
 
 /** All published posts, newest first, each with its log number (1 = first entry) and reading time. */
 export async function getPosts(): Promise<Post[]> {
@@ -9,7 +9,8 @@ export async function getPosts(): Promise<Post[]> {
   return all
     .map((p, i) => {
       const words = (p.body ?? '').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
-      return Object.assign(p, { log: i + 1, minutes: Math.max(1, Math.round(words / 220)) });
+      const video = /<Embed\b/.test(p.body ?? ''); // YouTube/Vimeo players; the read time then says "+ video"
+      return Object.assign(p, { log: i + 1, minutes: Math.max(1, Math.round(words / 220)), video });
     })
     .reverse();
 }

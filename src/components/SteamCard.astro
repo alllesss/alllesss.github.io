@@ -1,42 +1,60 @@
 ---
-// The Steam card as a stand-alone block (used on /stay/). The text and link come from
-// src/data/pinned.ts, the same entry the home page uses, so there is one place to edit.
+// The Steam card, used on the home page (pinned) and on /stay/. The text and link come from
+// src/data/pinned.ts, so there is one place to edit.
+// It wears the site's own glass with a small Steam mark; only the button keeps Steam's blue,
+// so it reads as "this is on Steam" without out-shouting the rest of the page.
 import BrandIcon from './BrandIcon.astro';
 import { pinned } from '../data/pinned';
 
 const card = pinned.find((p) => p.brand === 'steam' && p.show !== false);
 ---
 {card && (
-  <a class="steam-card" href={card.link.href}>
+  <a class="steam-card glass" href={card.link.href} target="_blank" rel="noopener">
     <span class="top">
-      <span class="mark"><BrandIcon name="steam" size={22} /><span>STEAM</span></span>
-      <span class="status">{card.status}</span>
+      <span class="mark"><BrandIcon name="steam" size={18} /><span>Steam</span></span>
+      <span class="badge">{card.status}</span>
     </span>
     <strong class="title">{card.title}</strong>
-    <span class="text">{card.text}</span>
-    <span class="go">{card.link.label}</span>
+    <span class="text">
+      {card.short ? <Fragment><span class="long">{card.text}</span><span class="short">{card.short}</span></Fragment> : card.text}
+    </span>
+    <span class="go">{card.link.label} <span aria-hidden="true">↗</span></span>
   </a>
 )}
 
 <style>
   .steam-card {
-    display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; text-align: left;
-    border-radius: var(--radius-lg); overflow: hidden; color: inherit;
-    background: linear-gradient(135deg, #171a21 0%, #1b2838 55%, #2a475e 100%);
-    border: 1px solid rgba(102, 192, 244, 0.28); box-shadow: var(--shadow-md);
+    display: flex; flex-direction: column; gap: 12px; padding: 22px 24px; text-align: left; color: inherit;
     transition: transform var(--dur-normal) var(--ease-standard), box-shadow var(--dur-normal) var(--ease-standard), border-color var(--dur-normal) var(--ease-standard);
   }
-  .steam-card:hover { color: inherit; transform: translateY(-2px); box-shadow: var(--shadow-lg); border-color: rgba(102, 192, 244, 0.7); }
+  .steam-card > * { position: relative; z-index: 1; }
+  .steam-card:hover { color: inherit; transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(102, 192, 244, 0.6), 0 6px 28px rgba(102, 192, 244, 0.25); border-color: rgba(102, 192, 244, 0.6); }
+  .steam-card:active { transform: translateY(0) scale(0.99); transition-duration: var(--dur-fast); }
   .top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-  .mark { display: inline-flex; align-items: center; gap: 8px; color: #ffffff; font-family: var(--font-display); font-weight: 600; font-size: 15px; letter-spacing: 0.14em; }
-  .status { padding: 3px 10px; border-radius: 2px; background: rgba(102, 192, 244, 0.18); color: #66c0f4; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
-  .title { font-family: var(--font-display); font-weight: 600; font-size: 22px; line-height: 1.2; color: #ffffff; }
-  .steam-card:hover .title { color: #66c0f4; }
-  .text { font-size: 15px; line-height: 1.5; color: #c7d5e0; }
+  .mark {
+    display: inline-flex; align-items: center; gap: 8px; color: var(--text-bright);
+    font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: var(--tracking-label); text-transform: uppercase;
+  }
+  .title { font-family: var(--font-display); font-weight: 600; font-size: 24px; line-height: 1.2; color: var(--text-bright); }
+  .text { font-size: 15px; line-height: 1.5; color: var(--text-muted); }
+  .short { display: none; }
+  /* Steam's own blue, with dark text so the label reads clearly (white on this blue would be 2.3:1). */
   .go {
-    align-self: flex-start; padding: 8px 16px; border-radius: 2px;
-    background: linear-gradient(90deg, #06bfff 0%, #2d73ff 100%); color: #ffffff; font-size: 14px; font-weight: 500;
+    align-self: flex-start; margin-top: auto; padding: 9px 16px; border-radius: var(--radius-sm);
+    background: linear-gradient(90deg, #66c0f4 0%, #3d9cf0 100%); color: #0b1622; font-size: 14px; font-weight: 600;
     transition: filter var(--dur-fast);
   }
-  .steam-card:hover .go { filter: brightness(1.12); }
+  .steam-card:hover .go { filter: brightness(1.08); }
+
+  @media (max-width: 640px) {
+    .steam-card { gap: 8px; padding: 14px 14px 12px; }
+    .title { font-size: 17px; line-height: 1.22; }
+    .text { font-size: 13px; line-height: 1.45; }
+    .go { padding: 7px 12px; font-size: 13px; }
+  }
+  /* On the home page, phones get the short summary. */
+  @media (max-width: 640px) {
+    :global(.pinned, .home-side) .long { display: none; }
+    :global(.pinned, .home-side) .short { display: inline; }
+  }
 </style>

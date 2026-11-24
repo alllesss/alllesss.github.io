@@ -5,7 +5,6 @@ import '@fontsource/barlow/600.css';
 import '@fontsource-variable/inter';
 import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
-import '@fontsource/jetbrains-mono/latin-400.css';
 import '../styles/tokens.css';
 import '../styles/global.css';
 import Wordmark from '../components/Wordmark.astro';
@@ -15,7 +14,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: 'website' | 'article';
-  bare?: boolean; // no navigation or footer (the /stay and /links pages)
+  bare?: boolean; // no navigation or footer (for a page that should stand on its own; none uses it now)
 }
 const SITE = 'ESHRAQ';
 const {

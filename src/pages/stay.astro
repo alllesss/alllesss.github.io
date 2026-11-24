@@ -2,6 +2,10 @@
 // The newsletter page. Its address (/stay/) is printed on the IDFA QR code, so it must not change.
 import Base from '../layouts/Base.astro';
 import SteamCard from '../components/SteamCard.astro';
+import Thumb from '../components/Thumb.astro';
+
+// People arrive here from the QR code at exhibitions, so the page first shows them the work again.
+const STILL = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/16_Post/Cover.jpg';
 ---
 <Base
   title="Stay in touch"
@@ -10,6 +14,10 @@ import SteamCard from '../components/SteamCard.astro';
   <div class="stay">
     <span class="stay-orb" aria-hidden="true"><span class="core"></span></span>
     <h1 class="page-title">Stay in touch</h1>
+    <figure class="stay-still">
+      <Thumb src={STILL} alt="A scene from ESHRAQ" sizes="(max-width: 560px) calc(100vw - 36px), 512px" widths={[480, 720, 1024]} priority />
+      <figcaption><strong>ESHRAQ</strong> is a simulation you can play, by artist Ali Eslami, built on Suhrawardi's philosophy of light.</figcaption>
+    </figure>
     <p class="stay-lead">Leave your email to get new devlogs, essays and news from the <a href="/">process log</a> as they are published.</p>
 
     <div class="stay-box">
@@ -29,12 +37,16 @@ import SteamCard from '../components/SteamCard.astro';
   @keyframes breathe { 50% { box-shadow: inset 0 1px 2px rgba(255, 200, 180, 0.55), inset 0 -2px 4px rgba(62, 23, 21, 0.7), 0 0 30px rgba(232, 112, 95, 0.7); } }
   .stay .page-title { font-size: clamp(2.25rem, 7vw, 3.25rem); }
   .stay-lead { margin: 16px auto 0; max-width: 26rem; font-size: 1.0625rem; line-height: 1.65; color: var(--text-body); text-wrap: balance; }
-  .stay-lead a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(218, 112, 44, 0.45); }
+  .stay-lead a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent-underline); }
   .stay-box {
     margin: 36px 0 0; padding: 10px; border-radius: var(--radius-lg);
     background: var(--glass-bg); border: var(--glass-border); box-shadow: var(--shadow-lg);
   }
   .stay-box iframe { display: block; width: 100%; min-height: 300px; border: 0; border-radius: var(--radius-md); background: #fff; }
-  .stay-note { margin-top: 14px; font-size: 13px; color: var(--text-faint); }
+  .stay-note { margin-top: 14px; font-size: 13px; color: var(--text-muted); }
+  .stay-still { margin: 28px 0 0; }
+  .stay-still :global(img) { display: block; width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); } /* the wide cover at its own shape, so the sign-up stays near the top */
+  .stay-still figcaption { margin: 14px auto 0; max-width: 26rem; font-size: 15px; line-height: 1.55; color: var(--text-muted); text-wrap: balance; }
+  .stay-still figcaption strong { color: var(--text-bright); font-weight: 600; }
   .stay-steam { margin-top: 40px; }
 </style>

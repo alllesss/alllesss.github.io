@@ -55,7 +55,7 @@ const vt = `view-transition-name: p-${post.id.replace(/[^A-Za-z0-9_-]/g, '-')}`;
       <div class="post-banner-text">
         <p class="post-meta">
           <time datetime={isoDate(post.data.date)}>{fmtDate(post.data.date)}</time>
-          <span>·</span><span>{post.minutes} min read</span>
+          <span>·</span><span>{post.minutes} min read{post.video && ' + video'}</span>
           {post.data.author !== OWNER && <Fragment><span>·</span><span>By {post.data.author}</span></Fragment>}
         </p>
         <h1 class="post-title">{post.data.title}</h1>
@@ -67,7 +67,7 @@ const vt = `view-transition-name: p-${post.id.replace(/[^A-Za-z0-9_-]/g, '-')}`;
       <header class="post-head">
         <p class="post-meta">
           <time datetime={isoDate(post.data.date)}>{fmtDate(post.data.date)}</time>
-          <span>·</span><span>{post.minutes} min read</span>
+          <span>·</span><span>{post.minutes} min read{post.video && ' + video'}</span>
           {post.data.author !== OWNER && <Fragment><span>·</span><span>By {post.data.author}</span></Fragment>}
         </p>
         <h1 class="post-title">{post.data.title}</h1>
