@@ -23,4 +23,6 @@ npm run build    # production build in dist/
 ## Hosting
 
 - `wrangler.jsonc` configures the Cloudflare Worker.
+- GitHub Actions (`.github/workflows/ci.yml`) builds every push and deploys `master` to Cloudflare with the `CLOUDFLARE_API_TOKEN` secret. Cloudflare's own Git builds are switched off.
+- To publish by hand instead: `npm run build`, then `npx wrangler deploy`.
 - `public/_redirects` keeps old addresses working, and `public/_headers` keeps the design document out of search engines.

@@ -1,5 +1,15 @@
+# Builds the site on every push and pull request. Pushes to master are then deployed to
+# Cloudflare (the eshraq-io Worker), so Cloudflare only hosts the site and doesn't build it.
+# Needs the repository secret CLOUDFLARE_API_TOKEN (Cloudflare token: "Edit Cloudflare Workers").
+# CLOUDFLARE_ACCOUNT_ID is optional; it's only needed if the token can reach more than one account.
 name: Build site
 on: [push, pull_request]
+
+# One deploy at a time; a newer push to master replaces one that is still waiting.
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: Build site
@@ -12,3 +22,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Deploy to Cloudflare
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
