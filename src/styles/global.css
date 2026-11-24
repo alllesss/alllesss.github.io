@@ -419,7 +419,12 @@ html { overflow-x: clip; }
 }
 .toc a:hover { color: var(--text-bright); }
 .toc a.is-active { color: var(--accent); border-left-color: var(--accent); }
-@media (max-width: 640px) { .toc { left: 16px; } }
+/* Phones: the Index button hides while you scroll down to read and returns with the header on the way up. */
+@media (max-width: 640px) {
+  .toc { left: 16px; }
+  .toc-btn { background: rgba(33, 31, 28, 0.94); }
+  .header-tucked .toc { opacity: 0; transform: translateY(-6px); pointer-events: none; }
+}
 
 .post-end { margin-top: 80px; }
 

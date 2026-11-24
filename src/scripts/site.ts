@@ -214,6 +214,8 @@ if (article && header) {
       else if (y > lastY + 6) head.classList.add('is-tucked');
       else if (y < lastY - 6) head.classList.remove('is-tucked');
       lastY = y;
+      // The floating Index button goes and comes back with the header, so it never sits over the text while reading.
+      document.documentElement.classList.toggle('header-tucked', head.classList.contains('is-tucked'));
     }, { passive: true });
   }
 }
