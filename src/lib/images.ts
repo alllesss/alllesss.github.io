@@ -20,8 +20,9 @@ export const localImage = (src?: string): ImageMetadata | undefined =>
 /** Size and placeholder colour for an image, if it has been measured (scripts/image-meta.mjs). */
 export const imageMeta = (src?: string): ImageMeta | undefined => (src ? meta[src] : undefined);
 
-/** Output formats, best first. The last one is the fallback every browser gets. */
-export const FORMATS = ['avif'] as const;
+/** Extra output formats, best first (none). Every image is made as WebP only: AVIF looked a little
+ *  smaller but made builds five times slower, long enough for Cloudflare's builds to hang. */
+export const FORMATS = [] as const;
 export const FALLBACK = 'webp' as const;
 
 /** Widths to generate, never upscaling past the original. */
