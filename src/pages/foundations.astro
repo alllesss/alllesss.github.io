@@ -2,6 +2,8 @@
 // Foundations: the ideas behind ESHRAQ. Carried over from the Help screen in the ESHRAQ interface
 // design sheets (Concepts + Foundations), adapted to the blog's reading layout.
 import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import { localImage } from '../lib/images';
 
 const CHAPTERS = [
   { id: 'concepts', n: '00', label: 'Concepts' },
@@ -60,7 +62,7 @@ const READING = [
   { t: 'Anticipatory Systems', by: 'Robert Rosen · 1985 · the modelling relation' },
 ];
 
-const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/06_Post/Canvas05.webp';
+const CANVAS05 = localImage('/media/06_Post/Canvas05.webp')!;
 ---
 <Base
   title="Foundations"
@@ -217,7 +219,7 @@ const CANVAS05 = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/0
       <p>Crucially, he said these images are not just inside your head. They exist on their own, and a person can travel there in dreams and visions. In Persian he named it <em>nā-kojā-ābād</em> (<span class="farsi" lang="fa">ناکجاآباد</span>), the land of Nowhere. In the twentieth century the French scholar Henri Corbin called it the <em>mundus imaginalis</em>, and warned against confusing it with the merely imaginary.</p>
       <p>ESHRAQ is an attempt to explore how this imaginal world might take shape through computation and simulation.</p>
       <figure class="fig is-wide">
-        <span class="fig-frame"><img src={CANVAS05} alt="Floating Platform, an ESHRAQ canvas" loading="lazy" style="aspect-ratio: 16 / 9; object-fit: cover" /></span>
+        <span class="fig-frame"><Image src={CANVAS05} alt="Floating Platform, an ESHRAQ canvas" widths={[768, 1280, 1760]} sizes="(min-width: 1000px) 904px, 100vw" loading="lazy" style="aspect-ratio: 16 / 9; object-fit: cover" /></span>
         <figcaption>Floating Platform, an ESHRAQ canvas. A stage suspended in nowhere: the simulation as an intermediate realm, a resonance rather than an equivalence.</figcaption>
       </figure>
 

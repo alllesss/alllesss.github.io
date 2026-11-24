@@ -4,12 +4,13 @@
 // Options: size="medium" | "small", or width="70%" / width="400px" for a custom maximum width.
 // Remote originals are resized to several widths in AVIF + WebP at build time.
 import { Picture } from 'astro:assets';
-import { imageMeta, widthsFor, FORMATS, FALLBACK } from '../lib/images';
+import { imageMeta, localImage, widthsFor, FORMATS, FALLBACK } from '../lib/images';
 
 interface Props { src: string; alt?: string; caption?: string; size?: 'medium' | 'small'; width?: string; priority?: boolean }
 const { src, alt = '', caption, size, width, priority = false } = Astro.props;
 const meta = imageMeta(src);
-const optimise = meta && !meta.animated && !/\.(svg|gif)$/i.test(src);
+const local = localImage(src);
+const optimise = meta && local && !meta.animated;
 const hasCaption = Boolean(caption) || Astro.slots.has('default');
 // How wide the image is drawn, so the browser can pick the smallest file that still looks sharp.
 const drawn = size === 'small' ? '480px' : size === 'medium' ? '680px' : '880px';
@@ -23,7 +24,7 @@ const style = custom || portrait || undefined;
   <span class="fig-frame" data-zoom tabindex="0" role="button" aria-label={alt ? `Enlarge image: ${alt}` : 'Enlarge image'} style={meta ? `--ph: ${meta.color}` : undefined}>
     {optimise ? (
       <Picture
-        src={src}
+        src={local!}
         alt={alt}
         width={meta.w}
         height={meta.h}

@@ -5,48 +5,117 @@ import SteamCard from '../components/SteamCard.astro';
 import Thumb from '../components/Thumb.astro';
 
 // People arrive here from the QR code at exhibitions, so the page first shows them the work again.
-const STILL = 'https://cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/images/16_Post/Cover.jpg';
+const STILL = '/media/16_Post/Cover.jpg';
+const EMAIL = 'alless0@outlook.com';
 ---
 <Base
   title="Stay in touch"
   description="Leave your email to get new devlogs, essays and news from the ESHRAQ process log as they are published."
 >
   <div class="stay">
-    <span class="stay-orb" aria-hidden="true"><span class="core"></span></span>
-    <h1 class="page-title">Stay in touch</h1>
+    <header class="stay-head">
+      <span class="stay-orb" aria-hidden="true"><span class="core"></span></span>
+      <h1 class="page-title">Stay in touch</h1>
+      <p class="stay-lead"><strong>ESHRAQ</strong> is a simulation you can play, by artist Ali Eslami, built on Suhrawardi's philosophy of light. Follow it here as it grows.</p>
+    </header>
+
     <figure class="stay-still">
-      <Thumb src={STILL} alt="A scene from ESHRAQ" sizes="(max-width: 560px) calc(100vw - 36px), 512px" widths={[480, 720, 1024]} priority />
-      <figcaption><strong>ESHRAQ</strong> is a simulation you can play, by artist Ali Eslami, built on Suhrawardi's philosophy of light.</figcaption>
+      <Thumb src={STILL} alt="A scene from ESHRAQ" sizes="(max-width: 960px) calc(100vw - 36px), 928px" widths={[720, 1024, 1440, 1856]} priority />
     </figure>
-    <p class="stay-lead">Leave your email to get new devlogs, essays and news from the <a href="/">process log</a> as they are published.</p>
 
-    <div class="stay-box">
-      <iframe src="https://alllesss.substack.com/embed" title="Subscribe to the ESHRAQ newsletter on Substack" scrolling="no"></iframe>
+    <!-- Sign-up on the left; the other ways to stay in touch on the right. -->
+    <div class="stay-grid">
+      <div class="stay-intro">
+        <h2 class="label">Newsletter</h2>
+        <p class="stay-text">New devlogs, essays and news from the <a href="/">process log</a>, by email, as they are published. No spam; unsubscribe any time.</p>
+      </div>
+      <div class="stay-news">
+        <div class="stay-box">
+          <iframe src="https://alllesss.substack.com/embed" title="Subscribe to the ESHRAQ newsletter on Substack" scrolling="no"></iframe>
+        </div>
+      </div>
+
+      <div class="stay-side">
+        <div class="stay-mail glass">
+          <span class="label">Write to me</span>
+          <span class="stay-mail-row">
+            <strong class="stay-address">{EMAIL}</strong>
+            <button type="button" class="stay-copy" data-copy={EMAIL}>Copy</button>
+          </span>
+        </div>
+        <SteamCard />
+      </div>
     </div>
-    <p class="stay-note">No spam. Unsubscribe any time.</p>
-
-    <div class="stay-steam"><SteamCard /></div>
   </div>
 </Base>
 
+<script>
+  // Copy the address with one click; the address itself stays plain, selectable text.
+  document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy!);
+        btn.textContent = 'Copied';
+        setTimeout(() => (btn.textContent = 'Copy'), 1800);
+      } catch {
+        const sel = getSelection();
+        const r = document.createRange();
+        r.selectNodeContents(btn.previousElementSibling!);
+        sel?.removeAllRanges();
+        sel?.addRange(r);
+      }
+    });
+  });
+</script>
+
 <style>
-  .stay { max-width: 32rem; margin: 0 auto; text-align: center; padding-top: clamp(40px, 9vw, 96px); }
+  .stay { max-width: 58rem; margin: 0 auto; padding-top: clamp(32px, 7vw, 72px); }
+
+  .stay-head { text-align: center; max-width: 36rem; margin: 0 auto; }
   /* The Agent Core, glowing softly: light arriving. */
-  .stay-orb { display: inline-flex; font-size: 22px; margin-bottom: 22px; }
+  .stay-orb { display: inline-flex; font-size: 22px; margin-bottom: 20px; }
   .stay-orb .core { animation: breathe 4.8s var(--ease-standard) infinite; }
   @keyframes breathe { 50% { box-shadow: inset 0 1px 2px rgba(255, 200, 180, 0.55), inset 0 -2px 4px rgba(62, 23, 21, 0.7), 0 0 30px rgba(232, 112, 95, 0.7); } }
   .stay .page-title { font-size: clamp(2.25rem, 7vw, 3.25rem); }
-  .stay-lead { margin: 16px auto 0; max-width: 26rem; font-size: 1.0625rem; line-height: 1.65; color: var(--text-body); text-wrap: balance; }
-  .stay-lead a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent-underline); }
+  .stay-lead { margin-top: 14px; font-size: 1.0625rem; line-height: 1.65; color: var(--text-muted); text-wrap: balance; }
+  .stay-lead strong { color: var(--text-bright); font-weight: 600; }
+
+  .stay-still { margin: clamp(28px, 5vw, 44px) 0 0; }
+  .stay-still :global(img) { display: block; width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+
+  .stay-grid {
+    display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 16px 40px; align-items: stretch;
+    grid-template-areas: 'intro .' 'news side';
+    margin-top: clamp(32px, 5vw, 48px);
+  }
+  .stay-intro { grid-area: intro; }
+  .stay-intro h2 { margin: 0; }
+  /* The sign-up frame stretches to the height of the cards beside it, so both columns end together. */
+  .stay-news { grid-area: news; display: flex; }
+  .stay-side { grid-area: side; }
+  .stay-text { margin-top: 10px; font-size: 1rem; line-height: 1.6; color: var(--text-body); }
+  .stay-text a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent-underline); }
   .stay-box {
-    margin: 36px 0 0; padding: 10px; border-radius: var(--radius-lg);
+    flex: 1; display: flex; padding: 10px; border-radius: var(--radius-lg);
     background: var(--glass-bg); border: var(--glass-border); box-shadow: var(--shadow-lg);
   }
-  .stay-box iframe { display: block; width: 100%; min-height: 300px; border: 0; border-radius: var(--radius-md); background: #fff; }
-  .stay-note { margin-top: 14px; font-size: 13px; color: var(--text-muted); }
-  .stay-still { margin: 28px 0 0; }
-  .stay-still :global(img) { display: block; width: 100%; height: auto; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); } /* the wide cover at its own shape, so the sign-up stays near the top */
-  .stay-still figcaption { margin: 14px auto 0; max-width: 26rem; font-size: 15px; line-height: 1.55; color: var(--text-muted); text-wrap: balance; }
-  .stay-still figcaption strong { color: var(--text-bright); font-weight: 600; }
-  .stay-steam { margin-top: 40px; }
+  .stay-box iframe { display: block; width: 100%; height: auto; min-height: 300px; border: 0; border-radius: var(--radius-md); background: #fff; }
+
+  .stay-side { display: flex; flex-direction: column; gap: var(--gap-tile); }
+  .stay-mail { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px; }
+  .stay-mail > * { position: relative; z-index: 1; }
+  .stay-mail-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  /* Plain text: one click selects the whole address. */
+  .stay-address { font-family: var(--font-display); font-weight: 600; font-size: 20px; color: var(--text-bright); user-select: all; overflow-wrap: anywhere; }
+  .stay-copy {
+    padding: 5px 12px; border-radius: 999px; cursor: pointer; background: transparent; border: 1px solid var(--border-strong);
+    font: 12px/1.3 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
+    transition: color var(--dur-fast), border-color var(--dur-fast);
+  }
+  .stay-copy:hover { color: var(--text-bright); border-color: var(--border-frame); }
+
+  @media (max-width: 760px) {
+    .stay-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: 'intro' 'news' 'side'; }
+    .stay-side { margin-top: 16px; }
+  }
 </style>

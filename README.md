@@ -8,7 +8,8 @@ Every push to `master` builds and publishes the site automatically.
 ## Writing
 
 - Posts live in `src/content/posts/` as `.mdx` files. The file name becomes the URL: `2026-11-09-ESHRAQ-at-IDFA-DocLab.mdx` is published at `/2026-11-09-ESHRAQ-at-IDFA-DocLab/`.
-- Images live in the [eshraq.io-assets](https://github.com/alllesss/eshraq.io-assets) repo. Link them with their `cdn.jsdelivr.net/gh/alllesss/eshraq.io-assets/...` address; the build makes optimised copies.
+- Images live in `src/media/<folder>/`, one folder per post (e.g. `src/media/14_Post/`). Link them as `/media/14_Post/Thumb.jpg`; the build makes optimised copies, so originals can be large.
+- Videos (`.mp4`) and files used by the static pages in `public/` go in `public/media/<folder>/` instead, linked the same way. They are served as they are, so keep them small (under 25 MB each).
 - Pinned cards on the home page: `src/data/pinned.ts`.
 
 ## Running locally

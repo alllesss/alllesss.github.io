@@ -117,6 +117,9 @@ const rows = posts.map((p, i) => {
             </span>
             <span class:list={['entry-media', r.p.data.thumbFit === 'whole' && 'is-whole']} style={`view-transition-name: p-${r.p.id.replace(/[^A-Za-z0-9_-]/g, "-")}`}>
               <Thumb src={r.p.data.thumbnail ?? r.p.data.cover} sizes="(max-width: 640px) calc(100vw - 50px), 228px" widths={[240, 480, 720]} />
+              {r.p.data.format === 'video' && (
+                <span class="entry-play"><svg viewBox="0 0 10 12" width="8" height="10" aria-hidden="true"><path d="M0 0 10 6 0 12z" fill="currentColor" /></svg>{r.p.data.minutes ? `${r.p.data.minutes} min` : 'Video'}</span>
+              )}
             </span>
           </a>
         </div>
@@ -279,6 +282,13 @@ const rows = posts.map((p, i) => {
   }
   .entry:hover .entry-media :global(img) { filter: none; transform: scale(1.03); }
   .entry-media.is-whole :global(img) { object-fit: contain; }
+  /* Video posts: a small play mark with the length, so the archive shows what is to watch. */
+  .entry-play {
+    position: absolute; left: 8px; bottom: 8px; z-index: 1; display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 9px; border-radius: 999px; background: rgba(16, 15, 15, 0.72); color: var(--text-bright);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+  }
 
   .entry-date { display: none; }
 

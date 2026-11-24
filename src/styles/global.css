@@ -269,6 +269,8 @@ html { overflow-x: clip; }
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 28px;
 }
 .site-footer .colophon { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; }
+/* The same lettering as the header wordmark, with the long stretch, at footer size. */
+.footer-farsi { font-family: "KarimWordmark", var(--font-farsi); font-weight: 700; font-size: 17px; line-height: 1; color: inherit; }
 .site-footer nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 .site-footer a { color: var(--text-muted); }
 .site-footer a:hover { color: var(--accent-hover); }
@@ -358,6 +360,26 @@ html { overflow-x: clip; }
 .post-head .post-subtitle { color: var(--text-muted); }
 .post-cover-plain { max-width: 880px; margin: 0 auto; }
 .post-cover-plain img { display: block; width: 100%; height: auto; border-radius: var(--radius-lg); }
+
+/* Video posts: a short header, the video at full width, then the text beside a details panel. */
+.vpost { max-width: 1100px; margin: 0 auto; padding-top: clamp(32px, 6vw, 64px); }
+.vpost-head { display: flex; flex-direction: column; gap: 12px; max-width: 46rem; }
+.vpost-head .post-subtitle { color: var(--text-muted); }
+.vpost-player { margin-top: clamp(24px, 4vw, 36px); }
+.vpost-player .embed { margin: 0; }
+.vpost-player .embed-frame { border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); }
+.vpost-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 280px); gap: 40px 64px; align-items: start; margin-top: clamp(32px, 5vw, 56px); }
+.vpost-body .prose { max-width: var(--prose-max); }
+.vpost-body--solo { grid-template-columns: minmax(0, 1fr); }
+.vpost-aside { display: flex; flex-direction: column; gap: 24px; padding-top: 6px; }
+.vpost-details { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--border-soft); }
+.vpost-details > div { display: grid; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--border-soft); }
+.vpost-details dd { margin: 0; font-size: 15px; line-height: 1.45; color: var(--text-bright); }
+.vpost-details dd a { color: var(--text-bright); }
+.vpost-details dd a:hover { color: var(--accent-text-hover); }
+.vpost-aside .fig { margin: 0; max-width: none; }
+.post-grid--video { display: block; max-width: 1100px; margin: 0 auto; padding-top: 0; }
+@media (max-width: 860px) { .vpost-body { grid-template-columns: minmax(0, 1fr); } .vpost-aside .fig { max-width: 240px; } }
 
 /* One centred reading column; the side index sits in the empty left margin on wide screens. */
 .post-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--prose-max)) minmax(0, 1fr); column-gap: 72px; padding-top: clamp(40px, 6vw, 64px); }
