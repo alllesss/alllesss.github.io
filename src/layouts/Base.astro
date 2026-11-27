@@ -20,7 +20,8 @@ const SITE = 'ESHRAQ';
 const {
   title,
   description = 'ESHRAQ process log: working notes from an ongoing simulation by Ali Eslami.',
-  image,
+  // Pages without their own image (the home page, About, Foundations…) share ESHRAQ's main image.
+  image = new URL('/img/og-eshraq.jpg', Astro.site).href,
   type = 'website',
   bare = false,
 } = Astro.props;
@@ -34,6 +35,18 @@ const nav = [
   { href: '/stay/', label: 'Stay in touch', current: path.startsWith('/stay'), icon: 'mail' },
 ];
 const GTAG = 'G-CX3VKN2EYV';
+// Structured data for search engines on the home page: ESHRAQ as a game by Ali Eslami, with its Steam page.
+const ld = path === '/' ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'ESHRAQ',
+  url: 'https://www.eshraq.io/',
+  description: 'If the 12th-century philosopher Suhrawardi had a computer, what would he build? A simulated world of light and knowledge, developed in the open.',
+  image: image,
+  gamePlatform: 'PC',
+  author: { '@type': 'Person', name: 'Ali Eslami', alternateName: 'ALLLESSS', url: 'https://www.alllesss.com/' },
+  sameAs: ['https://store.steampowered.com/app/4869850/ESHRAQ/', 'https://www.alllesss.com/projects/eshraq/'],
+}) : '';
 ---
 <!doctype html>
 <html lang="en">
@@ -45,6 +58,7 @@ const GTAG = 'G-CX3VKN2EYV';
     <meta name="author" content="Ali Eslami" />
     <meta name="theme-color" content="#211f1c" />
     <link rel="canonical" href={canonical} />
+    {ld && <script type="application/ld+json" set:html={ld} />}
     <link rel="icon" href="/favicon.ico" />
     <link rel="alternate" type="application/rss+xml" title="ESHRAQ — Process Log" href="/feed.xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
