@@ -49,7 +49,7 @@ const length = post.data.minutes
 const OWNER = 'Ali Eslami';
 const vt = `view-transition-name: p-${post.id.replace(/[^A-Za-z0-9_-]/g, '-')}`;
 ---
-<Base title={post.data.title} description={description} image={og} type="article">
+<Base title={post.data.title} description={description} image={og} type="article" published={post.data.date}>
   {isVideo ? (
     <div class="vpost">
       <header class="vpost-head">

@@ -15,6 +15,7 @@ interface Props {
   image?: string;
   type?: 'website' | 'article';
   bare?: boolean; // no navigation or footer (for a page that should stand on its own; none uses it now)
+  published?: Date; // a post's date, for the structured data
 }
 const SITE = 'ESHRAQ';
 const {
@@ -24,6 +25,7 @@ const {
   image = new URL('/img/og-eshraq.jpg', Astro.site).href,
   type = 'website',
   bare = false,
+  published,
 } = Astro.props;
 const fullTitle = title ? `${title} | ${SITE}` : `${SITE} — Process Log`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -35,18 +37,42 @@ const nav = [
   { href: '/stay/', label: 'Stay in touch', current: path.startsWith('/stay'), icon: 'mail' },
 ];
 const GTAG = 'G-CX3VKN2EYV';
-// Structured data for search engines on the home page: ESHRAQ as a game by Ali Eslami, with its Steam page.
-const ld = path === '/' ? JSON.stringify({
-  '@context': 'https://schema.org',
+// Structured data for search engines (invisible on the page): who makes ESHRAQ, what it is, and on posts, who wrote them.
+const AUTHOR = {
+  '@type': 'Person',
+  '@id': 'https://www.alllesss.com/#ali-eslami',
+  name: 'Ali Eslami',
+  alternateName: 'ALLLESSS',
+  url: 'https://www.alllesss.com/',
+  sameAs: ['https://www.instagram.com/alless0', 'https://www.linkedin.com/in/alllesss', 'https://vimeo.com/alllesss', 'https://www.youtube.com/@alless0', 'https://alllesss.itch.io/'],
+};
+const GAME = {
   '@type': 'VideoGame',
+  '@id': 'https://www.eshraq.io/#game',
   name: 'ESHRAQ',
   url: 'https://www.eshraq.io/',
   description: 'If the 12th-century philosopher Suhrawardi had a computer, what would he build? A simulated world of light and knowledge, developed in the open.',
-  image: image,
   gamePlatform: 'PC',
-  author: { '@type': 'Person', name: 'Ali Eslami', alternateName: 'ALLLESSS', url: 'https://www.alllesss.com/' },
+  applicationCategory: 'Game',
+  author: AUTHOR,
   sameAs: ['https://store.steampowered.com/app/4869850/ESHRAQ/', 'https://www.alllesss.com/projects/eshraq/'],
-}) : '';
+};
+const SITE_LD = { '@type': 'WebSite', '@id': 'https://www.eshraq.io/#website', name: 'ESHRAQ', alternateName: 'ESHRAQ Process Log', url: 'https://www.eshraq.io/', about: { '@id': GAME['@id'] }, author: { '@id': AUTHOR['@id'] } };
+const graph =
+  path === '/' ? [{ ...GAME, image }, SITE_LD]
+  : type === 'article' ? [{
+      '@type': 'BlogPosting',
+      headline: title,
+      description,
+      url: canonical.href,
+      image,
+      ...(published ? { datePublished: published.toISOString().slice(0, 10) } : {}),
+      author: AUTHOR,
+      about: { '@type': 'VideoGame', '@id': GAME['@id'], name: 'ESHRAQ' },
+      isPartOf: { '@id': SITE_LD['@id'] },
+    }]
+  : [];
+const ld = graph.length ? JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }) : '';
 ---
 <!doctype html>
 <html lang="en">
